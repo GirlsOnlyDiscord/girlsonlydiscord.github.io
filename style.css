@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    background-color: #f9f7f7;
     color: #333;
 }
 
@@ -14,12 +14,13 @@ header {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
 p {
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 section {
@@ -31,9 +32,16 @@ section {
 }
 
 #gallery .image-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#gallery .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
