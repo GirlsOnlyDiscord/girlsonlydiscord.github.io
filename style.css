@@ -26,14 +26,9 @@ ul {
 
 .navitem {
     margin-left: 40px;
+    float: left;
 }
 
 .navitem a {
     text-decoration: none;
-}
-
-.navbarelements {
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
 }
