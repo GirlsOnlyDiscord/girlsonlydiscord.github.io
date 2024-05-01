@@ -32,6 +32,7 @@ body {
     font-weight: bold;
     transition-duration: 0.15s;
     flex-shrink:1;
+    margin-bottom: 16px;
 }
 
 .navbar a:hover {
@@ -41,4 +42,5 @@ body {
 .mainpage {
     background-image: url(mainpage.jpeg);
     margin-top: 200px;
+    background-color: #cccccc
 }
