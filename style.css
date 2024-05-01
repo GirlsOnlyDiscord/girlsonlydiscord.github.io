@@ -12,5 +12,6 @@ body {
 }
 
 .navitem {
-    position: absolute;
+    display: inline;
+    margin-right: 10px;
 }
