@@ -6,11 +6,6 @@ body {
     color: #333;
 }
 
-.container {
-    height: 70px;
-    width: 100%;
-}
-
 .navbar {
     overflow: hidden;
     background-color: #ffefc9;
@@ -21,6 +16,7 @@ body {
     z-index: 1000;
     display:flex;
     padding-left: 100px;
+    height: 70px;
 }
 
 .navbar a {
@@ -37,11 +33,6 @@ body {
 
 .navbar a:hover {
     transform: scale(1.1);
-}
-
-.mainpage {
-    height: 35px;
-    background-color: #cccccc
 }
 
 .thisthemainpagefr {
