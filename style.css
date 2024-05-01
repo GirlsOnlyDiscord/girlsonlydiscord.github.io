@@ -44,3 +44,10 @@ body {
     height: max-content;
     background-color: #cccccc
 }
+
+.thisthemainpagefr {
+    padding-left: 30px;
+    padding-top: 30px;
+    height: 400px;
+    font-size: 20px;
+}
