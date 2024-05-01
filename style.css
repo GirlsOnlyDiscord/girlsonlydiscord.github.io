@@ -8,19 +8,15 @@ body {
 
 .container {
     height: 70px;
+    width: 100%;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-li {
-    display: inline;
     list-style: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
 }
-
 
 .navlink {
     display: block;
