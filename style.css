@@ -49,16 +49,19 @@ body {
 .headertext {
     font-size: 40px;
     margin-left: 30px;
+    margin-bottom: 10px;
 }
 
 .headertextsecond {
     font-size: 80px;
     margin-left: 30px;
+    margin-bottom: 10px;
 }
 
 .headertextlast {
     font-size: 35px;
     margin-left: 30px;
+    margin-bottom: 10px;
 }
 
 .thisthemainpagefr::before {
