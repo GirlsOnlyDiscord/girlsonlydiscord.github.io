@@ -20,12 +20,13 @@ body {
     width: 100%;
     z-index: 1000;
     display:flex;
+    margin-left: 50px;
 }
 
 .navbar a {
     display: flex;
     color: #607d8b;
-    padding: 30px 30px;
+    padding: 30px 16px;
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
@@ -35,4 +36,5 @@ body {
 
 .navbar a:hover {
     background: #ddd;
+    transform: scale(1.1);
 }
