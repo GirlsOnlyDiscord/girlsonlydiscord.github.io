@@ -22,7 +22,8 @@ body {
 .navbar a {
     display: flex;
     color: #f68d70;
-    padding: 30px 16px;
+    line-height: 70px;
+    padding: 0px 16px;
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
