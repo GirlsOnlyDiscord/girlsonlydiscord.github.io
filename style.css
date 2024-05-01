@@ -4,11 +4,10 @@ body {
     padding: 0;
     background-color: #f9f7f7;
     color: #333;
-    text-decoration: none;
 }
 
-.navlink {
-    color: #333;
+.container {
+    height: 70px;
 }
 
 ul {
@@ -19,10 +18,17 @@ ul {
 
 li {
     display: inline;
+    list-style: none;
 }
+
 
 .navlink {
     display: block;
     padding: 8px;
-    background-color: #fdf8e1;
+    background-color: #f6eac2;
+    color: #333;
+}
+
+.navitem a {
+    text-decoration: none;
 }
