@@ -20,7 +20,7 @@ body {
     width: 100%;
     z-index: 1000;
     display:flex;
-    margin-left: 50px;
+    padding-left: 100px;
 }
 
 .navbar a {
@@ -35,6 +35,5 @@ body {
 }
 
 .navbar a:hover {
-    background: #ddd;
     transform: scale(1.1);
 }
