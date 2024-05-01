@@ -15,7 +15,7 @@ body {
     width: 100%;
     z-index: 1000;
     display:flex;
-    padding-left: 100px;
+    justify-content: center;
     height: 70px;
 }
 
