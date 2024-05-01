@@ -40,10 +40,20 @@ body {
     padding-left: 30px;
     padding-top: 70px;
     width: 100%;
-    background-image: url(mainpage.jpeg);
+    position: relative;
     background-size: cover;
     box-sizing: border-box;
 
+}
+
+.thisthemainpagefr::before {
+    position: absolute;
+    content: "";
+    inset: 0px;
+    opacity: 0.5;
+    background-image: url(mainpage.jpeg);
+    background-size: cover;
+    z-index: -10;
 }
 
 .headertext {
@@ -63,13 +73,4 @@ body {
     font-size: 35px;
     margin-left: 30px;
     margin-bottom: 10px;
-}
-
-.layer {
-    background-color: rgba(245, 240, 228, 0.7);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
