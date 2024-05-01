@@ -6,7 +6,7 @@ body {
     color: #333;
 }
 
-.navbar {
+.navbar { /*this is the navbar*/
     overflow: hidden;
     background-color: #ffefc9;
     color: #f68d70;
@@ -19,7 +19,7 @@ body {
     justify-content: center;
 }
 
-.navbar a {
+.navbar a { /*this is the text in the navbar*/
     display: flex;
     color: #f68d70;
     line-height: 70px;
@@ -32,21 +32,20 @@ body {
     margin-bottom: 16px;
 }
 
-.navbar a:hover {
+.navbar a:hover { /*this is for upscaling on hover*/
     transform: scale(1.1);
 }
 
-.thisthemainpagefr {
+.thisthemainpagefr { /*this is the div for the starter text*/
     padding-left: 30px;
     padding-top: 90px;
     width: 100%;
     position: relative;
     background-size: cover;
     box-sizing: border-box;
-
 }
 
-.thisthemainpagefr::before {
+.thisthemainpagefr::before { /*this underlays and image behind the text and adjusts the opacity*/
     position: absolute;
     content: "";
     inset: 0px;
@@ -56,7 +55,7 @@ body {
     z-index: -10;
 }
 
-.headertext {
+.headertext { 
     font-size: 40px;
     margin-left: 50px;
     margin-bottom: 10px;
