@@ -32,3 +32,9 @@ li {
 .navitem a {
     text-decoration: none;
 }
+
+.navbarelements {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+}
