@@ -46,5 +46,9 @@ body {
 }
 
 .headertext {
-    font-size: 20px;
+    font-size: 30px;
+}
+
+.headertextsecond {
+    font-size: 40px;
 }
