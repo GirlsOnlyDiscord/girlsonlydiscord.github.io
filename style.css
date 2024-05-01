@@ -14,8 +14,10 @@ header {
 }
 
 h1 {
+    text-align: left;
     font-size: 48px;
     margin-bottom: 20px;
+    margin-left: 50px;
 }
 
 p {
