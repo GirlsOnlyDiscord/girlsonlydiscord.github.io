@@ -4,11 +4,11 @@ body {
     padding: 0;
     background-color: #f9f7f7;
     color: #333;
+    text-decoration: none;
 }
 
 .navlink {
     color: #333;
-    text-decoration: none;
 }
 
 .navitem {
