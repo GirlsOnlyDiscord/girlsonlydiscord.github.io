@@ -11,24 +11,24 @@ body {
     width: 100%;
 }
 
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.navbar {
+    overflow: hidden;
+    background-color: rgb(250, 250, 245);
+    color: #232a34;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 1000;
+    display:flex;
 }
 
-.navlink {
-    display: block;
-    padding: 8px;
-    background-color: #f6eac2;
-    color: #333;
-}
-
-.navitem {
-    margin-left: 40px;
-    float: left;
-}
-
-.navitem a {
+.navbar a {
+    display: flex;
+    color: #607d8b;
+    padding: 30px 16px;
     text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition-duration: 0.15s;
+    flex-shrink:1;
 }
