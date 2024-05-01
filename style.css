@@ -41,6 +41,6 @@ body {
 
 .mainpage {
     background-image: url(mainpage.jpeg);
-    margin-top: 200px;
+    height: max-content;
     background-color: #cccccc
 }
