@@ -37,3 +37,7 @@ body {
 .navbar a:hover {
     transform: scale(1.1);
 }
+
+.mainpage {
+    background-image: url(mainpage.jpeg);
+}
