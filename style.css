@@ -47,7 +47,7 @@ body {
 .thisthemainpagefr {
     padding-left: 30px;
     padding-top: 30px;
-    height: 400px;
+    height: max-content;
     width: 100%;
     background-image: url(mainpage.jpeg);
     background-size: cover;
