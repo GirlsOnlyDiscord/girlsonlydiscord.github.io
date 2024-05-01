@@ -25,10 +25,14 @@ body {
 .navbar a {
     display: flex;
     color: #607d8b;
-    padding: 30px 16px;
+    padding: 30px 30px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 30px;
     font-weight: bold;
     transition-duration: 0.15s;
     flex-shrink:1;
+}
+
+.navbar a:hover {
+    background: #ddd;
 }
