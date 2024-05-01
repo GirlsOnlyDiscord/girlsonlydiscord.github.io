@@ -13,8 +13,7 @@ body {
 
 ul {
     list-style: none;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0;
     padding: 0;
 }
 
@@ -23,6 +22,10 @@ ul {
     padding: 8px;
     background-color: #f6eac2;
     color: #333;
+}
+
+.navitem {
+    margin-left: 40px;
 }
 
 .navitem a {
