@@ -8,4 +8,9 @@ body {
 
 .navlink {
     color: #333;
+    text-decoration: none;
+}
+
+.navitem {
+    position: absolute;
 }
