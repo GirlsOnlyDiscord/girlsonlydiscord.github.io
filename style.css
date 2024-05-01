@@ -43,16 +43,24 @@ body {
     background-image: url(mainpage.jpeg);
     background-size: cover;
     box-sizing: border-box;
+
 }
 
 .headertext {
     font-size: 40px;
+    margin-left: 30px;
 }
 
 .headertextsecond {
     font-size: 80px;
+    margin-left: 30px;
 }
 
 .headertextlast {
     font-size: 35px;
+    margin-left: 30px;
+}
+
+.thisthemainpagefr::before {
+    background-color: rgba(241, 233, 233, 0.5);
 }
