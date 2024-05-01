@@ -38,7 +38,7 @@ body {
 
 .thisthemainpagefr {
     padding-left: 30px;
-    padding-top: 70px;
+    padding-top: 90px;
     width: 100%;
     position: relative;
     background-size: cover;
@@ -72,5 +72,5 @@ body {
 .headertextlast {
     font-size: 35px;
     margin-left: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
