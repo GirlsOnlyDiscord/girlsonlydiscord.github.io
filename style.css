@@ -265,4 +265,23 @@ html {
     height: 580px;
     padding-top: 100px;
     background-color: #fdf6e6;
+    display: flex;
+}
+
+.awesome {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #2b1802;
+    margin-left: 80px;
+    font-size: 30px;
+}
+
+.hereto {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #2b1802;
+    margin-left: 80px;
+    font-size: 20px;
 }
