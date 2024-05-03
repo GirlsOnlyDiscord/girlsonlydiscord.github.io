@@ -141,3 +141,7 @@ body {
 .mainbutton {
     display: flex;
 }
+
+.bgspacer {
+    max-height: 100%;
+}
