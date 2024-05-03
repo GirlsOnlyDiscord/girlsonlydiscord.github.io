@@ -313,3 +313,11 @@ html {
     height: 100%;
     border-radius: 10px 0 0 10px;
 }
+
+.dc1 {
+    transform: translate(100px);
+}
+
+.dc2 {
+    transform: translate(90px);
+}
