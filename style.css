@@ -100,7 +100,7 @@ body {
 
 .maintext {
     flex-grow: 1;
-    text-shadow: #462f14;
+    text-shadow: 5px #462f14;
 }
 
 .joinus {
@@ -136,6 +136,7 @@ body {
     font-weight: 500;
     font-style: normal;
     font-size: 35px;
+    text-shadow: 5px #462f14;
 }
 
 .mainbutton {
