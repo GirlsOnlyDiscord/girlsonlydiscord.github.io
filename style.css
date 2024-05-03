@@ -262,7 +262,7 @@ html {
 }
 
 .thirdpage {
-    height: 580px;
+    height: 800px;
     padding-top: 100px;
     background-color: #fdf6e6;
     display: flex;
@@ -274,7 +274,7 @@ html {
     font-style: normal;
     color: #2b1802;
     margin-left: 120px;
-    font-size: 55px;
+    font-size: 50px;
 }
 
 .hereto {
@@ -298,5 +298,9 @@ html {
     font-weight: 500;
     font-style: normal;
     color: #2b1802;
-    font-size: 35px;
+    font-size: 25px;
+}
+
+.listitems:hover {
+    transform: scale(1.05);
 }
