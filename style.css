@@ -156,5 +156,8 @@ body {
 }
 
 .embed {
-    margin-left: 250px;
+    margin-left: 200px;
+    background-color: #fdf6e6;
+    padding: 8px 8px 8px 8px;
+    border-radius: 15px;
 }
