@@ -131,7 +131,7 @@ body {
 
 .mainbutton {
     display: flex;
-    max-width: 50px;
+    max-width: 20px;
 }
 
 .buttonmoment {
@@ -145,6 +145,7 @@ body {
     font-weight: 500;
     font-style: normal;
     font-size: 30px;
+    padding-right: 100px;
 }
 
 .bgspacer {
