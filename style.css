@@ -107,8 +107,8 @@ body {
 }
 
 .joinus {
-    background-color: #faa825;
-    color: #f9f7f7;
+    background-color: #f9f7f7;
+    color: #7785cc;
     padding-left: 20px;
     padding-right: 20px;
     font-family: "Poppins", sans-serif;
@@ -139,9 +139,9 @@ body {
     height: 20px;
     padding: 0 0 0 0;
     border: none;
-    background-color: #faa825;
+    background-color: #f9f7f7;
     text-decoration: none;
-    color: #f9f7f7;
+    color: #7785cc;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
