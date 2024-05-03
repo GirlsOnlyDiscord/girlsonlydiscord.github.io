@@ -290,7 +290,7 @@ html {
 .listitems {
     margin-left: 120px;
     background-color: #f9f7f7;
-    box-shadow: 0px 0px 10px #462f14;
+    box-shadow: 0px 0px 10px #c49865;
     margin-top: 20px;
     border-radius: 15px;
     font-family: "Poppins", sans-serif;
@@ -301,6 +301,8 @@ html {
     transition-duration: 0.15s;
     display: flex;
     align-items: center;
+    gap: 10px;
+    padding-right: 15px;
 }
 
 .listitems:hover {
