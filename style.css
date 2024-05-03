@@ -175,16 +175,20 @@ body {
     font-weight: 500;
     font-style: italic;
     font-size: 35px;
-    padding-top: 100px;
-    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 40px;
     color: #f9f7f7;
-    text-shadow: 0 0 20px #2b1802;
+    background-color: #986c05;
+    border-radius: 15px;
 }
 
 .cards {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 70px;
 }
 
 .cardone {
@@ -192,7 +196,7 @@ body {
     width: 300px;
     background-color: #f9f7f7;
     border-radius: 15px;
-    box-shadow: 0px 0px 15px #462f14;
+    box-shadow: 0px 0px 10px #462f14;
 
 }
 
@@ -201,7 +205,7 @@ body {
     width: 300px;
     background-color: #f9f7f7;
     border-radius: 15px;
-    box-shadow: 0px 0px 15px #462f14;
+    box-shadow: 0px 0px 10px #462f14;
 }
 
 .cardthree {
@@ -209,5 +213,5 @@ body {
     width: 300px;
     background-color: #f9f7f7;
     border-radius: 15px;
-    box-shadow: 0px 0px 15px #462f14;
+    box-shadow: 0px 0px 10px #462f14;
 }
