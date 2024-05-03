@@ -82,7 +82,6 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
-    margin-right: -50%;
 }
 
 .headertextlast {
@@ -93,4 +92,14 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
+}
+
+
+.widget {
+    display: flex;
+}
+
+
+.widget iframe {
+    display: flex;
 }
