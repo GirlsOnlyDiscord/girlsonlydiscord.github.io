@@ -62,7 +62,7 @@ body {
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    text-shadow: 0 0 12px #462f14;
+    text-shadow: 0 0 20px #462f14;
 }
 
 .headertextsecond {
@@ -74,7 +74,7 @@ body {
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    text-shadow: 0 0 12px #462f14;
+    text-shadow: 0 0 20px #462f14;
 }
 
 .headertextthird {
@@ -86,7 +86,7 @@ body {
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
-    text-shadow: 0 0 12px #462f14;
+    text-shadow: 0 0 20px #462f14;
 }
 
 .headertextlast {
@@ -99,7 +99,7 @@ body {
     font-style: italic;
     color:#f9f7f7;
     margin-bottom: 10px;
-    text-shadow: 0 0 12px #462f14;
+    text-shadow: 0 0 20px #462f14;
 }
 
 .maintext {
