@@ -105,7 +105,7 @@ body {
 }
 
 .joinus {
-    background-color: #f36945;
+    background-color: #fac025;
     color: #f9f7f7;
     padding-left: 10px;
     padding-right: 10px;
@@ -114,6 +114,8 @@ body {
     font-weight: 500;
     font-style: normal;
     font-size: 35px;
-    max-height: 30px;
+    max-height: 50px;
     margin-left: -100px;
+    border: none;
+    border-radius: 20px;
 }
