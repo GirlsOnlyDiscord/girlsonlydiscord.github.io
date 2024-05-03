@@ -95,7 +95,7 @@ body {
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    
+    margin-bottom: 10px;
 }
 
 .maintext {
@@ -117,6 +117,7 @@ body {
     border-radius: 15px;
     transition-duration: 0.15s;
     margin-left: 80px;
+    margin-top: 0;
 }
 
 .joinus:hover {
@@ -124,9 +125,6 @@ body {
     background-color: #fc865a;
 }
 
-.joinus:click {
-    background-color: #f36945;
-}
 
 .ondiscord {
     margin-left: 15px;
@@ -138,4 +136,8 @@ body {
     font-weight: 500;
     font-style: normal;
     font-size: 35px;
+}
+
+.mainbutton {
+    display: flex;
 }
