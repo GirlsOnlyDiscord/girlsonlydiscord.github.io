@@ -121,7 +121,7 @@ body {
     margin-left: 80px;
     margin-top: 0;
     display: flex;
-    max-width: 300px;
+    line-height:65px;
 }
 
 .joinus:hover {
@@ -131,7 +131,6 @@ body {
 
 .mainbutton {
     display: flex;
-    max-width: 500px;
 }
 
 
