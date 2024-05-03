@@ -171,27 +171,38 @@ body {
 
 .whatdowe {
     text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 35px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .cards {
     display: flex;
     justify-content: center;
+    gap: 60px;
 }
 
 .cardone {
     height: 400px;
     width: 300px;
     background-color: #f9f7f7;
+    border-radius: 15px;
+
 }
 
 .cardtwo {
     height: 400px;
     width: 300px;
     background-color: #f9f7f7;
+    border-radius: 15px;
 }
 
 .cardthree {
     height: 400px;
     width: 300px;
     background-color: #f9f7f7;
+    border-radius: 15px;
 }
