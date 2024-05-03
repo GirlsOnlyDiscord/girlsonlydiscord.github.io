@@ -181,8 +181,9 @@ body {
     padding-right: 10px;
     margin-bottom: 40px;
     color: #f9f7f7;
-    background-color: #986c05;
+    background-color: #f68d70;
     border-radius: 15px;
+    width: fit-content;
 }
 
 .cards {
