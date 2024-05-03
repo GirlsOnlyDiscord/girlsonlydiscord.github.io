@@ -168,3 +168,30 @@ body {
     background-color: #fdf6e6;
     height: 750px;
 }
+
+.whatdowe {
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+}
+
+.cardone {
+    height: 400px;
+    width: 300px;
+    background-color: #f9f7f7;
+}
+
+.cardtwo {
+    height: 400px;
+    width: 300px;
+    background-color: #f9f7f7;
+}
+
+.cardthree {
+    height: 400px;
+    width: 300px;
+    background-color: #f9f7f7;
+}
