@@ -7,7 +7,7 @@ body {
 
 .navbar { /*this is the navbar*/
     overflow: hidden;
-    background-color: #ffefc9;
+    background-color: #fdf6e6;
     color: #f68d70;
     position: fixed;
     top: 0%;
@@ -42,6 +42,7 @@ body {
     position: relative;
     background-size: cover;
     box-sizing: border-box;
+    display: flex;
 }
 
 .thisthemainpagefr::before { /*this underlays and image behind the text and adjusts the opacity*/
