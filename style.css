@@ -131,7 +131,7 @@ body {
 
 .mainbutton {
     display: flex;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 
@@ -144,9 +144,9 @@ body {
 }
 
 .thisthelogo {
-    height: 40px;
+    height: 35px;
     object-fit: cover;
-    margin-top: 11.5px;
+    margin-top: 13px;
 }
 
 .bgspacer {
