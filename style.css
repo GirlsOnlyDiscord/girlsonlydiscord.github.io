@@ -169,7 +169,7 @@ html {
 }
 
 .secondpage {
-    background-color: #fdf6e6;
+    background-image: linear-gradient(#FDDCBE, #FBD7BF, #DFBFB5, #C5BFBC);
     height: 750px;
     padding-top: 100px;
 }
@@ -204,7 +204,7 @@ html {
     width: 300px;
     background-color: #f9f7f7;
     border-radius: 15px;
-    box-shadow: 0px 0px 10px #462f14;
+    box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
 
 }
@@ -218,7 +218,7 @@ html {
     width: 300px;
     background-color: #f9f7f7;
     border-radius: 15px;
-    box-shadow: 0px 0px 10px #462f14;
+    box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
 }
 
@@ -231,7 +231,7 @@ html {
     width: 300px;
     background-color: #f9f7f7;
     border-radius: 15px;
-    box-shadow: 0px 0px 10px #462f14;
+    box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
 }
 
@@ -259,31 +259,4 @@ html {
     margin-left: 30px;
     font-size: 20px;
     margin-top: 15px;
-}
-.upcoming {
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 35px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 40px;
-    color: #f9f7f7;
-    background-color: #f68d70;
-    border-radius: 15px;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.upcoming-item {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-    color: #2b1802;
-    list-style-type: none;
-    margin-bottom: 10px;
 }
