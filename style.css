@@ -299,6 +299,8 @@ html {
     color: #2b1802;
     font-size: 25px;
     transition-duration: 0.15s;
+    display: flex;
+    align-items: center;
 }
 
 .listitems:hover {
