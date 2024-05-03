@@ -113,10 +113,10 @@ body {
     font-style: normal;
     font-size: 35px;
     max-height: 65px;
-    margin-left: -100px;
     border: none;
     border-radius: 15px;
     transition-duration: 0.15s;
+    margin-left: 80px;
 }
 
 .joinus:hover {
