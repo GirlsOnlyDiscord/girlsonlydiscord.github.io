@@ -4,6 +4,10 @@ body {
     padding: 0;;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .navbar { /*this is the navbar*/
     overflow: hidden;
     background-color: #fdf6e6;
