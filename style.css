@@ -121,6 +121,7 @@ body {
     transition-duration: 0.15s;
     margin-left: 80px;
     margin-top: 0;
+    display: flex;
 }
 
 .joinus:hover {
@@ -128,19 +129,6 @@ body {
     background-color: #fc865a;
 }
 
-
-.ondiscord {
-    margin-left: 15px;
-    margin-top: 0;
-    margin-bottom: 0;
-    max-height: 65px;
-    color: #f9f7f7;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 35px;
-    text-shadow: 5px #462f14;
-}
 
 .mainbutton {
     display: flex;
