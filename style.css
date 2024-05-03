@@ -126,12 +126,19 @@ body {
 
 .joinus:hover {
     transform: scale(1.05);
-    background-color: #fc865a;
 }
 
 
 .mainbutton {
     display: flex;
+    max-width: min-content;
+}
+
+.buttonmoment {
+    height: 20px;
+    padding: 0 0 0 0;
+    border: none;
+    background-color: #fac025;
 }
 
 .bgspacer {
