@@ -167,6 +167,7 @@ body {
 .secondpage {
     background-color: #fdf6e6;
     height: 750px;
+    padding-top: 80px;
 }
 
 .whatdowe {
@@ -184,6 +185,8 @@ body {
     background-color: #f68d70;
     border-radius: 15px;
     width: fit-content;
+    margin-left: auto;
+    margin-left: auto;
 }
 
 .cards {
