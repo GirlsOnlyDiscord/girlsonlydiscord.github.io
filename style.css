@@ -273,8 +273,8 @@ html {
     font-weight: 500;
     font-style: normal;
     color: #2b1802;
-    margin-left: 80px;
-    font-size: 65px;
+    margin-left: 120px;
+    font-size: 55px;
 }
 
 .hereto {
@@ -282,15 +282,21 @@ html {
     font-weight: 500;
     font-style: normal;
     color: #2b1802;
-    margin-left: 80px;
-    font-size: 45px;
+    margin-left: 120px;
+    font-size: 40px;
     margin-top: 20px;
 }
 
 .listitems {
-    margin-left: 80px;
+    margin-left: 120px;
     padding: 15px 15px 15px 15px;
     background-color: #f9f7f7;
-    box-shadow: 0px 0px 20px #462f14;
+    box-shadow: 0px 0px 10px #462f14;
     margin-top: 20px;
+    border-radius: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #2b1802;
+    font-size: 35px;
 }
