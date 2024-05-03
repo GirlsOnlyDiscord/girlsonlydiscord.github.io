@@ -234,3 +234,7 @@ body {
 .cardthree:hover {
     transform: scale(1.05);
 }
+
+.featureimage {
+    width: 100%;
+}
