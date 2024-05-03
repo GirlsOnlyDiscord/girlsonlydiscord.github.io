@@ -299,8 +299,14 @@ html {
     font-style: normal;
     color: #2b1802;
     font-size: 25px;
+    transition-duration: 0.15s;
 }
 
 .listitems:hover {
     transform: scale(1.05);
+}
+
+.numberspng {
+    height: 100%;
+    border-radius: 15px 0 0 15px;
 }
