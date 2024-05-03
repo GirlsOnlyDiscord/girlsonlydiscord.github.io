@@ -63,7 +63,6 @@ body {
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    text-shadow: 4px 4px 4px 4px #462f14;
 }
 
 .headertextsecond {
@@ -75,7 +74,6 @@ body {
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    text-shadow: 4px 4px 4px 4px #462f14;
 }
 
 .headertextthird {
@@ -87,7 +85,6 @@ body {
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    text-shadow: 4px 4px 4px 4px #462f14;
 }
 
 .headertextlast {
@@ -99,9 +96,21 @@ body {
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    text-shadow: 4px 4px 4px 4px #462f14;
+    
 }
 
 .maintext {
     flex-grow: 1;
+    text-shadow: 4px 4px 4px 4px #462f14;
+}
+
+.joinus {
+    background-color: #f68d70;
+    color: #f9f7f7;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 35px;
 }
