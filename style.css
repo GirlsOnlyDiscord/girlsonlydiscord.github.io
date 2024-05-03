@@ -150,7 +150,9 @@ body {
 }
 
 .thisthelogo {
-    max-width: 60px;
+    height: 45px;
+    object-fit: cover;
+    align-content: center;
 }
 
 .bgspacer {
