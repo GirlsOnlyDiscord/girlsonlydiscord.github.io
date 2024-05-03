@@ -109,13 +109,17 @@ body {
     color: #f9f7f7;
     padding-left: 10px;
     padding-right: 10px;
-    display: flex;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: 35px;
-    max-height: 50px;
+    max-height: 54px;
     margin-left: -100px;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
+}
+
+.joinus:hover {
+    transform: scale(1.1);
+    background-color: #fc865a;
 }
