@@ -68,6 +68,13 @@ body {
     margin-top: 0;
 }
 
+.headertextthird {
+    font-size: 35px;
+    margin-top: 0;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
 .headertextlast {
     font-size: 35px;
     margin-left: 50px;
