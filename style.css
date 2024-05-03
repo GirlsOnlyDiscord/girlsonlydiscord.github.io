@@ -264,7 +264,7 @@ html {
 .thirdpage {
     height: 600px;
     padding-top: 100px;
-    background-color: #fdf6e6;
+    background-color: #f9f7f7;
     display: flex;
 }
 
@@ -311,7 +311,7 @@ html {
 
 .listitems {
     margin-left: 120px;
-    background-color: #f9f7f7;
+    background-color: #fdf6e6;
     box-shadow: 0px 0px 10px #c49865;
     margin-top: 20px;
     border-radius: 10px;
