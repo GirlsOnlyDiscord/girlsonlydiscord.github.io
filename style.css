@@ -107,7 +107,7 @@ body {
 }
 
 .joinus {
-    background-color: #fac025;
+    background-color: #faa825;
     color: #f9f7f7;
     padding-left: 20px;
     padding-right: 20px;
@@ -131,14 +131,19 @@ body {
 
 .mainbutton {
     display: flex;
-    max-width: min-content;
 }
 
 .buttonmoment {
     height: 20px;
     padding: 0 0 0 0;
     border: none;
-    background-color: #fac025;
+    background-color: #faa825;
+    text-decoration: none;
+    color: #f9f7f7;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
 }
 
 .bgspacer {
