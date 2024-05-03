@@ -113,7 +113,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: bold;
-    font-size: 35px;
+    font-size: 20px;
     max-height: 65px;
     border: none;
     border-radius: 15px;
@@ -143,8 +143,9 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: bold;
-    font-size: 30px;
+    font-size: 20px;
     padding-right: 100px;
+    display: flex;
 }
 
 .joinuscolor {
