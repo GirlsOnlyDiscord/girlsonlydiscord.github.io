@@ -121,12 +121,15 @@ body {
 }
 
 .joinus:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     background-color: #fc865a;
 }
 
 .ondiscord {
     margin-left: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-height: 65px;
     color: #f9f7f7;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
