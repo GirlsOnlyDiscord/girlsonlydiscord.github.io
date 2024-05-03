@@ -107,7 +107,7 @@ body {
 }
 
 .joinus {
-    background-color: #f9f7f7;
+    background-color: #fdf6e6;
     padding-left: 20px;
     padding-right: 20px;
     font-family: "Poppins", sans-serif;
@@ -140,6 +140,7 @@ body {
 
 .discordcolor {
     color: #5865f2;
+    margin-left: 5px;
 }
 
 .thisthelogo {
