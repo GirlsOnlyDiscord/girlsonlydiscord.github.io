@@ -201,7 +201,12 @@ body {
     background-color: #f9f7f7;
     border-radius: 15px;
     box-shadow: 0px 0px 10px #462f14;
+    transition-duration: 0.15s;
 
+}
+
+.cardone:hover {
+    transform: scale(1.05);
 }
 
 .cardtwo {
@@ -210,6 +215,11 @@ body {
     background-color: #f9f7f7;
     border-radius: 15px;
     box-shadow: 0px 0px 10px #462f14;
+    transition-duration: 0.15s;
+}
+
+.cardtwo:hover {
+    transform: scale(1.05);
 }
 
 .cardthree {
@@ -218,4 +228,9 @@ body {
     background-color: #f9f7f7;
     border-radius: 15px;
     box-shadow: 0px 0px 10px #462f14;
+    transition-duration: 0.15s;
+}
+
+.cardthree:hover {
+    transform: scale(1.05);
 }
