@@ -94,6 +94,9 @@ body {
     font-style: normal;
 }
 
+.maintext {
+    display: flex;
+}
 
 .widget {
     display: flex;
