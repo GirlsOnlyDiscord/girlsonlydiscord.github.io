@@ -315,9 +315,9 @@ html {
 }
 
 .dc1 {
-    transform: translate(100px);
+    transform: translate(200px);
 }
 
 .dc2 {
-    transform: translate(90px);
+    transform: translate(180px);
 }
