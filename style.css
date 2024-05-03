@@ -292,7 +292,7 @@ html {
     background-color: #f9f7f7;
     box-shadow: 0px 0px 10px #c49865;
     margin-top: 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -311,5 +311,5 @@ html {
 
 .numberspng {
     height: 100%;
-    border-radius: 15px 0 0 15px;
+    border-radius: 10px 0 0 10px;
 }
