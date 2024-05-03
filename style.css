@@ -268,19 +268,40 @@ html {
     display: flex;
 }
 
-.awesome {
+.awesome1 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
-    color: #2b1802;
+    color: #f9f7f7;
     margin-left: 120px;
     font-size: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px 15px 0 0;
+    background-color: #f68d70;
+}
+
+.awesome2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #f9f7f7;
+    margin-left: 120px;
+    font-size: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-radius: 0 0 15px 15px;
+    background-color: #f68d70;
 }
 
 .hereto {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
     color: #2b1802;
     margin-left: 120px;
     font-size: 40px;
