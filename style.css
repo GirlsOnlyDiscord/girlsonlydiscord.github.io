@@ -82,7 +82,7 @@ body {
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
     color:#f9f7f7;
 }
 
@@ -93,7 +93,7 @@ body {
     margin-top: 0;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
     color:#f9f7f7;
     margin-bottom: 10px;
 }
