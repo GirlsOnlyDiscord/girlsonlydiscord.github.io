@@ -103,3 +103,7 @@ body {
 .widget iframe {
     display: flex;
 }
+
+.maintext {
+    flex-grow: 1;
+}
