@@ -116,10 +116,19 @@ body {
     max-height: 54px;
     margin-left: -100px;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
+    transition-duration: 0.15s;
 }
 
 .joinus:hover {
     transform: scale(1.1);
     background-color: #fc865a;
+}
+
+.ondiscord {
+    margin-left: 20px;
+    color: #f9f7f7;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
