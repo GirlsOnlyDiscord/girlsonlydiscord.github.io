@@ -275,9 +275,6 @@ html {
     max-width: 1000px;
 }
 
-.pics {
-    display: none;
-}
 
 .prev, .next {
     cursor: pointer;
