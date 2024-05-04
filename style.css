@@ -269,6 +269,10 @@ html {
     margin-right: auto;
 }
 
+.gallerycon {
+    display: flex;
+}
+
 .pics {
     display: none;
 }
