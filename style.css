@@ -403,18 +403,23 @@ html {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
-    color: #2b1802;
+    color: #f9f7f7;
     text-align: center;
     font-size: 40px;
+    background-color: #312F51;
+    padding: 8px 8px 8px 8px;
+    border-radius: 10px;
 }
 
 .ouradmins {
-    padding-top: 80px;
     padding-bottom: 50px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
-    color: #2b1802;
+    color: #f9f7f7;
     text-align: center;
     font-size: 40px;
+    background-color: #312F51;
+    padding: 8px 8px 8px 8px;
+    border-radius: 10px;
 }
