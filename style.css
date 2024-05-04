@@ -371,10 +371,6 @@ html {
     margin-bottom: 50px;
 }
 
-.adminspics:hover {
-    transform: scale(1.05);
-}
-
 .mods {
     display: flex;
     gap: 25px;
@@ -391,11 +387,7 @@ html {
 .staffpics {
     background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5);
     padding-top: 100px;
-    height: 1200px;
-}
-
-.modspics:hover {
-    transform: scale(1.05);
+    height: 1500px;
 }
 
 .ourmods {
@@ -415,6 +407,7 @@ html {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
 }
 
 .ouradmins {
@@ -453,6 +446,7 @@ html {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
 }
 
 .managers {
@@ -477,4 +471,9 @@ html {
     background-color: #f9f7f7;
     border-radius: 15px 15px 15px 15px;
     box-shadow: 0px 0px 20px #ffffff;
+    transition-duration: 0.15s;
+}
+
+.infotab:hover {
+    transform: scale(1.05);
 }
