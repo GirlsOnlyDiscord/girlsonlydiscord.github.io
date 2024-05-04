@@ -385,7 +385,7 @@ html {
 }
 
 .staffpics {
-    background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5);
+    background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5, #FBD7BF, #FDDCBE, #7875a8);
     padding-top: 100px;
     height: 1500px;
 }
@@ -458,11 +458,6 @@ html {
 .managerpics {
     border-radius: 15px 15px 0px 0px;
     width: 300px;
-    transition-duration: 0.15s;
-}
-
-.managerpics:hover {
-    transform: scale(1.05);
 }
 
 .infotab {
