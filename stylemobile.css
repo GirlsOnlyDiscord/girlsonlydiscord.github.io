@@ -246,10 +246,9 @@ html {
 }
 
 .gallerypage {
-    height: 650px;
+    height: 400px;
     background-color: #f9f7f7;
-    padding-top: 100px;
-    padding-bottom: 65px;
+    padding-top: 35px;
 }
 
 .galleryheader {
@@ -257,7 +256,7 @@ html {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: italic;
-    font-size: 35px;
+    font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -294,7 +293,7 @@ html {
     transition: 0.6s ease;
     border-radius: 3px 3px 3px 3px;
     user-select: none;
-    transform: translate(-400px);
+    transform: translate(-90px);
 }
 
 .next {
@@ -332,7 +331,7 @@ html {
 }
 
 .gallerycon div img {
-    width: 700px;
+    width: 350px;
     border-radius: 10px;
 
 }
@@ -360,9 +359,7 @@ html {
 
 
 .admins {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
+
 }
 
 .adminspics {
@@ -373,9 +370,6 @@ html {
 }
 
 .mods {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
 }
 
 .modspics {
@@ -396,7 +390,7 @@ html {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: italic;
-    font-size: 35px;
+    font-size: 25px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -416,7 +410,7 @@ html {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: italic;
-    font-size: 35px;
+    font-size: 25px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -444,7 +438,7 @@ html {
     color: #f9f7f7;
     background-color: #312F51;
     border-radius: 15px;
-    width: fit-content;
+    width: 300px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -469,6 +463,9 @@ html {
     border-radius: 15px 15px 15px 15px;
     box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
 }
 
 .infotab:hover {
@@ -476,10 +473,6 @@ html {
 }
 
 .secondrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
 }
 
 .reyna {
