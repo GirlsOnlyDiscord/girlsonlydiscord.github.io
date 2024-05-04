@@ -289,8 +289,9 @@ html {
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 3px 3px 3px 3px;
     user-select: none;
+    transform: translate(-100px);
 }
 
 .next {
