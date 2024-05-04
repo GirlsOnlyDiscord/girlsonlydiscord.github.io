@@ -468,7 +468,8 @@ html {
 }
 
 .staffpics {
-    background-image: linear-gradient(#7875a8 #FDDCBE, #FBD7BF, #DFBFB5);
+    background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5);
+    padding-top: 40px;
     height: 1500px;
 }
 
