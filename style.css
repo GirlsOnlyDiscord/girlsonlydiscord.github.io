@@ -269,6 +269,10 @@ html {
     margin-right: auto;
 }
 
+.pics {
+    display: none;
+}
+
 .gallerycon {
     display: flex;
     gap: 50px;
