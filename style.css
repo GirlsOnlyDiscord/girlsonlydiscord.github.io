@@ -482,5 +482,33 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 35px;
+    gap: 50px;
+}
+
+.reyna {
+    border: 5px #E5C8AF;
+}
+
+.nisan {
+    border: 5px #CB7B78;
+}
+
+.nil {
+    border: 5px #9F2D24;
+}
+
+.jazzi {
+    border: 5px #988670;
+}
+
+.mayo {
+    border: 5px #219EE3;
+}
+
+.vi {
+    border: 5px #3F2B37;
+}
+
+.ruthie {
+    border: 5px #4972AB;
 }
