@@ -387,7 +387,7 @@ html {
 .staffpics {
     background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5, #FBD7BF, #FDDCBE, #7875a8);
     padding-top: 100px;
-    height: 1500px;
+    height: 1100px;
 }
 
 .ourmods {
@@ -477,7 +477,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 70px;
 }
 
 .reyna {
