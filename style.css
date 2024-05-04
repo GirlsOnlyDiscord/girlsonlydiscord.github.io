@@ -272,6 +272,7 @@ html {
 .gallerycon {
     display: flex;
     gap: 50px;
+    max-width: 1000px;
 }
 
 .prev, .next {
