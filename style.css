@@ -262,7 +262,7 @@ html {
 }
 
 .thirdpage {
-    height: 600px;
+    height: 900px;
     padding-top: 100px;
     background-color: #f9f7f7;
     display: flex;
@@ -314,7 +314,7 @@ html {
     background-color: #fdf6e6;
     box-shadow: 0px 0px 10px #ffffff;
     margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -333,7 +333,7 @@ html {
 
 .numberspng {
     height: 100%;
-    border-radius: 10px 0 0 10px;
+    border-radius: 8px 0 0 8px;
 }
 
 .dc2 {
