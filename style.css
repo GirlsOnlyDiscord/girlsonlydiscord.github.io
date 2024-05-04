@@ -339,3 +339,23 @@ html {
 .dc2 {
     transform: translate(180px);
 }
+
+.admins {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.adminspics {
+    border-radius: 15px 15px 0 0;
+}
+
+.mods {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.modspics {
+    border-radius: 15px 15px 0 0;
+}
