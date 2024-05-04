@@ -244,6 +244,11 @@ html {
     border-radius: 15px 15px 0 0;
 }
 
+.gallerypage {
+    height: 1000px;
+    background-color: #f9f7f7;
+}
+
 .listone {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -372,7 +377,7 @@ html {
 
 .staffpics {
     background-color: #f9f7f7;
-    height: 700;
+    height: 1500px;
 }
 
 .modspics:hover {
