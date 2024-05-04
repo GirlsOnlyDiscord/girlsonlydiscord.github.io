@@ -477,3 +477,7 @@ html {
 .infotab:hover {
     transform: scale(1.05);
 }
+
+.secondrow {
+    display: flex;
+}
