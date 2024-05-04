@@ -169,7 +169,7 @@ html {
 }
 
 .secondpage {
-    background-image: linear-gradient(#FDDCBE, #FBD7BF, #DFBFB5, #7875a8);
+    background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5, #FBD7BF, #FDDCBE, #7875a8);
     height: 580px;
     padding-top: 100px;
 }
