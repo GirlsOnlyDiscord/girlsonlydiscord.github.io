@@ -271,16 +271,17 @@ html {
 
 .gallerycon {
     display: flex;
-    gap: 30px;
+    gap: 100px;
 }
 
-.pics {
-    border: #7875a8;
+.pics img {
+    border: 5px #7875a8;
     border-radius: 10px;
 }
 
 .gallerycon div {
     animation: slide infinite 3s alternate;
+    animation-play-state: paused;
 }
 
 .gallerycon div:hover {
@@ -289,6 +290,7 @@ html {
 
 .gallerycon div img {
     width: 700px;
+    animation-play-state: paused;
 }
 
 @keyframes slide {
