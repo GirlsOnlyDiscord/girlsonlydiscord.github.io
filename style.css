@@ -486,29 +486,36 @@ html {
 }
 
 .reyna {
-    border: 5px #E5C8AF;
+    border: 5px;
+    border-color: #E5C8AF;
 }
 
 .nisan {
-    border: 5px #CB7B78;
+    border: 5px;
+    border-color:  #CB7B78;
 }
 
 .nil {
-    border: 5px #9F2D24;
+    border: 5px;
+    border-color: #9F2D24;
 }
 
 .jazzi {
-    border: 5px #988670;
+    border: 5px;
+    border-color: #988670;
 }
 
 .mayo {
-    border: 5px #219EE3;
+    border: 5px;
+    border-color:  #219EE3;
 }
 
 .vi {
-    border: 5px #3F2B37;
+    border: 5px;
+    border-color: #3F2B37;
 }
 
 .ruthie {
-    border: 5px #4972AB;
+    border: 5px;
+    border-color:  #4972AB;
 }
