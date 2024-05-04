@@ -248,6 +248,7 @@ html {
     height: 650px;
     background-color: #f9f7f7;
     padding-top: 100px;
+    padding-bottom: 65px;
 }
 
 .galleryheader {
@@ -389,7 +390,7 @@ html {
 
 .staffpics {
     background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5);
-    padding-top: 40px;
+    padding-top: 100px;
     height: 1200px;
 }
 
