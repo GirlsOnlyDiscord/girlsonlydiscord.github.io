@@ -186,7 +186,7 @@ html {
     padding-right: 10px;
     margin-bottom: 40px;
     color: #f9f7f7;
-    background-color: #f68d70;
+    background-color: #312F51;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -365,7 +365,7 @@ html {
 }
 
 .adminspics {
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 15px 15px;
     width: 300px;
     transition-duration: 0.15s;
     margin-bottom: 50px;
@@ -382,7 +382,7 @@ html {
 }
 
 .modspics {
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 15px 15px;
     width: 300px;
     transition-duration: 0.15s;
     margin-bottom: 50px;
@@ -462,7 +462,7 @@ html {
 }
 
 .managerpics {
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 15px 15px;
     width: 300px;
     transition-duration: 0.15s;
 }
