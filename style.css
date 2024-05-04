@@ -353,17 +353,7 @@ html {
     margin-bottom: 50px;
 }
 
-.adminspicsnil {
-    border-radius: 15px 15px 0 0;
-    width: 350px;
-    transition-duration: 0.15s;
-}
-
 .adminspics:hover {
-    transform: scale(1.05);
-}
-
-.adminspicsnil:hover {
     transform: scale(1.05);
 }
 
@@ -382,7 +372,6 @@ html {
 .staffpics {
     background-color: #f9f7f7;
     height: 700;
-    padding-top: 20px;
 }
 
 .modspicsvi {
