@@ -348,6 +348,12 @@ html {
 
 .adminspics {
     border-radius: 15px 15px 0 0;
+    width: 300px;
+}
+
+.adminspicsnil {
+    border-radius: 15px 15px 0 0;
+    width: 350px;
 }
 
 .mods {
@@ -358,4 +364,5 @@ html {
 
 .modspics {
     border-radius: 15px 15px 0 0;
+    width: 300px;
 }
