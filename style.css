@@ -367,6 +367,7 @@ html {
     border-radius: 15px 15px 0 0;
     width: 300px;
     transition-duration: 0.15s;
+    margin-top: 50px;
 }
 
 .staffpics {
