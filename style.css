@@ -269,6 +269,10 @@ html {
     margin-right: auto;
 }
 
+.pics {
+    display: none;
+}
+
 .prev, .next {
     cursor: pointer;
     position: absolute;
