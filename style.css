@@ -296,6 +296,7 @@ html {
 }
 
 .next {
+    right: 0;
     border-radius: 3px 3px 3px 3px;
 }
 
