@@ -269,22 +269,63 @@ html {
     margin-right: auto;
 }
 
-.gallerycon {
-    display: flex;
-    gap: 100px;
+.pics {
+    display: none;
 }
 
-.pics img {
-    border: 5px #7875a8;
-    border-radius: 10px;
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
-.gallerycon div {
-
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-.gallerycon div:hover {
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
 
+.numbertext {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+@keyframes pics {
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 .gallerycon div img {
