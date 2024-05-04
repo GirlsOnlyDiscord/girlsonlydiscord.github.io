@@ -272,7 +272,6 @@ html {
 .gallerycon {
     display: flex;
     gap: 50px;
-    max-width: 1000px;
     align-items: center;
     justify-content: center;
 }
