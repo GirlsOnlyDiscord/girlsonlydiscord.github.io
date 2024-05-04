@@ -281,6 +281,7 @@ html {
     padding-bottom: 10px;
     border-radius: 15px 15px 15px 0;
     background-color: #312F51;
+    width: fit-content;
 }
 
 .awesome2 {
