@@ -365,8 +365,8 @@ html {
 }
 
 .adminspics {
-    border-radius: 15px 15px 15px 15px;
-    width: 300px;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
     transition-duration: 0.15s;
     margin-bottom: 50px;
 }
@@ -382,8 +382,8 @@ html {
 }
 
 .modspics {
-    border-radius: 15px 15px 15px 15px;
-    width: 300px;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
     transition-duration: 0.15s;
     margin-bottom: 50px;
 }
@@ -469,4 +469,11 @@ html {
 
 .managerpics:hover {
     transform: scale(1.05);
+}
+
+.infotab {
+    height: 400px;
+    width: 300px;
+    background-color: #f9f7f7;
+    border-radius: 0px 0px 15px 15px;
 }
