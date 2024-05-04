@@ -349,11 +349,21 @@ html {
 .adminspics {
     border-radius: 15px 15px 0 0;
     width: 300px;
+    transition-duration: 0.15s;
 }
 
 .adminspicsnil {
     border-radius: 15px 15px 0 0;
     width: 350px;
+    transition-duration: 0.15s;
+}
+
+.adminspics:hover {
+    transform: scale(1.05);
+}
+
+.adminspicsnil:hover {
+    transform: scale(1.05);
 }
 
 .mods {
@@ -365,6 +375,7 @@ html {
 .modspics {
     border-radius: 15px 15px 0 0;
     width: 300px;
+    transition-duration: 0.15s;
 }
 
 .staffpics {
@@ -375,6 +386,15 @@ html {
 .modspicsvi {
     border-radius: 15px 15px 0 0;
     width: 350px;
+    transition-duration: 0.15s;
+}
+
+.modspics:hover {
+    transform: scale(1.05);
+}
+
+.modspicsvi:hover {
+    transform: scale(1.05);
 }
 
 .ourmods {
