@@ -285,7 +285,7 @@ html {
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: white;
+    color: rgb(92, 0, 0);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -299,18 +299,7 @@ html {
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-.numbertext {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-    color: #ffffff;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
+    background-color: rgba(216, 167, 138, 0.8);
 }
 
 .dot {
