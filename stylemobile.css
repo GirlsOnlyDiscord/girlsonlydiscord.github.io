@@ -357,19 +357,11 @@ html {
     margin-top: 15px;
 }
 
-
-.admins {
-
-}
-
 .adminspics {
     border-radius: 15px 15px 0px 0px;
     width: 100%;
     transition-duration: 0.15s;
     margin-bottom: 10px;
-}
-
-.mods {
 }
 
 .modspics {
@@ -382,7 +374,7 @@ html {
 .staffpics {
     background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5, #FBD7BF, #FDDCBE, #7875a8);
     padding-top: 100px;
-    height: 1100px;
+    height: 3200px;
 }
 
 .ourmods {
@@ -429,7 +421,7 @@ html {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: italic;
-    font-size: 35px;
+    font-size: 25px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -470,9 +462,6 @@ html {
 
 .infotab:hover {
     transform: scale(1.05);
-}
-
-.secondrow {
 }
 
 .reyna {
