@@ -519,7 +519,7 @@ html {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .icontext img {
@@ -530,4 +530,5 @@ html {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
+    color: #312F51;
 }
