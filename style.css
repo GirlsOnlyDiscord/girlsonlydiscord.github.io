@@ -350,6 +350,7 @@ html {
     border-radius: 15px 15px 0 0;
     width: 300px;
     transition-duration: 0.15s;
+    margin-bottom: 50px;
 }
 
 .adminspicsnil {
@@ -381,7 +382,7 @@ html {
 .staffpics {
     background-color: #f9f7f7;
     height: 700;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 
 .modspicsvi {
