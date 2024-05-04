@@ -271,6 +271,12 @@ html {
 
 .gallerycon {
     display: flex;
+    gap: 30px;
+}
+
+.pics {
+    border: #7875a8;
+    border-radius: 10px;
 }
 
 .gallerycon div {
@@ -282,8 +288,20 @@ html {
 }
 
 .gallerycon div img {
-    width: 300px;
+    width: 700px;
 }
+
+@keyframes slide {
+    0% {
+      margin-left: 0px;
+    }
+    50% {
+      margin-left: -100px;
+    }
+    100% {
+      margin-left: -200px;
+    }
+  }
 
 .listone {
     font-family: "Poppins", sans-serif;
