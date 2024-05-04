@@ -247,6 +247,26 @@ html {
 .gallerypage {
     height: 1000px;
     background-color: #f9f7f7;
+    padding-top: 100px;
+}
+
+.galleryheader {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 40px;
+    color: #f9f7f7;
+    background-color: #f68d70;
+    border-radius: 15px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .listone {
