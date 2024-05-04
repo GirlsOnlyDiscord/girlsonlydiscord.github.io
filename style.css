@@ -271,10 +271,7 @@ html {
 
 .gallerycon {
     display: flex;
-}
-
-.pics {
-    display: none;
+    gap: 50px;
 }
 
 .prev, .next {
