@@ -280,30 +280,17 @@ html {
 }
 
 .gallerycon div {
-    animation: slide infinite 3s alternate;
-    animation-play-state: paused;
+
 }
 
 .gallerycon div:hover {
-    animation-play-state: paused;
+
 }
 
 .gallerycon div img {
     width: 700px;
-    animation-play-state: paused;
-}
 
-@keyframes slide {
-    0% {
-      margin-left: 0px;
-    }
-    50% {
-      margin-left: -100px;
-    }
-    100% {
-      margin-left: -200px;
-    }
-  }
+}
 
 .listone {
     font-family: "Poppins", sans-serif;
