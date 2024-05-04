@@ -398,28 +398,37 @@ html {
 }
 
 .ourmods {
-    padding-top: 80px;
-    padding-bottom: 50px;
+    text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
+    font-size: 35px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 40px;
     color: #f9f7f7;
-    text-align: center;
-    font-size: 40px;
     background-color: #312F51;
-    padding: 8px 8px 8px 8px;
-    border-radius: 10px;
+    border-radius: 15px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ouradmins {
-    padding-bottom: 50px;
+    text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
+    font-size: 35px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 40px;
+    padding-top: 8px;
     color: #f9f7f7;
-    text-align: center;
-    font-size: 40px;
     background-color: #312F51;
-    padding: 8px 8px 8px 8px;
-    border-radius: 10px;
-}
+    border-radius: 15px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
