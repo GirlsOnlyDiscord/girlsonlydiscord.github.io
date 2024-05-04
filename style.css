@@ -380,9 +380,21 @@ html {
 .ourmods {
     padding-top: 80px;
     padding-bottom: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #2b1802;
+    text-align: center;
+    font-size: 40px;
 }
 
 .ouradmins {
     padding-top: 80px;
     padding-bottom: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #2b1802;
+    text-align: center;
+    font-size: 40px;
 }
