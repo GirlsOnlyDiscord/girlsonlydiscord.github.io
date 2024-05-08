@@ -8,8 +8,8 @@ body {
 .bgfr { 
     padding-left: 30px;
     padding-top: 100px;
-    width: 1664px;
-    height: 1032px;
+    width: 100%;
+    height: 100%;
     position: relative;
     box-sizing: border-box;
 }
@@ -19,14 +19,13 @@ body {
     content: "";
     inset: 0px;
     background-image: url(/focusimages/bg4.1.gif);
-    background-size: cover;
+    object-fit: cover;
     z-index: -10;
 }
 
 
 .top {
     display: flex;
-    gap: 1000px;
 }
 
 .topleft {
@@ -35,6 +34,7 @@ body {
 
 .topright {
     transition-duration: 0.15s;
+    align-self: flex-end;
 }
 
 .topright:hover {
