@@ -294,6 +294,7 @@ li:has(input[type="checkbox"]:checked) {
     width: fit-content;
     align-self: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .playlistbutton:hover {
