@@ -210,16 +210,21 @@ body {
 
 input, textarea {
     background-color: transparent;
+    padding: 5px;
+}
+
+textarea:focus, input:focus {
+    outline: none;
 }
 
 .taskfield {
-    border: none;
-    width: fit-content;
+    width: 180px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: italic;
     color:#f9f7f7;
     font-size: 20px;
+    border-radius: 15px;
 }
 
 .addtask {
