@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         taskItem.className = "task";
         taskItem.innerHTML = `
 
-            <div style="display: flex; align-content: center;">
+            <div style="display: flex; align-content: center; gap: 20px;">
                  <input type="checkbox" class="checkbox" style="width: 1.3em;
                  height: 1.3em;
                  background-color: white;
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
                  -webkit-appearance: none;
                  outline: none;
                  cursor: pointer;">
-                <span>${taskText}</span>
+                <span style="text-shadow: 0px 0px 15px #00022d;">${taskText}</span>
                 <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 30px; cursor: pointer;"></button>
             </div>
 
