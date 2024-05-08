@@ -208,8 +208,8 @@ body {
     gap: 20px;
 }
 
-.taskfield {
-    background-color: #ffffff00;
+input, textarea {
+    background-color: transparent;
     border: none;
 }
 
