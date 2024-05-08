@@ -32,9 +32,13 @@ body {
     margin-left: 120px;
 }
 
+.containerorsum {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .topright {
     transition-duration: 0.15s;
-    right: 120px;
 }
 
 .topright:hover {
