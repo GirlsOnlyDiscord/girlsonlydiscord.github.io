@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const newTaskInput = document.getElementById("new-task");
     const addTaskBtn = document.getElementById("add-task");
 
+    const style = document.createElement('style');
+    style.textContent = `
+        .checkbox:checked {
+            background-color: green;
+        }
+    `;
+
+
     addTaskBtn.addEventListener("click", function() {
         const taskText = newTaskInput.value.trim();
         if (taskText !== "") {
@@ -15,7 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
         const taskItem = document.createElement("li");
         taskItem.className = "task";
         taskItem.innerHTML = `
-            <input type="checkbox">
+            <input type="checkbox" class="checkbox" style="width: 1.3em;
+            height: 1.3em;
+            background-color: white;
+            border-radius: 50%;
+            vertical-align: middle;
+            border: 1px solid #ddd;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            cursor: pointer;">
+
             <span>${taskText}</span>
             <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 30px;"></button>
         `;
