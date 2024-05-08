@@ -73,6 +73,7 @@ body {
 .pomodorocontainer {
     display: flex;
     flex-direction: column;
+    margin-top: auto;
 }
 
 .clockactions {
