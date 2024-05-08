@@ -38,6 +38,10 @@ html {
     transform: scale(1.1);
 }
 
+.focus {
+    display: none;
+}
+
 .thisthemainpagefr { /*this is the div for the starter text*/
     padding-left: 10px;
     padding-top: 120px;
