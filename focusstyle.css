@@ -261,7 +261,7 @@ textarea:focus, input:focus {
 }
 
 li {
-    text-decoration: none;
+    list-style: none;
 }
 
 li:has(input[type="checkbox"]:checked) {
