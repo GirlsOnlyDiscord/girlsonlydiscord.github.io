@@ -4,11 +4,25 @@ body {
     padding: 0;;
 }
 
-.bgimage {
+
+.bgfr { 
+    padding-left: 30px;
+    padding-top: 120px;
     width: 100%;
     height: 100%;
-    display: block;
+    position: relative;
+    box-sizing: border-box;
 }
+
+.bgfr:before {
+    position: absolute;
+    content: "";
+    inset: 0px;
+    background-image: url(/focusimages/bg4.1.gif);
+    background-size: auto;
+    z-index: -10;
+}
+
 
 .top {
     display: flex;
@@ -20,5 +34,10 @@ body {
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    font-size: 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.joinwrap {
+    height: 25px;
 }
