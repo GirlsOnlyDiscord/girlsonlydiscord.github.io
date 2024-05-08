@@ -143,11 +143,14 @@ body {
     font-style: normal;
     color:#f9f7f7;
     font-size: 100px;
+    margin-left: 6px;
 }
 
 .breakfocus {
     display: flex;
     gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
 }
 
 .focusbutton {
@@ -161,6 +164,7 @@ body {
     padding: 10px 10px 10px 10px;
     border: none;
     transition-duration: 0.15s;
+    width: 140px;
 }
 
 .breakbutton {
@@ -174,4 +178,13 @@ body {
     padding: 10px 10px 10px 10px;
     border: none;
     transition-duration: 0.15s;
+    width: 140px;
+}
+
+.focusbutton:hover {
+    transform: scale(1.05);
+}
+
+.breakbutton:hover {
+    transform: scale(1.05);
 }
