@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         taskItem.innerHTML = `
             <input type="checkbox">
             <span>${taskText}</span>
-            <button class="delete-btn" style="background-color: transparent"><img src="/focusimages/closewindow.png" style="height: 20px;"></button>
+            <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 40px;"></button>
         `;
         todoList.appendChild(taskItem);
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
