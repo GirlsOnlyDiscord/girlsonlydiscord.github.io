@@ -258,6 +258,7 @@ textarea:focus, input:focus {
     font-style: italic;
     color:#f9f7f7;
     font-size: 20px;
+    padding-left: 0;
 }
 
 li {
