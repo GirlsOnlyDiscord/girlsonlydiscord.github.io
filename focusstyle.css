@@ -210,7 +210,16 @@ body {
 
 input, textarea {
     background-color: transparent;
+}
+
+.taskfield {
     border: none;
+    width: fit-content;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
 }
 
 .addtask {
@@ -222,7 +231,7 @@ input, textarea {
     font-weight: 600;
     font-style: italic;
     color:#f9f7f7;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .addtask:hover {
@@ -233,7 +242,7 @@ input, textarea {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: italic;
-    color:#f9f7f7;
+    color:#f9f7f748;
     font-size: 20px;
     text-shadow: 0px 0px 15px #00022d;
 }
