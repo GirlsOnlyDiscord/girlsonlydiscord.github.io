@@ -136,3 +136,11 @@ body {
 .startbutton:hover {
     transform: scale(1.05);
 }
+
+.pomodoro-timer {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color:#f9f7f7;
+    font-size: 100px;
+}
