@@ -74,6 +74,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: auto;
+    margin-left: 120px;
 }
 
 .clockactions {
