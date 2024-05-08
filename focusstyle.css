@@ -278,7 +278,3 @@ li:has(input[type="checkbox"]:checked) {
 .task:hover .delete-btn {
     display: initial;
 }
-
-.task input[type="checkbox"].checkbox:checked {
-    background-color: #5bb450;
-}
