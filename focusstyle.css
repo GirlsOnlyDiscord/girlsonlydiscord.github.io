@@ -299,3 +299,26 @@ li:has(input[type="checkbox"]:checked) {
 .playlistbutton:hover {
     transform: scale(1.05);
 }
+
+.custom-notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255, 99, 71, 0.8); /* Soft red background */
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 30px;
+    color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+.notification-message {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+}
