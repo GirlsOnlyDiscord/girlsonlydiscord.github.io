@@ -259,7 +259,7 @@ textarea:focus, input:focus {
     font-style: italic;
     color:#f9f7f7;
     font-size: 20px;
-    padding-left: 0;
+    padding-top: 0;
     padding-left: 0;
 }
 
@@ -269,4 +269,16 @@ li {
 
 li:has(input[type="checkbox"]:checked) {
     text-decoration: line-through;
+}
+
+.task .delete-btn {
+    display: none;
+}
+
+.task:hover .delete-btn {
+    display: inline-block;
+}
+
+.task input[type="checkbox"].checkbox:checked {
+    background-color: #5bb450;
 }

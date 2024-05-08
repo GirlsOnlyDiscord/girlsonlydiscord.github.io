@@ -3,13 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const newTaskInput = document.getElementById("new-task");
     const addTaskBtn = document.getElementById("add-task");
 
-    const style = document.createElement('style');
-    style.textContent = `
-        .checkbox:checked {
-            background-color: green;
-        }
-    `;
-
 
     addTaskBtn.addEventListener("click", function() {
         const taskText = newTaskInput.value.trim();
