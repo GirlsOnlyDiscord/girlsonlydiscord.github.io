@@ -81,15 +81,35 @@ body {
 }
 
 .redobuttonimage {
-    height: 30px;
+    height: 35px;
+}
+
+.redobutton {
     background-color: #312F51;
     border: none;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    transition-duration: 0.15s;
+}
+
+.redobutton:hover {
+    transform: scale(1.05);
 }
 
 .settingsbuttonimage {
-    height: 30px;
+    height: 35px;
+}
+
+.settingsbutton {
     background-color: #312F51;
     border: none;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    transition-duration: 0.15s;
+}
+
+.settingsbutton:hover {
+    transform: scale(1.05);
 }
 
 .startbutton {
@@ -97,9 +117,14 @@ body {
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    font-size: 35px;
+    font-size: 30px;
     background-color: #312F51;
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
     border: none;
+    transition-duration: 0.15s;
+}
+
+.startbutton:hover {
+    transform: scale(1.05);
 }
