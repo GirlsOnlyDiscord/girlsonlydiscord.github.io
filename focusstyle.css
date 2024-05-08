@@ -32,11 +32,12 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    position: fixed; 
+    right: 120px;
 }
 
 .topright {
     transition-duration: 0.15s;
-    margin-right: 120px;
 }
 
 .topright:hover {
