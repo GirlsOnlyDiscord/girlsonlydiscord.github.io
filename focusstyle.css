@@ -6,10 +6,8 @@ body {
 
 
 .bgfr { 
-    padding-left: 30px;
-    padding-top: 100px;
-    width: 1664px;
-    height: 1032px;
+    width: 100vw;
+    height: 100vh;
     position: relative;
     box-sizing: border-box;
 }
@@ -26,6 +24,7 @@ body {
 
 .top {
     display: flex;
+    margin-top: 100px;
 }
 
 .containerorsum {
@@ -123,7 +122,7 @@ body {
 .startbutton {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
     color:#f9f7f7;
     font-size: 30px;
     background-color: #312F51;
