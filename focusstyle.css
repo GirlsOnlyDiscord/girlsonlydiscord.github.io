@@ -28,17 +28,15 @@ body {
     display: flex;
 }
 
-.topleft {
-    margin-left: 120px;
-}
-
 .containerorsum {
+    width: 100%;
     display: flex;
     justify-content: flex-end;
 }
 
 .topright {
     transition-duration: 0.15s;
+    margin-right: 120px;
 }
 
 .topright:hover {
@@ -55,6 +53,8 @@ body {
 }
 
 .topleft {
+    width: 170px;
+    margin-left: 120px;
     transition-duration: 0.15s;
     padding: 10px 10px 10px 10px;
     background-color: #312F51;
