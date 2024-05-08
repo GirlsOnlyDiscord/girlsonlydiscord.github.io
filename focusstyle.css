@@ -69,3 +69,31 @@ body {
 .joinwrap {
     height: 80px;
 }
+
+.pomodorocontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.clockactions {
+    display: flex;
+}
+
+.redobuttonimage {
+    height: 20px;
+}
+
+.settingsbuttonimage {
+    height: 20px;
+}
+
+.starbutton {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color:#f9f7f7;
+    font-size: 25px;
+    background-color: #312F51;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+}
