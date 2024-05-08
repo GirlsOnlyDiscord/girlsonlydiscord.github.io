@@ -7,7 +7,7 @@ body {
 
 .bgfr { 
     padding-left: 30px;
-    padding-top: 120px;
+    padding-top: 100px;
     width: 1664px;
     height: 1032px;
     position: relative;
@@ -33,6 +33,10 @@ body {
     margin-left: 120px;
 }
 
+.topright {
+    transition-duration: 0.15s;
+}
+
 .topright:hover {
     transform: scale(1.05);
 }
@@ -44,6 +48,17 @@ body {
     color:#f9f7f7;
     font-size: 30px;
     text-decoration: none;
+}
+
+.toppleft {
+    transition-duration: 0.15s;
+    padding: 8px 8px 8px 8px;
+    background-color: #312F51;
+    border-radius: 10px;
+}
+
+.topleft:hover {
+    transform: scale(1.05);
 }
 
 .joinwrap {
