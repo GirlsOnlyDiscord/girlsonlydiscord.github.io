@@ -27,8 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
             outline: none;
             cursor: pointer;">
 
-            <span>${taskText}</span>
-            <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 30px;"></button>
+            <div style="display: flexbox; justify-content: center; align-content: center;">
+                <div>${taskText}</div>
+                <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 30px; cursor: pointer;"></button>
+            </div>
+
+            
         `;
         todoList.appendChild(taskItem);
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
