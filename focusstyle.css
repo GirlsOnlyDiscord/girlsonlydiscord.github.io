@@ -81,20 +81,25 @@ body {
 }
 
 .redobuttonimage {
-    height: 20px;
+    height: 30px;
+    background-color: #312F51;
+    border: none;
 }
 
 .settingsbuttonimage {
-    height: 20px;
+    height: 30px;
+    background-color: #312F51;
+    border: none;
 }
 
-.starbutton {
+.startbutton {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
-    font-size: 25px;
+    font-size: 35px;
     background-color: #312F51;
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
+    border: none;
 }
