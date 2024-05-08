@@ -9,3 +9,16 @@ body {
     height: 100%;
     display: block;
 }
+
+.top {
+    display: flex;
+    gap: 500px;
+}
+
+.goback {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color:#f9f7f7;
+    font-size: 30px;
+}
