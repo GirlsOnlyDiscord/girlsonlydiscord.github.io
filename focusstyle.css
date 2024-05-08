@@ -74,6 +74,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: auto;
+    position: fixed;
+    bottom: 100px;
     margin-left: 120px;
 }
 
