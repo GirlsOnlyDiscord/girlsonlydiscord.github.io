@@ -307,7 +307,7 @@ li:has(input[type="checkbox"]:checked) {
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
-    padding: 15px;
+    padding: 10px;
     border-radius: 15px;
     z-index: 1000;
 }
