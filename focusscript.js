@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
                  outline: none;
                  cursor: pointer;">
                 <span style="text-shadow: 0px 0px 15px #00022d;">${taskText}</span>
-                <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 30px; cursor: pointer;"></button>
+                <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
             </div>
 
             

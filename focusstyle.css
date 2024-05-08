@@ -272,10 +272,6 @@ li:has(input[type="checkbox"]:checked) {
     text-decoration: line-through;
 }
 
-.task {
-    margin-bottom: 10px;
-}
-
 .task .delete-btn {
     display: none;
 }
@@ -295,6 +291,9 @@ li:has(input[type="checkbox"]:checked) {
     padding: 10px 10px 10px 10px;
     border: none;
     transition-duration: 0.15s;
+    width: fit-content;
+    align-self: center;
+    margin-top: 20px;
 }
 
 .playlistbutton:hover {
