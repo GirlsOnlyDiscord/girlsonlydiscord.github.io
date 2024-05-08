@@ -226,7 +226,8 @@ textarea:focus, input:focus {
     color:#f9f7f7;
     font-size: 20px;
     border-radius: 15px;
-    outline: none;
+    border: none;
+    box-shadow: 0 4px 2px -2px rgb(49, 47, 81, 0.9);
 }
 
 .addtask {
