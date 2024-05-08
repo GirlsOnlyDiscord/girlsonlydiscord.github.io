@@ -144,3 +144,34 @@ body {
     color:#f9f7f7;
     font-size: 100px;
 }
+
+.breakfocus {
+    display: flex;
+    gap: 15px;
+}
+
+.focusbutton {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+    background-color: #312F51;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    transition-duration: 0.15s;
+}
+
+.breakbutton {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+    background-color: #312F51;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    transition-duration: 0.15s;
+}
