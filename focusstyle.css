@@ -8,8 +8,8 @@ body {
 .bgfr { 
     padding-left: 30px;
     padding-top: 120px;
-    width: 100%;
-    height: 100%;
+    width: 1664px;
+    height: 1032px;
     position: relative;
     box-sizing: border-box;
 }
@@ -19,21 +19,22 @@ body {
     content: "";
     inset: 0px;
     background-image: url(/focusimages/bg4.1.gif);
-    background-size: contain;
+    background-size: cover;
     z-index: -10;
 }
 
 
 .top {
     display: flex;
+    gap: 1000px;
 }
 
 .topleft {
     margin-left: 120px;
 }
 
-.topright {
-    align-items: flex-end;
+.topright:hover {
+    transform: scale(1.05);
 }
 
 .goback {
@@ -46,5 +47,5 @@ body {
 }
 
 .joinwrap {
-    height: 100px;
+    height: 80px;
 }
