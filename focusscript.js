@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         taskItem.className = "task";
         taskItem.innerHTML = `
 
-            <div style="display: flexbox; justify-content: center; align-content: center;">
+            <div style="display: flex; align-content: center;">
                  <input type="checkbox" class="checkbox" style="width: 1.3em;
                  height: 1.3em;
                  background-color: white;
