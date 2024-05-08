@@ -207,15 +207,9 @@ body {
     display: flex;
 }
 
-.inputfield {
+.taskfield {
     background-color: transparent;
     border: none;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    color:#f9f7f7;
-    font-size: 25px;
-    text-shadow: 0px 0px 15px #00022d;
 }
 
 .addtask {
@@ -227,5 +221,14 @@ body {
     font-weight: 600;
     font-style: italic;
     color:#f9f7f7;
+    font-size: 20px;
+}
+
+::placeholder {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
     font-size: 25px;
+    text-shadow: 0px 0px 15px #00022d;
 }
