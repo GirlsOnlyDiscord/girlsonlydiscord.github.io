@@ -52,9 +52,10 @@ body {
 
 .topleft {
     transition-duration: 0.15s;
-    padding: 8px 8px 8px 8px;
+    padding: 10px 10px 10px 10px;
     background-color: #312F51;
     border-radius: 10px;
+    height: fit-content;
 }
 
 .topleft:hover {
