@@ -314,5 +314,5 @@ li:has(input[type="checkbox"]:checked) {
 
 .notification-message {
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
 }

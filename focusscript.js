@@ -6,11 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
     addTaskBtn.addEventListener("click", function() {
         const taskText = newTaskInput.value.trim();
         if (taskText !== "") {
-            addTask(taskText);
-            newTaskInput.value = "";
             // Check if the number of tasks exceeds 15
-            if (todoList.children.length > 15) {
+            if (todoList.children.length >= 15) {
                 showCustomNotification(); // Call function to display custom notification
+                newTaskInput.disabled = true; // Disable input field
+                addTaskBtn.disabled = true; // Disable add button
+            } else {
+                addTask(taskText);
+                newTaskInput.value = "";
             }
         }
     });
@@ -37,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function() {
         todoList.appendChild(taskItem);
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
             taskItem.remove();
+            // Enable input field and add button when a task is deleted
+            newTaskInput.disabled = false;
+            addTaskBtn.disabled = false;
         });
     }
 
