@@ -16,19 +16,19 @@ document.addEventListener("DOMContentLoaded", function() {
         const taskItem = document.createElement("li");
         taskItem.className = "task";
         taskItem.innerHTML = `
-            <input type="checkbox" class="checkbox" style="width: 1.3em;
-            height: 1.3em;
-            background-color: white;
-            border-radius: 50%;
-            vertical-align: middle;
-            border: 1px solid #ddd;
-            appearance: none;
-            -webkit-appearance: none;
-            outline: none;
-            cursor: pointer;">
 
             <div style="display: flexbox; justify-content: center; align-content: center;">
-                <div>${taskText}</div>
+                 <input type="checkbox" class="checkbox" style="width: 1.3em;
+                 height: 1.3em;
+                 background-color: white;
+                 border-radius: 50%;
+                 vertical-align: middle;
+                 border: 1px solid #ddd;
+                 appearance: none;
+                 -webkit-appearance: none;
+                 outline: none;
+                 cursor: pointer;">
+                <span>${taskText}</span>
                 <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 30px; cursor: pointer;"></button>
             </div>
 
