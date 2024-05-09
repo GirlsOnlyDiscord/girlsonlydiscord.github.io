@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
         settingsContainer.style.display = "none";
     });
 
+    // Function to start countdown
     function startCountdown() {
         countdownInterval = setInterval(function() {
             remainingTime--;
@@ -177,26 +178,48 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000);
     }
 
+    // Function to pause countdown
     function pauseCountdown() {
         clearInterval(countdownInterval);
     }
 
+    // Function to format remaining time
     function formatTime(seconds) {
         let minutes = Math.floor(seconds / 60);
         let remainingSeconds = seconds % 60;
         return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     }
 
-    // Add event listener to settings button
-    settingsBtn.addEventListener("click", function() {
-        // Toggle the display of settings container
-        if (settingsContainer.style.display === "none" || settingsContainer.style.display === "") {
-            settingsContainer.style.display = "flex";
-            // Set default values for focus and break fields
-            focusInput.value = 25;
-            breakInput.value = 5;
-        } else {
-            settingsContainer.style.display = "none";
+    // Get the upload button and the input element
+    const uploadBtn = document.getElementById("upload");
+    const uploadInput = document.getElementById("upload-background");
+
+    // Add an event listener to the upload button
+    uploadBtn.addEventListener("click", function() {
+        // Simulate click on the hidden file input element
+        uploadInput.click();
+    });
+
+    // Add an event listener to the input element for file selection
+    uploadInput.addEventListener("change", function() {
+        // Get the selected file
+        const file = uploadInput.files[0];
+
+        // Check if a file was selected
+        if (file) {
+            // Create a FileReader object to read the file
+            const reader = new FileReader();
+
+            // Define what happens when the file is loaded
+            reader.onload = function(e) {
+                // Set the background image of the container to the selected image
+                document.querySelector(".bgfr").style.backgroundImage = `url(${e.target.result})`;
+                // Set the selectedImage variable to the selected image URL
+                selectedImage = e.target.result;
+            };
+
+            // Read the file as a data URL (base64 encoded)
+            reader.readAsDataURL(file);
         }
     });
 });
