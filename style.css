@@ -159,9 +159,10 @@ html {
 }
 
 .embed {
-    margin-left: 200px;
+    position: fixed;
+    right: 200px;
     background-color: #fdf6e6;
-    padding: 12px 12px 0px 12px;
+    padding: 12px 12px 12px 12px;
     border-radius: 15px;
     box-shadow: 0px 0px 20px #462f14;
     max-height: 419px;
