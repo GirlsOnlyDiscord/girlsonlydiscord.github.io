@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
             startCountdown();
             startBtn.textContent = "PAUSE";
             if (isFocus) {
-                focusBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)"; // Change focus button color
+                focusBtn.style.backgroundColor = "#ffdbb152"; // Change focus button color
             }
         } else {
             pauseCountdown();
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
     focusBtn.addEventListener("click", function() {
         if (isPaused) {
             isFocus = true;
-            focusBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
+            focusBtn.style.backgroundColor = "#ffdbb152";
             breakBtn.style.backgroundColor = "";
             remainingTime = 25 * 60;
             pomodoroTimer.textContent = "25:00";
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
     breakBtn.addEventListener("click", function() {
         if (isPaused) {
             isFocus = false;
-            breakBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
+            breakBtn.style.backgroundColor = "#ffdbb152";
             focusBtn.style.backgroundColor = "";
             remainingTime = 5 * 60;
             pomodoroTimer.textContent = "05:00";
