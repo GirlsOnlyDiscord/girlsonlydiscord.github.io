@@ -10,6 +10,7 @@ body {
     height: 100vh;
     position: relative;
     box-sizing: border-box;
+    background-size: 100vw 100vh;
 }
 
 .bgfr:before {
@@ -17,7 +18,7 @@ body {
     content: "";
     inset: 0px;
     background-image: url(/focusimages/bg4.1.gif);
-    background-size: cover;
+    background-size: 100vw 100vh;
     z-index: -10;
 }
 
