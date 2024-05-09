@@ -145,24 +145,19 @@ document.addEventListener("DOMContentLoaded", function() {
         return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     }
 
-    // Add event listener to settings button
-    settingsBtn.addEventListener("click", function() {
-        // Toggle the display of settings container
-        if (settingsContainer.style.display === "none" || settingsContainer.style.display === "") {
-            settingsContainer.style.display = "flex";
-            // Set default values for focus and break fields
-            focusInput.value = 25;
-            breakInput.value = 5;
-        } else {
-            settingsContainer.style.display = "none";
-        }
+    // Event listener for each imagesbutton
+    const imagesButtons = document.querySelectorAll(".imagesbutton");
+    imagesButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            // Update the background image of .bgfr:before with the clicked image URL
+            const backgroundImageUrl = button.querySelector("img").src;
+            document.querySelector(".bgfr:before").style.backgroundImage = `url(${backgroundImageUrl})`;
+        });
     });
 
+    // Event listener for the save button
     const saveBtn = document.getElementById("save");
     saveBtn.addEventListener("click", function() {
-        // Update focus and break timers
-        remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
-        pomodoroTimer.textContent = formatTime(remainingTime);
         // Hide settings container
         settingsContainer.style.display = "none";
     });
