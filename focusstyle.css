@@ -400,7 +400,6 @@ li:has(input[type="checkbox"]:checked) {
     font-style: italic;
     color:#f9f7f7;
     font-size: 15px;
-    margin-top: 20px;
     width: fit-content;
     align-self: center;
 }
@@ -431,4 +430,8 @@ li:has(input[type="checkbox"]:checked) {
 
 .spotifyplaylist {
     display: none;
+}
+
+.real {
+    margin-top: 20px;
 }
