@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    newTaskInput.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            addTaskFromInput();
+        }
+    });
+
     function addTask(taskText) {
         const taskItem = document.createElement("li");
         taskItem.className = "task";
