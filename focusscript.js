@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let countdownInterval; // Variable to store the interval for the countdown
     let isPaused = true; // Variable to track if the countdown is paused
     let isFocus = true; // Variable to track if it's focus time
-    let remainingTime = isFocus ? 25 * 60 : 5 * 60; // Variable to store the remaining time for focus or break
+    let remainingTime = isFocus ? 25 * 60 : 10; // Variable to store the remaining time for focus or break
 
     startBtn.addEventListener("click", function() {
         if (isPaused) {
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
             isFocus = false;
             breakBtn.style.backgroundColor = "#ffdbb152";
             focusBtn.style.backgroundColor = "";
-            remainingTime = 5 * 60;
+            remainingTime = 10;
             pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
             remainingTime = 25 * 60;
             pomodoroTimer.textContent = formatTime(remainingTime);
         } else {
-            remainingTime = 5 * 60;
+            remainingTime = 10;
             pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
@@ -118,13 +118,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (remainingTime <= 0) {
                 clearInterval(countdownInterval);
+                isFocus = !isFocus; // Switch to the other timer
                 if (isFocus) {
-                    isFocus = false;
-                    breakBtn.click(); // Automatically switch to break timer
-                } else {
-                    isFocus = true;
+                    remainingTime = 25 * 60;
                     focusBtn.click(); // Automatically switch to focus timer
+                } else {
+                    remainingTime = 10;
+                    breakBtn.click(); // Automatically switch to break timer
                 }
+                startCountdown(); // Start the countdown for the next timer
             }
         }, 1000); // 1000 milliseconds = 1 second
     }
