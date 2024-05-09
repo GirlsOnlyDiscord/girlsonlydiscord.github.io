@@ -17,7 +17,7 @@ body {
     position: absolute;
     content: "";
     inset: 0px;
-    background-image: url(/focusimages/bg4.1.gif);
+    background-image: url(/focusimages/bg2.jpg);
     background-size: 100vw 100vh;
     z-index: -10;
 }
