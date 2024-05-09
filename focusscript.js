@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", function() {
             isFocus = true;
             focusBtn.style.backgroundColor = "#ffdbb152";
             breakBtn.style.backgroundColor = "";
-            remainingTime = 31;
-            pomodoroTimer.textContent = "00:31";
+            remainingTime = 25 * 60;
+            pomodoroTimer.textContent = "25:00";
         }
     });
 
@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
             isFocus = false;
             breakBtn.style.backgroundColor = "#ffdbb152";
             focusBtn.style.backgroundColor = "";
-            remainingTime = 31;
-            pomodoroTimer.textContent = "00:31";
+            remainingTime = 5 * 60;
+            pomodoroTimer.textContent = "05:00";
         }
     });
 
@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", function() {
         startBtn.textContent = "START";
         isPaused = true;
         if (isFocus) {
-            remainingTime = 31;
-            pomodoroTimer.textContent = "00:31";
+            remainingTime = 25 * 60;
+            pomodoroTimer.textContent = "25:00";
         } else {
-            remainingTime = 31;
-            pomodoroTimer.textContent = "00:31";
+            remainingTime = 5 * 60;
+            pomodoroTimer.textContent = "05:00";
         }
     });
 
