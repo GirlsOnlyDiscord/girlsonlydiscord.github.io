@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let countdownInterval; // Variable to store the interval for the countdown
     let isPaused = true; // Variable to track if the countdown is paused
     let isFocus = true; // Variable to track if it's focus time
-    let remainingTime = isFocus ? 10 : 10; // Variable to store the remaining time for focus or break
+    let remainingTime = isFocus ? 25 * 60 : 5 * 60; // Variable to store the remaining time for focus or break
 
     startBtn.addEventListener("click", function() {
         if (isPaused) {
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
             isFocus = true;
             focusBtn.style.backgroundColor = "#ffdbb152";
             breakBtn.style.backgroundColor = "";
-            remainingTime = 10;
+            remainingTime = 25 * 60;
             pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
             isFocus = false;
             breakBtn.style.backgroundColor = "#ffdbb152";
             focusBtn.style.backgroundColor = "";
-            remainingTime = 10;
+            remainingTime = 5 * 60;
             pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
@@ -102,10 +102,10 @@ document.addEventListener("DOMContentLoaded", function() {
         startBtn.textContent = "START";
         isPaused = true;
         if (isFocus) {
-            remainingTime = 10;
+            remainingTime = 25 * 60;
             pomodoroTimer.textContent = formatTime(remainingTime);
         } else {
-            remainingTime = 10;
+            remainingTime = 5 * 60;
             pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
@@ -120,11 +120,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 clearInterval(countdownInterval);
                 isFocus = !isFocus; // Switch to the other timer
                 if (isFocus) {
-                    remainingTime = 10;
+                    remainingTime = 25 * 60;
                     focusBtn.style.backgroundColor = "#ffdbb152"; // Change focus button color
                     breakBtn.style.backgroundColor = ""; // Reset break button color
                 } else {
-                    remainingTime = 10;
+                    remainingTime = 5 * 60;
                     breakBtn.style.backgroundColor = "#ffdbb152"; // Change break button color
                     focusBtn.style.backgroundColor = ""; // Reset focus button color
                 }
