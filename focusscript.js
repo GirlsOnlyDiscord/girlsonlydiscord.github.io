@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const startBtn = document.querySelector(".startbutton");
     const focusBtn = document.querySelector(".focusbutton");
     const breakBtn = document.querySelector(".breakbutton");
+    const redoBtn = document.querySelector(".redobutton");
     const pomodoroTimer = document.getElementById("pomodoro-timer");
 
     let countdownInterval; // Variable to store the interval for the countdown
@@ -63,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isPaused) {
             startCountdown();
             startBtn.textContent = "PAUSE";
-            focusBtn.style.backgroundColor = "transparent";
-            focusBtn.style.border = "2px solid #312F51";
-            breakBtn.style.backgroundColor = "transparent";
-            breakBtn.style.border = "none";
+            focusBtn.style.backgroundColor = "";
+            focusBtn.style.border = "";
+            breakBtn.style.backgroundColor = "";
+            breakBtn.style.border = "";
         } else {
             pauseCountdown();
             startBtn.textContent = "START";
@@ -77,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function() {
     focusBtn.addEventListener("click", function() {
         if (isPaused) {
             focusBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
-            breakBtn.style.backgroundColor = "transparent";
-            breakBtn.style.border = "none";
+            breakBtn.style.backgroundColor = "";
+            breakBtn.style.border = "";
             remainingTime = 25 * 60;
             pomodoroTimer.textContent = "25:00";
         }
@@ -87,11 +88,19 @@ document.addEventListener("DOMContentLoaded", function() {
     breakBtn.addEventListener("click", function() {
         if (isPaused) {
             breakBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
-            focusBtn.style.backgroundColor = "transparent";
-            focusBtn.style.border = "none";
+            focusBtn.style.backgroundColor = "";
+            focusBtn.style.border = "";
             remainingTime = 5 * 60;
             pomodoroTimer.textContent = "05:00";
         }
+    });
+
+    redoBtn.addEventListener("click", function() {
+        pauseCountdown();
+        startBtn.textContent = "START";
+        isPaused = true;
+        remainingTime = 25 * 60;
+        pomodoroTimer.textContent = "25:00";
     });
 
     function startCountdown() {
