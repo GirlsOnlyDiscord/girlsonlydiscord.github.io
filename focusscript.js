@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let countdownInterval; // Variable to store the interval for the countdown
     let isPaused = true; // Variable to track if the countdown is paused
     let isFocus = true; // Variable to track if it's focus time
-    let remainingTime = 25 * 60; // Variable to store the remaining time for focus
+    let remainingTime = isFocus ? 25 * 60 : 5 * 60; // Variable to store the remaining time for focus or break
 
     startBtn.addEventListener("click", function() {
         if (isPaused) {
@@ -119,12 +119,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (remainingTime <= 0) {
                 clearInterval(countdownInterval);
+                isFocus = !isFocus; // Switch to the other timer
                 if (isFocus) {
-                    isFocus = false;
-                    breakBtn.click(); // Automatically switch to break timer
-                } else {
-                    isFocus = true;
                     focusBtn.click(); // Automatically switch to focus timer
+                } else {
+                    breakBtn.click(); // Automatically switch to break timer
                 }
             }
 
