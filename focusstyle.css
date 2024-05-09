@@ -320,15 +320,14 @@ li:has(input[type="checkbox"]:checked) {
 
 .settingscontainer {
     position: fixed;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
+    bottom: 100px;
+    left: 120px;
     background-color: #312F51;
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
     height: 400px;
     width: 400px;
+    z-index: 3000;
 }
 
 .settings {
@@ -336,7 +335,42 @@ li:has(input[type="checkbox"]:checked) {
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     box-shadow: 0 4px 2px -2px rgba(142, 139, 198, 0.9);
+}
+
+.customcon {
+    display: flex;
+}
+
+.focusfield {
+    width: 80px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 20px;
+    border: none;
+    background-color: #666291;
+}
+
+.breakfield {
+    width: 80px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 20px;
+    border: none;
+    background-color: #666291;
+}
+
+.customtext {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
