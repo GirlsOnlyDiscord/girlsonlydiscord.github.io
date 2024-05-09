@@ -75,30 +75,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     focusBtn.addEventListener("click", function() {
-        // Change background and border styles
-        focusBtn.style.backgroundColor = "transparent";
-        focusBtn.style.border = "2px solid #312F51";
-        breakBtn.style.backgroundColor = "transparent";
-        breakBtn.style.border = "none";
-
-        // Change countdown time to 25:00
-        remainingTime = 25 * 60;
-        if (!isPaused) {
-            startCountdown();
+        if (isPaused) {
+            focusBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
+            breakBtn.style.backgroundColor = "transparent";
+            breakBtn.style.border = "none";
+            remainingTime = 25 * 60;
+            pomodoroTimer.textContent = "25:00";
         }
     });
 
     breakBtn.addEventListener("click", function() {
-        // Change background and border styles
-        breakBtn.style.backgroundColor = "transparent";
-        breakBtn.style.border = "2px solid #312F51";
-        focusBtn.style.backgroundColor = "transparent";
-        focusBtn.style.border = "none";
-
-        // Change countdown time to 05:00
-        remainingTime = 5 * 60;
-        if (!isPaused) {
-            startCountdown();
+        if (isPaused) {
+            breakBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
+            focusBtn.style.backgroundColor = "transparent";
+            focusBtn.style.border = "none";
+            remainingTime = 5 * 60;
+            pomodoroTimer.textContent = "05:00";
         }
     });
 
