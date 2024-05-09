@@ -153,7 +153,6 @@ document.addEventListener("DOMContentLoaded", function() {
         settingsContainer.style.display = "none";
     });
 
-    // Function to start countdown
     function startCountdown() {
         countdownInterval = setInterval(function() {
             remainingTime--;
@@ -178,17 +177,28 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000);
     }
 
-    // Function to pause countdown
     function pauseCountdown() {
         clearInterval(countdownInterval);
     }
 
-    // Function to format remaining time
     function formatTime(seconds) {
         let minutes = Math.floor(seconds / 60);
         let remainingSeconds = seconds % 60;
         return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     }
+
+    // Add event listener to settings button
+    settingsBtn.addEventListener("click", function() {
+        // Toggle the display of settings container
+        if (settingsContainer.style.display === "none" || settingsContainer.style.display === "") {
+            settingsContainer.style.display = "flex";
+            // Set default values for focus and break fields
+            focusInput.value = 25;
+            breakInput.value = 5;
+        } else {
+            settingsContainer.style.display = "none";
+        }
+    });
 
     // Get the upload button and the input element
     const uploadBtn = document.getElementById("upload");
