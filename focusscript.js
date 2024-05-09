@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let countdownInterval; // Variable to store the interval for the countdown
     let isPaused = true; // Variable to track if the countdown is paused
     let isFocus = true; // Variable to track if it's focus time
-    let remainingTime = isFocus ? 31 : 31; // Variable to store the remaining time for focus or break
+    let remainingTime = isFocus ? 25 * 60 : 5 * 60; // Variable to store the remaining time for focus or break
 
     startBtn.addEventListener("click", function() {
         if (isPaused) {
