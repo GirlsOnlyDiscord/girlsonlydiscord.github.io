@@ -389,7 +389,7 @@ li:has(input[type="checkbox"]:checked) {
 
 .save {
     background-color: #666291;
-    padding: 10px 10px 10px 10px;
+    padding: 13px 13px 13px 13px;
     border: none;
     border-radius: 15px;
     font-family: "Poppins", sans-serif;
@@ -397,6 +397,7 @@ li:has(input[type="checkbox"]:checked) {
     font-style: italic;
     color:#f9f7f7;
     font-size: 15px;
-    justify-self: center;
-    align-self: flex-end;
+    margin-top: 20px;
+    width: fit-content;
+    align-self: center;
 }
