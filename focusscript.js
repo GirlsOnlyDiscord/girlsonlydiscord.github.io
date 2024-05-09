@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
         remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
         pomodoroTimer.textContent = formatTime(remainingTime);
         // Set background image to the selected image
-        document.querySelector(".bgfr").style.backgroundImage = `url(${selectedImage})`;
+        document.querySelector(".bgfr:before").style.backgroundImage = `url(${selectedImage})`;
         // Hide settings container
         settingsContainer.style.display = "none";
     });
