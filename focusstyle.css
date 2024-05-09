@@ -427,3 +427,7 @@ li:has(input[type="checkbox"]:checked) {
 .bg {
     margin-top: 20px;
 }
+
+.spotifyplaylist {
+    display: none;
+}
