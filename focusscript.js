@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
             startBtn.textContent = "PAUSE";
             if (isFocus) {
                 focusBtn.style.backgroundColor = "#ffdbb152"; // Change focus button color
+            } else {
+                breakBtn.style.backgroundColor = "#ffdbb152"; // Change break button color
             }
         } else {
             pauseCountdown();
