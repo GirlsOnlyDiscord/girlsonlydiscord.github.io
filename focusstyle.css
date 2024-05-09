@@ -29,7 +29,7 @@ body {
 }
 
 .containerorsum {
-    width: 100%;
+    width: 214px;
     display: flex;
     justify-content: flex-end;
     position: fixed; 
