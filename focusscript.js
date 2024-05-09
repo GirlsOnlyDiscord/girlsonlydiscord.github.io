@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const todoList = document.getElementById("todo-list");
     const newTaskInput = document.getElementById("new-task");
     const addTaskBtn = document.getElementById("add-task");
+    const settingsBtn = document.querySelector(".settingsbutton");
+    const settingsContainer = document.querySelector(".settingscontainer");
 
     addTaskBtn.addEventListener("click", function() {
         const taskText = newTaskInput.value.trim();
@@ -40,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Function to show the custom notification
     function showCustomNotification() {
         const notification = document.getElementById('custom-notification');
         notification.style.display = 'block';
@@ -49,26 +50,25 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 3000); // 3 seconds
     }
 
-    // Countdown functionality
     const startBtn = document.querySelector(".startbutton");
     const focusBtn = document.querySelector(".focusbutton");
     const breakBtn = document.querySelector(".breakbutton");
     const redoBtn = document.querySelector(".redobutton");
     const pomodoroTimer = document.getElementById("pomodoro-timer");
 
-    let countdownInterval; // Variable to store the interval for the countdown
-    let isPaused = true; // Variable to track if the countdown is paused
-    let isFocus = true; // Variable to track if it's focus time
-    let remainingTime = isFocus ? 25 * 60 : 5 * 60; // Variable to store the remaining time for focus or break
+    let countdownInterval;
+    let isPaused = true;
+    let isFocus = true;
+    let remainingTime = isFocus ? 25 * 60 : 5 * 60;
 
     startBtn.addEventListener("click", function() {
         if (isPaused) {
             startCountdown();
             startBtn.textContent = "PAUSE";
             if (isFocus) {
-                focusBtn.style.backgroundColor = "#ffdbb152"; // Change focus button color
+                focusBtn.style.backgroundColor = "#ffdbb152";
             } else {
-                breakBtn.style.backgroundColor = "#ffdbb152"; // Change break button color
+                breakBtn.style.backgroundColor = "#ffdbb152";
             }
         } else {
             pauseCountdown();
@@ -118,29 +118,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (remainingTime <= 0) {
                 clearInterval(countdownInterval);
-                isFocus = !isFocus; // Switch to the other timer
+                isFocus = !isFocus;
                 if (isFocus) {
                     remainingTime = 25 * 60;
-                    focusBtn.style.backgroundColor = "#ffdbb152"; // Change focus button color
-                    breakBtn.style.backgroundColor = ""; // Reset break button color
+                    focusBtn.style.backgroundColor = "#ffdbb152";
+                    breakBtn.style.backgroundColor = "";
                 } else {
                     remainingTime = 5 * 60;
-                    breakBtn.style.backgroundColor = "#ffdbb152"; // Change break button color
-                    focusBtn.style.backgroundColor = ""; // Reset focus button color
+                    breakBtn.style.backgroundColor = "#ffdbb152";
+                    focusBtn.style.backgroundColor = "";
                 }
-                startCountdown(); // Start the countdown for the next timer
+                startCountdown();
             }
-        }, 1000); // 1000 milliseconds = 1 second
+        }, 1000);
     }
 
     function pauseCountdown() {
         clearInterval(countdownInterval);
     }
 
-    // Helper function to format time in mm:ss format
     function formatTime(seconds) {
         let minutes = Math.floor(seconds / 60);
         let remainingSeconds = seconds % 60;
         return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     }
+
+    // Add event listener to settings button
+    settingsBtn.addEventListener("click", function() {
+        // Toggle the display of settings container
+        if (settingsContainer.style.display === "none" || settingsContainer.style.display === "") {
+            settingsContainer.style.display = "flex";
+        } else {
+            settingsContainer.style.display = "none";
+        }
+    });
 });
