@@ -74,6 +74,7 @@ body {
     bottom: 100px;
     right: 120px;
     position: fixed;
+    gap: 50px;
 }
 
 .pomodorocontainer {
@@ -323,13 +324,13 @@ li:has(input[type="checkbox"]:checked) {
 }
 
 .settingscontainer {
-    position: fixed;
     background-color: #312F51;
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
     height: 400px;
     width: 400px;
     z-index: 3000;
+    align-self: center;
 }
 
 .settings {
