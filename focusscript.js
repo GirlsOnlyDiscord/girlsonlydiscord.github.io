@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let selectedImage = ""; // Variable to store the selected image URL
 
-    addTaskBtn.addEventListener("click", function() {
+    // Function to add task
+    function addTaskFromInput() {
         const taskText = newTaskInput.value.trim();
         if (taskText !== "") {
             if (todoList.children.length >= 15) {
@@ -20,9 +21,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 newTaskInput.value = "";
             }
         }
-    });
+    }
 
-    newTaskInput.addEventListener("keyup", function(event) {
+    // Event listener for clicking the "Add Task" button
+    addTaskBtn.addEventListener("click", addTaskFromInput);
+
+    // Event listener for pressing the Enter key
+    newTaskInput.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             addTaskFromInput();
         }
