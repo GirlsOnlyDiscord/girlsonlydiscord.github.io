@@ -331,6 +331,8 @@ li:has(input[type="checkbox"]:checked) {
     width: 400px;
     z-index: 3000;
     align-self: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .settings {
@@ -384,3 +386,17 @@ li:has(input[type="checkbox"]:checked) {
     margin-bottom: 10px;
 }
 
+
+.save {
+    background-color: #666291;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    border-radius: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 15px;
+    justify-self: center;
+    align-self: flex-end;
+}
