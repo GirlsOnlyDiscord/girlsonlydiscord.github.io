@@ -121,10 +121,10 @@ document.addEventListener("DOMContentLoaded", function() {
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
                 if (isFocus) {
-                    remainingTime = 5 * 60;
+                    isFocus = false;
                     breakBtn.click(); // Automatically switch to break timer
                 } else {
-                    remainingTime = 25 * 60;
+                    isFocus = true;
                     focusBtn.click(); // Automatically switch to focus timer
                 }
             }
