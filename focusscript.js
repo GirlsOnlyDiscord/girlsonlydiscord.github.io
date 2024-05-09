@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const settingsContainer = document.querySelector(".settingscontainer");
     const focusInput = document.getElementById("focusquantity");
     const breakInput = document.getElementById("breakquantity");
+    const timerSound = new Audio('focusimages/notification.mp3');
 
     let selectedImage = ""; // Variable to store the selected image URL
 
@@ -155,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     breakBtn.style.backgroundColor = "#ffdbb152";
                     focusBtn.style.backgroundColor = "";
                 }
+                timerSound.play();
                 startCountdown();
             }
         }, 1000);
