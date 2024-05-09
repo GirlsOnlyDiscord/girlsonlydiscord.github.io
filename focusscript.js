@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Countdown functionality
     const startBtn = document.querySelector(".startbutton");
+    const focusBtn = document.querySelector(".focusbutton");
+    const breakBtn = document.querySelector(".breakbutton");
     const pomodoroTimer = document.getElementById("pomodoro-timer");
 
     let countdownInterval; // Variable to store the interval for the countdown
@@ -61,11 +63,41 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isPaused) {
             startCountdown();
             startBtn.textContent = "PAUSE";
+            focusBtn.style.backgroundColor = "transparent";
+            focusBtn.style.border = "2px solid #312F51";
         } else {
             pauseCountdown();
             startBtn.textContent = "START";
         }
         isPaused = !isPaused;
+    });
+
+    focusBtn.addEventListener("click", function() {
+        // Change background and border styles
+        focusBtn.style.backgroundColor = "transparent";
+        focusBtn.style.border = "2px solid #312F51";
+        breakBtn.style.backgroundColor = "#312F51";
+        breakBtn.style.border = "none";
+
+        // Change countdown time to 25:00
+        remainingTime = 25 * 60;
+        if (!isPaused) {
+            startCountdown();
+        }
+    });
+
+    breakBtn.addEventListener("click", function() {
+        // Change background and border styles
+        breakBtn.style.backgroundColor = "transparent";
+        breakBtn.style.border = "2px solid #312F51";
+        focusBtn.style.backgroundColor = "#312F51";
+        focusBtn.style.border = "none";
+
+        // Change countdown time to 05:00
+        remainingTime = 5 * 60;
+        if (!isPaused) {
+            startCountdown();
+        }
     });
 
     function startCountdown() {
@@ -80,12 +112,17 @@ document.addEventListener("DOMContentLoaded", function() {
             // Display the time left
             pomodoroTimer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
-            // If countdown reaches 0, stop the countdown
+            // If countdown reaches 0, switch to break countdown
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
-                pomodoroTimer.textContent = "25:00"; // Reset to original value
-                startBtn.textContent = "START";
-                isPaused = true;
+                if (remainingTime === 25 * 60) {
+                    remainingTime = 5 * 60;
+                    focusBtn.click(); // Automatically switch to break timer
+                } else {
+                    remainingTime = 25 * 60;
+                    startBtn.textContent = "START";
+                    isPaused = true;
+                }
             }
 
             timeLeft--;
