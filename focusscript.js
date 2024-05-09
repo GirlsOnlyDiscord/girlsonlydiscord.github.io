@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isPaused) {
             startCountdown();
             startBtn.textContent = "PAUSE";
-            focusBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)"; // Change focus button color
+            if (isFocus) {
+                focusBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)"; // Change focus button color
+            }
         } else {
             pauseCountdown();
             startBtn.textContent = "START";
