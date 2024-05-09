@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
             focusBtn.style.backgroundColor = "#ffdbb152";
             breakBtn.style.backgroundColor = "";
             remainingTime = 25 * 60;
-            pomodoroTimer.textContent = "25:00";
+            pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
 
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
             breakBtn.style.backgroundColor = "#ffdbb152";
             focusBtn.style.backgroundColor = "";
             remainingTime = 5 * 60;
-            pomodoroTimer.textContent = "05:00";
+            pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
 
@@ -103,35 +103,40 @@ document.addEventListener("DOMContentLoaded", function() {
         isPaused = true;
         if (isFocus) {
             remainingTime = 25 * 60;
-            pomodoroTimer.textContent = "25:00";
+            pomodoroTimer.textContent = formatTime(remainingTime);
         } else {
             remainingTime = 5 * 60;
-            pomodoroTimer.textContent = "05:00";
+            pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
 
     function startCountdown() {
         countdownInterval = setInterval(function() {
-            let minutes = Math.floor(remainingTime / 60);
-            let seconds = remainingTime % 60;
+            remainingTime--;
 
-            pomodoroTimer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            pomodoroTimer.textContent = formatTime(remainingTime);
 
             if (remainingTime <= 0) {
                 clearInterval(countdownInterval);
-                isFocus = !isFocus; // Switch to the other timer
                 if (isFocus) {
-                    focusBtn.click(); // Automatically switch to focus timer
-                } else {
+                    isFocus = false;
                     breakBtn.click(); // Automatically switch to break timer
+                } else {
+                    isFocus = true;
+                    focusBtn.click(); // Automatically switch to focus timer
                 }
             }
-
-            remainingTime--;
         }, 1000); // 1000 milliseconds = 1 second
     }
 
     function pauseCountdown() {
         clearInterval(countdownInterval);
+    }
+
+    // Helper function to format time in mm:ss format
+    function formatTime(seconds) {
+        let minutes = Math.floor(seconds / 60);
+        let remainingSeconds = seconds % 60;
+        return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     }
 });
