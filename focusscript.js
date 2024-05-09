@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let countdownInterval; // Variable to store the interval for the countdown
     let isPaused = true; // Variable to track if the countdown is paused
     let isFocus = true; // Variable to track if it's focus time
-    let remainingTime = isFocus ? 25 * 60 : 5 * 60; // Variable to store the remaining time for focus or break
+    let remainingTime = isFocus ? 25 * 60 : 30; // Variable to store the remaining time for focus or break
 
     startBtn.addEventListener("click", function() {
         if (isPaused) {
@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
             isFocus = false;
             breakBtn.style.backgroundColor = "#ffdbb152";
             focusBtn.style.backgroundColor = "";
-            remainingTime = 5 * 60;
-            pomodoroTimer.textContent = "05:00";
+            remainingTime = 30;
+            pomodoroTimer.textContent = "00:30";
         }
     });
 
@@ -105,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function() {
             remainingTime = 25 * 60;
             pomodoroTimer.textContent = "25:00";
         } else {
-            remainingTime = 5 * 60;
-            pomodoroTimer.textContent = "05:00";
+            remainingTime = 30;
+            pomodoroTimer.textContent = "00:30";
         }
     });
 
