@@ -327,7 +327,7 @@ li:has(input[type="checkbox"]:checked) {
     background-color: #312F51;
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
-    height: fit-content;
+    height: 400px;
     width: 400px;
     z-index: 3000;
     align-self: center;
@@ -400,4 +400,19 @@ li:has(input[type="checkbox"]:checked) {
     margin-top: 20px;
     width: fit-content;
     align-self: center;
+}
+
+.imagerow {
+    display: flex;
+    gap: 10px;
+}
+
+.images {
+    height: 80px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.imagesbutton {
+    border-radius: 10px;
 }
