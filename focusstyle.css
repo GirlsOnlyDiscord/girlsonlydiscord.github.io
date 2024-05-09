@@ -328,7 +328,7 @@ li:has(input[type="checkbox"]:checked) {
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
     height: 400px;
-    width: 400px;
+    width: 500px;
     z-index: 3000;
     align-self: center;
     display: none;
@@ -384,6 +384,7 @@ li:has(input[type="checkbox"]:checked) {
     color:#ffffff;
     font-size: 25px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 
@@ -405,6 +406,7 @@ li:has(input[type="checkbox"]:checked) {
 .imagerow {
     display: flex;
     gap: 10px;
+    justify-content: center;
 }
 
 .images {
@@ -415,4 +417,11 @@ li:has(input[type="checkbox"]:checked) {
 
 .imagesbutton {
     border-radius: 10px;
+    padding: 0;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.bg {
+    margin-top: 20px;
 }
