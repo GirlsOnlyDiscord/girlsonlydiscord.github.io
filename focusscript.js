@@ -130,11 +130,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const imagesButtons = document.querySelectorAll(".imagesbutton");
     imagesButtons.forEach(button => {
         button.addEventListener("click", function() {
+            // Remove border from all image buttons
+            imagesButtons.forEach(btn => btn.style.border = "none");
             // Update selectedImage variable with the URL of the clicked image
             selectedImage = button.querySelector("img").src;
             // Highlight the selected image button (optional)
             imagesButtons.forEach(btn => btn.classList.remove("selected"));
             button.classList.add("selected");
+            // Add border to the selected image button
+            button.style.border = "4px solid white";
         });
     });
 
