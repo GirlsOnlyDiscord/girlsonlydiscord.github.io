@@ -121,10 +121,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 isFocus = !isFocus; // Switch to the other timer
                 if (isFocus) {
                     remainingTime = 10;
-                    focusBtn.click(); // Automatically switch to focus timer
+                    focusBtn.style.backgroundColor = "#ffdbb152"; // Change focus button color
+                    breakBtn.style.backgroundColor = ""; // Reset break button color
                 } else {
                     remainingTime = 10;
-                    breakBtn.click(); // Automatically switch to break timer
+                    breakBtn.style.backgroundColor = "#ffdbb152"; // Change break button color
+                    focusBtn.style.backgroundColor = ""; // Reset focus button color
                 }
                 startCountdown(); // Start the countdown for the next timer
             }
