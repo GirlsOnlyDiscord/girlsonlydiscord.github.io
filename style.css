@@ -159,7 +159,7 @@ html {
 }
 
 .embed {
-    position: fixed;
+    position: absolute;
     right: 200px;
     background-color: #fdf6e6;
     padding: 12px 12px 12px 12px;
