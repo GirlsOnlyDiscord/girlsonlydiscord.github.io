@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isPaused) {
             startCountdown();
             startBtn.textContent = "PAUSE";
+            focusBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)"; // Change focus button color
         } else {
             pauseCountdown();
             startBtn.textContent = "START";
@@ -106,19 +107,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function startCountdown() {
-        // Check if there's remaining time to resume from
-        let timeLeft = remainingTime > 0 ? remainingTime : 25 * 60;
-
-        // Update the countdown every second
         countdownInterval = setInterval(function() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
+            let minutes = Math.floor(remainingTime / 60);
+            let seconds = remainingTime % 60;
 
-            // Display the time left
             pomodoroTimer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
-            // If countdown reaches 0, switch to break or focus countdown
-            if (timeLeft <= 0) {
+            if (remainingTime <= 0) {
                 clearInterval(countdownInterval);
                 if (isFocus) {
                     isFocus = false;
@@ -129,8 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
 
-            timeLeft--;
-            remainingTime = timeLeft; // Store the remaining time
+            remainingTime--;
         }, 1000); // 1000 milliseconds = 1 second
     }
 
