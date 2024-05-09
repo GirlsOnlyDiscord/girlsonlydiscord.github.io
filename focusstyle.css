@@ -69,13 +69,17 @@ body {
     height: 80px;
 }
 
+.general {
+    display: flex;
+    bottom: 100px;
+    right: 120px;
+    position: fixed;
+}
+
 .pomodorocontainer {
     display: flex;
     flex-direction: column;
     margin-top: auto;
-    position: fixed;
-    bottom: 100px;
-    right: 120px;
 }
 
 .clockactions {
@@ -320,8 +324,6 @@ li:has(input[type="checkbox"]:checked) {
 
 .settingscontainer {
     position: fixed;
-    bottom: 100px;
-    left: 120px;
     background-color: #312F51;
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
@@ -356,6 +358,7 @@ li:has(input[type="checkbox"]:checked) {
     border: none;
     background-color: #666291;
     margin-top: 10px;
+    border-radius: 15px;
 }
 
 .breakfield {
@@ -379,3 +382,4 @@ li:has(input[type="checkbox"]:checked) {
     font-size: 25px;
     margin-bottom: 10px;
 }
+

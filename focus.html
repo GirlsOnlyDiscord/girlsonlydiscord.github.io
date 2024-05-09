@@ -51,51 +51,53 @@
             </ul>
         </div>
 
-        <div class="settingscontainer">
-            <div class="settings">SETTINGS</div>
+        <div class="general">
 
-            <div class="customcon">
-
-                <div class="focustimecustom">
-                    <spanc class="customtext">FOCUS TIME</span>
-                    <input type="number" class="focusfield" id="focusquantity" name="quantity" min="1" max="60" placeholder="25">
+            <div class="settingscontainer">
+                <div class="settings">SETTINGS</div>
+    
+                <div class="customcon">
+    
+                    <div class="focustimecustom">
+                        <spanc class="customtext">FOCUS TIME</span>
+                        <input type="number" class="focusfield" id="focusquantity" name="quantity" min="1" max="60" placeholder="25">
+                    </div>
+    
+                    <div class="breaktimecustom">
+                        <span class="customtext">BREAK TIME</span>
+                        <input type="number" class="breakfield" id="breakquantity" name="quantity" min="1" max="60" placeholder="5">
+                    </div>
+    
                 </div>
+            </div>
 
-                <div class="breaktimecustom">
-                    <span class="customtext">BREAK TIME</span>
-                    <input type="number" class="breakfield" id="breakquantity" name="quantity" min="1" max="60" placeholder="5">
+            <div class="pomodorocontainer">
+
+                <button class="playlistbutton">PLAYLISTS</button>
+    
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5clqcIWc4LAua1EqOojVPc?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                
+                <div id="pomodoro-timer" class="pomodoro-timer">25:00</div>
+    
+                <div class="clockactions">
+                    <button class="startbutton">START</button>
+    
+                    <button class="redobutton">
+                        <img class="redobuttonimage" src="/focusimages/redoarrow.png">
+                    </button>
+    
+                    <button class="settingsbutton">
+                        <img class="settingsbuttonimage" src="/focusimages/settingsicon.png">
+                    </button>
                 </div>
-
+    
+                <div class="breakfocus">
+                    <button class="focusbutton">FOCUS</button>
+                    <button class="breakbutton">BREAK</button>
+                </div>
+    
+    
             </div>
-        </div>
-
-        
-
-        <div class="pomodorocontainer">
-
-            <button class="playlistbutton">PLAYLISTS</button>
-
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5clqcIWc4LAua1EqOojVPc?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            
-            <div id="pomodoro-timer" class="pomodoro-timer">25:00</div>
-
-            <div class="clockactions">
-                <button class="startbutton">START</button>
-
-                <button class="redobutton">
-                    <img class="redobuttonimage" src="/focusimages/redoarrow.png">
-                </button>
-
-                <button class="settingsbutton">
-                    <img class="settingsbuttonimage" src="/focusimages/settingsicon.png">
-                </button>
-            </div>
-
-            <div class="breakfocus">
-                <button class="focusbutton">FOCUS</button>
-                <button class="breakbutton">BREAK</button>
-            </div>
-
 
         </div>
 
