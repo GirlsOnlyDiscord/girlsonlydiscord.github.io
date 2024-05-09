@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const focusInput = document.getElementById("focusquantity");
     const breakInput = document.getElementById("breakquantity");
 
+    let selectedImage = ""; // Variable to store the selected image URL
+
     addTaskBtn.addEventListener("click", function() {
         const taskText = newTaskInput.value.trim();
         if (taskText !== "") {
@@ -112,6 +114,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Event listener for images buttons
+    const imagesButtons = document.querySelectorAll(".imagesbutton");
+    imagesButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            // Update selectedImage variable with the URL of the clicked image
+            selectedImage = button.querySelector("img").src;
+            // Highlight the selected image button (optional)
+            imagesButtons.forEach(btn => btn.classList.remove("selected"));
+            button.classList.add("selected");
+        });
+    });
+
+    const saveBtn = document.getElementById("save");
+    saveBtn.addEventListener("click", function() {
+        // Update focus and break timers
+        remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
+        pomodoroTimer.textContent = formatTime(remainingTime);
+        // Set background image to the selected image
+        document.querySelector(".bgfr").style.backgroundImage = `url(${selectedImage})`;
+        // Hide settings container
+        settingsContainer.style.display = "none";
+    });
+
     function startCountdown() {
         countdownInterval = setInterval(function() {
             remainingTime--;
@@ -156,35 +181,5 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             settingsContainer.style.display = "none";
         }
-    });
-
-    const saveBtn = document.getElementById("save");
-    saveBtn.addEventListener("click", function() {
-        // Update focus and break timers
-        remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
-        pomodoroTimer.textContent = formatTime(remainingTime);
-        // Set background image to the selected image
-        document.querySelector(".bgfr:before").style.backgroundImage = `url(${selectedImage})`;
-        // Hide settings container
-        settingsContainer.style.display = "none";
-    });
-
-    // Selectors for image buttons
-    const imageButtons = document.querySelectorAll(".imagesbutton");
-
-    let selectedImage = ""; // Variable to store the selected image URL
-
-    // Event listener for image buttons
-    imageButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            // Get the URL of the selected image
-            selectedImage = button.querySelector("img").src;
-            // Reset background for all buttons
-            imageButtons.forEach(function(btn) {
-                btn.style.backgroundColor = "";
-            });
-            // Highlight the selected button
-            button.style.backgroundColor = "#ffdbb152";
-        });
     });
 });
