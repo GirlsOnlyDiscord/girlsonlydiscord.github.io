@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let countdownInterval; // Variable to store the interval for the countdown
     let isPaused = true; // Variable to track if the countdown is paused
-    let remainingTime = 25 * 60; // Variable to store the remaining time
+    let isFocus = true; // Variable to track if it's focus time
+    let remainingTime = 25 * 60; // Variable to store the remaining time for focus
 
     startBtn.addEventListener("click", function() {
         if (isPaused) {
@@ -73,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     focusBtn.addEventListener("click", function() {
         if (isPaused) {
+            isFocus = true;
             focusBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
             breakBtn.style.backgroundColor = "";
             remainingTime = 25 * 60;
@@ -82,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     breakBtn.addEventListener("click", function() {
         if (isPaused) {
+            isFocus = false;
             breakBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
             focusBtn.style.backgroundColor = "";
             remainingTime = 5 * 60;
@@ -93,8 +96,13 @@ document.addEventListener("DOMContentLoaded", function() {
         pauseCountdown();
         startBtn.textContent = "START";
         isPaused = true;
-        remainingTime = 25 * 60;
-        pomodoroTimer.textContent = "25:00";
+        if (isFocus) {
+            remainingTime = 25 * 60;
+            pomodoroTimer.textContent = "25:00";
+        } else {
+            remainingTime = 5 * 60;
+            pomodoroTimer.textContent = "05:00";
+        }
     });
 
     function startCountdown() {
@@ -109,16 +117,15 @@ document.addEventListener("DOMContentLoaded", function() {
             // Display the time left
             pomodoroTimer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
-            // If countdown reaches 0, switch to break countdown
+            // If countdown reaches 0, switch to break or focus countdown
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
-                if (remainingTime === 25 * 60) {
+                if (isFocus) {
                     remainingTime = 5 * 60;
                     breakBtn.click(); // Automatically switch to break timer
                 } else {
                     remainingTime = 25 * 60;
-                    startBtn.textContent = "START";
-                    isPaused = true;
+                    focusBtn.click(); // Automatically switch to focus timer
                 }
             }
 
