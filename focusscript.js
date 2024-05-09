@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let countdownInterval; // Variable to store the interval for the countdown
     let isPaused = true; // Variable to track if the countdown is paused
+    let remainingTime = 25 * 60; // Variable to store the remaining time
 
     startBtn.addEventListener("click", function() {
         if (isPaused) {
@@ -68,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function startCountdown() {
-        let timeLeft = 25 * 60; // 25 minutes in seconds
+        // Check if there's remaining time to resume from
+        let timeLeft = remainingTime > 0 ? remainingTime : 25 * 60;
 
         // Update the countdown every second
         countdownInterval = setInterval(function() {
@@ -87,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             timeLeft--;
+            remainingTime = timeLeft; // Store the remaining time
         }, 1000); // 1000 milliseconds = 1 second
     }
 
