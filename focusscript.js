@@ -48,4 +48,49 @@ document.addEventListener("DOMContentLoaded", function() {
             notification.style.display = 'none';
         }, 3000); // 3 seconds
     }
+
+    // Countdown functionality
+    const startBtn = document.querySelector(".startbutton");
+    const pomodoroTimer = document.getElementById("pomodoro-timer");
+
+    let countdownInterval; // Variable to store the interval for the countdown
+    let isPaused = true; // Variable to track if the countdown is paused
+
+    startBtn.addEventListener("click", function() {
+        if (isPaused) {
+            startCountdown();
+            startBtn.textContent = "PAUSE";
+        } else {
+            pauseCountdown();
+            startBtn.textContent = "START";
+        }
+        isPaused = !isPaused;
+    });
+
+    function startCountdown() {
+        let timeLeft = 25 * 60; // 25 minutes in seconds
+
+        // Update the countdown every second
+        countdownInterval = setInterval(function() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+
+            // Display the time left
+            pomodoroTimer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+            // If countdown reaches 0, stop the countdown
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                pomodoroTimer.textContent = "25:00"; // Reset to original value
+                startBtn.textContent = "START";
+                isPaused = true;
+            }
+
+            timeLeft--;
+        }, 1000); // 1000 milliseconds = 1 second
+    }
+
+    function pauseCountdown() {
+        clearInterval(countdownInterval);
+    }
 });
