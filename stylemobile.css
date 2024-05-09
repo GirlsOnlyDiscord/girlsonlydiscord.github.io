@@ -39,7 +39,7 @@ html {
 }
 
 .focus {
-    display: none;
+    display: none !important;
 }
 
 .thisthemainpagefr { /*this is the div for the starter text*/
