@@ -64,10 +64,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isPaused) {
             startCountdown();
             startBtn.textContent = "PAUSE";
-            focusBtn.style.backgroundColor = "";
-            focusBtn.style.border = "";
-            breakBtn.style.backgroundColor = "";
-            breakBtn.style.border = "";
         } else {
             pauseCountdown();
             startBtn.textContent = "START";
@@ -79,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isPaused) {
             focusBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
             breakBtn.style.backgroundColor = "";
-            breakBtn.style.border = "";
             remainingTime = 25 * 60;
             pomodoroTimer.textContent = "25:00";
         }
@@ -89,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isPaused) {
             breakBtn.style.backgroundColor = "rgb(49, 47, 81, 0.5)";
             focusBtn.style.backgroundColor = "";
-            focusBtn.style.border = "";
             remainingTime = 5 * 60;
             pomodoroTimer.textContent = "05:00";
         }
