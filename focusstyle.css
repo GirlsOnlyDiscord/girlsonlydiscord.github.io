@@ -342,10 +342,12 @@ li:has(input[type="checkbox"]:checked) {
 
 .customcon {
     display: flex;
+    margin-left: 30px;
+    margin-top: 25px;
 }
 
 .focusfield {
-    width: 80px;
+    width: 120px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: italic;
@@ -353,10 +355,11 @@ li:has(input[type="checkbox"]:checked) {
     font-size: 20px;
     border: none;
     background-color: #666291;
+    margin-top: 10px;
 }
 
 .breakfield {
-    width: 80px;
+    width: 120px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: italic;
@@ -364,6 +367,8 @@ li:has(input[type="checkbox"]:checked) {
     font-size: 20px;
     border: none;
     background-color: #666291;
+    margin-top: 10px;
+    border-radius: 15px;
 }
 
 .customtext {
