@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const addTaskBtn = document.getElementById("add-task");
     const settingsBtn = document.querySelector(".settingsbutton");
     const settingsContainer = document.querySelector(".settingscontainer");
+    const focusInput = document.getElementById("focusquantity");
+    const breakInput = document.getElementById("breakquantity");
 
     addTaskBtn.addEventListener("click", function() {
         const taskText = newTaskInput.value.trim();
@@ -82,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
             isFocus = true;
             focusBtn.style.backgroundColor = "#ffdbb152";
             breakBtn.style.backgroundColor = "";
-            remainingTime = 25 * 60;
+            remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
             pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
@@ -92,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
             isFocus = false;
             breakBtn.style.backgroundColor = "#ffdbb152";
             focusBtn.style.backgroundColor = "";
-            remainingTime = 5 * 60;
+            remainingTime = parseInt(breakInput.value) * 60 || 5 * 60;
             pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
@@ -102,10 +104,10 @@ document.addEventListener("DOMContentLoaded", function() {
         startBtn.textContent = "START";
         isPaused = true;
         if (isFocus) {
-            remainingTime = 25 * 60;
+            remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
             pomodoroTimer.textContent = formatTime(remainingTime);
         } else {
-            remainingTime = 5 * 60;
+            remainingTime = parseInt(breakInput.value) * 60 || 5 * 60;
             pomodoroTimer.textContent = formatTime(remainingTime);
         }
     });
@@ -120,11 +122,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 clearInterval(countdownInterval);
                 isFocus = !isFocus;
                 if (isFocus) {
-                    remainingTime = 25 * 60;
+                    remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
                     focusBtn.style.backgroundColor = "#ffdbb152";
                     breakBtn.style.backgroundColor = "";
                 } else {
-                    remainingTime = 5 * 60;
+                    remainingTime = parseInt(breakInput.value) * 60 || 5 * 60;
                     breakBtn.style.backgroundColor = "#ffdbb152";
                     focusBtn.style.backgroundColor = "";
                 }
@@ -148,8 +150,20 @@ document.addEventListener("DOMContentLoaded", function() {
         // Toggle the display of settings container
         if (settingsContainer.style.display === "none" || settingsContainer.style.display === "") {
             settingsContainer.style.display = "flex";
+            // Set default values for focus and break fields
+            focusInput.value = 25;
+            breakInput.value = 5;
         } else {
             settingsContainer.style.display = "none";
         }
+    });
+
+    const saveBtn = document.getElementById("save");
+    saveBtn.addEventListener("click", function() {
+        // Update focus and break timers
+        remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
+        pomodoroTimer.textContent = formatTime(remainingTime);
+        // Hide settings container
+        settingsContainer.style.display = "none";
     });
 });
