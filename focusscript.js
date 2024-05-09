@@ -65,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
             startBtn.textContent = "PAUSE";
             focusBtn.style.backgroundColor = "transparent";
             focusBtn.style.border = "2px solid #312F51";
+            breakBtn.style.backgroundColor = "transparent";
+            breakBtn.style.border = "none";
         } else {
             pauseCountdown();
             startBtn.textContent = "START";
@@ -76,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Change background and border styles
         focusBtn.style.backgroundColor = "transparent";
         focusBtn.style.border = "2px solid #312F51";
-        breakBtn.style.backgroundColor = "#312F51";
+        breakBtn.style.backgroundColor = "transparent";
         breakBtn.style.border = "none";
 
         // Change countdown time to 25:00
@@ -90,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Change background and border styles
         breakBtn.style.backgroundColor = "transparent";
         breakBtn.style.border = "2px solid #312F51";
-        focusBtn.style.backgroundColor = "#312F51";
+        focusBtn.style.backgroundColor = "transparent";
         focusBtn.style.border = "none";
 
         // Change countdown time to 05:00
@@ -117,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 clearInterval(countdownInterval);
                 if (remainingTime === 25 * 60) {
                     remainingTime = 5 * 60;
-                    focusBtn.click(); // Automatically switch to break timer
+                    breakBtn.click(); // Automatically switch to break timer
                 } else {
                     remainingTime = 25 * 60;
                     startBtn.textContent = "START";
