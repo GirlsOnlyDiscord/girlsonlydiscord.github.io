@@ -453,14 +453,20 @@ li:has(input[type="checkbox"]:checked) {
     position: fixed;
     right: 50px;
     bottom: 50px;
+    transition-duration: 0.15s;
 }
 
 .fullscreen img {
-    height: 25px;
+    height: 35px;
 }
 
 .fullscreen {
     border: none;
     height: fit-content;
     width: fit-content;
+    background: transparent;
+}
+
+.fullscreen:hover {
+    transform: scale(1.05);
 }
