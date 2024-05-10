@@ -98,8 +98,8 @@ document.addEventListener("DOMContentLoaded", function() {
             taskItem.subtasks.forEach(subtask => subtask.remove());
             // Remove the input field for subtask if it exists
             const subtaskInput = document.querySelector(".subtask-input");
-            if (subtaskInput) {
-                subtaskInput.remove();
+            if (taskItem.subtaskInput) {
+                taskItem.subtaskInput.remove();
             }
         });
 
@@ -155,6 +155,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         });
+
+        // Store the input field element with the parent task
+        parentTask.subtaskInput = subtaskInput;
     }
 
 
