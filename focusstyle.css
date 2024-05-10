@@ -446,3 +446,21 @@ li:has(input[type="checkbox"]:checked) {
 .real {
     margin-top: 20px;
 }
+
+.screen {
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
+
+.fullscreen img {
+    height: 25px;
+}
+
+.fullscreen {
+    border: none;
+    height: fit-content;
+    width: fit-content;
+}
