@@ -112,20 +112,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Add the subtask reference to the parent task
         parentTask.subtasks.push(subtaskItem);
         // Focus on the input field of the newly added subtask
-        const inputField = subtaskItem.querySelector(".edit-field");
+        const inputField = subtaskItem.querySelector("span");
         inputField.focus();
-        
-        // Event listener to save changes on pressing Enter
-        inputField.addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                const subtaskText = inputField.value;
-                const subtaskSpan = document.createElement("span");
-                subtaskSpan.textContent = subtaskText;
-                subtaskItem.replaceChild(subtaskSpan, inputField);
-                // Re-attach the event listener for editing
-                attachSubtaskActions(subtaskItem);
-            }
-        });
     }
 
     // Function to create a new subtask element
