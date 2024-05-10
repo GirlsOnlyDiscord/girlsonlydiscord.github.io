@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     outline: none;
                     cursor: pointer;">
                 <span style="text-shadow: 0px 0px 15px #00022d;">${taskText}</span>
-                <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
+                <button class="delete-btn" style="background-color: transparent; border: none; display: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
                 <button class="subtask-btn" style="background-color: transparent; border: none;"><img src="/focusimages/subtask.png" style="height: 25px; cursor: pointer;"></button>
             </div>
         `;
@@ -121,9 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     -webkit-appearance: none;
                     outline: none;
                     cursor: pointer;">
-                <span style="text-shadow: 0px 0px 15px #00022d;">${subtaskText}</span>
+                <span style="text-shadow: 0px 0px 15px #00022d; font-size: 18px;">${subtaskText}</span>
                 <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
-                <button class="subtask-btn" style="background-color: transparent; border: none;"><img src="/focusimages/subtask.png" style="height: 25px; cursor: pointer;"></button>
             </div>
         `;
         // Attach event listeners for subtask actions (e.g., editing, deleting)
@@ -137,11 +136,19 @@ document.addEventListener("DOMContentLoaded", function() {
             subtaskItem.remove();
         });
 
-        subtaskItem.querySelector(".subtask-btn").addEventListener("click", function() {
-            // You can implement sub-subtask functionality here if needed
+        subtaskItem.addEventListener("mouseenter", function() {
+            subtaskItem.querySelector(".delete-btn").style.display = "block";
         });
 
-        // You can add more event listeners here as needed (e.g., for editing)
+        subtaskItem.addEventListener("mouseleave", function() {
+            subtaskItem.querySelector(".delete-btn").style.display = "none";
+        });
+
+        subtaskItem.addEventListener("click", function(event) {
+            if (event.target.tagName === "SPAN") {
+                editTask(subtaskItem);
+            }
+        });
     }
 
     function showCustomNotification() {
