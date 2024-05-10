@@ -84,12 +84,64 @@ document.addEventListener("DOMContentLoaded", function() {
                     cursor: pointer;">
                 <span style="text-shadow: 0px 0px 15px #00022d;">${taskText}</span>
                 <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
+                <button class="subtask-btn" style="background-color: transparent; border: none;"><img src="/focusimages/subtask.png" style="height: 25px; cursor: pointer;"></button>
             </div>
         `;
         todoList.appendChild(taskItem);
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
             taskItem.remove();
         });
+
+        // Add event listener for adding subtasks
+        taskItem.querySelector(".subtask-btn").addEventListener("click", function() {
+            addSubtask(taskItem);
+        });
+    }
+
+    // Function to add a subtask
+    function addSubtask(parentTask) {
+        const subtaskText = "Subtask"; // You can define the subtask text here or fetch it from the user
+        const subtaskItem = createSubtaskElement(subtaskText);
+        parentTask.insertAdjacentElement("afterend", subtaskItem);
+    }
+
+    // Function to create a new subtask element
+    function createSubtaskElement(subtaskText) {
+        const subtaskItem = document.createElement("li");
+        subtaskItem.className = "subtask";
+        subtaskItem.innerHTML = `
+            <div style="display: flex; align-content: center; gap: 20px; margin-left: 10px;">
+                <input type="checkbox" class="checkbox" style="width: 1.3em;
+                    height: 1.3em;
+                    background-color: white;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                    border: 1px solid #ddd;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    outline: none;
+                    cursor: pointer;">
+                <span style="text-shadow: 0px 0px 15px #00022d;">${subtaskText}</span>
+                <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
+                <button class="subtask-btn" style="background-color: transparent; border: none;"><img src="/focusimages/subtask.png" style="height: 25px; cursor: pointer;"></button>
+            </div>
+        `;
+        // Attach event listeners for subtask actions (e.g., editing, deleting)
+        attachSubtaskActions(subtaskItem);
+        return subtaskItem;
+    }
+
+    // Function to attach event listeners for subtask actions
+    function attachSubtaskActions(subtaskItem) {
+        subtaskItem.querySelector(".delete-btn").addEventListener("click", function() {
+            subtaskItem.remove();
+        });
+
+        subtaskItem.querySelector(".subtask-btn").addEventListener("click", function() {
+            // You can implement sub-subtask functionality here if needed
+        });
+
+        // You can add more event listeners here as needed (e.g., for editing)
     }
 
     function showCustomNotification() {
