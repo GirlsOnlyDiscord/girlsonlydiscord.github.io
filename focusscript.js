@@ -76,8 +76,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (event.type === "mouseenter") {
             // Create down arrow icon
             const downArrow = document.createElement("img");
-            downArrow.src = "/focusimages/downarrow.png";
+            downArrow.src = "/path/to/down-arrow.png";
             downArrow.className = "down-arrow";
+            downArrow.style.width = deleteButton.clientHeight + "px"; // Set width same as delete button height
+            downArrow.style.height = deleteButton.clientHeight + "px"; // Set height same as delete button height
             downArrow.style.cursor = "pointer";
             downArrow.addEventListener("click", function() {
                 addSubtask(taskItem);
@@ -96,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add event listeners for hover effect on task items
     todoList.addEventListener("mouseenter", handleTaskHover);
     todoList.addEventListener("mouseleave", handleTaskHover);
-
     
 
     // Event listener to handle task editing on click
