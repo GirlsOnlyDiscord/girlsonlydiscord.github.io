@@ -64,19 +64,44 @@ document.addEventListener("DOMContentLoaded", function() {
         const subtaskText = prompt("Enter the subtask:");
         if (subtaskText !== null && subtaskText.trim() !== "") {
             const subtaskItem = document.createElement("li");
-            subtaskItem.textContent = subtaskText;
+            subtaskItem.className = "subtask";
+            subtaskItem.innerHTML = `
+                <div style="display: flex; align-content: center; gap: 20px;">
+                    <input type="checkbox" class="checkbox" style="width: 1.3em;
+                        height: 1.3em;
+                        background-color: white;
+                        border-radius: 50%;
+                        vertical-align: middle;
+                        border: 1px solid #ddd;
+                        appearance: none;
+                        -webkit-appearance: none;
+                        outline: none;
+                        cursor: pointer;">
+                    <span style="text-shadow: 0px 0px 15px #00022d;">${subtaskText}</span>
+                </div>
+            `;
+            const bulletDot = subtaskItem.querySelector(".checkbox");
+            bulletDot.addEventListener("click", function() {
+                toggleStrikethrough(subtaskItem);
+            });
             taskItem.querySelector(".subtasks").appendChild(subtaskItem);
         }
     }
 
-    // Function to handle hover effect and display down arrow
+    // Function to toggle strikethrough effect
+    function toggleStrikethrough(subtaskItem) {
+        const subtaskText = subtaskItem.querySelector("span");
+        subtaskText.style.textDecoration = subtaskText.style.textDecoration === "line-through" ? "none" : "line-through";
+    }
+
+    // Event listener for adding subtask on clicking the down arrow icon
     function handleTaskHover(event) {
         const taskItem = event.currentTarget;
         const deleteButton = taskItem.querySelector(".delete-btn");
         if (event.type === "mouseenter") {
             // Create down arrow icon
             const downArrow = document.createElement("img");
-            downArrow.src = "/focusimages/downarrow.png";
+            downArrow.src = "/focusimages/subtask.png";
             downArrow.className = "down-arrow";
             downArrow.style.width = deleteButton.clientHeight + "px"; // Set width same as delete button height
             downArrow.style.height = deleteButton.clientHeight + "px"; // Set height same as delete button height
