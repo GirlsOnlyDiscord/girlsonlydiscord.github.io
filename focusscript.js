@@ -88,11 +88,14 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         `;
         todoList.appendChild(taskItem);
+
+        // Store references to the parent task and its associated subtasks
+        taskItem.subtasks = [];
+
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
             taskItem.remove();
             // Delete all subtasks associated with the deleted task
-            const subtasks = taskItem.querySelectorAll(".subtask");
-            subtasks.forEach(subtask => subtask.remove());
+            taskItem.subtasks.forEach(subtask => subtask.remove());
         });
 
         // Add event listener for adding subtasks
@@ -106,6 +109,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const subtaskText = "Click here to edit!"; // You can define the subtask text here or fetch it from the user
         const subtaskItem = createSubtaskElement(subtaskText);
         parentTask.insertAdjacentElement("afterend", subtaskItem);
+        // Add the subtask reference to the parent task
+        parentTask.subtasks.push(subtaskItem);
     }
 
     // Function to create a new subtask element
@@ -327,6 +332,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Read the file as a data URL (base64 encoded)
             reader.readAsDataURL(file);
+        }
+    });
+
+    // Event listener for checkbox state changes in both tasks and subtasks
+    todoList.addEventListener("change", function(event) {
+        const target = event.target;
+        if (target.type === "checkbox" && (target.closest(".task") || target.closest(".subtask"))) {
+            // Update the style based on checkbox state
+            const isChecked = target.checked;
+            if (isChecked) {
+                target.nextElementSibling.style.textDecoration = "line-through";
+            } else {
+                target.nextElementSibling.style.textDecoration = "none";
+            }
         }
     });
 });
