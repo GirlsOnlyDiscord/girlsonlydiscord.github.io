@@ -502,3 +502,16 @@ li:has(input[type="checkbox"]:checked) {
     border-radius: 15px;
     text-align: center;
 }
+
+.digital-clock {
+    position: fixed;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 130px;
+}
