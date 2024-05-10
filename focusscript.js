@@ -480,12 +480,12 @@ document.addEventListener("DOMContentLoaded", function() {
         pomodoroModeButton.addEventListener("click", function() {
             // Revert changes
             clockButton.textContent = "Clock Mode";
-            pomodoroTimer.style.display = "";
-            startBtn.style.display = "";
-            breakBtn.style.display = "";
-            redoBtn.style.display = "";
-            focusBtn.style.display = "";
-            settingsBtn.style.display = "";
+            pomodoroTimer.style.display = "initial";
+            startBtn.style.display = "initial";
+            breakBtn.style.display = "initial";
+            redoBtn.style.display = "initial";
+            focusBtn.style.display = "initial";
+            settingsBtn.style.display = "initial";
             settingsBtn.style.justifySelf = "";
             // Remove the event listener to prevent multiple bindings
             pomodoroModeButton.removeEventListener("click");
