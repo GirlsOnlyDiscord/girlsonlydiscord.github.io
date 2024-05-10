@@ -467,6 +467,6 @@ li:has(input[type="checkbox"]:checked) {
     background: transparent;
 }
 
-.fullscreen:hover {
+.screen:hover {
     transform: scale(1.05);
 }
