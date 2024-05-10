@@ -462,7 +462,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const options = {
             hour: 'numeric',
             minute: '2-digit',
-            second: '2-digit',
+            second: 'omit',
             hour12: false,
             timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
         };
