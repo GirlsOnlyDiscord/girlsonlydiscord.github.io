@@ -112,8 +112,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Add the subtask reference to the parent task
         parentTask.subtasks.push(subtaskItem);
         // Focus on the input field of the newly added subtask
-        const inputField = subtaskItem.querySelector("input.edit-field");
-        inputField.focus();
+        const editButton = subtaskItem.querySelector(".subtask-btn");
+        editButton.click();
     }
 
     // Function to create a new subtask element
