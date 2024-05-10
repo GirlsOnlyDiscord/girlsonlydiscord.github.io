@@ -472,7 +472,7 @@ li:has(input[type="checkbox"]:checked) {
 }
 
 .clockdiv {
-    width: 100%;
+    width: 295px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: italic;

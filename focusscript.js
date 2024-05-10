@@ -465,7 +465,8 @@ document.addEventListener("DOMContentLoaded", function() {
             breakBtn.style.display = "none";
             redoBtn.style.display = "none";
             focusBtn.style.display = "none";
-            settingsBtn.style.justifySelf = "center";
+            settingsBtn.style.marginLeft = "auto";
+            settingsBtn.style.marginLeft = "auto";
         } else {
             // Switch back to Clock Mode
             clockButton.textContent = "Clock Mode";
@@ -475,6 +476,8 @@ document.addEventListener("DOMContentLoaded", function() {
             redoBtn.style.display = "";
             focusBtn.style.display = "";
             settingsBtn.style.justifySelf = "";
+            settingsBtn.style.marginLeft = "";
+            settingsBtn.style.marginLeft = "";
         }
     });
 
