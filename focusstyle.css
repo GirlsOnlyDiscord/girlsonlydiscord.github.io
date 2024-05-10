@@ -103,6 +103,7 @@ body {
     transition-duration: 0.15s;
     width: 66px;
     height: 66px;
+    cursor: pointer;
 }
 
 .redobutton:hover {
@@ -121,6 +122,7 @@ body {
     transition-duration: 0.15s;
     width: 66px;
     height: 66px;
+    cursor: pointer;
 }
 
 .settingsbutton:hover {
@@ -138,6 +140,7 @@ body {
     padding: 10px 10px 10px 10px;
     border: none;
     transition-duration: 0.15s;
+    cursor: pointer;
 }
 
 .startbutton:hover {
@@ -173,6 +176,7 @@ body {
     border: none;
     transition-duration: 0.15s;
     width: 140px;
+    cursor: pointer;
 }
 
 .breakbutton {
@@ -187,6 +191,7 @@ body {
     border: none;
     transition-duration: 0.15s;
     width: 140px;
+    cursor: pointer;
 }
 
 .focusbutton:hover {
@@ -247,6 +252,7 @@ textarea:focus, input:focus {
     font-style: italic;
     color:#f9f7f7;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .addtask:hover {
@@ -312,6 +318,7 @@ li:has(input[type="checkbox"]:checked) {
     align-self: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .playlistbutton:hover {
@@ -345,6 +352,7 @@ li:has(input[type="checkbox"]:checked) {
     align-self: center;
     display: none;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .settings {
@@ -454,6 +462,7 @@ li:has(input[type="checkbox"]:checked) {
     right: 50px;
     bottom: 50px;
     transition-duration: 0.15s;
+    cursor: pointer;
 }
 
 .fullscreen img {
@@ -485,6 +494,7 @@ li:has(input[type="checkbox"]:checked) {
     text-align: center;
     padding: 10px 0px 10px 0px;
     transition-duration: 0.15s;
+    cursor: pointer;
 }
 
 .clockdiv:hover {
