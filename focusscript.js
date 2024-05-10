@@ -457,9 +457,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     clockButton.addEventListener("click", function() {
-        if (clockButton.textContent === "Clock Mode") {
+        if (clockButton.textContent === "CLOCK MODE") {
             // Switch to Pomodoro Mode
-            clockButton.textContent = "Pomodoro Mode";
+            clockButton.textContent = "POMODORO MODE";
             pomodoroTimer.style.display = "none";
             startBtn.style.display = "none";
             breakBtn.style.display = "none";
@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", function() {
             settingsBtn.style.marginLeft = "auto";
         } else {
             // Switch back to Clock Mode
-            clockButton.textContent = "Clock Mode";
+            clockButton.textContent = "CLOCK MODE";
             pomodoroTimer.style.display = "";
             startBtn.style.display = "";
             breakBtn.style.display = "";
