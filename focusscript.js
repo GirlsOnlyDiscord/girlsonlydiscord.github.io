@@ -111,10 +111,6 @@ document.addEventListener("DOMContentLoaded", function() {
         subtaskInput.type = "text";
         subtaskInput.className = "edit-field";
         subtaskInput.placeholder = "Start typing!";
-        subtaskInput.style.border = "none"; // Remove border
-        subtaskInput.style.color = "white"; // Set text color to white
-        subtaskInput.style.fontSize = "18px"; // Set font size to 18px
-        subtaskInput.placeholder.style.color = "white"; // Set placeholder text color to white
     
         // Add the input field to the parent task
         parentTask.insertAdjacentElement("afterend", subtaskInput);
