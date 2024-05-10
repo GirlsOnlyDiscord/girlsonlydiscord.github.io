@@ -470,3 +470,17 @@ li:has(input[type="checkbox"]:checked) {
 .screen:hover {
     transform: scale(1.05);
 }
+
+.clockdiv {
+    width: 240px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 20px;
+    border: none;
+    background-color: #312F51;
+    margin-top: 10px;
+    border-radius: 15px;
+    text-align: center;
+}
