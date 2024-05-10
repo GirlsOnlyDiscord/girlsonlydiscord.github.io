@@ -106,11 +106,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to add a subtask
     function addSubtask(parentTask) {
-        const subtaskText = "Click here to edit!"; // You can define the subtask text here or fetch it from the user
+        const subtaskText = "Start typing!"; // You can define the subtask text here or fetch it from the user
         const subtaskItem = createSubtaskElement(subtaskText);
         parentTask.insertAdjacentElement("afterend", subtaskItem);
         // Add the subtask reference to the parent task
         parentTask.subtasks.push(subtaskItem);
+        // Focus on the input field of the newly added subtask
+        const inputField = subtaskItem.querySelector(".edit-field");
+        inputField.focus();
     }
 
     // Function to create a new subtask element
