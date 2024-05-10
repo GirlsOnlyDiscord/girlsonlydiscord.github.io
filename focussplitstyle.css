@@ -1,0 +1,465 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;;
+}
+
+
+.bgfr { 
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position:50% 50%;
+}
+
+.bgfr:before {
+    position: absolute;
+    content: "";
+    inset: 0px;
+    background-image: url(/focusimages/bg5.jpg);
+    background-size: cover;
+    z-index: -10;
+    background-position: 50% 50%;
+}
+
+
+.top {
+    display: flex;
+    padding-top: 100px;
+}
+
+.containerorsum {
+    width: 214px;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed; 
+    right: 120px;
+}
+
+.topright {
+    display: none;
+}
+
+
+.goback {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color:#f9f7f7;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.topleft {
+    margin-left: 50px;
+    transition-duration: 0.15s;
+    padding: 10px 10px 10px 10px;
+    background-color: #312F51;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.topleft:hover {
+    transform: scale(1.05);
+}
+
+.joinwrap {
+    height: 80px;
+}
+
+.general {
+    display: flex;
+    bottom: 50px;
+    right: 50px;
+    position: fixed;
+    gap: 50px;
+}
+
+.pomodorocontainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.clockactions {
+    display: flex;
+    gap: 20px;
+}
+
+.redobuttonimage {
+    height: 20px;
+}
+
+.redobutton {
+    background-color: #312F51;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    transition-duration: 0.15s;
+    width: fit-content;
+    height: fit-content;
+}
+
+.redobutton:hover {
+    transform: scale(1.05);
+}
+
+.settingsbuttonimage {
+    height: 20px;
+}
+
+.settingsbutton {
+    background-color: #312F51;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    transition-duration: 0.15s;
+    width: fit-content;
+    height: fit-content;
+}
+
+.settingsbutton:hover {
+    transform: scale(1.05);
+}
+
+.startbutton {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+    background-color: #312F51;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+    border: none;
+    transition-duration: 0.15s;
+    height: fit-content;
+}
+
+.startbutton:hover {
+    transform: scale(1.05);
+}
+
+.pomodoro-timer {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color:#f9f7f7;
+    font-size: 75px;
+    margin-left: 6px;
+    text-shadow: 0px 0px 15px #00022d;
+}
+
+.breakfocus {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.focusbutton {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+    background-color: #312F51;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    transition-duration: 0.15s;
+    width: 85px;
+}
+
+.breakbutton {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+    background-color: #312F51;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    transition-duration: 0.15s;
+    width: 85px;
+}
+
+.focusbutton:hover {
+    transform: scale(1.05);
+}
+
+.breakbutton:hover {
+    transform: scale(1.05);
+}
+
+.listcontainer {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.todoheader {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 25px;
+    text-shadow: 0px 0px 15px #00022d;
+    padding-bottom: 0;
+}
+
+.addtaskcontainer {
+    display: flex;
+    gap: 20px;
+}
+
+input, textarea {
+    background-color: transparent;
+    padding: 5px;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.taskfield {
+    width: 180px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+    border: none;
+    box-shadow: 0 4px 2px -2px rgba(20, 18, 47, 0.9);
+}
+
+.addtask {
+    background-color: rgb(49, 47, 81, 0.5);
+    padding: 10px 10px 10px 10px;
+    border: none;
+    border-radius: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 15px;
+}
+
+.addtask:hover {
+    background-color: rgb(49, 47, 81, 0.9);
+}
+
+::placeholder {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f748;
+    font-size: 20px;
+    text-shadow: 0px 0px 15px #00022d;
+}
+
+.todo-list {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+    padding-top: 0;
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+li:has(input[type="checkbox"]:checked) {
+    text-decoration: line-through;
+}
+
+.task .delete-btn {
+    display: none;
+}
+
+.task .subtask-btn {
+    display: none;
+}
+
+.task:hover .delete-btn {
+    display: initial;
+}
+
+.task:hover .subtask-btn {
+    display: initial;
+}
+
+.playlistbutton {
+    display: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 30px;
+    background-color: #312F51;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    transition-duration: 0.15s;
+    width: fit-content;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.playlistbutton:hover {
+    transform: scale(1.05);
+}
+
+.custom-notification {
+    display: none;
+    background-color: rgba(255, 99, 71, 0.8); /* Soft red background */
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    padding: 10px;
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+.notification-message {
+    text-align: center;
+    font-size: 15px;
+}
+
+.settingscontainer {
+    background-color: #312F51;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    height: 650px;
+    width: 550px;
+    z-index: 3000;
+    align-self: center;
+    display: none;
+    flex-direction: column;
+}
+
+.settings {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 4px 2px -2px rgba(142, 139, 198, 0.9);
+}
+
+.customcon {
+    display: flex;
+    margin-top: 25px;
+    gap: 50px;
+    justify-content: center;
+}
+
+.focusfield {
+    width: 120px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 20px;
+    border: none;
+    background-color: #666291;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.breakfield {
+    width: 120px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 20px;
+    border: none;
+    background-color: #666291;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.customtext {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.save {
+    background-color: #666291;
+    padding: 13px 13px 13px 13px;
+    border: none;
+    border-radius: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 15px;
+    width: fit-content;
+    align-self: center;
+}
+
+.imagerow {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.images {
+    height: 80px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.imagesbutton {
+    border-radius: 10px;
+    padding: 0;
+    border: 0;
+    margin-bottom: 25px;
+    height: 80px;
+}
+
+.bg {
+    margin-top: 20px;
+}
+
+.spotifyplaylist {
+    display: none;
+}
+
+.real {
+    margin-top: 20px;
+}
+
+.screen {
+    display: none;
+}
+
+.fullscreen img {
+    height: 35px;
+}
+
+.fullscreen {
+    border: none;
+    height: fit-content;
+    width: fit-content;
+    background: transparent;
+}
+
+.screen:hover {
+    transform: scale(1.05);
+}
