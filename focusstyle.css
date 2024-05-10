@@ -282,7 +282,15 @@ li:has(input[type="checkbox"]:checked) {
     display: none;
 }
 
+.task .subtask-btn {
+    display: none;
+}
+
 .task:hover .delete-btn {
+    display: initial;
+}
+
+.task:hover .subtask-btn {
     display: initial;
 }
 
