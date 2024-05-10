@@ -359,6 +359,8 @@ li:has(input[type="checkbox"]:checked) {
     display: flex;
     margin-left: 30px;
     margin-top: 25px;
+    gap: 50px;
+    justify-content: center;
 }
 
 .focusfield {
