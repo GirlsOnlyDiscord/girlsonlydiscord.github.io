@@ -339,13 +339,39 @@ document.addEventListener("DOMContentLoaded", function() {
     todoList.addEventListener("change", function(event) {
         const target = event.target;
         if (target.type === "checkbox" && (target.closest(".task") || target.closest(".subtask"))) {
-            // Update the style based on checkbox state
             const isChecked = target.checked;
-            if (isChecked) {
-                target.nextElementSibling.style.textDecoration = "line-through";
-            } else {
-                target.nextElementSibling.style.textDecoration = "none";
+            // If the checkbox belongs to a parent task
+            if (target.closest(".task")) {
+                // Update the style of parent task text
+                const taskText = target.nextElementSibling;
+                if (isChecked) {
+                    taskText.style.textDecoration = "line-through";
+                } else {
+                    taskText.style.textDecoration = "none";
+                }
+                // Loop through all subtasks of the parent task and update their styles
+                const parentTask = target.closest(".task");
+                parentTask.subtasks.forEach(subtask => {
+                    const subtaskCheckbox = subtask.querySelector(".checkbox");
+                    const subtaskText = subtask.querySelector("span");
+                    if (isChecked) {
+                        subtaskCheckbox.checked = true;
+                        subtaskText.style.textDecoration = "line-through";
+                    } else {
+                        subtaskCheckbox.checked = false;
+                        subtaskText.style.textDecoration = "none";
+                    }
+                });
+            } else { // If the checkbox belongs to a subtask
+                // Update the style of subtask text
+                const subtaskText = target.nextElementSibling;
+                if (isChecked) {
+                    subtaskText.style.textDecoration = "line-through";
+                } else {
+                    subtaskText.style.textDecoration = "none";
+                }
             }
         }
     });
+
 });
