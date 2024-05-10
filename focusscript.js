@@ -44,11 +44,12 @@ document.addEventListener("DOMContentLoaded", function() {
         // Set font style to match the original task
         editText.style.fontFamily = window.getComputedStyle(taskText).fontFamily;
         editText.style.fontSize = window.getComputedStyle(taskText).fontSize;
+        editText.style.color = "white";
         // Remove border from input field
         editText.style.border = "none";
         taskText.replaceWith(editText);
         editText.focus();
-        
+
         // Event listener to save changes on pressing Enter
         editText.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
