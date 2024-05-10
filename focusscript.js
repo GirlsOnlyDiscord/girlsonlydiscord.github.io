@@ -9,8 +9,44 @@ document.addEventListener("DOMContentLoaded", function() {
     const timerSound = new Audio('focusimages/notification.mp3');
     const clockButton = document.getElementById("clockbutton");
     const digitalClock = document.getElementById("digital-clock");
+    const customBackground = localStorage.getItem('customBackground');
+
+    if (customBackground) {
+        // Apply the custom background image
+        document.querySelector(".bgfr").style.backgroundImage = `url(${customBackground})`;
+    }
 
     let selectedImage = ""; // Variable to store the selected image URL
+
+    // Function to serialize tasks into JSON format
+    function serializeTasks() {
+        const tasks = [];
+        todoList.querySelectorAll('.task').forEach(taskItem => {
+            const taskText = taskItem.querySelector('span').textContent;
+            tasks.push(taskText);
+        });
+        return JSON.stringify(tasks);
+    }
+
+    // Function to save tasks to localStorage
+    function saveTasksToLocalStorage() {
+        const serializedTasks = serializeTasks();
+        localStorage.setItem('tasks', serializedTasks);
+    }
+
+    // Function to load tasks from localStorage
+    function loadTasksFromLocalStorage() {
+        const serializedTasks = localStorage.getItem('tasks');
+        if (serializedTasks) {
+            const tasks = JSON.parse(serializedTasks);
+            tasks.forEach(taskText => {
+                addTask(taskText);
+            });
+        }
+    }
+
+    // Call the function to load tasks from localStorage when the page loads
+    loadTasksFromLocalStorage();
 
     // Function to add task
     function addTaskFromInput() {
@@ -103,12 +139,14 @@ document.addEventListener("DOMContentLoaded", function() {
             if (taskItem.subtaskInput) {
                 taskItem.subtaskInput.remove();
             }
+            saveTasksToLocalStorage(); // Save tasks after removing a task
         });
 
         // Add event listener for adding subtasks
         taskItem.querySelector(".subtask-btn").addEventListener("click", function() {
             addSubtask(taskItem);
         });
+        saveTasksToLocalStorage(); // Save tasks after adding a task
     }
 
     // Function to add a subtask
@@ -301,6 +339,7 @@ document.addEventListener("DOMContentLoaded", function() {
         pomodoroTimer.textContent = formatTime(remainingTime);
         // Set background image to the selected image
         document.querySelector(".bgfr").style.backgroundImage = `url(${selectedImage})`;
+        localStorage.setItem('customBackground', selectedImage);
         // Hide settings container
         settingsContainer.style.display = "none";
     });
