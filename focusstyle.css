@@ -504,6 +504,7 @@ li:has(input[type="checkbox"]:checked) {
 }
 
 .digital-clock {
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -513,4 +514,5 @@ li:has(input[type="checkbox"]:checked) {
     font-style: normal;
     color:#ffffff;
     font-size: 120px;
+    text-shadow: 0px 0px 15px #00022d;
 }

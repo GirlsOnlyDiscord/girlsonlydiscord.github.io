@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const breakInput = document.getElementById("breakquantity");
     const timerSound = new Audio('focusimages/notification.mp3');
     const clockButton = document.getElementById("clockbutton");
+    const digitalClock = document.getElementById("digital-clock");
 
     let selectedImage = ""; // Variable to store the selected image URL
 
@@ -455,6 +456,19 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
+
+    function updateDigitalClock() {
+        const now = new Date();
+        const options = {
+            hour: 'numeric',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false,
+            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        };
+        const formattedTime = new Intl.DateTimeFormat('en-US', options).format(now);
+        digitalClock.textContent = formattedTime;
+    }
     
     clockButton.addEventListener("click", function() {
         if (clockButton.textContent === "CLOCK MODE") {
@@ -467,6 +481,10 @@ document.addEventListener("DOMContentLoaded", function() {
             focusBtn.style.display = "none";
             settingsBtn.style.marginLeft = "auto";
             settingsBtn.style.marginLeft = "auto";
+            digitalClock.style.display = "initial";
+            updateDigitalClock(); // Initial update
+            // Start updating digital clock every second
+            setInterval(updateDigitalClock, 1000);
         } else {
             // Switch back to Clock Mode
             clockButton.textContent = "CLOCK MODE";
@@ -478,6 +496,7 @@ document.addEventListener("DOMContentLoaded", function() {
             settingsBtn.style.justifySelf = "";
             settingsBtn.style.marginLeft = "";
             settingsBtn.style.marginLeft = "";
+            digitalClock.style.display = "none";
         }
     });
 
