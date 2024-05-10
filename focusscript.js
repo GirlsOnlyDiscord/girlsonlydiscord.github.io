@@ -106,13 +106,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to add a subtask
     function addSubtask(parentTask) {
-        const subtaskText = " "; // You can define the subtask text here or fetch it from the user
+        const subtaskText = "click to edit"; // You can define the subtask text here or fetch it from the user
         const subtaskItem = createSubtaskElement(subtaskText);
         parentTask.insertAdjacentElement("afterend", subtaskItem);
         // Add the subtask reference to the parent task
         parentTask.subtasks.push(subtaskItem);
         // Focus on the input field of the newly added subtask
-        const inputField = subtaskItem.querySelector("span");
+        const inputField = subtaskItem.querySelector("input.edit-field");
         inputField.focus();
     }
 
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const subtaskItem = document.createElement("li");
         subtaskItem.className = "subtask";
         subtaskItem.innerHTML = `
-            <div style="display: flex; align-content: center; gap: 8px; margin-left: 25px;">
+            <div style="display: flex; align-content: center; gap: 8px; margin-left: 25px; margin-bottom: 15px;">
                 <input type="checkbox" class="checkbox" style="width: 1em;
                     height: 1em;
                     background-color: white;
