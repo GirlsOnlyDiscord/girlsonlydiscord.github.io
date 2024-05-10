@@ -115,6 +115,15 @@ document.addEventListener("DOMContentLoaded", function() {
         subtaskInput.style.color = "white"; // Set text color to white
         subtaskInput.style.fontSize = "18px"; // Set font size to 18px
         subtaskInput.style.marginLeft = "25px"; // Set left margin to 25px
+        subtaskInput.style.marginBottom = "15px"; // Set bottom margin to 15px
+
+        // Style placeholder text
+        subtaskInput.style.cssText += `
+        &::placeholder {
+            color: white;
+            font-size: 18px;
+        }
+    `;
     
         // Add the input field to the parent task
         parentTask.insertAdjacentElement("afterend", subtaskInput);
