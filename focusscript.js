@@ -56,6 +56,11 @@ document.addEventListener("DOMContentLoaded", function() {
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
             taskItem.remove();
         });
+
+        // Add event listener for task editing
+        taskItem.querySelector("span").addEventListener("click", function() {
+            editTask(taskItem);
+        });
     }
 
     function showCustomNotification() {
@@ -64,6 +69,42 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             notification.style.display = 'none';
         }, 3000); // 3 seconds
+    }
+
+    // Function to edit task
+    function editTask(taskItem) {
+        const taskTextElement = taskItem.querySelector("span");
+        const taskText = taskTextElement.textContent;
+        const inputField = document.createElement("input");
+        inputField.type = "text";
+        inputField.value = taskText;
+        inputField.style.width = "calc(100% - 40px)"; // Adjust the width as needed
+        inputField.style.border = "none";
+        inputField.style.fontSize = "inherit";
+        inputField.style.fontWeight = "inherit";
+        inputField.style.fontFamily = "inherit";
+        inputField.style.color = "inherit";
+        inputField.style.textShadow = "inherit";
+        inputField.style.background = "inherit";
+        inputField.style.padding = "0";
+        inputField.style.margin = "0";
+        inputField.style.outline = "none";
+
+        inputField.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                taskTextElement.textContent = inputField.value;
+                inputField.remove(); // Remove the input field after saving the task
+            }
+        });
+
+        inputField.addEventListener("blur", function() {
+            taskTextElement.textContent = inputField.value;
+            inputField.remove(); // Remove the input field if focus is lost without saving
+        });
+
+        taskTextElement.textContent = "";
+        taskTextElement.appendChild(inputField);
+        inputField.focus();
     }
 
     const startBtn = document.querySelector(".startbutton");
@@ -147,32 +188,30 @@ document.addEventListener("DOMContentLoaded", function() {
         // Update focus and break timers
         remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
         pomodoroTimer.textContent = formatTime(remainingTime);
-        // Set background image to the selected image
-        document.querySelector(".bgfr").style.backgroundImage = `url(${selectedImage})`;
-        // Hide settings container
+        // Close settings modal
         settingsContainer.style.display = "none";
     });
 
     function startCountdown() {
         countdownInterval = setInterval(function() {
             remainingTime--;
-
-            pomodoroTimer.textContent = formatTime(remainingTime);
-
-            if (remainingTime <= 0) {
-                clearInterval(countdownInterval);
-                isFocus = !isFocus;
+            if (remainingTime === 0) {
+                timerSound.play();
                 if (isFocus) {
+                    remainingTime = parseInt(breakInput.value) * 60 || 5 * 60;
+                    pomodoroTimer.textContent = formatTime(remainingTime);
+                    isFocus = false;
+                    focusBtn.style.backgroundColor = "";
+                    breakBtn.style.backgroundColor = "#ffdbb152";
+                } else {
                     remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
+                    pomodoroTimer.textContent = formatTime(remainingTime);
+                    isFocus = true;
                     focusBtn.style.backgroundColor = "#ffdbb152";
                     breakBtn.style.backgroundColor = "";
-                } else {
-                    remainingTime = parseInt(breakInput.value) * 60 || 5 * 60;
-                    breakBtn.style.backgroundColor = "#ffdbb152";
-                    focusBtn.style.backgroundColor = "";
                 }
-                timerSound.play();
-                startCountdown();
+            } else {
+                pomodoroTimer.textContent = formatTime(remainingTime);
             }
         }, 1000);
     }
@@ -182,54 +221,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function formatTime(seconds) {
-        let minutes = Math.floor(seconds / 60);
-        let remainingSeconds = seconds % 60;
-        return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     }
-
-    // Add event listener to settings button
-    settingsBtn.addEventListener("click", function() {
-        // Toggle the display of settings container
-        if (settingsContainer.style.display === "none" || settingsContainer.style.display === "") {
-            settingsContainer.style.display = "flex";
-            // Set default values for focus and break fields
-            focusInput.value = 25;
-            breakInput.value = 5;
-        } else {
-            settingsContainer.style.display = "none";
-        }
-    });
-
-    // Get the upload button and the input element
-    const uploadBtn = document.getElementById("upload");
-    const uploadInput = document.getElementById("upload-background");
-
-    // Add an event listener to the upload button
-    uploadBtn.addEventListener("click", function() {
-        // Simulate click on the hidden file input element
-        uploadInput.click();
-    });
-
-    // Add an event listener to the input element for file selection
-    uploadInput.addEventListener("change", function() {
-        // Get the selected file
-        const file = uploadInput.files[0];
-
-        // Check if a file was selected
-        if (file) {
-            // Create a FileReader object to read the file
-            const reader = new FileReader();
-
-            // Define what happens when the file is loaded
-            reader.onload = function(e) {
-                // Set the background image of the container to the selected image
-                document.querySelector(".bgfr").style.backgroundImage = `url(${e.target.result})`;
-                // Set the selectedImage variable to the selected image URL
-                selectedImage = e.target.result;
-            };
-
-            // Read the file as a data URL (base64 encoded)
-            reader.readAsDataURL(file);
-        }
-    });
 });
