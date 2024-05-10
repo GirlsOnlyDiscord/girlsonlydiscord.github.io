@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-
+    
     // Event listener to handle task editing on click
     todoList.addEventListener("click", function(event) {
         const target = event.target;
@@ -66,33 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
             editTask(target.closest(".task"));
         }
     });
-
-    // Function to add subtask
-    function addSubtask(taskItem) {
-        const subtasksList = taskItem.querySelector(".subtasks");
-        const subtaskInput = document.createElement("input");
-        subtaskInput.type = "text";
-        subtaskInput.placeholder = "Add subtask...";
-        subtaskInput.style.border = "none";
-        subtaskInput.style.background = "transparent";
-        subtaskInput.style.width = "calc(100% - 50px)"; // Adjust width based on the delete button size
-        const subtaskItem = document.createElement("li");
-        subtaskItem.appendChild(subtaskInput);
-        subtasksList.appendChild(subtaskItem);
-
-        subtaskInput.addEventListener("keypress", function(event) {
-            if (event.key === "Enter" && subtaskInput.value.trim() !== "") {
-                const subtaskText = subtaskInput.value.trim();
-                const subtaskSpan = document.createElement("span");
-                subtaskSpan.textContent = subtaskText;
-                const subtaskListItem = document.createElement("li");
-                subtaskListItem.style.marginLeft = "30px"; // Indent subtask
-                subtaskListItem.appendChild(subtaskSpan);
-                subtasksList.appendChild(subtaskListItem);
-                subtaskInput.value = ""; // Clear input after adding subtask
-            }
-        });
-    }
 
     function addTask(taskText) {
         const taskItem = document.createElement("li");
@@ -112,14 +85,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 <span style="text-shadow: 0px 0px 15px #00022d;">${taskText}</span>
                 <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
             </div>
-            <ul class="subtasks" style="list-style-type: none; margin-top: 5px;"></ul>
         `;
         todoList.appendChild(taskItem);
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
             taskItem.remove();
-        });
-        taskItem.querySelector(".add-subtask").addEventListener("click", function() {
-            addSubtask(taskItem);
         });
     }
 
