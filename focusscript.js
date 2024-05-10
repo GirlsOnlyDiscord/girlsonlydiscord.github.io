@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     -webkit-appearance: none;
                     outline: none;
                     cursor: pointer;">
-                <span style="text-shadow: 0px 0px 15px #00022d;">${taskText}</span>
+                <span style="text-shadow: 0px 0px 15px #00022d; margin-bottom: 10px;">${taskText}</span>
                 <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
                 <button class="subtask-btn" style="background-color: transparent; border: none;"><img src="/focusimages/subtask.png" style="height: 25px; cursor: pointer;"></button>
             </div>
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     outline: none;
                     cursor: pointer;">
                 <span style="text-shadow: 0px 0px 15px #00022d; font-size: 18px;">${subtaskText}</span>
-                <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
+                <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 20px; cursor: pointer;"></button>
             </div>
         `;
         // Attach event listeners for subtask actions (e.g., editing, deleting)
