@@ -106,15 +106,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to add a subtask
     function addSubtask(parentTask) {
-        const subtaskText = "click to edit"; // You can define the subtask text here or fetch it from the user
-        const subtaskItem = createSubtaskElement(subtaskText);
-        parentTask.insertAdjacentElement("afterend", subtaskItem);
-        // Add the subtask reference to the parent task
-        parentTask.subtasks.push(subtaskItem);
-        // Focus on the input field of the newly added subtask
-        const editButton = subtaskItem.querySelector(".subtask-btn");
-        editButton.click();
+        // Create a new input field for the subtask
+        const subtaskInput = document.createElement("input");
+        subtaskInput.type = "text";
+        subtaskInput.className = "edit-field";
+        subtaskInput.placeholder = "Start typing!";
+    
+        // Add the input field to the parent task
+        parentTask.insertAdjacentElement("afterend", subtaskInput);
+    
+        // Focus on the input field
+        subtaskInput.focus();
+    
+        // Event listener to handle saving subtask on pressing Enter
+        subtaskInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                const subtaskText = subtaskInput.value.trim();
+                if (subtaskText !== "") {
+                    // Create a new subtask element with the entered text
+                    const subtaskItem = createSubtaskElement(subtaskText);
+                
+                    // Insert the subtask element after the input field
+                    subtaskInput.insertAdjacentElement("afterend", subtaskItem);
+                
+                    // Add the subtask reference to the parent task
+                    parentTask.subtasks.push(subtaskItem);
+                
+                    // Remove the input field
+                    subtaskInput.remove();
+                }
+            }
+        });
     }
+
 
     // Function to create a new subtask element
     function createSubtaskElement(subtaskText) {
