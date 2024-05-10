@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const taskItem = document.createElement("li");
         taskItem.className = "task";
         taskItem.innerHTML = `
-            <div style="display: flex; align-content: center; gap: 20px;">
+            <div style="display: flex; align-content: center; gap: 15px;">
                 <input type="checkbox" class="checkbox" style="width: 1.3em;
                     height: 1.3em;
                     background-color: white;
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const subtaskItem = document.createElement("li");
         subtaskItem.className = "subtask";
         subtaskItem.innerHTML = `
-            <div style="display: flex; align-content: center; gap: 20px; margin-left: 10px;">
+            <div style="display: flex; align-content: center; gap: 15px; margin-left: 20px;">
                 <input type="checkbox" class="checkbox" style="width: 1.3em;
                     height: 1.3em;
                     background-color: white;
