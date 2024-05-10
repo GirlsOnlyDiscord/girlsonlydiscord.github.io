@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const focusInput = document.getElementById("focusquantity");
     const breakInput = document.getElementById("breakquantity");
     const timerSound = new Audio('focusimages/notification.mp3');
+    const clockButton = document.getElementById("clockbutton");
 
     let selectedImage = ""; // Variable to store the selected image URL
 
@@ -454,5 +455,46 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
+    
+    clockButton.addEventListener("click", function() {
+        // 1. Change Clock Mode button to Pomodoro Mode button
+        clockButton.textContent = "Pomodoro Mode";
+
+        // 2. Hide display settings of the pomodoro-timer, start button, break button,
+        // redo button, focus button, and break button
+        pomodoroTimer.style.display = "none";
+        startBtn.style.display = "none";
+        breakBtn.style.display = "none";
+        redoBtn.style.display = "none";
+        focusBtn.style.display = "none";
+        settingsBtn.style.display = "none";
+
+        // 3. Update justify-self property of the settings button
+        settingsButton.style.justifySelf = "center";
+
+        // 4. Add event listener to newly defined Pomodoro Mode button to revert changes
+        const pomodoroModeButton = document.createElement("button");
+        pomodoroModeButton.textContent = "Pomodoro Mode";
+        pomodoroModeButton.classList.add("clockbutton");
+        pomodoroModeButton.id = "pomodorobutton";
+        pomodoroModeButton.addEventListener("click", function() {
+            // Revert changes
+            clockButton.textContent = "Clock Mode";
+            pomodoroTimer.style.display = "";
+            startBtn.style.display = "";
+            breakBtn.style.display = "";
+            redoBtn.style.display = "";
+            focusBtn.style.display = "";
+            settingsBtn.style.display = "";
+            settingsBtn.style.justifySelf = "";
+            // Remove the event listener to prevent multiple bindings
+            pomodoroModeButton.removeEventListener("click");
+            // Remove the newly created button
+            pomodoroModeButton.remove();
+        });
+
+        // Replace Clock Mode button with Pomodoro Mode button
+        clockButton.parentNode.replaceChild(pomodoroModeButton, clockButton);
+    });
 
 });
