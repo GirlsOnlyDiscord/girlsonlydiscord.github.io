@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (event.type === "mouseenter") {
             // Create down arrow icon
             const downArrow = document.createElement("img");
-            downArrow.src = "/path/to/down-arrow.png";
+            downArrow.src = "/focusimages/downarrow.png";
             downArrow.className = "down-arrow";
             downArrow.style.width = deleteButton.clientHeight + "px"; // Set width same as delete button height
             downArrow.style.height = deleteButton.clientHeight + "px"; // Set height same as delete button height
