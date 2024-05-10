@@ -359,7 +359,6 @@ li:has(input[type="checkbox"]:checked) {
 
 .customcon {
     display: flex;
-    margin-left: 30px;
     margin-top: 25px;
     gap: 50px;
     justify-content: center;
