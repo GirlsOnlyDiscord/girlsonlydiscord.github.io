@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Function to handle task editing
     function editTask(taskItem) {
         const taskText = taskItem.querySelector("span");
         const editText = document.createElement("input");
@@ -41,9 +40,11 @@ document.addEventListener("DOMContentLoaded", function() {
         editText.className = "edit-field";
         editText.value = taskText.textContent;
         editText.style.width = taskText.offsetWidth + "px";
+        editText.style.color = window.getComputedStyle(taskText).color; // Inherit font color
+        editText.style.fontSize = window.getComputedStyle(taskText).fontSize; // Inherit font size
         taskText.replaceWith(editText);
         editText.focus();
-
+    
         // Event listener to save changes on pressing Enter
         editText.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+    
 
     // Event listener to handle task editing on click
     todoList.addEventListener("click", function(event) {
