@@ -465,7 +465,7 @@ li:has(input[type="checkbox"]:checked) {
 }
 
 .clockdiv {
-    width: 240px;
+    width: 200px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: italic;
@@ -473,7 +473,25 @@ li:has(input[type="checkbox"]:checked) {
     font-size: 20px;
     border: none;
     background-color: #312F51;
-    margin-top: 10px;
+    margin-top: 20px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    transition-duration: 0.15s;
+}
+
+.clockdiv:hover {
+    transform: scale(1.05);
+}
+
+.clockbutton {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 20px;
+    border: none;
+    background-color: #312F51;
     border-radius: 15px;
     text-align: center;
 }
