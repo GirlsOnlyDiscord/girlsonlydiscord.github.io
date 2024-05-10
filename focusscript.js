@@ -59,6 +59,44 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Function to add a subtask
+    function addSubtask(taskItem) {
+        const subtaskText = prompt("Enter the subtask:");
+        if (subtaskText !== null && subtaskText.trim() !== "") {
+            const subtaskItem = document.createElement("li");
+            subtaskItem.textContent = subtaskText;
+            taskItem.querySelector(".subtasks").appendChild(subtaskItem);
+        }
+    }
+
+    // Function to handle hover effect and display down arrow
+    function handleTaskHover(event) {
+        const taskItem = event.currentTarget;
+        const deleteButton = taskItem.querySelector(".delete-btn");
+        if (event.type === "mouseenter") {
+            // Create down arrow icon
+            const downArrow = document.createElement("img");
+            downArrow.src = "/focusimages/downarrow.png";
+            downArrow.className = "down-arrow";
+            downArrow.style.cursor = "pointer";
+            downArrow.addEventListener("click", function() {
+                addSubtask(taskItem);
+            });
+            // Append down arrow icon next to delete button
+            deleteButton.parentNode.insertBefore(downArrow, deleteButton.nextSibling);
+        } else if (event.type === "mouseleave") {
+            // Remove down arrow icon when mouse leaves
+            const downArrow = taskItem.querySelector(".down-arrow");
+            if (downArrow) {
+                downArrow.remove();
+            }
+        }
+    }
+
+    // Add event listeners for hover effect on task items
+    todoList.addEventListener("mouseenter", handleTaskHover);
+    todoList.addEventListener("mouseleave", handleTaskHover);
+
     
 
     // Event listener to handle task editing on click
