@@ -114,8 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
         subtaskItem.className = "subtask";
         subtaskItem.innerHTML = `
             <div style="display: flex; align-content: center; gap: 15px; margin-left: 20px;">
-                <input type="checkbox" class="checkbox" style="width: 1.3em;
-                    height: 1.3em;
+                <input type="checkbox" class="checkbox" style="width: 1em;
+                    height: 1em;
                     background-color: white;
                     border-radius: 50%;
                     vertical-align: middle;
