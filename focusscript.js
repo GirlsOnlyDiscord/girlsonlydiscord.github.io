@@ -83,13 +83,16 @@ document.addEventListener("DOMContentLoaded", function() {
                     outline: none;
                     cursor: pointer;">
                 <span style="text-shadow: 0px 0px 15px #00022d;">${taskText}</span>
-                <button class="delete-btn" style="background-color: transparent; border: none; display: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
+                <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/closewindow.png" style="height: 25px; cursor: pointer;"></button>
                 <button class="subtask-btn" style="background-color: transparent; border: none;"><img src="/focusimages/subtask.png" style="height: 25px; cursor: pointer;"></button>
             </div>
         `;
         todoList.appendChild(taskItem);
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
             taskItem.remove();
+            // Delete all subtasks associated with the deleted task
+            const subtasks = taskItem.querySelectorAll(".subtask");
+            subtasks.forEach(subtask => subtask.remove());
         });
 
         // Add event listener for adding subtasks
@@ -100,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to add a subtask
     function addSubtask(parentTask) {
-        const subtaskText = "Subtask"; // You can define the subtask text here or fetch it from the user
+        const subtaskText = "Click here to edit!"; // You can define the subtask text here or fetch it from the user
         const subtaskItem = createSubtaskElement(subtaskText);
         parentTask.insertAdjacentElement("afterend", subtaskItem);
     }
@@ -136,6 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
             subtaskItem.remove();
         });
 
+        // You can add more event listeners here as needed (e.g., for editing)
         subtaskItem.addEventListener("mouseenter", function() {
             subtaskItem.querySelector(".delete-btn").style.display = "block";
         });
