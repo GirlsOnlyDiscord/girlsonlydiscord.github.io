@@ -162,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function() {
         saveTasksToLocalStorage(); // Save tasks after adding a task
     }
 
-    // Function to add a subtask
     function addSubtask(parentTask) {
         // Create a new input field for the subtask
         const subtaskInput = document.createElement("input");
@@ -174,17 +173,17 @@ document.addEventListener("DOMContentLoaded", function() {
         subtaskInput.style.fontSize = "18px"; // Set font size to 18px
         subtaskInput.style.marginLeft = "25px"; // Set left margin to 25px
         subtaskInput.style.marginBottom = "15px"; // Set bottom margin to 15px
-
+    
         // Style placeholder text
         subtaskInput.style.cssText += `
-        &::placeholder {
-            color: white;
-            font-size: 18px;
-        }
-    `;
+            &::placeholder {
+                color: white;
+                font-size: 18px;
+            }
+        `;
     
         // Add the input field to the parent task
-        parentTask.insertAdjacentElement("afterend", subtaskInput);
+        parentTask.appendChild(subtaskInput); // Append as a child of the parent task
     
         // Focus on the input field
         subtaskInput.focus();
@@ -196,22 +195,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (subtaskText !== "") {
                     // Create a new subtask element with the entered text
                     const subtaskItem = createSubtaskElement(subtaskText);
-                
-                    // Insert the subtask element after the input field
-                    subtaskInput.insertAdjacentElement("afterend", subtaskItem);
-                
-                    // Add the subtask reference to the parent task
-                    parentTask.subtasks.push(subtaskItem);
-                
+    
+                    // Append the subtask element to the parent task
+                    parentTask.appendChild(subtaskItem); // Append as a child of the parent task
+    
                     // Remove the input field
                     subtaskInput.remove();
-
+    
                     // Save tasks after adding a subtask
-                    saveTasksToLocalStorage(); // Save tasks after adding a subtask
+                    saveTasksToLocalStorage();
                 }
             }
         });
-
+    
         // Store the input field element with the parent task
         parentTask.subtaskInput = subtaskInput;
     }
