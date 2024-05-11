@@ -39,22 +39,12 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('tasks', serializedTasks);
     }
 
-    // Function to load tasks and subtasks from localStorage
     function loadTasksFromLocalStorage() {
         const serializedTasks = localStorage.getItem('tasks');
         if (serializedTasks) {
             const tasks = JSON.parse(serializedTasks);
             tasks.forEach(task => {
-                // Add the task text
-                addTask(task.text);
-                // Get the last added task (which is the one we just added)
-                const parentTask = todoList.lastElementChild;
-                // Add subtasks if available
-                if (task.subtasks.length > 0) {
-                    task.subtasks.forEach(subtaskText => {
-                        addSubtask(parentTask, subtaskText);
-                    });
-                }
+                addTask(task.text, task.subtasks); // Pass subtasks along with the task text
             });
         }
     }
