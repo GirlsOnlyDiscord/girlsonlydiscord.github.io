@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to save tasks to localStorage
     function saveTasksToLocalStorage() {
         const serializedTasks = serializeTasks();
+        console.log(serializedTasks);
         localStorage.setItem('tasks', serializedTasks);
     }
 
