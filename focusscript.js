@@ -23,7 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const tasks = [];
         todoList.querySelectorAll('.task').forEach(taskItem => {
             const taskText = taskItem.querySelector('span').textContent;
-            tasks.push(taskText);
+            const subtasks = [];
+            // Serialize subtasks for the current task
+            taskItem.querySelectorAll('.subtask span').forEach(subtask => {
+                subtasks.push(subtask.textContent);
+            });
+            tasks.push({ text: taskText, subtasks: subtasks }); // Include subtasks along with the task text
         });
         return JSON.stringify(tasks);
     }
@@ -34,13 +39,22 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('tasks', serializedTasks);
     }
 
-    // Function to load tasks from localStorage
+    // Function to load tasks and subtasks from localStorage
     function loadTasksFromLocalStorage() {
         const serializedTasks = localStorage.getItem('tasks');
         if (serializedTasks) {
             const tasks = JSON.parse(serializedTasks);
-            tasks.forEach(taskText => {
-                addTask(taskText);
+            tasks.forEach(task => {
+                addTask(task.text); // Add the task text
+                // Add subtasks for the current task
+                task.subtasks.forEach(subtaskText => {
+                    const parentTask = todoList.lastChild; // Get the last added task
+                    addSubtask(parentTask); // Add subtask to the last added task
+                    const subtaskInput = parentTask.subtaskInput; // Get the input field of the subtask
+                    const subtaskItem = parentTask.querySelector('.subtask:last-of-type'); // Get the last added subtask
+                    subtaskItem.querySelector('span').textContent = subtaskText; // Set subtask text
+                    subtaskInput.remove(); // Remove the input field after setting subtask text
+                });
             });
         }
     }
