@@ -45,7 +45,16 @@ document.addEventListener("DOMContentLoaded", function() {
         if (serializedTasks) {
             const tasks = JSON.parse(serializedTasks);
             tasks.forEach(task => {
-                addTask(task.text, task.subtasks); // Add the task text and its associated subtasks
+                // Add the task text
+                addTask(task.text);
+                // Get the last added task (which is the one we just added)
+                const parentTask = todoList.lastElementChild;
+                // Add subtasks if available
+                if (task.subtasks.length > 0) {
+                    task.subtasks.forEach(subtaskText => {
+                        addSubtask(parentTask, subtaskText);
+                    });
+                }
             });
         }
     }
