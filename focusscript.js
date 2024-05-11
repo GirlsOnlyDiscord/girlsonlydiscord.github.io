@@ -204,6 +204,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                     // Remove the input field
                     subtaskInput.remove();
+
+                    // Save tasks after adding a subtask
+                    saveTasksToLocalStorage(); // Save tasks after adding a subtask
                 }
             }
         });
