@@ -46,14 +46,12 @@ document.addEventListener("DOMContentLoaded", function() {
             const tasks = JSON.parse(serializedTasks);
             tasks.forEach(task => {
                 addTask(task.text); // Add the task text
+                const parentTask = todoList.lastChild; // Get the last added task
                 // Add subtasks for the current task
                 task.subtasks.forEach(subtaskText => {
-                    const parentTask = todoList.lastChild; // Get the last added task
-                    addSubtask(parentTask); // Add subtask to the last added task
-                    const subtaskInput = parentTask.subtaskInput; // Get the input field of the subtask
-                    const subtaskItem = parentTask.querySelector('.subtask:last-of-type'); // Get the last added subtask
-                    subtaskItem.querySelector('span').textContent = subtaskText; // Set subtask text
-                    subtaskInput.remove(); // Remove the input field after setting subtask text
+                    const subtaskItem = createSubtaskElement(subtaskText); // Create subtask element
+                    parentTask.appendChild(subtaskItem); // Append subtask to parent task
+                    attachSubtaskActions(subtaskItem); // Attach event listeners to subtask
                 });
             });
         }
