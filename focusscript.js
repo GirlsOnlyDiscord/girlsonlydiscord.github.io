@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     cursor: pointer;">
                 <span style="text-shadow: 0px 0px 15px #00022d; margin-bottom: 10px;">${taskText}</span>
                 <button class="delete-btn" style="background-color: transparent; border: none;"><img src="/focusimages/deleteicon.png" class="deleteicon" style="height: 25px; cursor: pointer;"></button>
-                <button class="subtask-btn" style="background-color: transparent; border: none;"><img src="/focusimages/subtask.png" style="height: 25px; cursor: pointer;"></button>
+                <button class="subtask-btn" style="background-color: transparent; border: none;"><img src="/focusimages/plusicon.png" style="height: 25px; cursor: pointer;"></button>
             </div>
         `;
         todoList.appendChild(taskItem);
