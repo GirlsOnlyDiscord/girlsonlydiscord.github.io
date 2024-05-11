@@ -526,3 +526,7 @@ li:has(input[type="checkbox"]:checked) {
     font-size: 120px;
     text-shadow: 0px 0px 15px #00022d;
 }
+
+.deleteicon:hover {
+    background-image: url(/focusimages/deleteiconhover.png);
+}
