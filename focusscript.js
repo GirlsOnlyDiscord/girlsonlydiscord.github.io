@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (serializedTasks) {
             const tasks = JSON.parse(serializedTasks);
             tasks.forEach(task => {
-                addTask(task.text); // Add the task text
+                addTask(task.text, task.subtasks); // Add the task text
                 const parentTask = todoList.lastChild; // Get the last added task
                 // Add subtasks for the current task
                 task.subtasks.forEach(subtaskText => {
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    function addTask(taskText) {
+    function addTask(taskText, subtasks = []) { // Accept subtasks as parameter
         const taskItem = document.createElement("li");
         taskItem.className = "task";
         taskItem.innerHTML = `
@@ -141,6 +141,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Store references to the parent task and its associated subtasks
         taskItem.subtasks = [];
+
+        // Add subtasks if provided
+        subtasks.forEach(subtaskText => {
+            const subtaskItem = createSubtaskElement(subtaskText);
+            taskItem.appendChild(subtaskItem); // Append subtask to parent task
+            taskItem.subtasks.push(subtaskItem); // Store reference to subtask
+        });
 
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
             taskItem.remove();
