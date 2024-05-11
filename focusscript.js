@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (serializedTasks) {
             const tasks = JSON.parse(serializedTasks);
             tasks.forEach(task => {
-                addTask(task.text, task.subtasks); // Pass subtasks along with the task text
+                const { text, subtasks } = task;
+                addTask(text, subtasks); // Pass subtasks along with the task text
             });
         }
     }
