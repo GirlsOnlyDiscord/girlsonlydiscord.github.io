@@ -45,14 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (serializedTasks) {
             const tasks = JSON.parse(serializedTasks);
             tasks.forEach(task => {
-                addTask(task.text, task.subtasks); // Add the task text
-                const parentTask = todoList.lastChild; // Get the last added task
-                // Add subtasks for the current task
-                task.subtasks.forEach(subtaskText => {
-                    const subtaskItem = createSubtaskElement(subtaskText); // Create subtask element
-                    parentTask.appendChild(subtaskItem); // Append subtask to parent task
-                    attachSubtaskActions(subtaskItem); // Attach event listeners to subtask
-                });
+                addTask(task.text, task.subtasks); // Add the task text and its associated subtasks
             });
         }
     }
