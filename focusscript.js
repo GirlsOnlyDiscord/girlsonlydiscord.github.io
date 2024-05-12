@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
         subtaskItem.className = "subtask";
         subtaskItem.innerHTML = `
             <div style="display: flex; align-content: center; gap: 8px; margin-left: 25px; margin-bottom: 15px;">
-                <input type="checkbox" class="checkbox" style="width: 1em;
+                <input type="checkbox" class="subtask-checkbox" style="width: 1em;
                     height: 1em;
                     background-color: white;
                     border-radius: 50%;
@@ -457,9 +457,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Update the style of parent task text based on subtask checkboxes
                 const taskText = parentTask.querySelector("span");
                 if (allSubtasksChecked) {
-                    taskText.style.textDecoration = "line-through";
-                } else {
+                    // Remove strikethrough from parent task text
                     taskText.style.textDecoration = "none";
+                } else {
+                    // Do nothing if at least one subtask is unchecked
                 }
             } else if (target.classList.contains("task-checkbox")) { // If the checkbox belongs to a parent task
                 // Update the style of parent task text
