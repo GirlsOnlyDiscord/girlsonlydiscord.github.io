@@ -451,21 +451,36 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     subtaskText.style.textDecoration = "none";
                 }
-            }
-            // Update the style of parent task text based on checkbox state
-            const taskText = parentTask.querySelector("span");
-            if (isChecked) {
-                taskText.style.textDecoration = "line-through";
-            } else {
-                // Check if any subtask is checked
-                const anySubtaskChecked = Array.from(parentTask.querySelectorAll('.subtask .checkbox'))
-                    .some(subtaskCheckbox => subtaskCheckbox.checked);
-                if (!anySubtaskChecked) {
-                    // Remove strikethrough from parent task text if no subtask is checked
+                // Check if all subtasks are checked, then check the parent task
+                const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask .subtask-checkbox'))
+                    .every(subtaskCheckbox => subtaskCheckbox.checked);
+                if (allSubtasksChecked) {
+                    parentTask.querySelector('.checkbox').checked = true;
+                } else {
+                    parentTask.querySelector('.checkbox').checked = false;
+                }
+            } else { // If the checkbox belongs to a parent task
+                const subtaskCheckboxes = parentTask.querySelectorAll('.subtask .subtask-checkbox');
+                // Update the style of parent task text based on checkbox state
+                const taskText = parentTask.querySelector("span");
+                if (isChecked) {
+                    taskText.style.textDecoration = "line-through";
+                } else {
                     taskText.style.textDecoration = "none";
                 }
+                // Check/uncheck all subtasks based on the parent task checkbox state
+                subtaskCheckboxes.forEach(subtaskCheckbox => {
+                    subtaskCheckbox.checked = isChecked;
+                    if (isChecked) {
+                        subtaskCheckbox.nextElementSibling.style.textDecoration = "line-through";
+                    } else {
+                        subtaskCheckbox.nextElementSibling.style.textDecoration = "none";
+                    }
+                });
             }
         }
+        // Save tasks after checkbox state changes
+        saveTasksToLocalStorage();
     });
 
     // Get the fullscreen button element
