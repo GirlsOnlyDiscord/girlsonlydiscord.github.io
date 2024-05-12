@@ -452,14 +452,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 // Loop through all subtasks of the parent task and update their styles
                 const parentTask = target.closest(".task");
-                parentTask.subtasks.forEach(subtask => {
+                const subtasks = parentTask.querySelectorAll(".subtask");
+                subtasks.forEach(subtask => {
                     const subtaskCheckbox = subtask.querySelector(".checkbox");
                     const subtaskText = subtask.querySelector("span");
+                    subtaskCheckbox.checked = isChecked;
                     if (isChecked) {
-                        subtaskCheckbox.checked = true;
                         subtaskText.style.textDecoration = "line-through";
                     } else {
-                        subtaskCheckbox.checked = false;
                         subtaskText.style.textDecoration = "none";
                     }
                 });
