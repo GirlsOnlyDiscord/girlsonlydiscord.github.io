@@ -439,10 +439,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Event listener for checkbox state changes in both tasks and subtasks
     todoList.addEventListener("change", function(event) {
         const target = event.target;
-        if (target.type === "checkbox" && (target.closest(".task") || target.closest(".subtask"))) {
+        if (target.type === "checkbox") {
             const isChecked = target.checked;
             // If the checkbox belongs to a parent task
-            if (target.closest(".task")) {
+            if (target.classList.contains("task-checkbox")) {
                 // Update the style of parent task text
                 const taskText = target.nextElementSibling;
                 if (isChecked) {
@@ -452,14 +452,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 // Loop through all subtasks of the parent task and update their styles
                 const parentTask = target.closest(".task");
-                parentTask.subtasks.forEach(subtask => {
-                    const subtaskCheckbox = subtask.querySelector(".checkbox");
-                    const subtaskText = subtask.querySelector("span");
+                parentTask.querySelectorAll('.subtask .checkbox').forEach(subtaskCheckbox => {
+                    const subtaskText = subtaskCheckbox.nextElementSibling;
+                    subtaskCheckbox.checked = isChecked;
                     if (isChecked) {
-                        subtaskCheckbox.checked = true;
                         subtaskText.style.textDecoration = "line-through";
                     } else {
-                        subtaskCheckbox.checked = false;
                         subtaskText.style.textDecoration = "none";
                     }
                 });
