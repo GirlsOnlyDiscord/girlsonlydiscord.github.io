@@ -454,11 +454,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Check if all subtasks are checked, then check the parent task
                 const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask .subtask-checkbox'))
                     .every(subtaskCheckbox => subtaskCheckbox.checked);
-                if (allSubtasksChecked) {
-                    parentTask.querySelector('.checkbox').checked = true;
-                } else {
-                    parentTask.querySelector('.checkbox').checked = false;
-                }
+                parentTask.querySelector('.checkbox').checked = allSubtasksChecked;
             } else { // If the checkbox belongs to a parent task
                 const subtaskCheckboxes = parentTask.querySelectorAll('.subtask .subtask-checkbox');
                 // Update the style of parent task text based on checkbox state
