@@ -441,33 +441,46 @@ document.addEventListener("DOMContentLoaded", function() {
         const target = event.target;
         if (target.type === "checkbox") {
             const isChecked = target.checked;
-            // If the checkbox belongs to a parent task
-            if (target.classList.contains("task-checkbox")) {
-                // Update the style of parent task text
-                const taskText = target.nextElementSibling;
-                if (isChecked) {
-                    taskText.style.textDecoration = "line-through";
-                } else {
-                    taskText.style.textDecoration = "none";
-                }
-                // Loop through all subtasks of the parent task and update their styles
-                const parentTask = target.closest(".task");
-                parentTask.querySelectorAll('.subtask .checkbox').forEach(subtaskCheckbox => {
-                    const subtaskText = subtaskCheckbox.nextElementSibling;
-                    subtaskCheckbox.checked = isChecked;
-                    if (isChecked) {
-                        subtaskText.style.textDecoration = "line-through";
-                    } else {
-                        subtaskText.style.textDecoration = "none";
-                    }
-                });
-            } else { // If the checkbox belongs to a subtask
+            const parentTask = target.closest(".task");
+            // If the checkbox belongs to a subtask
+            if (target.classList.contains("subtask-checkbox")) {
                 // Update the style of subtask text
                 const subtaskText = target.nextElementSibling;
                 if (isChecked) {
                     subtaskText.style.textDecoration = "line-through";
                 } else {
                     subtaskText.style.textDecoration = "none";
+                }
+                // Check if all subtasks of the parent task are checked
+                const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask .checkbox'))
+                    .every(subtaskCheckbox => subtaskCheckbox.checked);
+                // Update the style of parent task text based on subtask checkboxes
+                const taskCheckbox = parentTask.querySelector(".task-checkbox");
+                const taskText = taskCheckbox.nextElementSibling;
+                if (allSubtasksChecked) {
+                    taskText.style.textDecoration = "line-through";
+                    taskCheckbox.checked = true;
+                } else {
+                    taskText.style.textDecoration = "none";
+                    taskCheckbox.checked = false;
+                }
+            } else if (target.classList.contains("task-checkbox")) { // If the checkbox belongs to a parent task
+                // Update the style of parent task text
+                const taskText = target.nextElementSibling;
+                if (isChecked) {
+                    taskText.style.textDecoration = "line-through";
+                    // Check all subtask checkboxes when parent task checkbox is checked
+                    parentTask.querySelectorAll('.subtask .checkbox').forEach(subtaskCheckbox => {
+                        subtaskCheckbox.checked = true;
+                        subtaskCheckbox.nextElementSibling.style.textDecoration = "line-through";
+                    });
+                } else {
+                    taskText.style.textDecoration = "none";
+                    // Uncheck all subtask checkboxes when parent task checkbox is unchecked
+                    parentTask.querySelectorAll('.subtask .checkbox').forEach(subtaskCheckbox => {
+                        subtaskCheckbox.checked = false;
+                        subtaskCheckbox.nextElementSibling.style.textDecoration = "none";
+                    });
                 }
             }
         }
