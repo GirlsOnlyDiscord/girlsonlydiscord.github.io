@@ -451,18 +451,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     subtaskText.style.textDecoration = "none";
                 }
-                // Check if all subtasks of the parent task are checked
-                const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask .checkbox'))
-                    .every(subtaskCheckbox => subtaskCheckbox.checked);
+                // Check if any subtask is unchecked
+                const anyUncheckedSubtask = Array.from(parentTask.querySelectorAll('.subtask .checkbox'))
+                    .some(subtaskCheckbox => !subtaskCheckbox.checked);
                 // Update the style of parent task text based on subtask checkboxes
                 const taskCheckbox = parentTask.querySelector(".task-checkbox");
                 const taskText = taskCheckbox.nextElementSibling;
-                if (allSubtasksChecked) {
-                    taskText.style.textDecoration = "line-through";
-                    taskCheckbox.checked = true;
-                } else {
+                if (anyUncheckedSubtask) {
                     taskText.style.textDecoration = "none";
                     taskCheckbox.checked = false;
+                } else {
+                    taskText.style.textDecoration = "line-through";
+                    taskCheckbox.checked = true;
                 }
             } else if (target.classList.contains("task-checkbox")) { // If the checkbox belongs to a parent task
                 // Update the style of parent task text
