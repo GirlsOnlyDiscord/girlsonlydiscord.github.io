@@ -57,7 +57,7 @@ html {
     content: "";
     inset: 0px;
     opacity: 0.5;
-    background-image: url(/images/mainpage.jpeg);
+    background-image: url(/images/actualbg.jpg);
     background-size: cover;
     z-index: -10;
 }

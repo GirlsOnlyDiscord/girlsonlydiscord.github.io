@@ -52,8 +52,7 @@ html {
     position: absolute;
     content: "";
     inset: 0px;
-    opacity: 0.5;
-    background-image: url(/images/haze.jpg);
+    background-image: url(/images/actualbg.jpg);
     background-size: cover;
     z-index: -10;
 }
@@ -159,6 +158,7 @@ html {
 }
 
 .embed {
+    display: none;
     position: absolute;
     right: 200px;
     background-color: #fdf6e6;
