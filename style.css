@@ -52,22 +52,22 @@ html {
     position: absolute;
     content: "";
     inset: 0px;
-    background-image: url(/images/plswork.jpg);
+    background-image: url(/images/back.jpg);
     background-size: cover;
     z-index: -10;
 }
 
 .start {
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    width: 100%;
+    margin-top: 120px;
 }
 
 .headertext { 
     font-size: 40px;
-    margin-left: 120px;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -78,7 +78,6 @@ html {
 
 .headertextsecond {
     font-size: 70px;
-    margin-left: 120px;
     margin-bottom: 10px;
     margin-top: 0;
     font-family: "Poppins", sans-serif;
@@ -91,7 +90,6 @@ html {
 .headertextthird {
     font-size: 35px;
     margin-top: 0;
-    margin-left: 120px;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -102,7 +100,6 @@ html {
 
 .headertextlast {
     font-size: 35px;
-    margin-left: 120px;
     padding-bottom: 50px;
     margin-top: 0;
     font-family: "Poppins", sans-serif;
