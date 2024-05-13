@@ -52,7 +52,7 @@ html {
     position: absolute;
     content: "";
     inset: 0px;
-    background-image: url(/images/actualbg.jpg);
+    background-image: url(/images/girlsonly.jpg);
     background-size: cover;
     z-index: -10;
 }
@@ -78,6 +78,7 @@ html {
     font-style: normal;
     color:#f9f7f7;
     text-shadow: 0 0 20px #2b1802;
+    text-align: center;
 }
 
 .headertextthird {
