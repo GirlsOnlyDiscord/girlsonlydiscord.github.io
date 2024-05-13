@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     subtaskText.style.textDecoration = "none";
                 }
             });
-        } else if (target.type === "checkbox" && target.closest(".subtask")) { // If the checkbox belongs to a subtask
+        } else { // If the checkbox belongs to a subtask
             // Update the style of subtask text
             const subtaskText = target.nextElementSibling;
             const isChecked = target.checked;
@@ -294,17 +294,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtaskText.style.textDecoration = "line-through";
             } else {
                 subtaskText.style.textDecoration = "none";
-            }
-    
-            // Check if all subtasks are checked and update parent task checkbox accordingly
-            const parentTask = target.closest(".task");
-            const subtaskCheckboxes = parentTask.querySelectorAll(".subtask .checkbox");
-            const allSubtasksChecked = Array.from(subtaskCheckboxes).every(checkbox => checkbox.checked);
-            const parentCheckbox = parentTask.querySelector(".checkbox");
-            if (allSubtasksChecked) {
-                parentCheckbox.checked = true;
-            } else {
-                parentCheckbox.checked = false;
             }
         }
     });
