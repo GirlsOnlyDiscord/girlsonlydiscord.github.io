@@ -436,65 +436,43 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    function applyLineThrough(checkbox) {
-        const taskItem = checkbox.closest(".task");
-        const subtaskItem = checkbox.closest(".subtask");
-        
-        if (taskItem) {
-            const taskText = taskItem.querySelector("span");
-            const subtasks = taskItem.querySelectorAll(".subtask");
+    function applyLineThrough(element) {
+        const parentTask = element.closest('.task');
+        if (parentTask) {
+            // Apply line-through to the parent task
+            parentTask.querySelector('span').style.textDecoration = 'line-through';
             
-            if (checkbox.checked) {
-                taskText.style.textDecoration = "line-through";
-                // Check all subtasks if any
-                subtasks.forEach(subtask => {
-                    const subCheckbox = subtask.querySelector(".checkbox");
-                    subCheckbox.checked = true;
-                    applyLineThrough(subCheckbox);
-                });
-            } else {
-                taskText.style.textDecoration = "none";
-            }
-        }
+            // Check all subtasks if any
+            parentTask.querySelectorAll('.subtask').forEach(subtask => {
+                subtask.querySelector('span').style.textDecoration = 'line-through';
+            });
     
-        if (subtaskItem) {
-            const subtaskText = subtaskItem.querySelector("span");
-            const parentTask = subtaskItem.closest(".task");
-            const allSubtaskCheckboxes = parentTask.querySelectorAll(".subtask .checkbox");
-            const parentCheckbox = parentTask.querySelector(".checkbox");
-            
-            if (checkbox.checked) {
-                subtaskText.style.textDecoration = "line-through";
-                // Check if all subtasks are checked
-                const allChecked = [...allSubtaskCheckboxes].every(checkbox => checkbox.checked);
-                if (allChecked) {
-                    parentCheckbox.checked = true;
-                    applyLineThrough(parentCheckbox);
-                }
-            } else {
-                subtaskText.style.textDecoration = "none";
-                // Uncheck parent task if any of the subtasks is unchecked
-                parentCheckbox.checked = false;
-                applyLineThrough(parentCheckbox);
+            // Check parent task if all subtasks are checked
+            const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask input[type="checkbox"]')).every(input => input.checked);
+            if (allSubtasksChecked) {
+                parentTask.querySelector('.checkbox').checked = true;
+            }
+        } else {
+            // Apply line-through to the subtask
+            const subtask = element.closest('.subtask');
+            subtask.querySelector('span').style.textDecoration = 'line-through';
+    
+            // Check parent task if all subtasks are checked
+            const parentTask = subtask.closest('.task');
+            const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask input[type="checkbox"]')).every(input => input.checked);
+            if (allSubtasksChecked) {
+                parentTask.querySelector('.checkbox').checked = true;
+                parentTask.querySelector('span').style.textDecoration = 'line-through';
             }
         }
     }
-
-    // Event listener for checkbox change on tasks
-    todoList.addEventListener("change", function(event) {
+    
+    // Event listener to handle checking tasks or subtasks
+    todoList.addEventListener('change', function(event) {
         const target = event.target;
-        if (target.classList.contains("checkbox")) {
+        if (target.tagName === 'INPUT' && target.type === 'checkbox') {
             applyLineThrough(target);
-            saveTasksToLocalStorage(); // Save tasks after checking/unchecking
-        }
-    });
-
-    // Event listener for checkbox change on subtasks
-    todoList.addEventListener("change", function(event) {
-        const target = event.target;
-        if (target.closest(".subtask") && target.classList.contains("checkbox")) {
-            applyLineThrough(target);
-            saveTasksToLocalStorage(); // Save tasks after checking/unchecking
+            saveTasksToLocalStorage();
         }
     });
 
