@@ -43,9 +43,7 @@ html {
 }
 
 .thisthemainpagefr { /*this is the div for the starter text*/
-    padding-left: 10px;
     padding-top: 120px;
-    width: 100vh;
     position: relative;
     background-size: cover;
     box-sizing: border-box;
