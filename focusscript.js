@@ -443,34 +443,36 @@ document.addEventListener("DOMContentLoaded", function() {
             const isChecked = target.checked;
             // If the checkbox belongs to a parent task
             if (target.closest(".task")) {
-                // Update the style of parent task text
-                const taskText = target.nextElementSibling;
-                if (isChecked) {
-                    taskText.style.textDecoration = "line-through";
-                } else {
-                    taskText.style.textDecoration = "none";
-                }
-                // Loop through all subtasks of the parent task and update their styles
                 const parentTask = target.closest(".task");
+                // Update the style of parent task text
+                const taskText = parentTask.querySelector("span");
+                taskText.style.textDecoration = isChecked ? "line-through" : "none";
+                // Loop through all subtasks of the parent task and update their styles
                 const subtasks = parentTask.querySelectorAll(".subtask");
                 subtasks.forEach(subtask => {
                     const subtaskCheckbox = subtask.querySelector(".checkbox");
                     const subtaskText = subtask.querySelector("span");
                     subtaskCheckbox.checked = isChecked;
-                    if (isChecked) {
-                        subtaskText.style.textDecoration = "line-through";
-                    } else {
-                        subtaskText.style.textDecoration = "none";
-                    }
+                    subtaskText.style.textDecoration = isChecked ? "line-through" : "none";
                 });
             } else { // If the checkbox belongs to a subtask
-                // Update the style of subtask text
-                const subtaskText = target.nextElementSibling;
-                if (isChecked) {
-                    subtaskText.style.textDecoration = "line-through";
-                } else {
-                    subtaskText.style.textDecoration = "none";
+                const parentTask = target.closest(".task");
+                const subtaskChecked = parentTask.querySelectorAll(".subtask .checkbox:checked").length;
+                const subtasksTotal = parentTask.querySelectorAll(".subtask").length;
+                const parentCheckbox = parentTask.querySelector(".checkbox");
+                const parentTaskText = parentTask.querySelector("span");
+            
+                if (isChecked && subtaskChecked === subtasksTotal) {
+                    parentCheckbox.checked = true;
+                    parentTaskText.style.textDecoration = "line-through";
+                } else if (!isChecked && subtaskChecked === subtasksTotal - 1) {
+                    parentCheckbox.checked = false;
+                    parentTaskText.style.textDecoration = "none";
                 }
+            
+                // Update the style of the subtask text
+                const subtaskText = target.nextElementSibling;
+                subtaskText.style.textDecoration = isChecked ? "line-through" : "none";
             }
         }
     });
