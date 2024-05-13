@@ -260,32 +260,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Event listener for parent task checkboxes
-    todoList.addEventListener("change", function(event) {
-        const target = event.target;
-        if (target.matches('.task .checkbox')) {
-            const taskItem = target.closest(".task");
-            if (target.checked) {
-                taskItem.style.textDecoration = "line-through";
-            } else {
-                taskItem.style.textDecoration = "none";
-            }
-        }
-    });
-
-    // Event listener for subtask checkboxes
-    todoList.addEventListener("change", function(event) {
-        const target = event.target;
-        if (target.matches('.subtask .checkbox')) {
-            const subtaskItem = target.closest(".subtask");
-            if (target.checked) {
-                subtaskItem.style.textDecoration = "line-through";
-            } else {
-                subtaskItem.style.textDecoration = "none";
-            }
-        }
-    });
-
     function showCustomNotification() {
         const notification = document.getElementById('custom-notification');
         notification.style.display = 'block';
