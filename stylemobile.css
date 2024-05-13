@@ -180,7 +180,7 @@ html {
 }
 
 .secondpage {
-    background-image: linear-gradient(#F4E8DC, #FBDFD5, #F1C282, #F9F7F7);
+    background-image: linear-gradient(#F4E8DC, #FBDFD5, #E0BFB6, #F9F7F7);
     height: 1250px;
     padding-top: 100px;
 }
@@ -197,7 +197,7 @@ html {
     padding-right: 10px;
     margin-bottom: 40px;
     color: #f9f7f7;
-    background-color: #A6A142;
+    background-color: #DC8269;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -280,7 +280,7 @@ html {
     padding-right: 10px;
     margin-bottom: 40px;
     color: #f9f7f7;
-    background-color: #A6A142;
+    background-color: #DC8269;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -392,7 +392,7 @@ html {
 }
 
 .staffpics {
-    background-image: linear-gradient(#F9F7F7, #FDDCBE, #FBD7BF, #FBD7BF, #FDDCBE, #ED8D63);
+    background-image: linear-gradient(#F9F7F7, #FBDFD5, #E0BFB6);
     padding-top: 100px;
     height: 3200px;
 }
@@ -409,7 +409,7 @@ html {
     margin-bottom: 40px;
     padding-top: 10px;
     color: #f9f7f7;
-    background-color: #A6A142;
+    background-color: #DC8269;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -429,7 +429,7 @@ html {
     margin-bottom: 40px;
     padding-top: 8px;
     color: #f9f7f7;
-    background-color: #A6A142;
+    background-color: #DC8269;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
