@@ -458,9 +458,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const parentTask = target.closest(".task");
                 const subtasks = parentTask.querySelectorAll(".subtask");
                 const allSubtasksChecked = Array.from(subtasks).every(subtask => subtask.querySelector(".checkbox").checked);
-                if (allSubtasksChecked) {
-                    parentTask.querySelector(".checkbox").checked = true;
-                }
+                parentTask.querySelector(".checkbox").checked = allSubtasksChecked;
             }
         }
     });
