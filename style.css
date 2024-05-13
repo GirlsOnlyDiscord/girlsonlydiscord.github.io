@@ -53,7 +53,7 @@ html {
     content: "";
     inset: 0px;
     opacity: 0.5;
-    background-image: url(/images/squares.jpg);
+    background-image: url(/images/haze.jpg);
     background-size: cover;
     z-index: -10;
 }
