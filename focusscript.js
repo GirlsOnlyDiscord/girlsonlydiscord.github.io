@@ -453,6 +453,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Loop through all subtasks of the parent task and update their styles
                 const parentTask = target.closest(".task");
                 const subtasks = parentTask.querySelectorAll(".subtask");
+                const allSubtasksChecked = Array.from(subtasks).every(subtask => subtask.querySelector(".checkbox").checked);
                 subtasks.forEach(subtask => {
                     const subtaskCheckbox = subtask.querySelector(".checkbox");
                     const subtaskText = subtask.querySelector("span");
@@ -463,6 +464,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         subtaskText.style.textDecoration = "none";
                     }
                 });
+                // Check/uncheck parent task checkbox based on all subtasks checked or not
+                const parentCheckbox = parentTask.querySelector(".checkbox");
+                parentCheckbox.checked = allSubtasksChecked;
             } else { // If the checkbox belongs to a subtask
                 // Update the style of subtask text
                 const subtaskText = target.nextElementSibling;
@@ -471,7 +475,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     subtaskText.style.textDecoration = "none";
                 }
+                // Check/uncheck parent task checkbox based on all subtasks checked or not
+                const parentTask = target.closest(".task");
+                const subtasks = parentTask.querySelectorAll(".subtask");
+                const allSubtasksChecked = Array.from(subtasks).every(subtask => subtask.querySelector(".checkbox").checked);
+                const parentCheckbox = parentTask.querySelector(".checkbox");
+                parentCheckbox.checked = allSubtasksChecked;
             }
+            // Save tasks after checkbox state changes
+            saveTasksToLocalStorage();
         }
     });
 
