@@ -453,15 +453,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Loop through all subtasks of the parent task and update their styles
                 const parentTask = target.closest(".task");
                 const subtasks = parentTask.querySelectorAll(".subtask");
-                const allSubtasksChecked = Array.from(subtasks).every(subtask => subtask.querySelector(".checkbox").checked);
+                let allSubtasksChecked = true;
                 subtasks.forEach(subtask => {
                     const subtaskCheckbox = subtask.querySelector(".checkbox");
                     const subtaskText = subtask.querySelector("span");
-                    subtaskCheckbox.checked = isChecked;
-                    if (isChecked) {
-                        subtaskText.style.textDecoration = "line-through";
-                    } else {
-                        subtaskText.style.textDecoration = "none";
+                    if (subtaskCheckbox.checked !== isChecked) {
+                        subtaskCheckbox.checked = isChecked;
+                        if (isChecked) {
+                            subtaskText.style.textDecoration = "line-through";
+                        } else {
+                            subtaskText.style.textDecoration = "none";
+                        }
+                    }
+                    if (!isChecked) {
+                        allSubtasksChecked = false;
                     }
                 });
                 // Check/uncheck parent task checkbox based on all subtasks checked or not
