@@ -10,7 +10,7 @@ html {
 
 .navbar { /*this is the navbar*/
     overflow: hidden;
-    background-color: #fdf6e6;
+    background-color: #F4E8DC,;
     color: #f68d70;
     position: fixed;
     top: 0%;
@@ -180,7 +180,7 @@ html {
 }
 
 .secondpage {
-    background-image: linear-gradient(#FBDFD5, #FDDCBE, #ffddae, #F1C282, #ffddae, #FDDCBE, #FBDFD5);
+    background-image: linear-gradient(#F4E8DC, #FBDFD5, #F1C282, #F9F7F7);
     height: 1250px;
     padding-top: 100px;
 }
