@@ -63,7 +63,8 @@ html {
     justify-content: center;
     align-content: center;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 50px;
+    text-align: center;
 }
 
 .headertext { 
@@ -111,7 +112,9 @@ html {
 }
 
 .maintext {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
 
 .joinus {
@@ -126,7 +129,6 @@ html {
     border: none;
     border-radius: 15px;
     transition-duration: 0.15s;
-    margin-left: 120px;
     margin-top: 0;
     display: flex;
     line-height:65px;
@@ -139,6 +141,7 @@ html {
 
 .mainbutton {
     display: flex;
+    padding-bottom: 50px;
 }
 
 
@@ -175,7 +178,7 @@ html {
 }
 
 .secondpage {
-    background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5, #FBD7BF, #FDDCBE, #7875a8);
+    background-image: linear-gradient(#bc9886, #FDDCBE, #FBD7BF, #DFBFB5, #FBD7BF, #FDDCBE, #bc9886);
     height: 580px;
     padding-top: 100px;
 }
@@ -394,7 +397,7 @@ html {
 }
 
 .staffpics {
-    background-image: linear-gradient(#7875a8, #FDDCBE, #FBD7BF, #DFBFB5, #FBD7BF, #FDDCBE, #7875a8);
+    background-image: linear-gradient(#bc9886, #FDDCBE, #FBD7BF, #DFBFB5, #FBD7BF, #FDDCBE, #bc9886);
     padding-top: 100px;
     height: 1100px;
 }
