@@ -455,10 +455,10 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 const subtaskText = target.nextElementSibling;
                 subtaskText.style.textDecoration = isChecked ? "line-through" : "none";
-                const parentTask = target.closest(".task");
-                const subtasks = parentTask.querySelectorAll(".subtask");
-                const allSubtasksChecked = Array.from(subtasks).every(subtask => subtask.querySelector(".checkbox").checked);
-                parentTask.querySelector(".checkbox").checked = allSubtasksChecked;
+                const parentTaskCheckbox = target.closest(".task").querySelector(".checkbox");
+                const subtaskCheckboxes = parentTaskCheckbox.querySelectorAll(".subtask .checkbox");
+                const allSubtasksChecked = Array.from(subtaskCheckboxes).every(subtaskCheckbox => subtaskCheckbox.checked);
+                parentTaskCheckbox.checked = allSubtasksChecked;
             }
         }
     });
