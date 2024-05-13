@@ -260,6 +260,46 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    function checkTaskCompletion(element) {
+        const parentTask = element.closest('.task');
+        if (parentTask) {
+            // Apply line-through to the parent task
+            parentTask.querySelector('span').style.textDecoration = 'line-through';
+            
+            // Check all subtasks if any
+            parentTask.querySelectorAll('.subtask').forEach(subtask => {
+                subtask.querySelector('span').style.textDecoration = 'line-through';
+            });
+    
+            // Check parent task if all subtasks are checked
+            const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask input[type="checkbox"]')).every(input => input.checked);
+            if (allSubtasksChecked) {
+                parentTask.querySelector('.checkbox').checked = true;
+            }
+        } else {
+            // Apply line-through to the subtask
+            const subtask = element.closest('.subtask');
+            subtask.querySelector('span').style.textDecoration = 'line-through';
+    
+            // Check parent task if all subtasks are checked
+            const parentTask = subtask.closest('.task');
+            const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask input[type="checkbox"]')).every(input => input.checked);
+            if (allSubtasksChecked) {
+                parentTask.querySelector('.checkbox').checked = true;
+                parentTask.querySelector('span').style.textDecoration = 'line-through';
+            }
+        }
+    }
+
+    // Event listener to handle checking tasks or subtasks
+    todoList.addEventListener('change', function(event) {
+        const target = event.target;
+        if (target.tagName === 'INPUT' && target.type === 'checkbox') {
+            checkTaskCompletion(target);
+            saveTasksToLocalStorage();
+        }
+    });
+
     function showCustomNotification() {
         const notification = document.getElementById('custom-notification');
         notification.style.display = 'block';
@@ -433,46 +473,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Read the file as a data URL (base64 encoded)
             reader.readAsDataURL(file);
-        }
-    });
-
-    function applyLineThrough(element) {
-        const parentTask = element.closest('.task');
-        if (parentTask) {
-            // Apply line-through to the parent task
-            parentTask.querySelector('span').style.textDecoration = 'line-through';
-            
-            // Check all subtasks if any
-            parentTask.querySelectorAll('.subtask').forEach(subtask => {
-                subtask.querySelector('span').style.textDecoration = 'line-through';
-            });
-    
-            // Check parent task if all subtasks are checked
-            const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask input[type="checkbox"]')).every(input => input.checked);
-            if (allSubtasksChecked) {
-                parentTask.querySelector('.checkbox').checked = true;
-            }
-        } else {
-            // Apply line-through to the subtask
-            const subtask = element.closest('.subtask');
-            subtask.querySelector('span').style.textDecoration = 'line-through';
-    
-            // Check parent task if all subtasks are checked
-            const parentTask = subtask.closest('.task');
-            const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask input[type="checkbox"]')).every(input => input.checked);
-            if (allSubtasksChecked) {
-                parentTask.querySelector('.checkbox').checked = true;
-                parentTask.querySelector('span').style.textDecoration = 'line-through';
-            }
-        }
-    }
-    
-    // Event listener to handle checking tasks or subtasks
-    todoList.addEventListener('change', function(event) {
-        const target = event.target;
-        if (target.tagName === 'INPUT' && target.type === 'checkbox') {
-            applyLineThrough(target);
-            saveTasksToLocalStorage();
         }
     });
 
