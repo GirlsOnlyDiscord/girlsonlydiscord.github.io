@@ -180,7 +180,7 @@ html {
 }
 
 .secondpage {
-    background-image: linear-gradient(#F4E8DC, #FDDCBE, #FBD7BF, #FBD7BF, #FDDCBE, #F9F7F7);
+    background-image: linear-gradient(#FBDFD5, #FDDCBE, #ffddae, #F1C282, #ffddae, #FDDCBE, #FBDFD5);
     height: 1250px;
     padding-top: 100px;
 }
