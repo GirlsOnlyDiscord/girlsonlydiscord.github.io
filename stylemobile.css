@@ -45,11 +45,12 @@ html {
 .thisthemainpagefr { /*this is the div for the starter text*/
     padding-left: 10px;
     padding-top: 120px;
-    width: 100%;
+    width: 100vh;
     position: relative;
     background-size: cover;
     box-sizing: border-box;
     display: flex;
+    background-position:50% 50%;
 }
 
 .thisthemainpagefr::before { /*this underlays and image behind the text and adjusts the opacity*/
@@ -60,6 +61,7 @@ html {
     background-image: url(/images/back.jpg);
     background-size: cover;
     z-index: -10;
+    background-position: 50% 50%;
 }
 
 .start {
@@ -102,6 +104,8 @@ html {
     font-style: italic;
     color:#f9f7f7;
     text-shadow: 0 0 20px #2b1802;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .headertextlast {
@@ -114,6 +118,8 @@ html {
     color:#f9f7f7;
     margin-bottom: 10px;
     text-shadow: 0 0 20px #2b1802;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .maintext {
