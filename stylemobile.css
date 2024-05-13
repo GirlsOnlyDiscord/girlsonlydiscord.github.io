@@ -180,7 +180,7 @@ html {
 }
 
 .secondpage {
-    background-image: linear-gradient(#F4E8DC, #FBDFD5, #E0BFB6, #F9F7F7);
+    background-image: linear-gradient(#F4E8DC, #FBDFD5, #E0BFB6, #F4E8DC);
     height: 1250px;
     padding-top: 100px;
 }
@@ -264,7 +264,7 @@ html {
 
 .gallerypage {
     height: 400px;
-    background-color: #f9f7f7;
+    background-color: #F4E8DC;
     padding-top: 35px;
 }
 
@@ -392,7 +392,7 @@ html {
 }
 
 .staffpics {
-    background-image: linear-gradient(#F9F7F7, #FBDFD5, #E0BFB6);
+    background-image: linear-gradient(#F4E8DC, #FBDFD5, #E0BFB6);
     padding-top: 100px;
     height: 3200px;
 }
