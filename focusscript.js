@@ -446,8 +446,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 taskText.style.textDecoration = isChecked ? "line-through" : "none";
                 const parentTask = target.closest(".task");
                 const subtasks = parentTask.querySelectorAll(".subtask");
-                const allSubtasksChecked = Array.from(subtasks).every(subtask => subtask.querySelector(".checkbox").checked);
-                parentTask.querySelector(".checkbox").checked = allSubtasksChecked;
+                subtasks.forEach(subtask => {
+                    const subtaskCheckbox = subtask.querySelector(".checkbox");
+                    subtaskCheckbox.checked = isChecked;
+                    const subtaskText = subtask.querySelector("span");
+                    subtaskText.style.textDecoration = isChecked ? "line-through" : "none";
+                });
             } else {
                 const subtaskText = target.nextElementSibling;
                 subtaskText.style.textDecoration = isChecked ? "line-through" : "none";
