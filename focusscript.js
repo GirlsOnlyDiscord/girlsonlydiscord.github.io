@@ -260,42 +260,89 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    function findParentTask(element) {
+        let parent = element.parentElement;
+        while (parent && !parent.classList.contains('task')) {
+            parent = parent.parentElement;
+        }
+        return parent;
+    }
+    
     function checkTaskCompletion(element) {
-        const parentTask = element.closest('.task');
+        const parentTask = findParentTask(element);
         if (parentTask) {
             // Apply line-through to the parent task
             parentTask.querySelector('span').style.textDecoration = 'line-through';
-            
+    
             // Check all subtasks if any
-            parentTask.querySelectorAll('.subtask').forEach(subtask => {
+            const subtasks = parentTask.querySelectorAll('.subtask');
+            subtasks.forEach(subtask => {
                 subtask.querySelector('span').style.textDecoration = 'line-through';
             });
     
             // Check parent task if all subtasks are checked
-            const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask input[type="checkbox"]')).every(input => input.checked);
+            const checkboxes = parentTask.querySelectorAll('.subtask input[type="checkbox"]');
+            const allSubtasksChecked = Array.from(checkboxes).every(input => input.checked);
             if (allSubtasksChecked) {
                 parentTask.querySelector('.checkbox').checked = true;
+            } else {
+                parentTask.querySelector('.checkbox').checked = false;
             }
         } else {
             // Apply line-through to the subtask
-            const subtask = element.closest('.subtask');
+            const subtask = element.parentElement;
             subtask.querySelector('span').style.textDecoration = 'line-through';
     
             // Check parent task if all subtasks are checked
-            const parentTask = subtask.closest('.task');
-            const allSubtasksChecked = Array.from(parentTask.querySelectorAll('.subtask input[type="checkbox"]')).every(input => input.checked);
+            const parentTask = subtask.parentElement.parentElement;
+            const checkboxes = parentTask.querySelectorAll('.subtask input[type="checkbox"]');
+            const allSubtasksChecked = Array.from(checkboxes).every(input => input.checked);
             if (allSubtasksChecked) {
                 parentTask.querySelector('.checkbox').checked = true;
                 parentTask.querySelector('span').style.textDecoration = 'line-through';
+            } else {
+                parentTask.querySelector('.checkbox').checked = false;
+                parentTask.querySelector('span').style.textDecoration = 'none';
             }
         }
     }
-
+    
+    function uncheckTaskCompletion(element) {
+        const parentTask = findParentTask(element);
+        if (parentTask) {
+            // Remove line-through from the parent task
+            parentTask.querySelector('span').style.textDecoration = 'none';
+    
+            // Uncheck all subtasks
+            const subtasks = parentTask.querySelectorAll('.subtask');
+            subtasks.forEach(subtask => {
+                subtask.querySelector('span').style.textDecoration = 'none';
+                subtask.querySelector('.checkbox').checked = false;
+            });
+    
+            // Uncheck the parent task
+            parentTask.querySelector('.checkbox').checked = false;
+        } else {
+            // Remove line-through from the subtask
+            const subtask = element.parentElement;
+            subtask.querySelector('span').style.textDecoration = 'none';
+    
+            // Uncheck the parent task if it was auto-checked
+            const parentTask = subtask.parentElement.parentElement;
+            parentTask.querySelector('.checkbox').checked = false;
+            parentTask.querySelector('span').style.textDecoration = 'none';
+        }
+    }
+    
     // Event listener to handle checking tasks or subtasks
     todoList.addEventListener('change', function(event) {
         const target = event.target;
         if (target.tagName === 'INPUT' && target.type === 'checkbox') {
-            checkTaskCompletion(target);
+            if (target.checked) {
+                checkTaskCompletion(target);
+            } else {
+                uncheckTaskCompletion(target);
+            }
             saveTasksToLocalStorage();
         }
     });
