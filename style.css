@@ -142,6 +142,8 @@ html {
 .mainbutton {
     display: flex;
     padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
