@@ -85,11 +85,11 @@ html {
     font-size: 35px;
     margin-bottom: 10px;
     margin-top: 0;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
     color:#f9f7f7;
     text-shadow: 0 0 20px #2b1802;
+    font-family: "Borel", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .headertextthird {
