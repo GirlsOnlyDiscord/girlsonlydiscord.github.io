@@ -11,7 +11,7 @@ html {
 .navbar { /*this is the navbar*/
     overflow: hidden;
     background-color: #F4E8DC;
-    color: #f68d70;
+    color: #A25945;
     position: fixed;
     top: 0%;
     width: 100%;
@@ -23,7 +23,7 @@ html {
 
 .navbar a { /*this is the text in the navbar*/
     display: flex;
-    color: #f68d70;
+    color: #A25945;
     line-height: 70px;
     padding: 0px 16px;
     text-decoration: none;
