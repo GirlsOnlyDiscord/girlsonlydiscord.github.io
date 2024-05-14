@@ -285,6 +285,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function attachSubtaskActions(subtaskItem) {
         subtaskItem.querySelector(".delete-btn").addEventListener("click", function() {
             subtaskItem.remove();
+            saveTasksToLocalStorage();
         });
 
         // You can add more event listeners here as needed (e.g., for editing)
