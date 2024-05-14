@@ -26,9 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
             const subtasks = [];
             // Serialize subtasks for the current task
             taskItem.querySelectorAll('.subtask span').forEach(subtask => {
-                subtasks.push(subtask.textContent);
+                subtasks.push({
+                    text: subtask.textContent,
+                    checked: subtask.previousElementSibling.checked // Save the checked state of subtasks
+                });
             });
-            tasks.push({ text: taskText, subtasks: subtasks }); // Include subtasks along with the task text
+            tasks.push({ text: taskText, subtasks: subtasks });
         });
         return JSON.stringify(tasks);
     }
@@ -36,10 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to save tasks to localStorage
     function saveTasksToLocalStorage() {
         const serializedTasks = serializeTasks();
-        console.log(serializedTasks);
         localStorage.setItem('tasks', serializedTasks);
     }
 
+    // Function to load tasks from localStorage
     function loadTasksFromLocalStorage() {
         const serializedTasks = localStorage.getItem('tasks');
         if (serializedTasks) {
@@ -136,11 +139,22 @@ document.addEventListener("DOMContentLoaded", function() {
         // Store references to the parent task and its associated subtasks
         taskItem.subtasks = [];
 
+        // Add event listener for checkbox state changes in tasks
+        taskItem.querySelector(".checkbox").addEventListener("change", function() {
+            updateTaskCheckboxState(taskItem);
+        });
+
         // Add subtasks if provided
-        subtasks.forEach(subtaskText => {
-            const subtaskItem = createSubtaskElement(subtaskText);
+        subtasks.forEach(subtask => {
+            const subtaskItem = createSubtaskElement(subtask.text);
             taskItem.appendChild(subtaskItem); // Append subtask to parent task
             taskItem.subtasks.push(subtaskItem); // Store reference to subtask
+            // Set the initial checked state of subtask checkbox
+            subtaskItem.querySelector(".checkbox").checked = subtask.checked;
+            // Update subtask text decoration based on its checked state
+            if (subtask.checked) {
+                subtaskItem.querySelector("span").style.textDecoration = "line-through";
+            }
         });
 
         taskItem.querySelector(".delete-btn").addEventListener("click", function() {
@@ -160,6 +174,34 @@ document.addEventListener("DOMContentLoaded", function() {
             addSubtask(taskItem);
         });
         saveTasksToLocalStorage(); // Save tasks after adding a task
+    }
+
+    // Function to update the checkbox state of a task
+    function updateTaskCheckboxState(taskItem) {
+        const taskCheckbox = taskItem.querySelector(".checkbox");
+        const isChecked = taskCheckbox.checked;
+        const taskText = taskItem.querySelector("span");
+
+        // Update task text decoration based on checkbox state
+        if (isChecked) {
+            taskText.style.textDecoration = "line-through";
+        } else {
+            taskText.style.textDecoration = "none";
+        }
+
+        // Loop through subtasks and update their checkbox state and text decoration
+        taskItem.querySelectorAll(".subtask").forEach(subtask => {
+            const subtaskCheckbox = subtask.querySelector(".checkbox");
+            const subtaskText = subtask.querySelector("span");
+            subtaskCheckbox.checked = isChecked;
+            if (isChecked) {
+                subtaskText.style.textDecoration = "line-through";
+            } else {
+                subtaskText.style.textDecoration = "none";
+            }
+        });
+
+        saveTasksToLocalStorage(); // Save tasks after updating checkbox state
     }
 
     function addSubtask(parentTask) {
@@ -203,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     subtaskInput.remove();
     
                     // Save tasks after adding a subtask
-                    saveTasksStateToLocalStorage();
+                    saveTasksToLocalStorage();
                 }
             }
         });
