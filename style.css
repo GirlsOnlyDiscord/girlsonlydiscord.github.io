@@ -8,6 +8,30 @@ html {
     scroll-behavior: smooth;
 }
 
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/Poppins/Poppins-Black.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/Poppins/Poppins-BlackItalic.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Borel', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Borel/Borel-Regular.ttf) format('woff2');
+}
+
 .navbar { /*this is the navbar*/
     overflow: hidden;
     background-color: #F4E8DC;

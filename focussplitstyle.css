@@ -5,6 +5,38 @@ body {
 }
 
 
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/Poppins/Poppins-Black.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/Poppins/Poppins-BlackItalic.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/Poppins/Poppins-BlackItalic.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/Poppins/Poppins-BlackItalic.ttf) format('woff2');
+}
+
 .bgfr { 
     width: 100vw;
     height: 100vh;
