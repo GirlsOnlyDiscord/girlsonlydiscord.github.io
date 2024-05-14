@@ -56,11 +56,15 @@ html {
     line-height: 70px;
     padding: 0px 16px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     transition-duration: 0.15s;
     flex-shrink:1;
     margin-bottom: 16px;
+}
+
+.focus {
+    display: none;
 }
 
 .navbar a:hover { /*this is for upscaling on hover*/
@@ -95,7 +99,6 @@ html {
     align-content: center;
     width: 100%;
     text-align: center;
-    margin-top: 80px;
 }
 
 .headertext { 
@@ -109,7 +112,7 @@ html {
 }
 
 .headertextsecond {
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 10px;
     margin-top: 0;
     color:#332C5C;
@@ -119,7 +122,7 @@ html {
 }
 
 .headertextthird {
-    font-size: 3.5rem;
+    font-size: 2rem;
     margin-top: 0;
     margin-bottom: 10px;
     font-family: "Poppins";
@@ -218,8 +221,8 @@ html {
     padding-right: 20px;
     font-family: "Poppins";
     font-weight: 500;
-    font-style: bold;
-    font-size: 25px;
+    font-style: normal;
+    font-size: 20px;
     max-height: 65px;
     border: none;
     border-radius: 15px;
@@ -254,8 +257,8 @@ html {
 .aura {
     display: flex;
     flex-direction: column;
-    height: 800px;
-    width: 800px;
+    height: 400px;
+    width: 400px;
     background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
     margin-left: auto;
     margin-right: auto;
@@ -276,7 +279,7 @@ html {
 }
 
 .omgheader {
-    font-size: 3rem;
+    font-size: 40px;
     font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
@@ -284,7 +287,7 @@ html {
 }
 
 .safespan {
-    font-size: 3rem;
+    font-size: 40px;
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic !important;
@@ -297,7 +300,6 @@ html {
     font-weight: 500;
     font-style: normal;
     color: #332C5C;
-    width: 700px;
     text-wrap: pretty;
     text-align: center;
 }
@@ -308,7 +310,7 @@ html {
 }
 
 .auratext {
-    font-size: 3rem;
+    font-size: 30px;
     text-align: center;
     font-family: "Poppins";
     font-weight: 500;
@@ -317,8 +319,9 @@ html {
 }
 
 .secondpage {
-    height: 580px;
+    height: fit-content;
     padding-top: 100px;
+    padding-bottom: 100px;
     background-color: #F8F5FF;
 }
 
@@ -327,7 +330,7 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
-    font-size: 35px;
+    font-size: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -344,7 +347,9 @@ html {
 .cards {
     display: flex;
     justify-content: center;
-    gap: 70px;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
 }
 
 .cardone {
@@ -393,9 +398,8 @@ html {
 }
 
 .gallerypage {
-    height: 650px;
-    padding-top: 100px;
-    padding-bottom: 65px;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
 
 .galleryheader {
@@ -403,7 +407,7 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
-    font-size: 35px;
+    font-size: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -443,12 +447,12 @@ html {
 }
 
 .next {
-    right: 200px;
+    right: 0;
     border-radius: 3px 3px 3px 3px;
 }
 
 .prev {
-    left: 200px;
+    left: 0;
 }
 
 .prev:hover, .next:hover {
@@ -481,7 +485,7 @@ html {
 }
 
 .gallerycon div img {
-    width: 700px;
+    width: 400px;
     border-radius: 10px;
 
 }
@@ -510,8 +514,10 @@ html {
 
 .admins {
     display: flex;
-    gap: 25px;
+    gap: 50px;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .adminspics {
@@ -523,8 +529,10 @@ html {
 
 .mods {
     display: flex;
-    gap: 25px;
+    gap: 50px;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .modspics {
@@ -536,7 +544,8 @@ html {
 
 .staffpics {
     padding-top: 100px;
-    height: 1100px;
+    height: fit-content;
+    padding-bottom: 100px;
     background-color: #26143D;
 }
 
@@ -545,7 +554,7 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
-    font-size: 35px;
+    font-size: 25px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -565,7 +574,7 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
-    font-size: 35px;
+    font-size: 25px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
