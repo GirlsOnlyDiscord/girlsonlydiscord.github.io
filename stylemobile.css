@@ -8,6 +8,12 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --animate-delay: 0.5s;
+    --animate-duration: 1s;
+    --animate-repeat: 1;
+}
+
 @font-face {
     font-family: 'Poppins';
     font-style: normal;
@@ -34,8 +40,6 @@ html {
 
 .navbar { /*this is the navbar*/
     overflow: hidden;
-    background-color: #F4E8DC;
-    color: #A25945;
     position: fixed;
     top: 0%;
     width: 100%;
@@ -43,15 +47,16 @@ html {
     display:flex;
     height: 70px;
     justify-content: center;
+    transition: all 175ms;
 }
 
 .navbar a { /*this is the text in the navbar*/
     display: flex;
-    color: #A25945;
+    color: #332C5C;
     line-height: 70px;
     padding: 0px 16px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 30px;
     font-weight: bold;
     transition-duration: 0.15s;
     flex-shrink:1;
@@ -62,25 +67,23 @@ html {
     transform: scale(1.1);
 }
 
-.focus {
-    display: none !important;
-}
-
 .thisthemainpagefr { /*this is the div for the starter text*/
+    padding-left: 30px;
     padding-top: 120px;
+    width: 100%;
     position: relative;
     background-size: cover;
     box-sizing: border-box;
     display: flex;
-    background-position:50% 50%;
+    background-position: 50% 50%;
+    padding-bottom: 120px;
 }
 
 .thisthemainpagefr::before { /*this underlays and image behind the text and adjusts the opacity*/
     position: absolute;
     content: "";
     inset: 0px;
-    background-image: url(/images/back.jpg);
-    background-size: cover;
+    background: radial-gradient(ellipse at top, #EEB1DB, #FCCADC, #FFE7E2, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF);
     z-index: -10;
     background-position: 50% 50%;
 }
@@ -91,12 +94,12 @@ html {
     justify-content: center;
     align-content: center;
     width: 100%;
-    margin-top: 50px;
     text-align: center;
+    margin-top: 80px;
 }
 
 .headertext { 
-    font-size: 20px;
+    font-size: 40px;
     margin-bottom: 10px;
     font-family: "Poppins";
     font-weight: 500;
@@ -106,31 +109,27 @@ html {
 }
 
 .headertextsecond {
-    font-size: 35px;
+    font-size: 70px;
     margin-bottom: 10px;
     margin-top: 0;
-    color:#f9f7f7;
-    text-shadow: 0 0 20px #2b1802;
+    color:#332C5C;
     font-family: "Borel";
     font-weight: 400;
     font-style: normal;
 }
 
 .headertextthird {
-    font-size: 25px;
+    font-size: 3.5rem;
     margin-top: 0;
     margin-bottom: 10px;
     font-family: "Poppins";
-    font-weight: 500;
-    font-style: italic;
-    color:#f9f7f7;
-    text-shadow: 0 0 20px #2b1802;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-weight: 600;
+    font-style: normal;
+    color:#332C5C;
 }
 
 .headertextlast {
-    font-size: 25px;
+    font-size: 35px;
     padding-bottom: 50px;
     margin-top: 0;
     font-family: "Poppins";
@@ -138,9 +137,73 @@ html {
     font-style: italic;
     color:#f9f7f7;
     margin-bottom: 10px;
-    text-shadow: 0 0 20px #2b1802;
-    margin-left: 20px;
-    margin-right: 20px;
+}
+
+@keyframes scrollUp {
+    4%, 8% {
+        transform: translateY(-10%);
+    }
+    12%, 16% {
+        transform: translateY(-20%);
+    }
+    20%, 24% {
+        transform: translateY(-30%);
+    }
+    28%, 32% {
+        transform: translateY(-40%);
+    }
+    36%, 40% {
+        transform: translateY(-50%);
+    }
+    44%, 48% {
+        transform: translateY(-60%);
+    }
+    52%, 56% {
+        transform: translateY(-70%);
+    }
+    60%, 64% {
+        transform: translateY(-80%);
+    }
+    68%, 72% {
+        transform: translateY(-90%);
+    }
+    85% {
+        transform: translateY(-90%);
+    }
+    95% {
+        transform: translateY(0);
+    }
+}
+
+.scrollingwords {
+    height: 1.6em;
+    margin: auto;
+    margin-top: .5rem;
+    overflow: hidden;
+}
+
+.scrollingwords ul {
+    padding: 0;
+    margin: 0 .625rem;
+    animation: scrollUp 16s infinite;
+    animation-duration: 16s;
+    animation-timing-function: ease;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: scrollUp;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+}
+
+.scrollingwords ul li {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: normal;
+    color:#7432FF;
 }
 
 .maintext {
@@ -150,13 +213,13 @@ html {
 }
 
 .joinus {
-    background-color: #fdf6e6;
+    background-color: #7432FF;
     padding-left: 20px;
     padding-right: 20px;
     font-family: "Poppins";
     font-weight: 500;
     font-style: bold;
-    font-size: 15px;
+    font-size: 25px;
     max-height: 65px;
     border: none;
     border-radius: 15px;
@@ -173,39 +236,90 @@ html {
 
 .mainbutton {
     display: flex;
-    padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
 }
 
 
 .joinuscolor {
-    color: #f68d70;
+    color: #ffffff;
 }
 
 .discordcolor {
-    color: #5865f2;
+    color: #ffffff;
     margin-left: 7px;
 }
 
-.thisthelogo {
-    height: 25px;
-    object-fit: cover;
-    margin-top: 18px;
-    margin-left: 10px;
+.aura {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    width: 800px;
+    background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-content: center;
 }
 
-.bgspacer {
-    height: 150px;
+.runbygirls {
+    height: fit-content;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #F8F5FF;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
 }
 
-.embed {
-    display: none;
+.omgheader {
+    font-size: 3rem;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: normal;
+    color: #332C5C;
+}
+
+.safespan {
+    font-size: 3rem;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: italic !important;
+    color: #332C5C;
+}
+
+.omgtext {
+    font-size: 1.375rem;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: normal;
+    color: #332C5C;
+    width: 700px;
+    text-wrap: pretty;
+    text-align: center;
+}
+
+.omgtext2 {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.auratext {
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: normal;
+    color: #332C5C;
 }
 
 .secondpage {
-    height: 1250px;
+    height: 580px;
     padding-top: 100px;
+    background-color: #F8F5FF;
 }
 
 .whatdowe {
@@ -213,14 +327,14 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
-    font-size: 25px;
+    font-size: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 40px;
     color: #f9f7f7;
-    background-color: #a25945;
+    background-color: #332C5C;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -228,20 +342,18 @@ html {
 }
 
 .cards {
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
 }
 
 .cardone {
     height: 350px;
     width: 300px;
-    background-color: #f9f7f7;
+    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
 
 }
 
@@ -252,13 +364,10 @@ html {
 .cardtwo {
     height: 350px;
     width: 300px;
-    background-color: #f9f7f7;
+    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .cardtwo:hover {
@@ -268,12 +377,10 @@ html {
 .cardthree {
     height: 350px;
     width: 300px;
-    background-color: #f9f7f7;
+    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .cardthree:hover {
@@ -286,9 +393,9 @@ html {
 }
 
 .gallerypage {
-    height: 400px;
-    background-color: #f5f5f5;
-    padding-top: 35px;
+    height: 650px;
+    padding-top: 100px;
+    padding-bottom: 65px;
 }
 
 .galleryheader {
@@ -296,14 +403,14 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
-    font-size: 20px;
+    font-size: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 40px;
     color: #f9f7f7;
-    background-color: #a25945;
+    background-color: #332C5C;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -335,13 +442,13 @@ html {
     user-select: none;
 }
 
-.prev {
-    left: 0;
+.next {
+    right: 200px;
+    border-radius: 3px 3px 3px 3px;
 }
 
-.next {
-    right: 0;
-    border-radius: 3px 3px 3px 3px;
+.prev {
+    left: 200px;
 }
 
 .prev:hover, .next:hover {
@@ -374,7 +481,7 @@ html {
 }
 
 .gallerycon div img {
-    width: 350px;
+    width: 700px;
     border-radius: 10px;
 
 }
@@ -400,11 +507,24 @@ html {
     margin-top: 15px;
 }
 
+
+.admins {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
 .adminspics {
     border-radius: 15px 15px 0px 0px;
     width: 100%;
     transition-duration: 0.15s;
     margin-bottom: 10px;
+}
+
+.mods {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
 }
 
 .modspics {
@@ -416,7 +536,8 @@ html {
 
 .staffpics {
     padding-top: 100px;
-    height: 3200px;
+    height: 1100px;
+    background-color: #26143D;
 }
 
 .ourmods {
@@ -424,14 +545,14 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
-    font-size: 25px;
+    font-size: 35px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 40px;
     padding-top: 10px;
     color: #f9f7f7;
-    background-color: #a25945;
+    background-color: #7432FF;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -444,14 +565,14 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
-    font-size: 25px;
+    font-size: 35px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 40px;
     padding-top: 8px;
     color: #f9f7f7;
-    background-color: #a25945;
+    background-color: #7432FF;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -463,15 +584,18 @@ html {
     width: 300px;
     background-color: #ffffff;
     border-radius: 15px 15px 15px 15px;
-    box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
 }
 
 .infotab:hover {
     transform: scale(1.05);
+}
+
+.secondrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
 }
 
 .reyna {
