@@ -19,40 +19,54 @@ document.addEventListener("DOMContentLoaded", function() {
     let selectedImage = ""; // Variable to store the selected image URL
 
     // Function to serialize tasks into JSON format
-    function serializeTasks() {
-        const tasks = [];
+    function serializeTasksState() {
+        const tasksState = [];
         todoList.querySelectorAll('.task').forEach(taskItem => {
             const taskText = taskItem.querySelector('span').textContent;
-            const subtasks = [];
-            // Serialize subtasks for the current task
-            taskItem.querySelectorAll('.subtask span').forEach(subtask => {
-                subtasks.push(subtask.textContent);
+            const taskChecked = taskItem.querySelector('.checkbox').checked;
+            const subtasksState = [];
+            taskItem.querySelectorAll('.subtask').forEach(subtask => {
+                const subtaskText = subtask.querySelector('span').textContent;
+                const subtaskChecked = subtask.querySelector('.checkbox').checked;
+                subtasksState.push({ text: subtaskText, checked: subtaskChecked });
             });
-            tasks.push({ text: taskText, subtasks: subtasks }); // Include subtasks along with the task text
+            tasksState.push({ text: taskText, checked: taskChecked, subtasks: subtasksState });
         });
-        return JSON.stringify(tasks);
+        return JSON.stringify(tasksState);
     }
-
-    // Function to save tasks to localStorage
-    function saveTasksToLocalStorage() {
-        const serializedTasks = serializeTasks();
-        console.log(serializedTasks);
-        localStorage.setItem('tasks', serializedTasks);
+    
+    // Function to save tasks and subtasks state to localStorage
+    function saveTasksStateToLocalStorage() {
+        const serializedTasksState = serializeTasksState();
+        localStorage.setItem('tasksState', serializedTasksState);
     }
-
-    function loadTasksFromLocalStorage() {
-        const serializedTasks = localStorage.getItem('tasks');
-        if (serializedTasks) {
-            const tasks = JSON.parse(serializedTasks);
-            tasks.forEach(task => {
-                const { text, subtasks } = task;
-                addTask(text, subtasks); // Pass subtasks along with the task text
+    
+    // Function to load tasks and subtasks state from localStorage
+    function loadTasksStateFromLocalStorage() {
+        const serializedTasksState = localStorage.getItem('tasksState');
+        if (serializedTasksState) {
+            const tasksState = JSON.parse(serializedTasksState);
+            tasksState.forEach(taskState => {
+                const taskItem = todoList.querySelector(`.task span:contains('${taskState.text}')`).closest('.task');
+                const taskCheckbox = taskItem.querySelector('.checkbox');
+                taskCheckbox.checked = taskState.checked;
+                taskState.subtasks.forEach(subtaskState => {
+                    const subtaskItem = taskItem.querySelector(`.subtask span:contains('${subtaskState.text}')`).closest('.subtask');
+                    const subtaskCheckbox = subtaskItem.querySelector('.checkbox');
+                    subtaskCheckbox.checked = subtaskState.checked;
+                    if (subtaskState.checked) {
+                        subtaskItem.querySelector('span').style.textDecoration = 'line-through';
+                    }
+                });
+                if (taskState.checked) {
+                    taskItem.querySelector('span').style.textDecoration = 'line-through';
+                }
             });
         }
     }
 
-    // Call the function to load tasks from localStorage when the page loads
-    loadTasksFromLocalStorage();
+    // Call the function to load tasks and subtasks state from localStorage when the page loads
+    loadTasksStateFromLocalStorage();
 
     // Function to add task
     function addTaskFromInput() {
@@ -152,14 +166,14 @@ document.addEventListener("DOMContentLoaded", function() {
             if (taskItem.subtaskInput) {
                 taskItem.subtaskInput.remove();
             }
-            saveTasksToLocalStorage(); // Save tasks after removing a task
+            saveTasksStateToLocalStorage(); // Save tasks after removing a task
         });
 
         // Add event listener for adding subtasks
         taskItem.querySelector(".subtask-btn").addEventListener("click", function() {
             addSubtask(taskItem);
         });
-        saveTasksToLocalStorage(); // Save tasks after adding a task
+        saveTasksStateToLocalStorage(); // Save tasks after adding a task
     }
 
     function addSubtask(parentTask) {
@@ -203,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     subtaskInput.remove();
     
                     // Save tasks after adding a subtask
-                    saveTasksToLocalStorage();
+                    saveTasksStateToLocalStorage();
                 }
             }
         });
@@ -286,6 +300,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     subtaskText.style.textDecoration = "none";
                 }
             });
+            saveTasksStateToLocalStorage();
         } else { // If the checkbox belongs to a subtask
             // Update the style of subtask text
             const subtaskText = target.nextElementSibling;
@@ -295,6 +310,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 subtaskText.style.textDecoration = "none";
             }
+            saveTasksStateToLocalStorage();
         }
     });
 
