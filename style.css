@@ -13,7 +13,7 @@ html {
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url(/fonts/Poppins/Poppins-Black.ttf) format('woff2');
+    src: url(/fonts/Poppins/Poppins-Black.ttf) format('ttf');
 }
 
 @font-face {
@@ -21,7 +21,7 @@ html {
     font-style: italic;
     font-weight: 500;
     font-display: swap;
-    src: url(/fonts/Poppins/Poppins-BlackItalic.ttf) format('woff2');
+    src: url(/fonts/Poppins/Poppins-BlackItalic.ttf) format('ttf');
 }
 
 @font-face {
@@ -29,7 +29,7 @@ html {
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/fonts/Borel/Borel-Regular.ttf) format('woff2');
+    src: url(/fonts/Borel/Borel-Regular.ttf) format('ttf');
 }
 
 .navbar { /*this is the navbar*/
