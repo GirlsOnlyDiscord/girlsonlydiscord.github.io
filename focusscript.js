@@ -57,6 +57,40 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the function to load tasks from localStorage when the page loads
     loadTasksFromLocalStorage();
 
+    function updateTasksState() {
+        const tasks = document.querySelectorAll('.task');
+        tasks.forEach(taskItem => {
+            const taskText = taskItem.querySelector('span').textContent;
+            const storedTask = findTaskByText(taskText);
+            if (storedTask) {
+                const storedSubtasks = storedTask.subtasks;
+                const subtasks = taskItem.querySelectorAll('.subtask');
+                subtasks.forEach((subtask, index) => {
+                    const storedSubtask = storedSubtasks[index];
+                    if (storedSubtask) {
+                        const subtaskText = subtask.querySelector('span');
+                        const subtaskCheckbox = subtask.querySelector('.checkbox');
+                        subtaskCheckbox.checked = storedSubtask.checked;
+                        subtaskText.style.textDecoration = storedSubtask.checked ? 'line-through' : 'none';
+                    }
+                });
+            }
+        });
+    }
+
+    // Find task by text in the loaded tasks from localStorage
+    function findTaskByText(taskText) {
+        const serializedTasks = localStorage.getItem('tasks');
+        if (serializedTasks) {
+            const tasks = JSON.parse(serializedTasks);
+            return tasks.find(task => task.text === taskText);
+        }
+        return null;
+    }
+
+    // Call the function to update tasks state
+    updateTasksState();
+
     // Function to add task
     function addTaskFromInput() {
         const taskText = newTaskInput.value.trim();
