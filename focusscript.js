@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (event.key === "Enter") {
                 taskText.textContent = editText.value;
                 editText.replaceWith(taskText);
+                saveTasksToLocalStorage();
             }
         });
     }
@@ -312,8 +313,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const taskText = target.nextElementSibling;
             if (isChecked) {
                 taskText.style.textDecoration = "line-through";
+                saveTasksToLocalStorage();
             } else {
                 taskText.style.textDecoration = "none";
+                saveTasksToLocalStorage();
             }
             // Loop through all subtasks of the parent task and update their styles
             const parentTask = target.closest(".task");
@@ -324,21 +327,23 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtaskCheckbox.checked = isChecked;
                 if (isChecked) {
                     subtaskText.style.textDecoration = "line-through";
+                    saveTasksToLocalStorage();
                 } else {
                     subtaskText.style.textDecoration = "none";
+                    saveTasksToLocalStorage();
                 }
             });
-            saveTasksToLocalStorage();
         } else { // If the checkbox belongs to a subtask
             // Update the style of subtask text
             const subtaskText = target.nextElementSibling;
             const isChecked = target.checked;
             if (isChecked) {
                 subtaskText.style.textDecoration = "line-through";
+                saveTasksToLocalStorage();
             } else {
                 subtaskText.style.textDecoration = "none";
+                saveTasksToLocalStorage();
             }
-            saveTasksToLocalStorage();
         }
     });
 
