@@ -292,20 +292,41 @@ html {
     background-color: #F8F5FF;
     display: flex;
     justify-content: center;
-    align-content: center;
     flex-direction: column;
     gap: 50px;
+    align-items: center;
+}
+
+.omgheader {
+    font-size: 3rem;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: normal;
+    color: #332C5C;
+}
+
+.safespan {
+    font-size: 3rem;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: italic !important;
+    color: #332C5C;
 }
 
 .omgtext {
     font-size: 1.375rem;
-    text-align: center;
     font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
     color: #332C5C;
     width: 700px;
     text-wrap: pretty;
+    text-align: center;
+}
+
+.omgtext2 {
+    font-size: 1.6rem;
+    text-align: center;
 }
 
 .auratext {
