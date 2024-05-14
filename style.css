@@ -77,6 +77,7 @@ html {
     box-sizing: border-box;
     display: flex;
     background-position: 50% 50%;
+    padding-bottom: 120px;
 }
 
 .thisthemainpagefr::before { /*this underlays and image behind the text and adjusts the opacity*/
@@ -95,7 +96,7 @@ html {
     align-content: center;
     width: 100%;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .headertext { 
@@ -275,30 +276,36 @@ html {
     flex-direction: column;
     height: 800px;
     width: 800px;
-    background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF);
+    background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-content: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .runbygirls {
     height: fit-content;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     background-color: #F8F5FF;
     display: flex;
     justify-content: center;
     align-content: center;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .omgtext {
-    font-size: 30px;
+    font-size: 1.375rem;
     text-align: center;
     font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
     color: #332C5C;
+    width: 700px;
+    text-wrap: pretty;
 }
 
 .auratext {
