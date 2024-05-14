@@ -118,6 +118,9 @@ document.addEventListener("DOMContentLoaded", function() {
     function addTask(taskText, subtasks = []) { // Accept subtasks as parameter
         const taskItem = document.createElement("li");
         taskItem.className = "task";
+        if (subtasks.every(subtask => subtask.checked)) {
+            taskItem.classList.add("checked");
+        }
         taskItem.innerHTML = `
             <div style="display: flex; align-content: center; gap: 8px;">
                 <input type="checkbox" class="checkbox" style="width: 1.3em;
@@ -152,9 +155,9 @@ document.addEventListener("DOMContentLoaded", function() {
             taskItem.subtasks.push(subtaskItem); // Store reference to subtask
             // Set the initial checked state of subtask checkbox
             subtaskItem.querySelector(".checkbox").checked = subtask.checked;
-            // Update subtask text decoration based on its checked state
+            // If subtask was checked, add checked class
             if (subtask.checked) {
-                subtaskItem.querySelector("span").style.textDecoration = "line-through";
+                subtaskItem.classList.add("checked");
             }
         });
 
@@ -304,49 +307,42 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Event listener for checkbox state changes in both tasks and subtasks
     todoList.addEventListener("change", function(event) {
         const target = event.target;
-        if (target.type === "checkbox" && target.closest(".task") && !target.closest(".subtask")) {
-            const isChecked = target.checked;
+        if (target.type === "checkbox" && target.closest(".task")) {
             // If the checkbox belongs to a parent task
-            // Update the style of parent task text
-            const taskText = target.nextElementSibling;
-            if (isChecked) {
-                taskText.style.textDecoration = "line-through";
-                saveTasksToLocalStorage();
-            } else {
-                taskText.style.textDecoration = "none";
-                saveTasksToLocalStorage();
-            }
-            // Loop through all subtasks of the parent task and update their styles
-            const parentTask = target.closest(".task");
-            const subtasks = parentTask.querySelectorAll(".subtask");
+            const taskItem = target.closest(".task");
+            const isChecked = target.checked;
+            taskItem.classList.toggle("checked", isChecked); // Toggle checked class based on checkbox state
+            // Loop through all subtasks of the parent task and update their checkbox state and classes
+            const subtasks = taskItem.querySelectorAll(".subtask");
             subtasks.forEach(subtask => {
                 const subtaskCheckbox = subtask.querySelector(".checkbox");
-                const subtaskText = subtask.querySelector("span");
                 subtaskCheckbox.checked = isChecked;
-                if (isChecked) {
-                    subtaskText.style.textDecoration = "line-through";
-                    saveTasksToLocalStorage();
-                } else {
-                    subtaskText.style.textDecoration = "none";
-                    saveTasksToLocalStorage();
-                }
+                subtask.classList.toggle("checked", isChecked); // Toggle checked class based on checkbox state
             });
-        } else { // If the checkbox belongs to a subtask
-            // Update the style of subtask text
-            const subtaskText = target.nextElementSibling;
+        } else if (target.type === "checkbox" && target.closest(".subtask")) {
+            // If the checkbox belongs to a subtask
+            const subtaskItem = target.closest(".subtask");
             const isChecked = target.checked;
-            if (isChecked) {
-                subtaskText.style.textDecoration = "line-through";
-                saveTasksToLocalStorage();
-            } else {
-                subtaskText.style.textDecoration = "none";
-                saveTasksToLocalStorage();
-            }
+            subtaskItem.classList.toggle("checked", isChecked); // Toggle checked class based on checkbox state
         }
+        saveTasksToLocalStorage(); // Save tasks after updating checkbox state
     });
+
+    // Function to update the checkbox state of a task
+    function updateTaskCheckboxState(taskItem) {
+        const taskCheckbox = taskItem.querySelector(".checkbox");
+        const isChecked = taskCheckbox.checked;
+        taskItem.classList.toggle("checked", isChecked); // Toggle checked class based on checkbox state
+        // Loop through subtasks and update their checkbox state and classes
+        taskItem.querySelectorAll(".subtask").forEach(subtask => {
+            const subtaskCheckbox = subtask.querySelector(".checkbox");
+            subtaskCheckbox.checked = isChecked;
+            subtask.classList.toggle("checked", isChecked); // Toggle checked class based on checkbox state
+        });
+        saveTasksToLocalStorage(); // Save tasks after updating checkbox state
+    }
 
     function showCustomNotification() {
         const notification = document.getElementById('custom-notification');
