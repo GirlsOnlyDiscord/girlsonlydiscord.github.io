@@ -46,6 +46,7 @@ html {
     background-size: cover;
     box-sizing: border-box;
     display: flex;
+    background-position: 50% 50%;
 }
 
 .thisthemainpagefr::before { /*this underlays and image behind the text and adjusts the opacity*/
@@ -55,6 +56,7 @@ html {
     background-image: url(/images/back.jpg);
     background-size: cover;
     z-index: -10;
+    background-position: 50% 50%;
 }
 
 .start {
