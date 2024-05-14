@@ -9,7 +9,7 @@ body {
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url(/fonts/Poppins/Poppins-Regular.ttf);
+    src: url(/fonts/Poppins/Poppins-Medium.ttf);
 }
 
 @font-face {
@@ -17,7 +17,7 @@ body {
     font-style: italic;
     font-weight: 500;
     font-display: swap;
-    src: url(/fonts/Poppins/Poppins-Italic.ttf);
+    src: url(/fonts/Poppins/Poppins-MediumItalic.ttf);
 }
 
 @font-face {
@@ -25,7 +25,7 @@ body {
     font-style: italic;
     font-weight: 600;
     font-display: swap;
-    src: url(/fonts/Poppins/Poppins-Italic.ttf);
+    src: url(/fonts/Poppins/Poppins-MediumItalic.ttf);
 }
 
 @font-face {
@@ -33,7 +33,7 @@ body {
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url(/fonts/Poppins/Poppins-Regular.ttf);
+    src: url(/fonts/Poppins/Poppins-Medium.ttf);
 }
 
 
