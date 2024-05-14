@@ -416,7 +416,7 @@ html {
     height: 650px;
     padding-top: 100px;
     padding-bottom: 65px;
-    background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
+    background: radial-gradient(#EEB1DB, #FCCADC, #FFE7E2, #ECE8FF, #ffffff, #ffffff, #ffffff);
 }
 
 .galleryheader {
