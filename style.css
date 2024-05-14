@@ -40,7 +40,6 @@ html {
 
 .navbar { /*this is the navbar*/
     overflow: hidden;
-    color: #332C5C;
     position: fixed;
     top: 0%;
     width: 100%;
