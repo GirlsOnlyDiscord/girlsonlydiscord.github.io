@@ -176,7 +176,7 @@ html {
 }
 
 .scrollingwords {
-    height: 1em;
+    height: 1.6em;
     margin: auto;
     margin-top: .5rem;
     overflow: hidden;
@@ -236,7 +236,6 @@ html {
 
 .mainbutton {
     display: flex;
-    padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -259,10 +258,6 @@ html {
     margin-left: 10px;
 }
 
-.bgspacer {
-    height: 150px;
-}
-
 .embed {
     display: none;
     position: absolute;
@@ -277,13 +272,21 @@ html {
 
 .aura {
     display: flex;
+    flex-direction: column;
     height: 800px;
     width: 800px;
-    background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
+    background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF);
     margin-left: auto;
     margin-right: auto;
-    align-items: center;
-    justify-content: center;
+}
+
+.omgtext {
+    font-size: 30px;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: normal;
+    color: #332C5C;
 }
 
 .auratext {
