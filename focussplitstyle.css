@@ -6,7 +6,7 @@ body {
 
 
 @font-face {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-display: swap;
@@ -14,7 +14,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-style: italic;
     font-weight: 500;
     font-display: swap;
@@ -22,7 +22,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-style: italic;
     font-weight: 600;
     font-display: swap;
@@ -30,7 +30,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-display: swap;
