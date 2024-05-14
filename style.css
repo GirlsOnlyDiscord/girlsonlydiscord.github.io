@@ -76,8 +76,7 @@ html {
     position: absolute;
     content: "";
     inset: 0px;
-    background-image: url(/images/back.jpg);
-    background-size: cover;
+    background: radial-gradient(ellipse at top, #EEB1DB, #FCCADC, #FFE7E2, #FFF5ED, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF);
     z-index: -10;
     background-position: 50% 50%;
 }
@@ -88,7 +87,6 @@ html {
     justify-content: center;
     align-content: center;
     width: 100%;
-    margin-top: 50px;
     text-align: center;
 }
 
@@ -215,7 +213,7 @@ html {
     justify-content: center;
 }
 
-auratext {
+.auratext {
     font-size: 50px;
     text-align: center;
     font-family: "Poppins";
