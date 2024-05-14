@@ -26,29 +26,19 @@ function showSlides(n) {
   dots[slideIndex].className += " active";
 }
 
-const navbar = document.querySelector('.navbar');
-const originalBgColor = window.getComputedStyle(navbar).backgroundColor;
-const originalTextColor = window.getComputedStyle(navbar.querySelector('a')).color;
+window.addEventListener('scroll', function() {
+  var navbar = document.querySelector('.navbar');
+  var navbarLinks = document.querySelectorAll('.navbar a');
 
-// Function to change navbar colors on scroll
-function changeNavbarColors() {
-  // Get the current scroll position
-  const scrollPosition = window.scrollY;
-
-  // Check if scroll position is twice the height of the navbar
-  if (scrollPosition > 2 * navbar.clientHeight) {
+  if (window.scrollY > 0) {
       navbar.style.backgroundColor = '#0F0A2E';
-      navbar.querySelectorAll('a').forEach(link => {
+      navbarLinks.forEach(function(link) {
           link.style.color = '#FFFFFF';
       });
   } else {
-      // Revert back to original colors
-      navbar.style.backgroundColor = originalBgColor;
-      navbar.querySelectorAll('a').forEach(link => {
-          link.style.color = originalTextColor;
+      navbar.style.backgroundColor = 'transparent';
+      navbarLinks.forEach(function(link) {
+          link.style.color = '#332C5C';
       });
   }
-}
-
-// Add scroll event listener
-window.addEventListener('scroll', changeNavbarColors);
+});
