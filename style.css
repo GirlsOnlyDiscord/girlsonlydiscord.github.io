@@ -205,10 +205,22 @@ html {
     margin-top: 30px;
 }
 
+.auratext {
+    height: 500px;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: normal;
+    color: #332C5C;
+    background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
+}
+
 .secondpage {
-    background-image: linear-gradient(#F4E8DC, #FBDFD5, #E0BFB6, #F4E8DC, #f5f5f5);
     height: 580px;
     padding-top: 100px;
+    background-color: #F8F5FF;
 }
 
 .whatdowe {
@@ -283,7 +295,6 @@ html {
 
 .gallerypage {
     height: 650px;
-    background-color: #f5f5f5;
     padding-top: 100px;
     padding-bottom: 65px;
 }
@@ -425,7 +436,6 @@ html {
 }
 
 .staffpics {
-    background-image: linear-gradient(#f5f5f5, #F4E8DC, #FBDFD5, #E0BFB6);
     padding-top: 100px;
     height: 1100px;
 }
