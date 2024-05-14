@@ -278,6 +278,18 @@ html {
     background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF);
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
+    align-content: center;
+}
+
+.runbygirls {
+    height: fit-content;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #F8F5FF;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .omgtext {
