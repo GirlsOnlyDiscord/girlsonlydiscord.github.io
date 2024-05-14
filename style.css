@@ -138,6 +138,42 @@ html {
     margin-bottom: 10px;
 }
 
+@keyframes scrollUp {
+    4%, 8% {
+        transform: translateY(-10%);
+    }
+    12%, 16% {
+        transform: translateY(-20%);
+    }
+    20%, 24% {
+        transform: translateY(-30%);
+    }
+    28%, 32% {
+        transform: translateY(-40%);
+    }
+    36%, 40% {
+        transform: translateY(-50%);
+    }
+    44%, 48% {
+        transform: translateY(-60%);
+    }
+    52%, 56% {
+        transform: translateY(-70%);
+    }
+    60%, 64% {
+        transform: translateY(-80%);
+    }
+    68%, 72% {
+        transform: translateY(-90%);
+    }
+    85% {
+        transform: translateY(-90%);
+    }
+    95% {
+        transform: translateY(0);
+    }
+}
+
 .scrollingwords {
     height: 1em;
     margin: auto;
@@ -202,6 +238,7 @@ html {
     padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
 }
 
 
