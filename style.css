@@ -34,8 +34,7 @@ html {
 
 .navbar { /*this is the navbar*/
     overflow: hidden;
-    background-color: #F4E8DC;
-    color: #A25945;
+    color: #ffffff;
     position: fixed;
     top: 0%;
     width: 100%;
@@ -47,7 +46,7 @@ html {
 
 .navbar a { /*this is the text in the navbar*/
     display: flex;
-    color: #A25945;
+    color: #ffffff;
     line-height: 70px;
     padding: 0px 16px;
     text-decoration: none;
@@ -144,7 +143,7 @@ html {
 }
 
 .joinus {
-    background-color: #fdf6e6;
+    background-color: #332C5C;
     padding-left: 20px;
     padding-right: 20px;
     font-family: "Poppins";
@@ -174,11 +173,11 @@ html {
 
 
 .joinuscolor {
-    color: #f68d70;
+    color: #ffffff;
 }
 
 .discordcolor {
-    color: #5865f2;
+    color: #ffffff;
     margin-left: 7px;
 }
 
@@ -205,16 +204,24 @@ html {
     margin-top: 30px;
 }
 
-.auratext {
-    height: 500px;
-    width: 100%;
+.aura {
+    display: flex;
+    height: 800px;
+    width: 800px;
+    background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+auratext {
     font-size: 50px;
     text-align: center;
     font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
     color: #332C5C;
-    background: radial-gradient(#89CAD6, #A6D2F4, #C3D5FD, #D1D9FF, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
 }
 
 .secondpage {
@@ -235,7 +242,7 @@ html {
     padding-right: 10px;
     margin-bottom: 40px;
     color: #f9f7f7;
-    background-color: #a25945;
+    background-color: #332C5C;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -251,7 +258,7 @@ html {
 .cardone {
     height: 350px;
     width: 300px;
-    background-color: #f9f7f7;
+    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
@@ -265,7 +272,7 @@ html {
 .cardtwo {
     height: 350px;
     width: 300px;
-    background-color: #f9f7f7;
+    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
@@ -278,7 +285,7 @@ html {
 .cardthree {
     height: 350px;
     width: 300px;
-    background-color: #f9f7f7;
+    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
@@ -311,7 +318,7 @@ html {
     padding-right: 10px;
     margin-bottom: 40px;
     color: #f9f7f7;
-    background-color: #a25945;
+    background-color: #332C5C;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -452,7 +459,7 @@ html {
     margin-bottom: 40px;
     padding-top: 10px;
     color: #f9f7f7;
-    background-color: #a25945;
+    background-color: #332C5C;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -472,7 +479,7 @@ html {
     margin-bottom: 40px;
     padding-top: 8px;
     color: #f9f7f7;
-    background-color: #a25945;
+    background-color: #332C5C;
     border-radius: 15px;
     width: fit-content;
     margin-left: auto;
@@ -482,7 +489,7 @@ html {
 .infotab {
     height: 360px;
     width: 300px;
-    background-color: #f9f7f7;
+    background-color: #ffffff;
     border-radius: 15px 15px 15px 15px;
     box-shadow: 0px 0px 20px #ffffff;
     transition-duration: 0.15s;
