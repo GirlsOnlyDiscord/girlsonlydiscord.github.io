@@ -98,7 +98,7 @@ html {
 .headertext { 
     font-size: 20px;
     margin-bottom: 10px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
@@ -111,7 +111,7 @@ html {
     margin-top: 0;
     color:#f9f7f7;
     text-shadow: 0 0 20px #2b1802;
-    font-family: "Borel", cursive;
+    font-family: "Borel";
     font-weight: 400;
     font-style: normal;
 }
@@ -120,7 +120,7 @@ html {
     font-size: 25px;
     margin-top: 0;
     margin-bottom: 10px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
@@ -133,7 +133,7 @@ html {
     font-size: 25px;
     padding-bottom: 50px;
     margin-top: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
@@ -153,7 +153,7 @@ html {
     background-color: #fdf6e6;
     padding-left: 20px;
     padding-right: 20px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: bold;
     font-size: 15px;
@@ -211,7 +211,7 @@ html {
 
 .whatdowe {
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     font-size: 25px;
@@ -294,7 +294,7 @@ html {
 
 .galleryheader {
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     font-size: 20px;
@@ -385,14 +385,14 @@ html {
 }
 
 .listone {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color: #2b1802;
 }
 
 .forcomm {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
     color: #2b1802;
@@ -423,7 +423,7 @@ html {
 
 .ourmods {
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     font-size: 25px;
@@ -443,7 +443,7 @@ html {
 
 .ouradmins {
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     font-size: 25px;
@@ -523,7 +523,7 @@ html {
 }
 
 .infotext {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
     color: #312F51;

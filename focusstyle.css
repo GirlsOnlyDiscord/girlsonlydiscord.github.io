@@ -79,7 +79,7 @@ body {
 }
 
 .goback {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
     color:#f9f7f7;
@@ -162,7 +162,7 @@ body {
 }
 
 .startbutton {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
@@ -180,7 +180,7 @@ body {
 }
 
 .pomodoro-timer {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: normal;
     color:#f9f7f7;
@@ -197,7 +197,7 @@ body {
 }
 
 .focusbutton {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
@@ -212,7 +212,7 @@ body {
 }
 
 .breakbutton {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
@@ -240,7 +240,7 @@ body {
 }
 
 .todoheader {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#f9f7f7;
@@ -265,7 +265,7 @@ textarea:focus, input:focus {
 
 .taskfield {
     width: 180px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#f9f7f7;
@@ -279,7 +279,7 @@ textarea:focus, input:focus {
     padding: 10px 10px 10px 10px;
     border: none;
     border-radius: 15px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#f9f7f7;
@@ -292,7 +292,7 @@ textarea:focus, input:focus {
 }
 
 ::placeholder {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#f9f7f748;
@@ -301,7 +301,7 @@ textarea:focus, input:focus {
 }
 
 .todo-list {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
@@ -336,7 +336,7 @@ li:has(task.input[type="checkbox"]:checked) {
 
 .playlistbutton {
     display: none;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
@@ -360,7 +360,7 @@ li:has(task.input[type="checkbox"]:checked) {
 .custom-notification {
     display: none;
     background-color: rgba(255, 99, 71, 0.8); /* Soft red background */
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
@@ -388,7 +388,7 @@ li:has(task.input[type="checkbox"]:checked) {
 }
 
 .settings {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 500;
     font-style: italic;
     color:#f9f7f7;
@@ -406,7 +406,7 @@ li:has(task.input[type="checkbox"]:checked) {
 
 .focusfield {
     width: 120px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#ffffff;
@@ -419,7 +419,7 @@ li:has(task.input[type="checkbox"]:checked) {
 
 .breakfield {
     width: 120px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#ffffff;
@@ -431,7 +431,7 @@ li:has(task.input[type="checkbox"]:checked) {
 }
 
 .customtext {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#ffffff;
@@ -446,7 +446,7 @@ li:has(task.input[type="checkbox"]:checked) {
     padding: 13px 13px 13px 13px;
     border: none;
     border-radius: 15px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#f9f7f7;
@@ -514,7 +514,7 @@ li:has(task.input[type="checkbox"]:checked) {
 
 .clockdiv {
     width: 295px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#ffffff;
@@ -534,7 +534,7 @@ li:has(task.input[type="checkbox"]:checked) {
 }
 
 .clockbutton {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#ffffff;
@@ -551,7 +551,7 @@ li:has(task.input[type="checkbox"]:checked) {
     top: 50%;
     left: 50%;
     translate:-50% -50%;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-style: normal;
     color:#ffffff;
