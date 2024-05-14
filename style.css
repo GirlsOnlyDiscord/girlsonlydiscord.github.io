@@ -48,6 +48,7 @@ html {
     display:flex;
     height: 70px;
     justify-content: center;
+    transition: all 175ms;
 }
 
 .navbar a { /*this is the text in the navbar*/
@@ -118,7 +119,7 @@ html {
 }
 
 .headertextthird {
-    font-size: 40px;
+    font-size: 3.5rem;
     margin-top: 0;
     margin-bottom: 10px;
     font-family: "Poppins";
@@ -212,7 +213,7 @@ html {
 }
 
 .joinus {
-    background-color: #332C5C;
+    background-color: #7432FF;
     padding-left: 20px;
     padding-right: 20px;
     font-family: "Poppins";
