@@ -58,7 +58,7 @@ body {
 
 .top {
     display: flex;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .containerorsum {
@@ -637,8 +637,30 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     .general {
         display: flex;
         bottom: 50px;
-        right: 120px;
+        right: 80px;
         position: fixed;
         gap: 50px;
+    }
+
+    .listcontainer {
+        margin-top: 50px;
+        margin-left: 80px;
+    }
+
+    .topleft {
+        margin-left: 80px;
+        transition-duration: 0.15s;
+        padding: 10px 10px 10px 10px;
+        background-color: #312F51;
+        border-radius: 10px;
+        height: fit-content;
+    }
+
+    .containerorsum {
+        width: 400px;
+        display: flex;
+        justify-content: flex-end;
+        position: fixed; 
+        right: 80px;
     }
 }
