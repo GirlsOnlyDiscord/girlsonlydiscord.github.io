@@ -18,35 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let selectedImage = ""; // Variable to store the selected image URL
 
-    var background = document.querySelector('.bgfr');
-
-    // Make sure background is loaded
-    background.onload = function() {
-        // Fade in the content
-        fadeInContent();
-    };
-
-    // Function to fade in content
-    function fadeInContent() {
-        // Get all elements that need to be faded in
-        var elementsToFadeIn = document.querySelectorAll('.top, .listcontainer, .digital-clock, .general');
-
-        // Set initial opacity to 0 and position them absolutely
-        elementsToFadeIn.forEach(function(element) {
-            element.style.opacity = 0;
-            element.style.position = 'absolute';
-        });
-
-        // Wait for a short delay before starting the fading effect
-        setTimeout(function() {
-            // Apply fading effect with transition
-            elementsToFadeIn.forEach(function(element) {
-                element.style.transition = 'opacity 2s';
-                element.style.opacity = 1;
-            });
-        }, 100); // Adjust delay time here
-    }
-
     // Function to serialize tasks into JSON format
     function serializeTasks() {
         const tasks = [];

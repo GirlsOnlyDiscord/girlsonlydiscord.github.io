@@ -42,16 +42,3 @@ window.addEventListener('scroll', function() {
       });
   }
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-  var focusLink = document.querySelector('.focus');
-  if (focusLink) {
-      focusLink.addEventListener('click', function (event) {
-          event.preventDefault();
-          document.body.style.opacity = 0;
-          setTimeout(function () {
-              window.location.href = focusLink.getAttribute('href');
-          }, 500); // Adjust the duration of the fade-out animation here
-      });
-  }
-});
