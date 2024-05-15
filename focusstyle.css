@@ -318,18 +318,24 @@ li:has(task.input[type="checkbox"]:checked) {
 
 .task .delete-btn {
     display: none;
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.15s ease; /* Smooth transition */
 }
 
 .task .subtask-btn {
     display: none;
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.15s ease; /* Smooth transition */
 }
 
 .task:hover .delete-btn {
     display: initial;
+    opacity: 1;
 }
 
 .task:hover .subtask-btn {
     display: initial;
+    opacity: 1;
 }
 
 .playlistbutton {
