@@ -413,36 +413,55 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function startCountdown() {
-        countdownInterval = setInterval(function() {
+        if (countdownInterval) return; //doesn't read on if already an intervalID is defined (interval is running)
+   
+        countdownInterval = setInterval(function () {
+            // things to do on EVERY tick
+            pomodoroTimer.textContent = remainingTime;
             remainingTime--;
-
-            pomodoroTimer.textContent = formatTime(remainingTime);
-
-            if (remainingTime <= 0) {
-                clearInterval(countdownInterval);
-                isFocus = !isFocus;
+   
+            // things to do when switching after the end of a period!
+            if (remainingTime < 0) {
                 if (isFocus) {
-                    remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
-                    focusBtn.style.backgroundColor = "#ffdbb152";
-                    breakBtn.style.backgroundColor = "";
                     focusPeriodsCompleted++;
-                    streakText.textContent = focusPeriodsCompleted;
-                    localStorage.setItem('focusPeriodsCompleted', focusPeriodsCompleted);
+                    console.log(focusPeriodsCompleted);
+                    localStorage.setItem(
+                        "focusPeriodsCompleted",
+                        focusPeriodsCompleted
+                    );
                     const currentDate = new Date();
-                    localStorage.setItem('lastUpdatedDate', currentDate.toDateString());
-                } else {
-                    remainingTime = parseInt(breakInput.value) * 60 || 5 * 60;
-                    breakBtn.style.backgroundColor = "#ffdbb152";
-                    focusBtn.style.backgroundColor = "";
+                    localStorage.setItem(
+                        "lastUpdatedDate",
+                        currentDate.toDateString()
+                    );
                 }
-                timerSound.play();
-                startCountdown();
+                // if isFocus OR !isFocus but time = 0 => change boolean, check which time to choose, update relevant UI
+                isFocus = !isFocus;
+                remainingTime = isFocus ? 25 * 60 : 5 * 60;
+                updateUI(); // separated all UI-updates on focus-switch
             }
         }, 1000);
-    }
+   }
 
+    function updateUI() {
+        streakText.textContent = focusPeriodsCompleted;
+   
+        
+       if (isFocus) {
+           focusBtn.style.backgroundColor = "#ffdbb152";
+           breakBtn.style.backgroundColor = "";
+       } else {
+           focusBtn.style.backgroundColor = "";
+           breakBtn.style.backgroundColor = "#ffdbb152";
+       }
+   }
+
+    // initial call to updateUI
+    updateUI();
+    // clears the interval when paused
     function pauseCountdown() {
         clearInterval(countdownInterval);
+        countdownInterval = null;
     }
 
     function formatTime(seconds) {
