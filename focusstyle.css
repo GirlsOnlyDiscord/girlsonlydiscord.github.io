@@ -373,7 +373,7 @@ li:has(task.input[type="checkbox"]:checked) {
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
     height: 650px;
-    width: 550px;
+    width: fit-content;
     z-index: 3000;
     align-self: center;
     display: none;

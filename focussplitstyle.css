@@ -349,7 +349,7 @@ li:has(input[type="checkbox"]:checked) {
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
     height: 650px;
-    width: 550px;
+    width: fit-content;
     z-index: 3000;
     align-self: center;
     display: none;
@@ -452,8 +452,40 @@ li:has(input[type="checkbox"]:checked) {
     margin-top: 20px;
 }
 
+.rightside {
+    right: 50px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+}
+
+.streakdiv {
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    background-color: #312F51;
+    border: 2px solid #fff;
+    transition: all 175ms ease-in-out;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: normal;
+    color:#ffffff;
+    font-size: 1rem;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.streakemoji {
+    margin-right: .25rem;
+}
+
 .screen {
-    display: none;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
 }
 
 .fullscreen img {
@@ -462,13 +494,16 @@ li:has(input[type="checkbox"]:checked) {
 
 .fullscreen {
     border: none;
-    height: fit-content;
-    width: fit-content;
-    background: transparent;
+    height: 50px;
+    width: 50px;
+    background: #312F51;
+    border-radius: 10px;
+    transition-duration: 0.15s;
 }
 
-.screen:hover {
+.fullscreen:hover {
     transform: scale(1.05);
+    background: #7432FF;
 }
 
 .clockdiv {
