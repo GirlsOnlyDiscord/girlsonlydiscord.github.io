@@ -43,24 +43,15 @@ window.addEventListener('scroll', function() {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Get all navigation links
-  var navLinks = document.querySelectorAll('.navbar focus');
-
-  // Add click event listener to each navigation link
-  navLinks.forEach(function(link) {
-      link.addEventListener('click', function(event) {
-          // Prevent default link behavior
+document.addEventListener("DOMContentLoaded", function () {
+  var focusLink = document.querySelector('.focus');
+  if (focusLink) {
+      focusLink.addEventListener('click', function (event) {
           event.preventDefault();
-
-          // Fade out the body
-          document.body.style.transition = 'opacity 0.3s ease';
           document.body.style.opacity = 0;
-
-          // Redirect to the target URL after a short delay
-          setTimeout(function() {
-              window.location.href = link.getAttribute('href');
-          }, 300); // 300ms delay to match the transition duration
+          setTimeout(function () {
+              window.location.href = focusLink.getAttribute('href');
+          }, 500); // Adjust the duration of the fade-out animation here
       });
-  });
+  }
 });

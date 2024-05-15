@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const clockButton = document.getElementById("clockbutton");
     const digitalClock = document.getElementById("digital-clock");
     const customBackground = localStorage.getItem('customBackground');
+    var background = document.querySelector('.bgfr');
 
     if (customBackground) {
         // Apply the custom background image
@@ -17,6 +18,37 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     let selectedImage = ""; // Variable to store the selected image URL
+
+    // Make sure background is loaded
+    background.onload = function() {
+        // Fade in the content
+        fadeInContent();
+    };
+
+    // Function to fade in content
+    function fadeInContent() {
+        // Get all elements that need to be faded in
+        var elementsToFadeIn = document.querySelectorAll('.top, .listcontainer, .digital-clock, .general');
+
+        // Set initial opacity to 0
+        elementsToFadeIn.forEach(function(element) {
+            element.style.opacity = 0;
+        });
+
+        // Apply fading effect
+        var opacity = 0;
+        var interval = setInterval(function() {
+            elementsToFadeIn.forEach(function(element) {
+                opacity += 0.01;
+                element.style.opacity = opacity;
+            });
+
+            // Stop interval when opacity reaches 1
+            if (opacity >= 1) {
+                clearInterval(interval);
+            }
+        }, 10); // Adjust fading speed here
+    }
 
     // Function to serialize tasks into JSON format
     function serializeTasks() {
