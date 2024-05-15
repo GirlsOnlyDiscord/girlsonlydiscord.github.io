@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const clockButton = document.getElementById("clockbutton");
     const digitalClock = document.getElementById("digital-clock");
     const customBackground = localStorage.getItem('customBackground');
-    var background = document.querySelector('.bgfr');
 
     if (customBackground) {
         // Apply the custom background image
@@ -18,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     let selectedImage = ""; // Variable to store the selected image URL
+
+    var background = document.querySelector('.bgfr');
 
     // Make sure background is loaded
     background.onload = function() {
@@ -30,24 +31,20 @@ document.addEventListener("DOMContentLoaded", function() {
         // Get all elements that need to be faded in
         var elementsToFadeIn = document.querySelectorAll('.top, .listcontainer, .digital-clock, .general');
 
-        // Set initial opacity to 0
+        // Set initial opacity to 0 and position them absolutely
         elementsToFadeIn.forEach(function(element) {
             element.style.opacity = 0;
+            element.style.position = 'absolute';
         });
 
-        // Apply fading effect
-        var opacity = 0;
-        var interval = setInterval(function() {
+        // Wait for a short delay before starting the fading effect
+        setTimeout(function() {
+            // Apply fading effect with transition
             elementsToFadeIn.forEach(function(element) {
-                opacity += 0.01;
-                element.style.opacity = opacity;
+                element.style.transition = 'opacity 2s';
+                element.style.opacity = 1;
             });
-
-            // Stop interval when opacity reaches 1
-            if (opacity >= 1) {
-                clearInterval(interval);
-            }
-        }, 10); // Adjust fading speed here
+        }, 100); // Adjust delay time here
     }
 
     // Function to serialize tasks into JSON format
