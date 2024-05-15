@@ -448,10 +448,6 @@ li:has(input[type="checkbox"]:checked) {
     margin-top: 20px;
 }
 
-.spotifyplaylist {
-    display: none;
-}
-
 .real {
     margin-top: 20px;
 }
