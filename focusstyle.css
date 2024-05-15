@@ -36,7 +36,6 @@ body {
     src: url(/fonts/Poppins/Poppins-Medium.ttf);
 }
 
-
 .bgfr { 
     width: 100vw;
     height: 100vh;
@@ -54,6 +53,15 @@ body {
     background-size: cover;
     z-index: -10;
     background-position: 50% 50%;
+}
+
+.fadein {
+    opacity: 0;
+}
+  
+.visible {
+    opacity: 1;
+    transition: opacity 2s ease-out;
 }
 
 

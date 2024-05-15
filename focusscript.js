@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let selectedImage = ""; // Variable to store the selected image URL
 
+    document.querySelectorAll('.fadein').forEach(element => {
+        element.classList.remove('fadein');
+        element.classList.add('visible');
+    });
+
     // Function to serialize tasks into JSON format
     function serializeTasks() {
         const tasks = [];
