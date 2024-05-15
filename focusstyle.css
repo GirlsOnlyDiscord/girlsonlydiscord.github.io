@@ -536,13 +536,9 @@ li:has(task.input[type="checkbox"]:checked) {
     color:#ffffff;
     font-size: 20px;
     border: none;
-    background-color: #312F51;
+    background-color: transparent;
     border-radius: 15px;
     text-align: center;
-}
-
-.clockbutton:hover {
-    background-color: #7432FF;
 }
 
 .digital-clock {

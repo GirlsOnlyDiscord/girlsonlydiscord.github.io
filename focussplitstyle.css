@@ -502,7 +502,7 @@ li:has(input[type="checkbox"]:checked) {
     color:#ffffff;
     font-size: 20px;
     border: none;
-    background-color: #312F51;
+    background-color: transparent;
     border-radius: 15px;
     text-align: center;
 }
