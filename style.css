@@ -47,23 +47,38 @@ html {
     display:flex;
     height: 70px;
     justify-content: center;
+    align-items: center;
     transition: all 175ms;
+    display: flex;
 }
 
-.navbar a { /*this is the text in the navbar*/
-    display: flex;
+.navnav { /*this is the text in the navbar*/
     color: #332C5C;
-    line-height: 70px;
-    padding: 0px 16px;
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
     transition-duration: 0.15s;
-    flex-shrink:1;
     margin-bottom: 16px;
 }
 
-.navbar a:hover { /*this is for upscaling on hover*/
+.navnav:hover { /*this is for upscaling on hover*/
+    transform: scale(1.1);
+}
+
+.focus {
+    text-decoration: none;
+    color: rgb(255 255 255) !important;
+    background-color: rgb(116, 50, 255) !important;
+    padding: 20px 20px 20px 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+    display: flex;
+    place-items: center;
+    font-size: 25px;
+    transition-duration: 0.15s;
+}
+
+.focus:hover {
     transform: scale(1.1);
 }
 
