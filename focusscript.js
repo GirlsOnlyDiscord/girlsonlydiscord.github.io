@@ -416,8 +416,15 @@ document.addEventListener("DOMContentLoaded", function() {
         if (countdownInterval) return; //doesn't read on if already an intervalID is defined (interval is running)
    
         countdownInterval = setInterval(function () {
+
+            const minutes = Math.floor(remainingTime / 60); // Calculate minutes
+            const seconds = remainingTime % 60; // Calculate remaining seconds
+
+            // Format minutes and seconds
+            const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
             // things to do on EVERY tick
-            pomodoroTimer.textContent = remainingTime;
+            pomodoroTimer.textContent = formattedTime;
             remainingTime--;
    
             // things to do when switching after the end of a period!
