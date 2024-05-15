@@ -699,4 +699,9 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
         transition-duration: 0.15s;
         cursor: pointer;
     }
+
+    .top {
+        display: flex;
+        padding-top: 50px;
+    }
 }
