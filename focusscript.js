@@ -315,6 +315,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const redoBtn = document.querySelector(".redobutton");
     const pomodoroTimer = document.getElementById("pomodoro-timer");
 
+    const streakText = document.querySelector(".streaktext");
+    let focusPeriodsCompleted = parseInt(localStorage.getItem('focusPeriodsCompleted')) || 0;
+    let lastUpdatedDate = localStorage.getItem('lastUpdatedDate');
+
+    if (lastUpdatedDate) {
+        const currentDate = new Date();
+        const lastUpdated = new Date(lastUpdatedDate);
+        if (currentDate.getDate() !== lastUpdated.getDate()) {
+            focusPeriodsCompleted = 0;
+            localStorage.setItem('focusPeriodsCompleted', focusPeriodsCompleted);
+        }
+    }
+
+    streakText.textContent = focusPeriodsCompleted;
+
     let countdownInterval;
     let isPaused = true;
     let isFocus = true;
@@ -410,6 +425,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     remainingTime = parseInt(focusInput.value) * 60 || 25 * 60;
                     focusBtn.style.backgroundColor = "#ffdbb152";
                     breakBtn.style.backgroundColor = "";
+                    focusPeriodsCompleted++;
+                    streakText.textContent = focusPeriodsCompleted;
+                    localStorage.setItem('focusPeriodsCompleted', focusPeriodsCompleted);
+                    const currentDate = new Date();
+                    localStorage.setItem('lastUpdatedDate', currentDate.toDateString());
                 } else {
                     remainingTime = parseInt(breakInput.value) * 60 || 5 * 60;
                     breakBtn.style.backgroundColor = "#ffdbb152";

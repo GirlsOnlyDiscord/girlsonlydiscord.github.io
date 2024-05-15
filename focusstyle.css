@@ -88,9 +88,9 @@ text-quote .content::after {
 .general {
     display: flex;
     bottom: 50px;
-    right: 120px;
+    right: 50px;
     position: fixed;
-    gap: 50px;
+    gap: 30px;
 }
 
 .pomodorocontainer {
@@ -481,7 +481,8 @@ li:has(task.input[type="checkbox"]:checked) {
     right: 50px;
     bottom: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 30px;
 }
 
 .streakdiv {
@@ -498,6 +499,8 @@ li:has(task.input[type="checkbox"]:checked) {
     font-style: normal;
     color:#ffffff;
     font-size: 1rem;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .streakemoji {
@@ -507,8 +510,6 @@ li:has(task.input[type="checkbox"]:checked) {
 .screen {
     width: fit-content;
     height: fit-content;
-    position: fixed;
-    transition-duration: 0.15s;
     cursor: pointer;
 }
 
@@ -518,13 +519,16 @@ li:has(task.input[type="checkbox"]:checked) {
 
 .fullscreen {
     border: none;
-    height: fit-content;
-    width: fit-content;
-    background: transparent;
+    height: 50px;
+    width: 50px;
+    background: #312F51;
+    border-radius: 10px;
+    transition-duration: 0.15s;
 }
 
-.screen:hover {
+.fullscreen:hover {
     transform: scale(1.05);
+    background: #7432FF;
 }
 
 .clockdiv {
