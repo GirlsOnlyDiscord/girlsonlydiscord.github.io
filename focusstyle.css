@@ -90,14 +90,6 @@ body {
     transform: scale(1.05);
 }
 
-text-quote .content::before {
-    content: open-quote;
-}
-
-text-quote .content::after {
-    content: close-quote;
-}
-
 .content {
     font-size: clamp(1.25rem,5vw,1.875rem);
     font-family: "Poppins";
