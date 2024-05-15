@@ -1,3 +1,4 @@
+import confetti from "https://cdn.skypack.dev/canvas-confetti";
 document.addEventListener("DOMContentLoaded", function() {
     const todoList = document.getElementById("todo-list");
     const newTaskInput = document.getElementById("new-task");
@@ -53,6 +54,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Call the function to load tasks from localStorage when the page loads
     loadTasksFromLocalStorage();
+
+    window.onload = function() {
+        confetti();
+    };
+
+    async function fetchRandomQuote() {
+        try {
+          const response = await fetch('https://api.quotable.io/random');
+          const data = await response.json();
+          return data.content;
+        } catch (error) {
+          console.error('Error fetching quote:', error);
+          return 'Failed to fetch quote.';
+        }
+    }
+      
+    // Function to update the text content with a random quote
+    async function updateQuote() {
+        const quoteElement = document.querySelector('#focusquote .content');
+        const quote = await fetchRandomQuote();
+        quoteElement.textContent = quote;
+    }
+      
+    // Function to update the quote every 10 minutes
+    function updateQuoteEvery10Minutes() {
+    updateQuote(); // Update quote immediately when the page loads
+    setInterval(updateQuote, 10 * 60 * 1000); // Update quote every 10 minutes
+    }
+      
+    // Call the function to update the quote every 10 minutes
+    updateQuoteEvery10Minutes();
 
     // Function to add task
     function addTaskFromInput() {

@@ -96,8 +96,12 @@ body {
     transform: scale(1.05);
 }
 
-.joinwrap {
-    height: 80px;
+text-quote .content::before {
+    content: open-quote;
+}
+
+text-quote .content::after {
+    content: close-quote;
 }
 
 .general {

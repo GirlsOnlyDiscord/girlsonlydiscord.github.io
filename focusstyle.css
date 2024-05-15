@@ -68,14 +68,6 @@ body {
     right: 120px;
 }
 
-.topright {
-    transition-duration: 0.15s;
-}
-
-.topright:hover {
-    transform: scale(1.05);
-}
-
 .goback {
     font-family: "Poppins";
     font-weight: 500;
@@ -98,8 +90,20 @@ body {
     transform: scale(1.05);
 }
 
-.joinwrap {
-    height: 80px;
+text-quote .content::before {
+    content: open-quote;
+}
+
+text-quote .content::after {
+    content: close-quote;
+}
+
+.content {
+    font-size: clamp(1.25rem,5vw,1.875rem);
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: normal;
+    color:#f9f7f7;
 }
 
 .general {
@@ -283,6 +287,7 @@ textarea:focus, input:focus {
     color:#f9f7f7;
     font-size: 15px;
     cursor: pointer;
+    transition-duration: 0.15s;
 }
 
 .addtask:hover {
