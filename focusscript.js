@@ -54,11 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the function to load tasks from localStorage when the page loads
     loadTasksFromLocalStorage();
 
-    document.querySelectorAll('.fadein').forEach(element => {
-        element.classList.remove('fadein');
-        element.classList.add('visible');
-    });
-
     // Function to add task
     function addTaskFromInput() {
         const taskText = newTaskInput.value.trim();
