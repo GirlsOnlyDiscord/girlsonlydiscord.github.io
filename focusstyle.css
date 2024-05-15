@@ -68,28 +68,6 @@ body {
     right: 100px;
 }
 
-.goback {
-    font-family: "Poppins";
-    font-weight: 500;
-    font-style: normal;
-    color:#f9f7f7;
-    font-size: 30px;
-    text-decoration: none;
-}
-
-.topleft {
-    margin-left: 120px;
-    transition-duration: 0.15s;
-    padding: 10px 10px 10px 10px;
-    background-color: #312F51;
-    border-radius: 10px;
-    height: fit-content;
-}
-
-.topleft:hover {
-    transform: scale(1.05);
-}
-
 .content {
     font-size: clamp(1.25rem,5vw,1.875rem);
     font-family: "Poppins";
@@ -145,6 +123,7 @@ text-quote .content::after {
 
 .redobutton:hover {
     transform: scale(1.05);
+    background-color: #7432FF;
 }
 
 .settingsbuttonimage {
@@ -164,6 +143,7 @@ text-quote .content::after {
 
 .settingsbutton:hover {
     transform: scale(1.05);
+    background-color: #7432FF;
 }
 
 .startbutton {
@@ -182,6 +162,7 @@ text-quote .content::after {
 
 .startbutton:hover {
     transform: scale(1.05);
+    background-color: #7432FF;
 }
 
 .pomodoro-timer {
@@ -233,10 +214,12 @@ text-quote .content::after {
 
 .focusbutton:hover {
     transform: scale(1.05);
+    background-color: #7432FF;
 }
 
 .breakbutton:hover {
     transform: scale(1.05);
+    background-color: #7432FF;
 }
 
 .listcontainer {
@@ -543,6 +526,7 @@ li:has(task.input[type="checkbox"]:checked) {
 
 .clockdiv:hover {
     transform: scale(1.05);
+    background-color: #7432FF;
 }
 
 .clockbutton {
@@ -671,15 +655,6 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     .listcontainer {
         margin-top: 50px;
         margin-left: 80px;
-    }
-
-    .topleft {
-        margin-left: 80px;
-        transition-duration: 0.15s;
-        padding: 10px 10px 10px 10px;
-        background-color: #312F51;
-        border-radius: 10px;
-        height: fit-content;
     }
 
     .containerorsum {

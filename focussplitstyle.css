@@ -73,29 +73,6 @@ body {
     display: none;
 }
 
-
-.goback {
-    font-family: "Poppins";
-    font-weight: 500;
-    font-style: normal;
-    color:#f9f7f7;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.topleft {
-    margin-left: 50px;
-    transition-duration: 0.15s;
-    padding: 10px 10px 10px 10px;
-    background-color: #312F51;
-    border-radius: 10px;
-    height: fit-content;
-}
-
-.topleft:hover {
-    transform: scale(1.05);
-}
-
 text-quote .content::before {
     content: open-quote;
 }
@@ -645,15 +622,6 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     .listcontainer {
         margin-top: 50px;
         margin-left: 80px;
-    }
-
-    .topleft {
-        margin-left: 80px;
-        transition-duration: 0.15s;
-        padding: 10px 10px 10px 10px;
-        background-color: #312F51;
-        border-radius: 10px;
-        height: fit-content;
     }
 
     .containerorsum {
