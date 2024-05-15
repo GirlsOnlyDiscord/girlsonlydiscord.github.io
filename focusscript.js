@@ -54,33 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the function to load tasks from localStorage when the page loads
     loadTasksFromLocalStorage();
 
-    async function fetchRandomQuote() {
-        try {
-            const response = await fetch('https://zenquotes.io/api/random');
-            const data = await response.json();
-            return data[0].q; // Extracting only the quote (q) from the response
-        } catch (error) {
-            console.error('Error fetching quote:', error);
-            return 'Failed to fetch quote.';
-        }
-    }
-    
-    // Function to update the text content with a random quote
-    async function updateQuote() {
-        const quoteElement = document.querySelector('#focusquote .content');
-        const quote = await fetchRandomQuote();
-        quoteElement.textContent = quote;
-    }
-    
-    // Function to update the quote every 10 minutes
-    function updateQuoteEvery10Minutes() {
-        updateQuote(); // Update quote immediately when the page loads
-        setInterval(updateQuote, 10 * 60 * 1000); // Update quote every 10 minutes
-    }
-    
-    // Call the function to update the quote every 10 minutes
-    updateQuoteEvery10Minutes();
-
     // Function to add task
     function addTaskFromInput() {
         const taskText = newTaskInput.value.trim();
@@ -579,5 +552,78 @@ document.addEventListener("DOMContentLoaded", function() {
             digitalClock.style.display = "none";
         }
     });
+
+    const quotes = [
+        "The only way to do great work is to love what you do.",
+        "Believe you can and you're halfway there.",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "The future belongs to those who believe in the beauty of their dreams.",
+        "In the middle of every difficulty lies opportunity.",
+        "Don't watch the clock; do what it does. Keep going.",
+        "You are never too old to set another goal or to dream a new dream.",
+        "The only limit to our realization of tomorrow will be our doubts of today.",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        "Your time is limited, don't waste it living someone else's life.",
+        "Life is 10% what happens to us and 90% how we react to it.",
+        "The only person you should try to be better than is the person you were yesterday.",
+        "Whatever you are, be a good one.",
+        "Strive not to be a success, but rather to be of value.",
+        "The only way to achieve the impossible is to believe it is possible.",
+        "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.",
+        "The greatest wealth is to live content with little.",
+        "The journey of a thousand miles begins with one step.",
+        "The best revenge is massive success.",
+        "It is during our darkest moments that we must focus to see the light.",
+        "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it.",
+        "The harder the conflict, the more glorious the triumph.",
+        "Dream big and dare to fail.",
+        "Every strike brings me closer to the next home run.",
+        "In the end, it's not the years in your life that count. It's the life in your years.",
+        "You miss 100% of the shots you don't take.",
+        "I attribute my success to this: I never gave or took any excuse.",
+        "The only way to do great work is to love what you do.",
+        "It does not matter how slowly you go as long as you do not stop.",
+        "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+        "The purpose of our lives is to be happy.",
+        "The only thing that overcomes hard luck is hard work.",
+        "Life is what happens when you're busy making other plans.",
+        "I am not a product of my circumstances. I am a product of my decisions.",
+        "The only limit to our realization of tomorrow is our doubts of today.",
+        "Success is not how high you have climbed, but how you make a positive difference to the world.",
+        "Happiness is not something ready-made. It comes from your own actions.",
+        "The only person you are destined to become is the person you decide to be.",
+        "You must be the change you wish to see in the world.",
+        "Do not wait to strike till the iron is hot, but make it hot by striking.",
+        "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+        "Life is 10% what happens to you and 90% how you react to it.",
+        "The only thing that will stop you from fulfilling your dreams is you.",
+        "In the midst of movement and chaos, keep stillness inside of you.",
+        "Don't let yesterday take up too much of today.",
+        "The only way to achieve the impossible is to believe it is possible.",
+        "Life is really simple, but we insist on making it complicated.",
+        "Keep your face always toward the sunshine—and shadows will fall behind you.",
+        "The only limit to our realization of tomorrow is our doubts of today.",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+        "The only thing that will stop you from fulfilling your dreams is you.",
+        "Believe you can and you're halfway there.",
+        "Life is 10% what happens to you and 90% how you react to it.",
+        "The only thing that will stop you from fulfilling your dreams is you."
+    ];
+
+    // Get the div element where the quote will be displayed
+    const contentDiv = document.querySelector('.content');
+
+    // Function to generate a random quote from the array and display it
+    function generateQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        contentDiv.textContent = quotes[randomIndex];
+    }
+
+    // Call the function initially to display a random quote
+    generateQuote();
+
+    // Call the function every 10 minutes
+    setInterval(generateQuote, 300000); // 300000 milliseconds = 5 minutes
 
 });
