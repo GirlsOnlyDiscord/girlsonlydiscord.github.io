@@ -18,11 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let selectedImage = ""; // Variable to store the selected image URL
 
-    document.querySelectorAll('.fadein').forEach(element => {
-        element.classList.remove('fadein');
-        element.classList.add('visible');
-    });
-
     // Function to serialize tasks into JSON format
     function serializeTasks() {
         const tasks = [];
@@ -58,6 +53,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Call the function to load tasks from localStorage when the page loads
     loadTasksFromLocalStorage();
+
+    document.querySelectorAll('.fadein').forEach(element => {
+        element.classList.remove('fadein');
+        element.classList.add('visible');
+    });
 
     // Function to add task
     function addTaskFromInput() {
