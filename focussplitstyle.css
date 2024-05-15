@@ -208,7 +208,6 @@ text-quote .content::after {
 }
 
 .listcontainer {
-    margin-top: 50px;
     margin-left: 50px;
 }
 
@@ -620,7 +619,6 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     }
 
     .listcontainer {
-        margin-top: 50px;
         margin-left: 80px;
     }
 
