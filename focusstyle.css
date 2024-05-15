@@ -317,25 +317,25 @@ li:has(task.input[type="checkbox"]:checked) {
 }
 
 .task .delete-btn {
-    display: none;
+    visibility: hidden;
     opacity: 0; /* Start with opacity 0 */
-    transition: opacity 0.15s ease; /* Smooth transition */
+    transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
 .task .subtask-btn {
-    display: none;
+    visibility: hidden;
     opacity: 0; /* Start with opacity 0 */
-    transition: opacity 0.15s ease; /* Smooth transition */
+    transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
 .task:hover .delete-btn {
-    display: initial;
     opacity: 1;
+    visibility: visible;
 }
 
 .task:hover .subtask-btn {
-    display: initial;
     opacity: 1;
+    visibility: visible;
 }
 
 .playlistbutton {
