@@ -86,7 +86,7 @@ text-quote .content::after {
     bottom: 50px;
     right: 50px;
     position: fixed;
-    gap: 50px;
+    gap: 30px;
 }
 
 .pomodorocontainer {
@@ -98,6 +98,7 @@ text-quote .content::after {
 .clockactions {
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 .redobuttonimage {
@@ -507,7 +508,7 @@ li:has(input[type="checkbox"]:checked) {
 }
 
 .clockdiv {
-    width: 200px;
+    width: 100%;
     font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
@@ -644,9 +645,9 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     .general {
         display: flex;
         bottom: 50px;
-        right: 80px;
+        right: 50px;
         position: fixed;
-        gap: 50px;
+        gap: 30px;
     }
 
     .listcontainer {
