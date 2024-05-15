@@ -39,17 +39,17 @@ html {
 }
 
 .navbar { /*this is the navbar*/
-    overflow: hidden;
     position: fixed;
     top: 0%;
     width: 100%;
     z-index: 1000;
     display:flex;
-    height: 70px;
+    height: 100px;
     justify-content: center;
     align-items: center;
     transition: all 175ms;
     display: flex;
+    gap: 50px;
 }
 
 .navnav { /*this is the text in the navbar*/
@@ -58,7 +58,6 @@ html {
     font-size: 30px;
     font-weight: bold;
     transition-duration: 0.15s;
-    margin-bottom: 16px;
 }
 
 .navnav:hover { /*this is for upscaling on hover*/
@@ -69,13 +68,13 @@ html {
     text-decoration: none;
     color: rgb(255 255 255) !important;
     background-color: rgb(116, 50, 255) !important;
-    padding: 20px 20px 20px 20px;
+    padding: 15px 15px 15px 15px;
     border-radius: 15px;
-    margin-top: 10px;
     display: flex;
     place-items: center;
     font-size: 25px;
     transition-duration: 0.15s;
+    font-weight: bold;
 }
 
 .focus:hover {
