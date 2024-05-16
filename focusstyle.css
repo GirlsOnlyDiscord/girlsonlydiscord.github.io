@@ -412,8 +412,9 @@ li:has(task.input[type="checkbox"]:checked) {
     display: flex;
     position: fixed;
     top: 20px;
-    gap: 280px;
-    margin-right: 20px;
+    gap: 240px;
+    margin-right: 50px;
+    margin-left: 30px;
 }
 
 .customcon {
@@ -481,7 +482,7 @@ li:has(task.input[type="checkbox"]:checked) {
 }
 
 .images {
-    height: 40px;
+    height: 60px;
     width: 100%;
     border-radius: 10px;
 }

@@ -677,6 +677,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const settingsBtn = document.querySelector(".settingsbutton");
     const settingsContainer = document.querySelector(".settingscontainer");
+    const closeSettings = document.querySelector(".closesettings");
 
     //Function to toggle settings
     function toggleSettings() {

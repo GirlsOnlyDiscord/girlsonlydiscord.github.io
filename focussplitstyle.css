@@ -365,8 +365,26 @@ li:has(input[type="checkbox"]:checked) {
     display: flex;
     position: fixed;
     top: 20px;
-    gap: 280px;
-    margin-right: 20px;
+    gap: 240px;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+
+.closesettings {
+    height: 36px;
+    width: 36px;
+    background-color: transparent;
+    border: none;
+}
+
+.closesettings img {
+    height: 30px;
+    width: 30px;
+    transition-duration: 0.15s;
+}
+
+.closesettings img:hover {
+    transform: scale(1.05);
 }
 
 .customcon {
@@ -434,7 +452,7 @@ li:has(input[type="checkbox"]:checked) {
 }
 
 .images {
-    height: 80px;
+    height: 60px;
     width: 100%;
     border-radius: 10px;
 }
@@ -444,7 +462,6 @@ li:has(input[type="checkbox"]:checked) {
     padding: 0;
     border: 0;
     margin-bottom: 25px;
-    height: 80px;
 }
 
 .bg {
