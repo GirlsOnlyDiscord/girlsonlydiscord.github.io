@@ -308,28 +308,6 @@ li:has(input[type="checkbox"]:checked) {
     display: initial;
 }
 
-.playlistbutton {
-    display: none;
-    font-family: "Poppins";
-    font-weight: 500;
-    font-style: italic;
-    color:#f9f7f7;
-    font-size: 30px;
-    background-color: #312F51;
-    border-radius: 10px;
-    padding: 10px 10px 10px 10px;
-    border: none;
-    transition-duration: 0.15s;
-    width: fit-content;
-    align-self: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.playlistbutton:hover {
-    transform: scale(1.05);
-}
-
 .custom-notification {
     display: none;
     background-color: rgba(255, 99, 71, 0.8); /* Soft red background */
@@ -566,6 +544,17 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     border: none;
     border-radius: 10px;
     background-color: #312F51;
+    cursor: pointer;
+}
+
+.spotifybutton img {
+    width: 20px;
+    height: 20px;
+}
+
+.spotifybutton:hover {
+    transform: scale(1.05);
+    background-color: #7432FF;
 }
 
 @media screen and (max-height: 900px) {

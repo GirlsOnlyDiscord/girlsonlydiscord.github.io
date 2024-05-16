@@ -672,4 +672,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the function every 10 minutes
     setInterval(generateQuote, 300000); // 300000 milliseconds = 5 minutes
 
+    const sidebar = document.getElementById("sidebar");
+    const spotifyButton = document.getElementById("spotifybutton");
+
+    function toggleSidebar() {
+        sidebar.classList.toggle("show-sidebar");
+    }
+
+    spotifyButton.addEventListener("click", function() {
+        toggleSidebar();
+    });
+
 });
