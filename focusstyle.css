@@ -417,6 +417,23 @@ li:has(task.input[type="checkbox"]:checked) {
     margin-left: 30px;
 }
 
+.closesettings {
+    height: 36px;
+    width: 36px;
+    background-color: transparent;
+    border: none;
+}
+
+.closesettings img {
+    height: 30px;
+    width: 30px;
+    transition-duration: 0.15s;
+}
+
+.closesettings img:hover {
+    transform: scale(1.05);
+}
+
 .customcon {
     display: flex;
     margin-top: 25px;
@@ -492,7 +509,7 @@ li:has(task.input[type="checkbox"]:checked) {
     padding: 0;
     border: 0;
     margin-bottom: 25px;
-    height: 80px;
+    height: fit-content;
 }
 
 .bg {
