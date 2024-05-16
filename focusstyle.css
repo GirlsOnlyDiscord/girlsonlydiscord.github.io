@@ -592,6 +592,17 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     border: none;
     border-radius: 10px;
     background-color: #312F51;
+    transition-duration: 0.15s;
+}
+
+.spotifybutton img {
+    width: 20px;
+    height: 20px;
+}
+
+.spotifybutton:hover {
+    transform: scale(1.05);
+    background-color: #7432FF;
 }
 
 @media screen and (max-height: 900px) {
