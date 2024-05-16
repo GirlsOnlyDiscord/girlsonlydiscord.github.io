@@ -212,6 +212,7 @@ text-quote .content::after {
     margin-left: 50px;
     display: flex;
     flex-direction: column;
+    top: 100px;
 }
 
 .todoheader {
@@ -583,9 +584,10 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
 
 .toptext {
     display: flex;
-    justify-content: space-between;
     position: fixed;
-    top: 50px;
+    top: 20px;
+    gap: 280px;
+    margin-left: 20px;
 }
 
 .closesidebar {
@@ -596,8 +598,16 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
 }
 
 .closesidebar img {
-    height: 20px;
-    width: 20px;
+    height: 36px;
+    width: 36px;
+}
+
+.topmusic {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: italic;
+    color:#ffffff;
+    font-size: 30px;
 }
 
 @media screen and (max-height: 900px) {
