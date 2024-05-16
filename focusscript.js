@@ -674,12 +674,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const sidebar = document.getElementById("sidebar");
     const spotifyButton = document.getElementById("spotifybutton");
+    const closeButton = document.querySelector(".closesidebar");
 
     function toggleSidebar() {
         sidebar.classList.toggle("show-sidebar");
     }
 
     spotifyButton.addEventListener("click", function() {
+        toggleSidebar();
+    });
+
+    // Event listener for closing sidebar
+    closeButton.addEventListener("click", function() {
         toggleSidebar();
     });
 
