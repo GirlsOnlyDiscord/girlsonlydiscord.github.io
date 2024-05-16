@@ -557,6 +557,22 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     background-color: #7432FF;
 }
 
+.sidebar {
+    position: fixed;
+    left: -650px;
+    width: 650px;
+    height: 100%;
+    background-color: #312F51;
+    transition: left 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-sidebar {
+    left: 0;
+}
+
 @media screen and (max-height: 900px) {
     .pomodoro-timer {
         font-family: "Poppins";
