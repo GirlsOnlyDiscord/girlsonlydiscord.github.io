@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const todoList = document.getElementById("todo-list");
     const newTaskInput = document.getElementById("new-task");
     const addTaskBtn = document.getElementById("add-task");
-    const settingsBtn = document.querySelector(".settingsbutton");
-    const settingsContainer = document.querySelector(".settingscontainer");
     const focusInput = document.getElementById("focusquantity");
     const breakInput = document.getElementById("breakquantity");
     const timerSound = new Audio('focusimages/notification.mp3');
@@ -409,7 +407,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector(".bgfr").style.backgroundImage = `url(${selectedImage})`;
         localStorage.setItem('customBackground', selectedImage);
         // Hide settings container
-        settingsContainer.style.display = "none";
     });
 
     function startCountdown() {
@@ -476,19 +473,6 @@ document.addEventListener("DOMContentLoaded", function() {
         let remainingSeconds = seconds % 60;
         return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     }
-
-    // Add event listener to settings button
-    settingsBtn.addEventListener("click", function() {
-        // Toggle the display of settings container
-        if (settingsContainer.style.display === "none" || settingsContainer.style.display === "") {
-            settingsContainer.style.display = "flex";
-            // Set default values for focus and break fields
-            focusInput.value = 25;
-            breakInput.value = 5;
-        } else {
-            settingsContainer.style.display = "none";
-        }
-    });
 
     // Get the upload button and the input element
     const uploadBtn = document.getElementById("upload");
@@ -689,6 +673,24 @@ document.addEventListener("DOMContentLoaded", function() {
     // Event listener for closing sidebar
     closeButton.addEventListener("click", function() {
         toggleSidebar();
+    });
+
+    const settingsBtn = document.querySelector(".settingsbutton");
+    const settingsContainer = document.querySelector(".settingscontainer");
+
+    //Function to toggle settings
+    function toggleSettings() {
+        settingsContainer.classList.toggle("show-settings")
+        settingsContainer.classList.toggle("settingsContainer")
+    }
+
+    settingsBtn.addEventListener("click", function () {
+        toggleSettings();
+    });
+
+    // Event listener for closing settings
+    closeSettings.addEventListener("click", function() {
+        toggleSettings();
     });
 
 });
