@@ -479,7 +479,7 @@ li:has(task.input[type="checkbox"]:checked) {
 
 
 .save {
-    background-color: #666291;
+    background-color: #7432FF;
     padding: 13px 13px 13px 13px;
     border: none;
     border-radius: 15px;
@@ -490,6 +490,11 @@ li:has(task.input[type="checkbox"]:checked) {
     font-size: 15px;
     width: fit-content;
     align-self: center;
+    transition-duration: 0.15s;
+}
+
+.save:hover {
+    transform: scale(1.05);
 }
 
 .imagerow {
