@@ -228,7 +228,7 @@ text-quote .content::after {
     display: flex;
     flex-direction: column;
     position: fixed;
-    margin-top: 100;
+    margin-top: 100px;
 }
 
 .todoheader {
@@ -635,9 +635,10 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
 
 .toptext {
     display: flex;
-    justify-content: space-between;
     position: fixed;
-    top: 50px;
+    top: 20px;
+    gap: 280px;
+    margin-left: 20px;
 }
 
 .closesidebar {
@@ -648,8 +649,8 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
 }
 
 .closesidebar img {
-    height: 20px;
-    width: 20px;
+    height: 36px;
+    width: 36px;
 }
 
 .topmusic {
