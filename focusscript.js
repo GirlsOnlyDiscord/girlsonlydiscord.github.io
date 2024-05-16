@@ -676,8 +676,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const spotifyButton = document.getElementById("spotifybutton");
     const closeButton = document.querySelector(".closesidebar");
 
+    // Function to toggle sidebar
     function toggleSidebar() {
         sidebar.classList.toggle("show-sidebar");
+        sidebar.classList.toggle("sidebar");
     }
 
     spotifyButton.addEventListener("click", function() {

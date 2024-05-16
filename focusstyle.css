@@ -58,6 +58,7 @@ body {
 .top {
     display: flex;
     padding-top: 100px;
+    position: fixed;
 }
 
 .containerorsum {
@@ -226,6 +227,7 @@ text-quote .content::after {
     margin-left: 120px;
     display: flex;
     flex-direction: column;
+    position: fixed;
 }
 
 .todoheader {
@@ -609,26 +611,38 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
 .sidebar {
     position: fixed;
     left: -650px;
-    width: 650px;
+    width: 450px;
     height: 100%;
-    background-color: #312F51;
+    background-color: #000000;
     transition: left 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .show-sidebar {
+    position: fixed;
     left: 0;
+    width: 450px;
+    height: 100%;
+    background-color: #000000;
+    transition: left 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.toptext {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 50px;
 }
 
 .closesidebar {
     height: 36px;
     width: 36px;
     background-color: transparent;
-    position: fixed;
-    top: 50px;
     border: none;
 }
 
@@ -734,6 +748,7 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
 
     .listcontainer {
         margin-left: 80px;
+        position: fixed;
     }
 
     .containerorsum {
@@ -747,5 +762,6 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     .top {
         display: flex;
         padding-top: 50px;
+        position: fixed;
     }
 }
