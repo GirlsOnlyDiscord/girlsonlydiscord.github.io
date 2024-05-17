@@ -679,13 +679,17 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
 
 .customplaylisttext {
     font-size: 1.5rem;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: normal;
+    color:#f9f7f7;
 }
 
 .inputfield {
     align-self: center;
 }
 
-.newplaylist {
+.new-playlist {
     border: 2px solid white;
     border-radius: 10px;
     background-color: #302645;
@@ -696,14 +700,35 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     font-style: italic;
     color:#f9f7f7;
     font-size: 20px;
+    margin-top: 20px;
 }
 
-.newplaylist::placeholder {
+.new-playlist::placeholder {
     font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
     color:#f9f7f748;
     font-size: 20px;
+}
+
+.playlistsave {
+    background-color: #7432FF;
+    padding: 15px 15px 15px 15px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: normal;
+    color:#f9f7f7;
+    font-size: 20px;
+    width: fit-content;
+    align-self: center;
+    transition-duration: 0.15s;
+    margin-top: 20px;
+}
+
+.playlist:hover {
+    transform: scale(1.05);
 }
 
 .toptext {
