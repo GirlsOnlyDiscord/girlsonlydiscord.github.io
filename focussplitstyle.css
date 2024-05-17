@@ -711,10 +711,15 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
 
 .topmusic {
     font-family: "Poppins";
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
-    color:#ffffff;
-    font-size: 30px;
+    color:#f9f7f7;
+    font-size: 20px;
+    box-shadow: 0 4px 2px -2px rgba(142, 139, 198, 0.9);
+}
+
+iframe {
+    height: 352px !important;
 }
 
 @media screen and (max-height: 900px) {
