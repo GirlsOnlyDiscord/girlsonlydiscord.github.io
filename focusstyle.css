@@ -687,6 +687,9 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
 
 .inputfield {
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .new-playlist {
@@ -700,7 +703,6 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     font-style: italic;
     color:#f9f7f7;
     font-size: 20px;
-    margin-top: 20px;
 }
 
 .new-playlist::placeholder {
@@ -724,10 +726,9 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     width: fit-content;
     align-self: center;
     transition-duration: 0.15s;
-    margin-top: 20px;
 }
 
-.playlist:hover {
+.playlistsave:hover {
     transform: scale(1.05);
 }
 

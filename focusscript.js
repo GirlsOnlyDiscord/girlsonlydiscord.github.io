@@ -694,4 +694,32 @@ document.addEventListener("DOMContentLoaded", function() {
         toggleSettings();
     });
 
+    document.getElementById("playlistsave").addEventListener("click", function() {
+        // Get the input field value (URL)
+        var playlistUrl = document.getElementById("new-playlist").value;
+        
+        // Extract playlist ID from the URL
+        var playlistId = extractPlaylistId(playlistUrl);
+        
+        // If a valid playlist ID is found, update the iframe src
+        if (playlistId) {
+            var embedUrl = "https://open.spotify.com/embed/playlist/" + playlistId;
+            document.querySelector("iframe").src = embedUrl;
+        } else {
+            // Handle invalid URL or no ID found
+            alert("Invalid playlist URL. Please paste a valid Spotify playlist URL.");
+        }
+    });
+    
+    // Function to extract playlist ID from the URL
+    function extractPlaylistId(url) {
+        var regex = /playlist\/(\w+)/;
+        var match = url.match(regex);
+        if (match && match.length > 1) {
+            return match[1];
+        } else {
+            return null;
+        }
+    }
+
 });
