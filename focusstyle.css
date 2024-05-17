@@ -449,7 +449,7 @@ li:has(task.input[type="checkbox"]:checked) {
     color:#ffffff;
     font-size: 20px;
     border: none;
-    background-color: #666291;
+    background-color: #302645;
     margin-top: 10px;
     border-radius: 15px;
 }
@@ -462,7 +462,7 @@ li:has(task.input[type="checkbox"]:checked) {
     color:#ffffff;
     font-size: 20px;
     border: none;
-    background-color: #666291;
+    background-color: #302645;
     margin-top: 10px;
     border-radius: 15px;
 }
@@ -980,13 +980,13 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
         color:#ffffff;
         font-size: 20px;
         border: none;
-        background-color: #666291;
+        background-color: #302645;
         margin-top: 10px;
         border-radius: 15px;
     }
 
     .save {
-        background-color: #666291;
+        background-color: #7432FF;
         padding: 13px 13px 13px 13px;
         border: none;
         border-radius: 15px;
@@ -1008,7 +1008,7 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
         color:#ffffff;
         font-size: 20px;
         border: none;
-        background-color: #666291;
+        background-color: #302645;
         margin-top: 10px;
         border-radius: 15px;
     }
