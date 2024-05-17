@@ -601,7 +601,7 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     left: -650px;
     width: 450px;
     height: 100%;
-    background-color: #312F51;
+    background-color: #000000;
     transition: left 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -613,11 +613,75 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     left: 0;
     width: 450px;
     height: 100%;
-    background-color: #312F51;
+    background-color: #000000;
     transition: left 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.customplaylisttext {
+    font-size: 1.5rem;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: normal;
+    color:#f9f7f7;
+}
+
+.inputfield {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.new-playlist {
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #302645;
+    width: 300px;
+    height: 35px;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+}
+
+.new-playlist::placeholder {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f748;
+    font-size: 20px;
+}
+
+.onlyspotify {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 15px;
+}
+
+.playlistsave {
+    background-color: #7432FF;
+    padding: 15px 15px 15px 15px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: normal;
+    color:#f9f7f7;
+    font-size: 20px;
+    width: fit-content;
+    align-self: center;
+    transition-duration: 0.15s;
+}
+
+.playlistsave:hover {
+    transform: scale(1.05);
 }
 
 .toptext {
