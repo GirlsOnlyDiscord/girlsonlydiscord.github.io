@@ -698,66 +698,25 @@ document.addEventListener("DOMContentLoaded", function() {
         // Get the input field value (URL)
         var playlistUrl = document.getElementById("new-playlist").value;
         
-        // Determine the platform based on the URL format
-        var platform = getPlatform(playlistUrl);
-        
-        // Extract playlist ID based on platform
-        var playlistId;
-        switch (platform) {
-            case "spotify":
-                playlistId = extractPlaylistId(playlistUrl, /playlist\/(\w+)/);
-                break;
-            case "youtube":
-                playlistId = extractPlaylistId(playlistUrl, /list=([^\&]+)/);
-                break;
-            case "apple":
-                playlistId = extractPlaylistId(playlistUrl, /playlist\/(\w+)/);
-                break;
-            default:
-                playlistId = null;
-        }
+        // Extract playlist ID from the URL
+        var playlistId = extractPlaylistId(playlistUrl);
         
         // If a valid playlist ID is found, update the iframe src
         if (playlistId) {
-            var embedUrl;
-            switch (platform) {
-                case "spotify":
-                    embedUrl = "https://open.spotify.com/embed/playlist/" + playlistId;
-                    break;
-                case "youtube":
-                    embedUrl = "https://music.youtube.com/playlist?list=" + playlistId;
-                    break;
-                case "apple":
-                    embedUrl = "https://music.apple.com/us/playlist/" + playlistId;
-                    break;
-                default:
-                    embedUrl = "";
-            }
+            var embedUrl = "https://open.spotify.com/embed/playlist/" + playlistId;
             document.querySelector("iframe").src = embedUrl;
         } else {
             // Handle invalid URL or no ID found
-            alert("Invalid playlist URL. Please paste a valid playlist URL from Spotify, YouTube Music, or Apple Music.");
+            alert("Invalid playlist URL. Please paste a valid Spotify playlist URL.");
         }
     });
     
     // Function to extract playlist ID from the URL
-    function extractPlaylistId(url, regex) {
+    function extractPlaylistId(url) {
+        var regex = /playlist\/(\w+)/;
         var match = url.match(regex);
         if (match && match.length > 1) {
             return match[1];
-        } else {
-            return null;
-        }
-    }
-    
-    // Function to determine platform based on URL format
-    function getPlatform(url) {
-        if (url.includes("open.spotify.com")) {
-            return "spotify";
-        } else if (url.includes("music.youtube.com")) {
-            return "youtube";
-        } else if (url.includes("music.apple.com")) {
-            return "apple";
         } else {
             return null;
         }
