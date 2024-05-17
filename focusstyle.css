@@ -473,7 +473,6 @@ li:has(task.input[type="checkbox"]:checked) {
     font-style: italic;
     color:#ffffff;
     font-size: 25px;
-    margin-bottom: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -954,4 +953,64 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     iframe {
         height: 250px;
     }
+
+    .customtext {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-style: italic;
+        color:#ffffff;
+        font-size: 18px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .images {
+        height: 35px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .focusfield {
+        height: 25px;
+        width: 120px;
+        font-family: "Poppins";
+        font-weight: 600;
+        font-style: italic;
+        color:#ffffff;
+        font-size: 20px;
+        border: none;
+        background-color: #666291;
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+
+    .save {
+        background-color: #666291;
+        padding: 13px 13px 13px 13px;
+        border: none;
+        border-radius: 15px;
+        font-family: "Poppins";
+        font-weight: 600;
+        font-style: italic;
+        color:#f9f7f7;
+        font-size: 10px;
+        width: fit-content;
+        align-self: center;
+    }
+
+    .breakfield {
+        height: 25px;
+        width: 120px;
+        font-family: "Poppins";
+        font-weight: 600;
+        font-style: italic;
+        color:#ffffff;
+        font-size: 20px;
+        border: none;
+        background-color: #666291;
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+    
 }
