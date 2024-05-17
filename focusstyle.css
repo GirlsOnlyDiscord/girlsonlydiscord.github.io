@@ -982,7 +982,7 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
         border: none;
         background-color: #302645;
         margin-top: 10px;
-        border-radius: 15px;
+        border-radius: 10px;
     }
 
     .save {
@@ -1010,7 +1010,7 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
         border: none;
         background-color: #302645;
         margin-top: 10px;
-        border-radius: 15px;
+        border-radius: 10px;
     }
     
 }

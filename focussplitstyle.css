@@ -404,7 +404,7 @@ li:has(input[type="checkbox"]:checked) {
     border: none;
     background-color: #302645;
     margin-top: 10px;
-    border-radius: 15px;
+    border-radius: 1px;
 }
 
 .breakfield {
@@ -417,7 +417,7 @@ li:has(input[type="checkbox"]:checked) {
     border: none;
     background-color: #302645;
     margin-top: 10px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .customtext {
@@ -929,7 +929,7 @@ iframe {
         border: none;
         background-color: #302645;
         margin-top: 10px;
-        border-radius: 15px;
+        border-radius: 10px;
     }
 
     .save {
@@ -957,6 +957,6 @@ iframe {
         border: none;
         background-color: #302645;
         margin-top: 10px;
-        border-radius: 15px;
+        border-radius: 10px;
     }
 }
