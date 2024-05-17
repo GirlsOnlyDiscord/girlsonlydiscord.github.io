@@ -246,7 +246,7 @@ text-quote .content::after {
     gap: 20px;
 }
 
-input, textarea {
+.taskfield, textarea {
     background-color: transparent;
     padding: 5px;
 }
@@ -284,7 +284,7 @@ textarea:focus, input:focus {
     background-color: rgb(49, 47, 81, 0.9);
 }
 
-::placeholder {
+.taskfield::placeholder {
     font-family: "Poppins";
     font-weight: 600;
     font-style: italic;
@@ -674,6 +674,36 @@ input[type="checkbox"]:checked { background-color:#4aab4a !important; border: 4p
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 50px;
+}
+
+.customplaylisttext {
+    font-size: 1.5rem;
+}
+
+.inputfield {
+    align-self: center;
+}
+
+.newplaylist {
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #302645;
+    width: 300px;
+    height: 35px;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f7;
+    font-size: 20px;
+}
+
+.newplaylist::placeholder {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: italic;
+    color:#f9f7f748;
+    font-size: 20px;
 }
 
 .toptext {
