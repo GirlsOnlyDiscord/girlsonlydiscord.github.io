@@ -428,6 +428,8 @@ li:has(input[type="checkbox"]:checked) {
     font-size: 25px;
     margin-bottom: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 
