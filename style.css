@@ -593,8 +593,8 @@ html {
 }
 
 .infotab {
-    height: 360px;
-    width: 300px;
+    height: 330px;
+    width: 250px;
     background-color: #ffffff;
     border-radius: 15px 15px 15px 15px;
     transition-duration: 0.15s;
