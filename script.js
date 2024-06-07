@@ -31,7 +31,7 @@ window.addEventListener('scroll', function() {
   var navbarLinks = document.querySelectorAll('.navbar a');
 
   if (window.scrollY > 0) {
-      navbar.style.backgroundColor = '#0F0A2E';
+      navbar.style.backgroundColor = 'rgb(53 10 10)';
       navbarLinks.forEach(function(link) {
           link.style.color = '#FFFFFF';
       });

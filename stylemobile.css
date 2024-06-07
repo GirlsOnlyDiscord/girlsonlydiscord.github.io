@@ -53,7 +53,7 @@ html {
 }
 
 .navnav { /*this is the text in the navbar*/
-    color: #332C5C;
+    color: #5c2c2c;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
@@ -83,7 +83,7 @@ html {
     position: absolute;
     content: "";
     inset: 0px;
-    background: radial-gradient(ellipse at top, #EEB1DB, #FCCADC, #FFE7E2, #ECE8FF, #FFFFFF, #FFFFFF, #FFFFFF);
+    background: radial-gradient(ellipse at top, #FFE38A, #ffddab, #ffd8cb, #FFFFFF, #FFFFFF, #FFFFFF);
     z-index: -10;
     background-position: 50% 50%;
 }
@@ -111,7 +111,7 @@ html {
     font-size: 50px;
     margin-bottom: 10px;
     margin-top: 0;
-    color:#332C5C;
+    color:#5c2c2c;
     font-family: "Borel";
     font-weight: 400;
     font-style: normal;
@@ -124,7 +124,7 @@ html {
     font-family: "Poppins";
     font-weight: 600;
     font-style: normal;
-    color:#332C5C;
+    color:#a56000;
 }
 
 .headertextlast {
@@ -202,7 +202,7 @@ html {
     font-family: "Poppins";
     font-weight: 600;
     font-style: normal;
-    color:#7432FF;
+    color:#a44949;
 }
 
 .maintext {
@@ -212,7 +212,7 @@ html {
 }
 
 .joinus {
-    background-color: #7432FF;
+    background-color: #a44949;
     padding-left: 20px;
     padding-right: 20px;
     font-family: "Poppins";
@@ -266,7 +266,7 @@ html {
     height: fit-content;
     padding-top: 80px;
     padding-bottom: 80px;
-    background-color: #F8F5FF;
+    background-color: #edf1ff;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -279,7 +279,7 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
-    color: #332C5C;
+    color: #5c2c2c;
 }
 
 .safespan {
@@ -287,7 +287,7 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: italic !important;
-    color: #332C5C;
+    color: #5c2c2c;
 }
 
 .omgtext {
@@ -295,7 +295,7 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
-    color: #332C5C;
+    color: #5c2c2c;
     text-wrap: pretty;
     text-align: center;
     padding-left: 20px;
@@ -313,7 +313,7 @@ html {
     font-family: "Poppins";
     font-weight: 500;
     font-style: normal;
-    color: #332C5C;
+    color: #5c2c2c;
     padding-right: 20px;
     padding-left: 20px;
 }
