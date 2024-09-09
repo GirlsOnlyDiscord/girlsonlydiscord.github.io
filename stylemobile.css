@@ -520,11 +520,28 @@ html {
     align-items: center;
 }
 
+.founder {
+    display: flex;
+    justify-content: center;
+}
+
 .adminspics {
     border-radius: 15px 15px 0px 0px;
     width: 100%;
     transition-duration: 0.15s;
     margin-bottom: 10px;
+}
+
+.partone {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.parttwo {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
 }
 
 .mods {
@@ -570,6 +587,26 @@ html {
 }
 
 .ouradmins {
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: italic;
+    font-size: 25px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 40px;
+    padding-top: 8px;
+    color: #f9f7f7;
+    background-color: #A44949;
+    border-radius: 15px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.founderdiv {
     text-align: center;
     font-family: "Poppins";
     font-weight: 500;
