@@ -529,6 +529,11 @@ html {
     align-items: center;
 }
 
+.founder {
+    display: flex;
+    justify-content: center;
+}
+
 .partone {
     display: flex;
     gap: 25px;
@@ -563,7 +568,8 @@ html {
 
 .staffpics {
     padding-top: 100px;
-    height: 1100px;
+    padding-bottom: 100px;
+    height: max-content;
     background-color: #531818;
 }
 
@@ -588,6 +594,25 @@ html {
 }
 
 .ouradmins {
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: italic;
+    font-size: 35px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 40px;
+    padding-top: 8px;
+    color: #f9f7f7;
+    background-color: #A44949;
+    border-radius: 15px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.founderdiv {
     text-align: center;
     font-family: "Poppins";
     font-weight: 500;
