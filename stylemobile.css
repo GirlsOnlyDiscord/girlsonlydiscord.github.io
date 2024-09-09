@@ -534,12 +534,14 @@ html {
 
 .partone {
     display: flex;
+    flex-direction: column;
     gap: 25px;
     justify-content: center;
 }
 
 .parttwo {
     display: flex;
+    flex-direction: column;
     gap: 25px;
     justify-content: center;
 }
