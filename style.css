@@ -523,6 +523,20 @@ html {
 
 .admins {
     display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.partone {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.parttwo {
+    display: flex;
     gap: 25px;
     justify-content: center;
 }
