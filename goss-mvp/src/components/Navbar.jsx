@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import GOSSTag from "../assets/GOSSTag.png";
 
 export default function Navbar() {
   return (
     <header className="navWrap">
       <div className="navInner">
-        <div className="brand">
+        <Link to="/" className="brand" aria-label="Go to homepage">
           <span className="brandText">Girls Only Study Space</span>
 
           <img
@@ -12,12 +13,20 @@ export default function Navbar() {
             alt="GOSS tag"
             className="brandTag"
           />
-        </div>
+        </Link>
 
         <nav className="navLinks" aria-label="Primary">
-          <a className="navLink" href="#support">Support Us</a>
-          <a className="navLink" href="#contact">Contact Us</a>
-          <a className="btn btnPrimary" href="#join">Join</a>
+          <Link className="navLink" to="/support">
+            Support Us
+          </Link>
+
+          <a className="navLink" href="/contact">
+            Contact Us
+          </a>
+
+          <a className="btn btnPrimary" href="#join">
+            Join
+          </a>
         </nav>
       </div>
     </header>

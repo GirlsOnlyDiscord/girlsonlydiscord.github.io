@@ -3,6 +3,9 @@
   --brand-blue: #729FC9;
   --brand-cream: #F6F1DB;
   --brand-coral: #FF6F71;
+  --brand-green: #369E69;
+  --brand-gold:  #D49F19;
+  --brand-red:   #E95241;
 
   /* Derived tones (do not invent new colours elsewhere) */
   --brand-blue-soft: #6a95bd;
