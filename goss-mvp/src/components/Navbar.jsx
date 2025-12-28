@@ -5,6 +5,7 @@ export default function Navbar() {
   return (
     <header className="navWrap">
       <div className="navInner">
+        {/* Brand → Home */}
         <Link to="/" className="brand" aria-label="Go to homepage">
           <span className="brandText">Girls Only Study Space</span>
 
@@ -15,16 +16,22 @@ export default function Navbar() {
           />
         </Link>
 
+        {/* Navigation */}
         <nav className="navLinks" aria-label="Primary">
           <Link className="navLink" to="/support">
             Support Us
           </Link>
 
-          <a className="navLink" href="/contact">
+          <Link className="navLink" to="/contact">
             Contact Us
-          </a>
+          </Link>
 
-          <a className="btn btnPrimary" href="#join">
+          <a
+            className="btn btnPrimary"
+            href="https://discord.gg/girlsonlystudy"
+            target="_blank"
+            rel="noreferrer"
+          >
             Join
           </a>
         </nav>

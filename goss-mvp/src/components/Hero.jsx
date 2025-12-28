@@ -16,7 +16,13 @@ export default function Hero() {
             Your discord server for <WordCarousel items={HERO_WORDS} />
           </p>
 
-          <a className="btn btnDiscord" href="#join" aria-label="Join on Discord">
+          <a
+            className="btn btnDiscord"
+            href="https://discord.gg/girlsonlystudy"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Join the Girls Only Study Space Discord server"
+          >
             <img
               src={DiscordLogo}
               alt=""
