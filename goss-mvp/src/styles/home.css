@@ -76,22 +76,43 @@
   text-decoration: underline;
 }
 
+/* =========================
+   HERO (single source of truth)
+   - No sparkles
+   - No heart spawning
+   - No animation loops
+   - Optional subtle mouse parallax only
+   ========================= */
 
-.hero::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(600px 240px at 22% 22%, rgba(255, 255, 255, .24), transparent 60%),
-    radial-gradient(520px 260px at 78% 30%, rgba(255, 255, 255, .16), transparent 62%),
-    radial-gradient(700px 340px at 55% 85%, rgba(255, 255, 255, .10), transparent 65%);
-  pointer-events: none;
+/* Hero section wrapper */
+.hero{
+  position: relative;
+  padding: 48px 18px 64px;
+  background: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-soft));
+  border-top: 2px solid rgba(0,0,0,.08);
+  border-bottom: 2px solid rgba(0,0,0,.08);
+  overflow: hidden;
 }
 
+/* Background host (goes behind content) */
+.heroBg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  /* mouse parallax inputs (set from JS) */
+  --mx: 0;
+  --my: 0;
+}
+
+/* Keep hero content above background */
 .heroInner{
   max-width: 1120px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
+
   min-height: 520px;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -99,6 +120,7 @@
   gap: 16px;
 }
 
+/* Center copy */
 .heroCenter{
   grid-column: 1 / 2;
   grid-row: 1 / 2;
@@ -106,13 +128,124 @@
   text-align: center;
 }
 
+/* Kicker line */
 .heroKicker{
   font-family: "Fraunces", serif;
   font-size: 28px;
-  font-weight: 500; /* softened */
+  font-weight: 500;
   color: rgba(255,255,255,.92);
   margin: 0 0 18px;
-} */
+}
+
+/* Word carousel pill (if you use it) */
+.wordCarousel{
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.10);
+  margin-left: 8px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+}
+
+/* Join button inside hero */
+.btnDiscord{
+  background: var(--brand-coral);
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 22px;
+}
+
+/* Discord icon inside join button */
+.discordIcon{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ---- Background layers ---- */
+
+/* Soft “moving gradient vibe” BUT STATIC (no animation loop).
+   Only shifts slightly with mouse (optional). */
+.heroGradient{
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(700px 420px at 30% 30%, rgba(255,255,255,.18), transparent 60%),
+    radial-gradient(680px 380px at 70% 40%, rgba(255,255,255,.12), transparent 62%),
+    radial-gradient(900px 540px at 55% 85%, rgba(255,255,255,.08), transparent 64%);
+  filter: blur(2px);
+  opacity: .95;
+
+  transform: translate3d(
+    calc(var(--mx) * 8px),
+    calc(var(--my) * 6px),
+    0
+  );
+}
+
+/* Doodles layer */
+.heroDoodles{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  /* overall “reduce opacity” */
+  opacity: 0.22;
+}
+
+/* Shared doodle styling */
+.doodle{
+  position: absolute;
+  width: clamp(44px, 6vw, 92px);
+  height: auto;
+  user-select: none;
+
+  transform:
+    translate3d(calc(var(--mx) * 5px), calc(var(--my) * 4px), 0)
+    rotate(var(--r, 0deg));
+
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.10));
+}
+
+/* Individual positions (responsive via %) */
+.doodleBow{     left: 6%;  top: 12%; --r: -12deg; }
+.doodleNotes{   left: 9%;  top: 56%; --r: -18deg; width: clamp(52px, 7vw, 110px); }
+
+.doodleBook{    left: 22%; top: 30%; --r: 14deg;  width: clamp(48px, 6.5vw, 108px); }
+.doodlePencil{  right: 12%; top: 18%; --r: 10deg; }
+
+.doodleAPlus{   left: 46%; top: 66%; --r: -6deg;  width: clamp(42px, 5.6vw, 88px); }
+.doodleCalc{    left: 2%;  top: 72%; --r: 16deg;  width: clamp(44px, 5.8vw, 90px); }
+
+.doodleApple{   left: 38%; top: 10%; --r: 0deg;   width: clamp(44px, 5.8vw, 86px); }
+.doodleStar{    left: 58%; top: 14%; --r: -6deg;  width: clamp(40px, 5vw, 78px); }
+
+.doodleCrown{   right: 3%; top: 10%; --r: 12deg;  width: clamp(60px, 8vw, 140px); }
+.doodleKitty{   right: 8%; top: 62%; --r: 10deg;  width: clamp(52px, 7vw, 110px); }
+
+/* Responsive */
+@media (max-width: 980px){
+  .heroInner{ min-height: 620px; }
+}
+
+@media (max-width: 720px){
+  .heroInner{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  /* reduce clutter on small screens */
+  .heroDoodles{ opacity: 0.16; }
+  .doodleCrown,
+  .doodleNotes{
+    display: none;
+  }
+
+  .heroKicker{ font-size: 26px; }
+}
+
 
 .scrollHint{
   font-family: "Outfit", sans-serif;
@@ -362,51 +495,53 @@
 
 
 /* =========================
-   Support Page (FULL)
+   Support + Contact (STANDARDISED)
    ========================= */
 
-.supportPage{
+/* Shared page wrapper */
+.supportPage,
+.contactPage{
   background: var(--brand-cream);
-  padding: 52px 0 78px;
+  padding: 56px 0 84px;
 }
 
-/* Outer wrapper: side padding for the whole page */
-.supportPageInner{
+/* Shared inner width + side padding */
+.supportPageInner,
+.contactPageInner{
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 28px; /* key: side breathing room */
+  padding: 0 28px;
 }
 
-/* Header */
-.supportHeader{
+/* Shared headers */
+.supportHeader,
+.contactHeader{
   text-align: center;
   margin-bottom: 34px;
 }
 
-.supportPageTitle{
+.supportPageTitle,
+.contactPageTitle{
   font-family: "Fraunces", serif;
-  font-size: 46px;
+  font-size: 52px;
   font-weight: 500;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: var(--ink);
+  letter-spacing: -0.2px;
 }
 
-.supportPageSubtitle{
-  margin: 0;
-  color: rgba(31, 41, 55, 0.70);
+.supportPageSubtitle,
+.contactPageSubtitle{
+  margin: 0 auto;
+  max-width: 560px;
+  color: var(--ink-muted);
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
-/* Cards layout */
-.supportCards{
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 28px;
-}
-
-/* Card base */
-.supportCard{
+/* Shared card base */
+.supportCard,
+.contactCard{
   background: var(--brand-cream-card);
   border: 1px solid rgba(0,0,0,.10);
   border-radius: var(--radius-lg);
@@ -414,10 +549,19 @@
   padding: 22px;
   position: relative;
   overflow: hidden;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-/* Blue accent rail for all cards */
-.supportCard::before{
+.supportCard:hover,
+.contactCard:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Shared top accent rail (NO gradient) */
+.supportCard::before,
+.contactCard::before{
   content: "";
   position: absolute;
   left: 16px;
@@ -425,43 +569,56 @@
   top: 14px;
   height: 6px;
   border-radius: 999px;
-  background: rgba(114,159,201,.65);
+  background: rgba(114,159,201,.75); /* brand blue */
 }
 
-/* Primary (Ko-fi) card */
+/* Primary Support card gets slightly stronger rail */
 .supportCardPrimary{
-  border-color: rgba(114,159,201,.32);
-  box-shadow: 0 20px 44px rgba(0,0,0,.14);
+  border-color: rgba(114,159,201,.22);
 }
 
 .supportCardPrimary::before{
-  background: linear-gradient(
-    90deg,
-    rgba(114,159,201,.85),
-    rgba(255,111,113,.60)
-  );
+  background: rgba(255,111,113,.70); /* brand coral */
 }
 
-/* Titles and text */
-.supportCardTitle{
+/* Titles + text */
+.supportCardTitle,
+.contactCardTitle{
   font-family: "Fraunces", serif;
   font-weight: 500;
   font-size: 26px;
-  margin: 14px 0 10px; /* space under the accent bar */
+  margin: 14px 0 10px; /* clears the rail */
   color: rgba(31, 41, 55, 0.92);
 }
 
-.supportCardText{
-  color: rgba(31, 41, 55, 0.72);
+.supportCardText,
+.contactCardText{
   margin: 0 0 12px;
-  line-height: 1.45;
+  color: rgba(31, 41, 55, 0.74);
+  line-height: 1.5;
 }
 
-/* Donation list becomes “blocks” with brand colour rails */
+.contactLink{
+  font-weight: 500;
+  color: var(--brand-coral);
+  text-decoration: underline;
+}
+
+/* =========================
+   Support layout + list styling
+   ========================= */
+
+.supportCards{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+}
+
+/* Support list as soft blocks */
 .supportList{
   list-style: none;
   padding: 0;
-  margin: 10px 0 16px;
+  margin: 12px 0 18px;
   display: grid;
   gap: 10px;
 }
@@ -470,13 +627,13 @@
   position: relative;
   padding: 12px 14px;
   border-radius: 16px;
-  background: rgba(255,255,255,.78);
+  background: rgba(255,255,255,.72);
   border: 1px solid rgba(0,0,0,.08);
   color: rgba(31, 41, 55, 0.82);
   line-height: 1.45;
 }
 
-/* Left colour rail */
+/* left colour rails using your brand colours */
 .supportList li::before{
   content: "";
   position: absolute;
@@ -492,38 +649,109 @@
 .supportList li:nth-child(2)::before{ background: rgba(54,158,105,.55); } /* green */
 .supportList li:nth-child(3)::before{ background: rgba(233,82,65,.50); }  /* red */
 
-/* Boost hint pill (blue-tinted) */
+/* Support hint pill */
 .supportCardHint{
-  color: rgba(31, 41, 55, 0.74);
-  margin: 0;
+  margin: 14px 0 0;
   font-size: 14px;
+  color: rgba(31, 41, 55, 0.78);
   line-height: 1.4;
   padding: 12px 14px;
   border-radius: 16px;
-  background: rgba(114,159,201,.12);
-  border: 1px solid rgba(114,159,201,.28);
+  background: rgba(114,159,201,.10);
+  border: 1px solid rgba(114,159,201,.26);
 }
 
-/* Responsive */
+/* =========================
+   Contact layout + image
+   ========================= */
+
+.contactCards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.contactList{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  color: rgba(31, 41, 55, 0.78);
+}
+
+/* Ticket image: consistently sized + contained */
+.contactImage{
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 14px auto 16px;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+/* Contact hint pill: same style as support */
+.contactCardHint{
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: rgba(31, 41, 55, 0.78);
+  line-height: 1.4;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(114,159,201,.10);
+  border: 1px solid rgba(114,159,201,.26);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
 @media (max-width: 980px){
   .supportCards{
+    grid-template-columns: 1fr;
+  }
+
+  .contactCards{
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 720px){
-  .supportPageInner{
+  .supportPageInner,
+  .contactPageInner{
     padding: 0 18px;
   }
 
-  .supportPageTitle{
-    font-size: 36px;
+  .supportPageTitle,
+  .contactPageTitle{
+    font-size: 38px;
   }
 
-  .supportCards{
-    gap: 18px;
+  .supportHeader,
+  .contactHeader{
+    margin-bottom: 26px;
   }
 }
+/* =========================
+   Contact card colour rails
+   ========================= */
+
+/* Default stays blue for first card (Support & Moderation) */
+.contactCards .contactCard:nth-child(1)::before{
+  background: rgba(114,159,201,.75); /* brand blue */
+}
+
+/* Email */
+.contactCards .contactCard:nth-child(2)::before{
+  background: rgba(255,111,113,.75); /* brand coral */
+}
+
+/* Server Owners */
+.contactCards .contactCard:nth-child(3)::before{
+  background: rgba(212,159,25,.75); /* brand gold */
+}
+
 
 
 .wordCarousel{
