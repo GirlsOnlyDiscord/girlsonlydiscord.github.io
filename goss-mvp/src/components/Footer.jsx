@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -10,10 +12,16 @@ export default function Footer() {
         </div>
 
         <nav className="footerNav" aria-label="Footer navigation">
-          <a href="#about">About</a>
-          <a href="#support">Support</a>
-          <a href="#contact">Contact</a>
-          <a href="#join">Join</a>
+          <Link to="/">Home</Link>
+          <Link to="/support">Support</Link>
+          <Link to="/contact">Contact</Link>
+          <a
+            href="https://discord.gg/girlsonlystudy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Join
+          </a>
         </nav>
       </div>
 
