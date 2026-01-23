@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footerBrand">
           <span className="footerLogo">GOSS</span>
           <p className="footerTagline">
-            Girls Only Study Space — a free, non-profit, international study community.
+            Girls Only Study Space — a free, non-profit, girls-only international study community.
           </p>
         </div>
 
