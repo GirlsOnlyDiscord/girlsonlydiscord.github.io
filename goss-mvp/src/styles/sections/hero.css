@@ -1,0 +1,275 @@
+/* =========================
+   HERO (single source of truth)
+   - No sparkles
+   - No heart spawning
+   - No animation loops
+   - Optional subtle mouse parallax only
+   ========================= */
+
+/* Hero section wrapper */
+.hero{
+  position: relative;
+  padding: 48px 18px 64px;
+  background: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-soft));
+  border-top: 2px solid rgba(0,0,0,.08);
+  border-bottom: 2px solid rgba(0,0,0,.08);
+  overflow: hidden;
+}
+
+/* Background host (goes behind content) */
+.heroBg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  /* mouse parallax inputs (set from JS) */
+  --mx: 0;
+  --my: 0;
+}
+
+/* Keep hero content above background */
+.heroInner{
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  gap: 16px;
+}
+
+/* Center copy */
+.heroCenter{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  place-self: center;
+  text-align: center;
+}
+
+/* Kicker line */
+.heroKicker{
+  font-family: "Fraunces", serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: rgba(255,255,255,.92);
+  margin: 0 0 18px;
+}
+
+/* Word carousel pill */
+.wordCarousel{
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.10);
+  margin-left: 8px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+
+  /* no looping animation. keep only small hover/micro motion if you want */
+  transition: transform 200ms ease;
+}
+
+.wordCarousel:hover{
+  transform: translateY(-1px);
+}
+
+/* Join button sizing inside hero (colour comes from buttons.css) */
+.btnDiscord{
+  padding: 14px 20px;
+  font-size: 22px;
+}
+
+.discordDot{
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,.22);
+}
+
+.discordIcon{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ---- Background layers ---- */
+
+/* Soft gradient vibe (STATIC).
+   Only shifts slightly with mouse (optional). */
+.heroGradient{
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(700px 420px at 30% 30%, rgba(255,255,255,.18), transparent 60%),
+    radial-gradient(680px 380px at 70% 40%, rgba(255,255,255,.12), transparent 62%),
+    radial-gradient(900px 540px at 55% 85%, rgba(255,255,255,.08), transparent 64%);
+  filter: blur(2px);
+  opacity: .95;
+
+  transform: translate3d(
+    calc(var(--mx) * 8px),
+    calc(var(--my) * 6px),
+    0
+  );
+}
+
+/* Doodles layer */
+.heroDoodles{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+}
+
+/* Shared doodle styling */
+.doodle{
+  position: absolute;
+  width: clamp(44px, 6vw, 92px);
+  height: auto;
+  user-select: none;
+
+  transform:
+    translate3d(calc(var(--mx) * 5px), calc(var(--my) * 4px), 0)
+    rotate(var(--r, 0deg));
+
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.10));
+}
+
+/* Individual positions */
+.doodleBow{     left: 6%;  top: 12%; --r: -12deg; }
+.doodleNotes{   left: 9%;  top: 56%; --r: -18deg; width: clamp(52px, 7vw, 110px); }
+
+.doodleBook{    left: 22%; top: 30%; --r: 14deg;  width: clamp(48px, 6.5vw, 108px); }
+.doodlePencil{  right: 12%; top: 18%; --r: 10deg; }
+
+.doodleAPlus{   left: 46%; top: 66%; --r: -6deg;  width: clamp(42px, 5.6vw, 88px); }
+.doodleCalc{    left: 2%;  top: 72%; --r: 16deg;  width: clamp(44px, 5.8vw, 90px); }
+
+.doodleApple{   left: 38%; top: 10%; --r: 0deg;   width: clamp(44px, 5.8vw, 86px); }
+.doodleStar{    left: 58%; top: 14%; --r: -6deg;  width: clamp(40px, 5vw, 78px); }
+
+.doodleCrown{   right: 3%; top: 10%; --r: 12deg;  width: clamp(60px, 8vw, 140px); }
+.doodleKitty{   right: 8%; top: 62%; --r: 10deg;  width: clamp(52px, 7vw, 110px); }
+
+/* Social stack */
+.socialStack{
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  align-self: start;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pillLink{
+  min-width: 160px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(0,0,0,.10);
+  color: var(--brand-coral);
+  font-weight: 500;
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+}
+
+.pillLink:hover{
+  filter: brightness(0.99);
+}
+
+/* Benefits strip */
+.benefitsCard{
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  align-self: end;
+  background: var(--brand-cream-card);
+  border-radius: var(--radius-lg);
+  padding: 18px 18px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+.benefitsGrid{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.benefit{
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 8px 6px;
+}
+
+.benefitIcon{
+  font-size: 26px;
+}
+
+.benefitText{
+  font-size: 12px;
+  color: rgba(31, 41, 55, 0.78);
+  line-height: 1.2;
+}
+
+.scrollHint{
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  color: rgba(31, 41, 55, 0.82);
+  margin-left: 10px;
+  background: rgba(255,255,255,.55);
+  border-radius: 999px;
+  padding: 4px 10px;
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .heroInner{ min-height: 620px; }
+  .benefitsGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px){
+  .heroInner{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  /* reduce clutter on small screens */
+  .heroDoodles{ opacity: 0.16; }
+  .doodleCrown,
+  .doodleNotes{
+    display: none;
+  }
+
+  .heroKicker{ font-size: 26px; }
+
+  .socialStack{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    justify-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 520px;
+  }
+
+  .pillLink{ min-width: unset; }
+  .benefitsCard{ grid-column: 1 / 2; grid-row: 3 / 4; }
+  .benefitsGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Respect reduced motion (parallax is JS-side, this just prevents any CSS motion) */
+@media (prefers-reduced-motion: reduce){
+  .wordCarousel{
+    transition: none;
+  }
+}

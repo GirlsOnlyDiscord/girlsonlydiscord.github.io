@@ -1,0 +1,68 @@
+/* =========================
+   Navbar
+   ========================= */
+
+.navWrap{
+  background: var(--brand-cream);
+  border-bottom: 2px solid rgba(0,0,0,.08);
+}
+
+.navInner{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+/* Single source of truth */
+.brand .brandText{
+  background: var(--brand-coral);
+  color: #fff;
+  border-radius: 18px;
+  padding: 14px 22px;
+
+  font-family: "Fraunces", serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: .3px;
+
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brandTag{
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.navLinks{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navLink{
+  color: rgba(31, 41, 55, 0.68);
+  font-weight: 400;
+}
+
+.navLink:hover{
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 720px){
+  .navLinks{ gap: 12px; }
+  .navLink{ display: none; }
+}

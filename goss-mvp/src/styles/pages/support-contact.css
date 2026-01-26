@@ -1,0 +1,257 @@
+/* =========================
+   Support + Contact (STANDARDISED)
+   ========================= */
+
+/* Page wrappers */
+.supportPage,
+.contactPage{
+  background: var(--brand-cream);
+  padding: 56px 0 84px;
+}
+
+/* Inner containers */
+.supportPageInner,
+.contactPageInner{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Headers */
+.supportHeader,
+.contactHeader{
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.supportPageTitle,
+.contactPageTitle{
+  font-family: "Fraunces", serif;
+  font-size: 52px;
+  font-weight: 500;
+  margin: 0 0 10px;
+  color: var(--ink);
+  letter-spacing: -0.2px;
+}
+
+.supportPageSubtitle,
+.contactPageSubtitle{
+  margin: 0 auto;
+  max-width: 560px;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+/* =========================
+   Shared card base
+   ========================= */
+
+.supportCard,
+.contactCard{
+  background: var(--brand-cream-card);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.supportCard:hover,
+.contactCard:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Top accent rail */
+.supportCard::before,
+.contactCard::before{
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 14px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(114,159,201,.75); /* default blue */
+}
+
+/* Primary support card rail */
+.supportCardPrimary{
+  border-color: rgba(114,159,201,.22);
+}
+
+.supportCardPrimary::before{
+  background: rgba(255,111,113,.70); /* coral */
+}
+
+/* Card typography */
+.supportCardTitle,
+.contactCardTitle{
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 26px;
+  margin: 14px 0 10px;
+  color: rgba(31, 41, 55, 0.92);
+}
+
+.supportCardText,
+.contactCardText{
+  margin: 0 0 12px;
+  color: rgba(31, 41, 55, 0.74);
+  line-height: 1.5;
+}
+
+.contactLink{
+  font-weight: 500;
+  color: var(--brand-coral);
+  text-decoration: underline;
+}
+
+/* =========================
+   Support layout + list
+   ========================= */
+
+.supportCards{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+}
+
+.supportList{
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.supportList li{
+  position: relative;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(0,0,0,.08);
+  color: rgba(31, 41, 55, 0.82);
+  line-height: 1.45;
+}
+
+/* Left colour rails */
+.supportList li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  border-radius: 16px 0 0 16px;
+  background: rgba(114,159,201,.55);
+}
+
+.supportList li:nth-child(1)::before{ background: rgba(212,159,25,.55); }
+.supportList li:nth-child(2)::before{ background: rgba(54,158,105,.55); }
+.supportList li:nth-child(3)::before{ background: rgba(233,82,65,.50); }
+
+/* Support hint pill */
+.supportCardHint{
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: rgba(31, 41, 55, 0.78);
+  line-height: 1.4;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(114,159,201,.10);
+  border: 1px solid rgba(114,159,201,.26);
+}
+
+/* =========================
+   Contact layout
+   ========================= */
+
+.contactCards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.contactList{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  color: rgba(31, 41, 55, 0.78);
+}
+
+/* Contact image */
+.contactImage{
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 14px auto 16px;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+/* Contact hint pill */
+.contactCardHint{
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: rgba(31, 41, 55, 0.78);
+  line-height: 1.4;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(114,159,201,.10);
+  border: 1px solid rgba(114,159,201,.26);
+}
+
+/* =========================
+   Contact card colour rails
+   ========================= */
+
+.contactCards .contactCard:nth-child(1)::before{
+  background: rgba(114,159,201,.75); /* blue */
+}
+
+.contactCards .contactCard:nth-child(2)::before{
+  background: rgba(255,111,113,.75); /* coral */
+}
+
+.contactCards .contactCard:nth-child(3)::before{
+  background: rgba(212,159,25,.75); /* gold */
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 980px){
+  .supportCards{
+    grid-template-columns: 1fr;
+  }
+
+  .contactCards{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px){
+  .supportPageInner,
+  .contactPageInner{
+    padding: 0 18px;
+  }
+
+  .supportPageTitle,
+  .contactPageTitle{
+    font-size: 38px;
+  }
+
+  .supportHeader,
+  .contactHeader{
+    margin-bottom: 26px;
+  }
+}

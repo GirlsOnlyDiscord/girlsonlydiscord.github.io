@@ -1,0 +1,22 @@
+/* =========================
+   Global entry point
+   Import order matters.
+   ========================= */
+
+/* 1. Design tokens + base reset */
+@import "./globals.css";
+
+/* 2. Layout primitives */
+@import "./layout/appShell.css";
+
+/* 3. Reusable components */
+@import "./components/buttons.css";
+@import "./components/navbar.css";
+@import "./components/footer.css";
+
+/* 4. Page sections */
+@import "./sections/hero.css";
+@import "./sections/about.css";
+
+/* 5. Full pages */
+@import "./pages/support-contact.css";
