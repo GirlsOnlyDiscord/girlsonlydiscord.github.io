@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-/* Single source of truth */
+/* Brand text pill (desktop) */
 .brand .brandText{
   background: var(--brand-coral);
   color: #fff;
@@ -46,6 +46,7 @@
   display: block;
 }
 
+/* Nav links */
 .navLinks{
   display: flex;
   align-items: center;
@@ -61,8 +62,52 @@
   text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 720px){
-  .navLinks{ gap: 12px; }
-  .navLink{ display: none; }
+/* =========================
+   Mobile behaviour
+   ========================= */
+
+   @media (max-width: 720px){
+
+  /* Hide the long brand text */
+  .brand .brandText{
+    display: none;
+  }
+
+  .brandTag{
+    height: 30px;
+  }
+
+  /* Hide ALL links by default... */
+  .navLink{
+    display: none;
+  }
+
+  /* ...then re-enable ONLY Support + Contact + Join.
+     This avoids any reliance on order. */
+  .navLink[href="/support"],
+  .navLink[href="/contact"],
+  .navLink[href*="discord.gg"]{
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* Join feels like the CTA */
+  .navLink[href*="discord.gg"]{
+    font-weight: 600;
+  }
+
+  .navLinks{
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px){
+  .navInner{
+    padding: 14px 16px;
+  }
+
+  .navLinks{
+    gap: 12px;
+  }
 }

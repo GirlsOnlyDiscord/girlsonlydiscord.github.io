@@ -9,7 +9,7 @@
 /* Hero section wrapper */
 .hero{
   position: relative;
-  padding: 48px 18px 64px;
+  padding: clamp(28px, 6vw, 48px) 18px clamp(36px, 8vw, 64px);
   background: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-soft));
   border-top: 2px solid rgba(0,0,0,.08);
   border-bottom: 2px solid rgba(0,0,0,.08);
@@ -35,11 +35,16 @@
   position: relative;
   z-index: 1;
 
-  min-height: 520px;
+  /* avoids “too short” or “too tall” hero */
+  min-height: clamp(420px, 70vh, 620px);
+
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
   gap: 16px;
+
+  /* prevents overflow quirks in grid children */
+  min-width: 0;
 }
 
 /* Center copy */
@@ -48,15 +53,16 @@
   grid-row: 1 / 2;
   place-self: center;
   text-align: center;
+  min-width: 0;
 }
 
 /* Kicker line */
 .heroKicker{
   font-family: "Fraunces", serif;
-  font-size: 28px;
+  font-size: clamp(22px, 5.2vw, 28px);
   font-weight: 500;
   color: rgba(255,255,255,.92);
-  margin: 0 0 18px;
+  margin: 0 0 14px;
 }
 
 /* Word carousel pill */
@@ -66,11 +72,10 @@
   border-radius: 999px;
   background: rgba(255,255,255,.55);
   border: 1px solid rgba(0,0,0,.10);
-  margin-left: 8px;
+  margin-left: 6px;
   font-family: "Outfit", sans-serif;
   font-weight: 600;
 
-  /* no looping animation. keep only small hover/micro motion if you want */
   transition: transform 200ms ease;
 }
 
@@ -81,7 +86,18 @@
 /* Join button sizing inside hero (colour comes from buttons.css) */
 .btnDiscord{
   padding: 14px 20px;
-  font-size: 22px;
+  font-size: clamp(18px, 4.2vw, 22px);
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+/* Optional: on very small screens, full-width CTA reads better */
+@media (max-width: 480px){
+  .btnDiscord{
+    width: 100%;
+    justify-content: center;
+    padding: 14px 16px;
+  }
 }
 
 .discordDot{
@@ -126,6 +142,11 @@
   inset: 0;
   pointer-events: none;
   opacity: 0.22;
+}
+
+/* Reduce doodle dominance earlier */
+@media (max-width: 900px){
+  .heroDoodles{ opacity: 0.16; }
 }
 
 /* Shared doodle styling */
@@ -200,7 +221,7 @@
 .benefitsGrid{
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 
 .benefit{
@@ -234,7 +255,6 @@
 
 /* Responsive */
 @media (max-width: 980px){
-  .heroInner{ min-height: 620px; }
   .benefitsGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
@@ -245,13 +265,10 @@
   }
 
   /* reduce clutter on small screens */
-  .heroDoodles{ opacity: 0.16; }
   .doodleCrown,
   .doodleNotes{
     display: none;
   }
-
-  .heroKicker{ font-size: 26px; }
 
   .socialStack{
     grid-column: 1 / 2;
@@ -260,16 +277,22 @@
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 520px;
+    justify-content: center;
   }
 
   .pillLink{ min-width: unset; }
   .benefitsCard{ grid-column: 1 / 2; grid-row: 3 / 4; }
   .benefitsGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* shadows get noisy on tiny screens */
+  .doodle{ filter: none; }
 }
 
-/* Respect reduced motion (parallax is JS-side, this just prevents any CSS motion) */
+@media (max-width: 560px){
+  .benefitText{ font-size: 13px; }
+}
+
+/* Respect reduced motion (parallax is JS-side) */
 @media (prefers-reduced-motion: reduce){
-  .wordCarousel{
-    transition: none;
-  }
+  .wordCarousel{ transition: none; }
 }
