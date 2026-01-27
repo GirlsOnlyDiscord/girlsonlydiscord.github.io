@@ -15,6 +15,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 18px;
+
+  /* critical for flex overflow issues */
+  min-width: 0;
 }
 
 .brand{
@@ -22,6 +25,9 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
+
+  /* critical for truncation to work */
+  min-width: 0;
 }
 
 /* Brand text pill (desktop) */
@@ -38,6 +44,11 @@
 
   line-height: 1;
   white-space: nowrap;
+
+  /* prevents “cut off” overflow */
+  max-width: 62vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brandTag{
@@ -46,11 +57,11 @@
   display: block;
 }
 
-/* Nav links */
 .navLinks{
   display: flex;
   align-items: center;
   gap: 18px;
+  flex-shrink: 0; /* keep links readable */
 }
 
 .navLink{
@@ -66,9 +77,8 @@
    Mobile behaviour
    ========================= */
 
-   @media (max-width: 720px){
-
-  /* Hide the long brand text */
+@media (max-width: 720px){
+  /* Hide the long brand text pill */
   .brand .brandText{
     display: none;
   }
@@ -77,24 +87,18 @@
     height: 30px;
   }
 
-  /* Hide ALL links by default... */
+  /* Hide everything first */
   .navLink{
     display: none;
   }
 
-  /* ...then re-enable ONLY Support + Contact + Join.
-     This avoids any reliance on order. */
+  /* Show Support + Contact + Join explicitly (not order-based) */
   .navLink[href="/support"],
   .navLink[href="/contact"],
   .navLink[href*="discord.gg"]{
     display: inline-flex;
     font-size: 14px;
     font-weight: 500;
-  }
-
-  /* Join feels like the CTA */
-  .navLink[href*="discord.gg"]{
-    font-weight: 600;
   }
 
   .navLinks{
