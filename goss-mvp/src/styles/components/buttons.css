@@ -1,0 +1,58 @@
+/* =========================
+   Buttons / CTAs (GLOBAL)
+   ========================= */
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 12px 18px;
+
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+
+  background-clip: padding-box;
+  box-shadow: var(--shadow);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease;
+}
+
+/* Primary CTA */
+.btnPrimary{
+  background: var(--brand-coral);
+  color: #fff;
+}
+
+/* Discord CTA (semantic alias of primary) */
+.btnDiscord{
+  background: var(--brand-coral);
+  color: #fff;
+}
+
+/* Hover / focus behaviour */
+.btn:hover,
+.btn:focus-visible{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+  filter: brightness(0.98);
+}
+
+/* Active / pressed */
+.btn:active{
+  transform: translateY(0);
+  box-shadow: var(--shadow);
+  filter: brightness(0.96);
+}
+
+/* Accessibility: visible focus ring */
+.btn:focus-visible{
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 2px;
+}

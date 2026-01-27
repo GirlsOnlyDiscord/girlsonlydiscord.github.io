@@ -1,0 +1,61 @@
+/* =========================
+   Design tokens (GLOBAL)
+   ========================= */
+
+:root{
+  /* Brand colours */
+  --brand-blue: #729FC9;
+  --brand-cream: #F6F1DB;
+  --brand-coral: #FF6F71;
+  --brand-green: #369E69;
+  --brand-gold:  #D49F19;
+  --brand-red:   #E95241;
+
+  /* Derived tones (do not invent new colours elsewhere) */
+  --brand-blue-soft: #6a95bd;
+  --brand-cream-card: #fbf7ea;
+
+  /* Text */
+  --ink: #1f2937;
+  --ink-muted: rgba(31, 41, 55, 0.65);
+
+  /* UI */
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 14px 34px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================
+   Base reset
+   ========================= */
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+html,
+body{
+  height: 100%;
+}
+
+/* =========================
+   Base typography + body
+   ========================= */
+
+body{
+  margin: 0;
+  font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--brand-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links */
+a{
+  color: inherit;
+  text-decoration: none;
+}
