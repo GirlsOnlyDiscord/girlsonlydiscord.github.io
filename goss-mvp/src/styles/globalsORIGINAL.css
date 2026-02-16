@@ -7,8 +7,15 @@
   --brand-gold:  #D49F19;
   --brand-red:   #E95241;
 
+  --brand-light-blue: #729FC9;
+  --brand-light-cream: #F6F1DB;
+  --brand-light-coral: #FBC0B7;
+  --brand-light-green: #6bc490;
+  --brand-light-gold:  #FFD76A;
+  --brand-light-red:   #f58a7a;
+
   /* Derived tones (do not invent new colours elsewhere) */
-  --brand-blue-soft: #6a95bd;
+  --brand-blue-dark: #497DA9;
   --brand-cream-card: #fbf7ea;
 
   /* Text */
@@ -72,14 +79,16 @@ a {
 
 /* Primary CTA */
 .btnPrimary {
-  background: var(--brand-coral);
-  color: #fff;
+  color: #1E1C1D;
+  background-color: var(--brand-coral);
+  border: #1E1C1D solid 2px;
 }
 
 /* Discord CTA inherits this via class combo */
 .btnDiscord {
   background: var(--brand-coral);
-  color: #fff;
+  color: var(--brand-cream);
+
 }
 
 /* Hover / focus behaviour for ALL CTAs */
@@ -89,6 +98,28 @@ a {
   box-shadow: var(--shadow-hover);
   filter: brightness(0.98);
 }
+
+.wordCarousel {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.cursor {
+  display: inline-block;
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
+
 
 /* Active / pressed */
 .btn:active {

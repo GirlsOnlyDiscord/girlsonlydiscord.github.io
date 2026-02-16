@@ -2,7 +2,7 @@
    Buttons / CTAs (GLOBAL)
    ========================= */
 
-.btn{
+.btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -12,7 +12,7 @@
   padding: 12px 18px;
 
   font-family: "Outfit", sans-serif;
-  font-weight: 500;
+  font-weight: 500; /* softened from 600 */
   cursor: pointer;
 
   background-clip: padding-box;
@@ -24,21 +24,24 @@
     filter 0.18s ease;
 }
 
+
 /* Primary CTA */
-.btnPrimary{
-  background: var(--brand-coral);
-  color: #fff;
+.btnPrimary {
+  color: #1E1C1D;
+  background-color: var(--brand-coral);
+  border: #1E1C1D solid 2px;
 }
 
-/* Discord CTA (semantic alias of primary) */
-.btnDiscord{
+/* Discord CTA inherits this via class combo */
+.btnDiscord {
   background: var(--brand-coral);
-  color: #fff;
+  color: var(--brand-cream);
+
 }
 
-/* Hover / focus behaviour */
+/* Hover / focus behaviour for ALL CTAs */
 .btn:hover,
-.btn:focus-visible{
+.btn:focus-visible {
   transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
   filter: brightness(0.98);

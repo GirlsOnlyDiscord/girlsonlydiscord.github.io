@@ -7,13 +7,14 @@
    ========================= */
 
 /* Hero section wrapper */
-.hero{
+.hero {
   position: relative;
   padding: 48px 18px 64px;
   background: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-soft));
   border-top: 2px solid rgba(0,0,0,.08);
   border-bottom: 2px solid rgba(0,0,0,.08);
   overflow: hidden;
+  margin-top: -100px;
 }
 
 /* Background host (goes behind content) */
@@ -35,7 +36,7 @@
   position: relative;
   z-index: 1;
 
-  min-height: 520px;
+  min-height: 570px;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
@@ -48,34 +49,37 @@
   grid-row: 1 / 2;
   place-self: center;
   text-align: center;
+   margin-top: 100px;
 }
 
 /* Kicker line */
 .heroKicker{
   font-family: "Fraunces", serif;
-  font-size: 28px;
+  font-size: 48px;
   font-weight: 500;
-  color: rgba(255,255,255,.92);
-  margin: 0 0 18px;
+  color: var(--brand-cream);
+  margin: 0px;
 }
 
 /* Word carousel pill */
-.wordCarousel{
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.55);
-  border: 1px solid rgba(0,0,0,.10);
-  margin-left: 8px;
+.wordCarousel {
   font-family: "Outfit", sans-serif;
-  font-weight: 600;
-
-  /* no looping animation. keep only small hover/micro motion if you want */
-  transition: transform 200ms ease;
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
 }
 
-.wordCarousel:hover{
-  transform: translateY(-1px);
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.cursor {
+  display: inline-block;
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
 }
 
 /* Join button sizing inside hero (colour comes from buttons.css) */
@@ -158,27 +162,45 @@
 .doodleCrown{   right: 3%; top: 10%; --r: 12deg;  width: clamp(60px, 8vw, 140px); }
 .doodleKitty{   right: 8%; top: 62%; --r: 10deg;  width: clamp(52px, 7vw, 110px); }
 
+
+.picBg {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  height: auto;
+}
+.star{
+    width: 80px;
+    top: 450px;
+    left: 520px;
+}
+
+.crown{
+  top: 210px;
+  left: 910px;
+  rotate: 10deg;
+  width:140px;
+}
+
 /* Social stack */
 .socialStack{
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: start;
-  justify-self: end;
+  justify-content: space-around;
+  align-self: center;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 18px;
+  flex-direction: row;
+  border: var(--ink) solid 2px;
+  background-color: var(--brand-light-coral);
+  border-radius: 12px;
+  margin: 2px;
+  margin-top: 100px;
 }
 
 .pillLink{
   min-width: 160px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.82);
-  border: 1px solid rgba(0,0,0,.10);
-  color: var(--brand-coral);
+  color: #1E1C1D;;
   font-weight: 500;
-  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+  padding:18px;
+  text-align: center;
 }
 
 .pillLink:hover{

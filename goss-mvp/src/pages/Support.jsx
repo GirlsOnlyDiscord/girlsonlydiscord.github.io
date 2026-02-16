@@ -16,9 +16,8 @@ export default function Support() {
           </header>
 
           <div className="supportCards">
-            {/* Ko-fi */}
             <section
-              className="supportCard supportCardPrimary"
+              className="supportCard"
               aria-label="Support on Ko-fi"
             >
               <h2 className="supportCardTitle">Ko-fi</h2>

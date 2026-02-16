@@ -5,7 +5,6 @@
 /* Page wrappers */
 .supportPage,
 .contactPage{
-  background: var(--brand-cream);
   padding: 56px 0 84px;
 }
 
@@ -29,16 +28,16 @@
   font-family: "Fraunces", serif;
   font-size: 52px;
   font-weight: 500;
-  margin: 0 0 10px;
-  color: var(--ink);
+  margin: 40px 0 10px;
+  color: var(--brand-cream-card);
   letter-spacing: -0.2px;
 }
 
 .supportPageSubtitle,
 .contactPageSubtitle{
-  margin: 0 auto;
+  margin: auto;
   max-width: 560px;
-  color: var(--ink-muted);
+  color: var(--light-text-muted);
   font-size: 16px;
   line-height: 1.45;
 }
@@ -53,7 +52,7 @@
   border: 1px solid rgba(0,0,0,.10);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  padding: 22px;
+  padding: 0 22px;
   position: relative;
   overflow: hidden;
 
@@ -66,26 +65,14 @@
   box-shadow: var(--shadow-hover);
 }
 
-/* Top accent rail */
 .supportCard::before,
 .contactCard::before{
-  content: "";
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  top: 14px;
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(114,159,201,.75); /* default blue */
+  display: none;
 }
 
-/* Primary support card rail */
+/* Primary support card border only */
 .supportCardPrimary{
-  border-color: rgba(114,159,201,.22);
-}
-
-.supportCardPrimary::before{
-  background: rgba(255,111,113,.70); /* coral */
+  border-color: rgba(255,111,113,.22);
 }
 
 /* Card typography */
@@ -94,7 +81,7 @@
   font-family: "Fraunces", serif;
   font-weight: 500;
   font-size: 26px;
-  margin: 14px 0 10px;
+  margin-top: 5px;
   color: rgba(31, 41, 55, 0.92);
 }
 
@@ -139,23 +126,10 @@
   line-height: 1.45;
 }
 
-/* Left colour rails */
 .supportList li::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 6px;
-  border-radius: 16px 0 0 16px;
-  background: rgba(114,159,201,.55);
+  display: none;
 }
 
-.supportList li:nth-child(1)::before{ background: rgba(212,159,25,.55); }
-.supportList li:nth-child(2)::before{ background: rgba(54,158,105,.55); }
-.supportList li:nth-child(3)::before{ background: rgba(233,82,65,.50); }
-
-/* Support hint pill */
 .supportCardHint{
   margin: 14px 0 0;
   font-size: 14px;
@@ -163,8 +137,8 @@
   line-height: 1.4;
   padding: 12px 14px;
   border-radius: 16px;
-  background: rgba(114,159,201,.10);
-  border: 1px solid rgba(114,159,201,.26);
+  background: rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.12);
 }
 
 /* =========================
@@ -205,24 +179,8 @@
   line-height: 1.4;
   padding: 12px 14px;
   border-radius: 16px;
-  background: rgba(114,159,201,.10);
-  border: 1px solid rgba(114,159,201,.26);
-}
-
-/* =========================
-   Contact card colour rails
-   ========================= */
-
-.contactCards .contactCard:nth-child(1)::before{
-  background: rgba(114,159,201,.75); /* blue */
-}
-
-.contactCards .contactCard:nth-child(2)::before{
-  background: rgba(255,111,113,.75); /* coral */
-}
-
-.contactCards .contactCard:nth-child(3)::before{
-  background: rgba(212,159,25,.75); /* gold */
+  background: rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.12);
 }
 
 /* =========================
