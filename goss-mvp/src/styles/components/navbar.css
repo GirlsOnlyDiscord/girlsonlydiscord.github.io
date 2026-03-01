@@ -17,6 +17,8 @@
   display: flex;
   justify-content: space-between;
   gap: 18px;
+  align-items: center;
+  border: var(--ink) solid 2px;
 
   /* critical for flex overflow issues */
   min-width: 500px;
