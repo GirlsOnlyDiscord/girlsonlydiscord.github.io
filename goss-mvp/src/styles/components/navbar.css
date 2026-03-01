@@ -19,8 +19,6 @@
   gap: 18px;
   align-items: center;
   border: var(--ink) solid 2px;
-
-  /* critical for flex overflow issues */
   min-width: 500px;
 }
 
@@ -29,8 +27,6 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
-
-  /* critical for truncation to work */
   min-width: 0;
 }
 
@@ -43,7 +39,7 @@
   font-weight: 600;
   letter-spacing: .3px;
 
-  line-height: 1;
+  line-height: 2;
   white-space: nowrap;
 
   /* prevents “cut off” overflow */

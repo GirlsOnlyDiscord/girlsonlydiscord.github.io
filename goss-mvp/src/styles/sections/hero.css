@@ -54,30 +54,21 @@
   grid-row: 1 / 2;
   place-self: center;
   text-align: center;
+  margin-top: 100px;
 }
 
 /* Kicker line */
 .heroKicker{
   font-family: "Fraunces", serif;
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 500;
   color: rgba(255,255,255,.92);
   margin: 0 0 18px;
 }
 
-/* Word carousel pill */
 .wordCarousel{
   display: inline-block;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.55);
-  border: 1px solid rgba(0,0,0,.10);
-  margin-left: 8px;
   font-family: "Outfit", sans-serif;
-  font-weight: 600;
-
-  /* no looping animation. keep only small hover/micro motion if you want */
-  transition: transform 200ms ease;
 }
 
 .animate-blink {
