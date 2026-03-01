@@ -9,9 +9,9 @@ export default function FAQ() {
     <div className="appShell">
       <Navbar />
       <main>
-          <div className="titleCont">
-            <h1 className="titleCards">Frequently asked Questions</h1>
-            <p>Here are all Questions we get idk add description here ig</p>
+          <div className="faqTitleContainer">
+            <h1 className="faqTitle">Frequently asked Questions</h1>
+            <button className="faqExpandAllButton">Expand all Questions</button>
           </div>
           <Cards />
       </main>

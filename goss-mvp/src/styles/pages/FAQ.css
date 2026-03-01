@@ -12,6 +12,7 @@
   gap: 10px;
   margin: 0 10px;
 }
+
 .card {
   background: var(--brand-cream-card);
   border: 2px solid var(--ink);
@@ -19,6 +20,10 @@
   box-shadow: var(--shadow);
   overflow: hidden;
   transition: all 0.3s ease;
+}
+
+p{
+  margin: 0;
 }
 
 .card-header {
@@ -50,7 +55,7 @@
 
 .card.open .card-content {
   max-height: 500px;
-  padding: 0 20px 20px 20px;
+  padding: 0 30px 20px 30px;
 }
 
 .plus {
@@ -70,4 +75,6 @@
     flex-direction: column;
   }
 }
+
+
 
