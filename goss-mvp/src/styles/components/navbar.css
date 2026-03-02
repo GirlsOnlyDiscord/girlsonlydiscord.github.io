@@ -58,8 +58,8 @@
 .navLinks{
   display: flex;
   align-items: center;
-  gap: 18px;
-  flex-shrink: 0; /* keep links readable */
+  gap: 40px; /* increased spacing */
+  flex-shrink: 0;
 }
 
 .navLink{
