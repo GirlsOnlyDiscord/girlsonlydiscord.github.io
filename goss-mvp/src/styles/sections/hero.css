@@ -306,3 +306,7 @@
 @media (prefers-reduced-motion: reduce){
   .wordCarousel{ transition: none; }
 }
+
+.benefitsCard {
+  margin-top: 2rem;
+}

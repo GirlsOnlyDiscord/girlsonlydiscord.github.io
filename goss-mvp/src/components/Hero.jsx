@@ -3,12 +3,14 @@ import { HERO_WORDS } from "../data/heroWords.js";
 import SocialLinks from "./SocialLinks.jsx";
 import crown from "../assets/doodles/crown.png";
 import star from "../assets/doodles/star.png";
+import BenefitsStrip from "./BenefitsStrip.jsx";
 import HeroBackground from "./HeroBackground.jsx";
 
 export default function Hero() {
   return (
     <section className="hero" aria-label="Hero">
-      <HeroBackground/>
+      <HeroBackground />
+
       <div className="heroInner">
         <div className="heroCenter">
           <p className="heroKicker">Your discord server</p>
@@ -25,8 +27,11 @@ export default function Hero() {
           >
             <span>Join GOSS → </span>
           </a>
+
+          <BenefitsStrip />
         </div>
       </div>
+
       <img src={crown} className="picBg crown" alt="Crown" />
       <img src={star} className="picBg star" alt="Star" />
 
