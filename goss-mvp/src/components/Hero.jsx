@@ -21,9 +21,9 @@ export default function Hero() {
             href="https://discord.gg/girlsonlystudy"
             target="_blank"
             rel="noreferrer"
-            aria-label="Join the Girls Only Study Space Discord server"
+            aria-label="Join the Girls Only Study Space"
           >
-            <span>Join GOSS Discord Server</span>
+            <span>Join GOSS → </span>
           </a>
         </div>
       </div>
