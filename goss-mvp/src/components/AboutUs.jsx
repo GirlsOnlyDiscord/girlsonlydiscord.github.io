@@ -6,33 +6,33 @@ export default function AboutUs() {
       <div className="aboutInner">
         <h2 className="sectionTitle">About GOSS</h2>
 
-        <p>
+        <p className="aboutPara para1">
           Girls Only Study Space (GOSS) is a free, international online study
           community for girls who want to focus, achieve and grow.
         </p>
 
-        <p>
+        <p className="aboutPara para2">
           We created GOSS because studying alone can feel isolating, and many
           online spaces are distracting or unstructured. GOSS offers a
           dedicated, moderated environment where members can study together in
           real time, stay accountable, and build consistent study habits.
         </p>
 
-        <p>
+        <p className="aboutPara para3">
           In our server, you’ll find structured study sessions,
           Pomodoro-based voice channels, themed events, competitive study
           tournaments, and 24/7 study channels with members active around the
           clock. It’s a girls-only environment where real work gets done.
         </p>
 
-        <p>
+        <p className="aboutPara para4">
           Founded in April 2024, we’ve grown into a global community of over
           2,500 members across more than 70 countries. We support ambitious
           girls of every age at every stage, providing structure and consistency
           in an otherwise fragmented online landscape.
         </p>
 
-        <p>
+        <p className="aboutPara para5">
           Run by a volunteer staff team, GOSS is free to join and operates as a
           non-profit community. Our mission is clear: to provide a disciplined,
           focused environment where girls can perform at their highest level
