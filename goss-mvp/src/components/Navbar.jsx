@@ -11,7 +11,7 @@ export default function Navbar() {
 
         {/* Navigation */}
         <nav className="navLinks" aria-label="Primary">
-          <a href="#faq" className="navLink">
+          <a href="/#faq" className="navLink">
             FAQ
           </a>
           <Link className="navLink" to="/support">
