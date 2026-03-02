@@ -11,16 +11,15 @@ export default function Navbar() {
 
         {/* Navigation */}
         <nav className="navLinks" aria-label="Primary">
+          <a href="#faq" className="navLink">
+            FAQ
+          </a>
           <Link className="navLink" to="/support">
             Support Us
           </Link>
 
           <Link className="navLink" to="/contact">
             Contact Us
-          </Link>
-
-          <Link className="navLink" to="/faq">
-            FAQ
           </Link>
 
           <a

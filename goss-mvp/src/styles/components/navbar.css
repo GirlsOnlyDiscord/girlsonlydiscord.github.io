@@ -7,6 +7,10 @@
   top: 20px;
   z-index: 1000;
 }
+.faqSection {
+  scroll-margin-top: 120px;
+  padding-top: 80px;
+}
 
 .navInner {
   margin: 0 20px;

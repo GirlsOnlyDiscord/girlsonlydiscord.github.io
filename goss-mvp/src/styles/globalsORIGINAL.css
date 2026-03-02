@@ -29,6 +29,10 @@
   --shadow-hover: 0 14px 34px rgba(0, 0, 0, 0.14);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -133,3 +137,5 @@ a {
   outline: 2px solid rgba(255, 255, 255, 0.9);
   outline-offset: 2px;
 }
+
+
