@@ -171,26 +171,6 @@
 .doodleCrown{   right: 3%; top: 10%; --r: 12deg;  width: clamp(60px, 8vw, 140px); }
 .doodleKitty{   right: 8%; top: 62%; --r: 10deg;  width: clamp(52px, 7vw, 110px); }
 
-
-.picBg {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  height: auto;
-}
-.star{
-    width: 80px;
-    top: 450px;
-    left: 520px;
-}
-
-.crown{
-  top: 210px;
-  left: 910px;
-  rotate: 10deg;
-  width:140px;
-}
-
 /* Social stack */
 .socialStack{
   justify-content: space-around;
