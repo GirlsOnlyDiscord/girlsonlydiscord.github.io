@@ -1,4 +1,24 @@
+/* =========================
+   FAQ
+   ========================= */
 
+  /* FAQ Header */
+  .faqTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  margin:  50px 20px 20px 20px;
+  padding: 10px;
+  background: var(--brand-cream);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.faqTitle{
+  margin: 0;
+}
+/* Expandle Questions */
 .cards-wrapper {
   display: flex;
   align-items: flex-start;
@@ -22,10 +42,6 @@
   transition: all 0.3s ease;
 }
 
-p {
-  margin: 0;
-}
-
 .card-header {
   display: flex;
   align-items: center;
@@ -42,11 +58,6 @@ p {
     color:var(--ink)
 }
 
-.plus {
-  font-size: 22px;
-  width: 20px;
-}
-
 .card-content {
   max-height: 0;
   overflow: hidden;
@@ -58,7 +69,15 @@ p {
   padding: 0 30px 20px 30px;
 }
 
+/* text (remove margin) */
+p {
+  margin: 0;
+}
+
+/* plus + animation + -> x */
 .plus {
+  font-size: 22px;
+  width: 20px;
   display: inline-block;
   transition: transform 0.3s ease;
   font-size: 22px;
@@ -76,22 +95,6 @@ p {
   }
 }
 
-.faqTitleContainer {
-  display: flex;
-  justify-content: space-between;
-  margin:  50px 20px 20px 20px;
-  padding: 10px;
-  background: var(--brand-cream);
-  border: 2px solid var(--ink);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.faqTitle{
-  margin: 0;
-
-}
 
 
 

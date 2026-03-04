@@ -1,7 +1,6 @@
 /* =========================
    Navbar
    ========================= */
-
 .navWrap {
   position: sticky;
   top: 20px;
@@ -80,6 +79,9 @@
    ========================= */
 
 @media (max-width: 720px){
+  .navWrap{
+
+  }
   /* Hide the long brand text pill */
   .brand .brandText{
     display: none;

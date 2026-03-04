@@ -70,6 +70,7 @@ a{
   text-decoration: none;
 }
 
-html, body{
-  overflow-x: hidden;
+/* changed due to breaking sticky header */
+html {
+  overflow-x: clip;
 }

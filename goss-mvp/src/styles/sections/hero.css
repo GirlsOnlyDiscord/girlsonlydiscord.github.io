@@ -85,6 +85,8 @@
 
 /* Optional: on very small screens, full-width CTA reads better */
 @media (max-width: 480px){
+  .navwar
+
   .btnDiscord{
     width: 100%;
     justify-content: center;
