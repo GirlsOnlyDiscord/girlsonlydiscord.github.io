@@ -3,7 +3,7 @@
    ========================= */
 
   /* FAQ Header */
-  .faqTitleContainer {
+.faqTitleContainer {
   display: flex;
   justify-content: space-between;
   margin:  50px 20px 20px 20px;

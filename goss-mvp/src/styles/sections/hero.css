@@ -197,6 +197,7 @@
   align-self: center;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   border: var(--ink) solid 2px;
   background-color: var(--brand-light-coral);
   border-radius: 12px;
@@ -206,7 +207,7 @@
 
 .pillLink{
   min-width: 160px;
-  color: #1E1C1D;;
+  color: var(--ink);
   font-weight: 500;
   padding:18px;
   text-align: center;
@@ -225,7 +226,7 @@
   border-radius: var(--radius-lg);
   padding: 18px 18px;
   box-shadow: var(--shadow);
-  border: 1px solid rgba(0,0,0,.10);
+  border: 1px solid var(--ink);
 }
 
 .benefitsGrid{
@@ -266,6 +267,13 @@
 /* Responsive */
 @media (max-width: 980px){
   .benefitsGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+   .socialStack{
+    justify-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 720px){
@@ -280,15 +288,6 @@
     display: none;
   }
 
-  .socialStack{
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    justify-self: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 520px;
-    justify-content: center;
-  }
 
   .pillLink{ min-width: unset; }
   .benefitsCard{ grid-column: 1 / 2; grid-row: 3 / 4; }

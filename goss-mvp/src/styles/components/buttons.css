@@ -27,9 +27,9 @@
 
 /* Primary CTA */
 .btnPrimary {
-  color: #1E1C1D;
+  color: var(--ink);
   background-color: var(--brand-coral);
-  border: #1E1C1D solid 2px;
+  border: var(--ink) solid 2px;
 }
 
 /* Discord CTA inherits this via class combo */
