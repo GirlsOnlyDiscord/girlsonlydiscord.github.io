@@ -1,8 +1,6 @@
 import WordCarousel from "./WordCarousel.jsx";
 import { HERO_WORDS } from "../data/heroWords.js";
 import SocialLinks from "./SocialLinks.jsx";
-import crown from "../assets/doodles/crown.png";
-import star from "../assets/doodles/star.png";
 import BenefitsStrip from "./BenefitsStrip.jsx";
 import HeroBackground from "./HeroBackground.jsx";
 
