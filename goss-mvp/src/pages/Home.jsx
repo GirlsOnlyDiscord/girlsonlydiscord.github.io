@@ -3,7 +3,7 @@ import Hero from "../components/Hero.jsx";
 import AboutSection from "../components/AboutSection.jsx"; // short intro section
 import AboutUs from "../components/AboutUs.jsx";           // full detailed section
 import Footer from "../components/Footer.jsx";
-import Cards from "../components/Cards.jsx";
+import FAQ from "../pages/FAQ.jsx";
 
 export default function Home() {
   return (
@@ -18,13 +18,7 @@ export default function Home() {
         <AboutSection />
 
         {/* FAQ Section */}
-        <section id="faq" className="faqSection">
-          <div className="faqTitleContainer">
-            <h1 className="faqTitle">Frequently Asked Questions</h1>
-            <button className="btn btnPrimary">Expand all Questions</button>
-          </div>
-          <Cards />
-        </section>
+        <FAQ />
 
         {/* Full About Us Section */}
         <AboutUs />

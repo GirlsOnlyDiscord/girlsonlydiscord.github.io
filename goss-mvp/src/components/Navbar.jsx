@@ -1,12 +1,32 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
+  const [brandText, setBrandText] = useState("Girls Only Study Space");
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 768px)");
+
+    const updateText = (e) => {
+      if (e.matches) {
+        setBrandText("GOSS");
+      } else {
+        setBrandText("Girls Only Study Space");
+      }
+    };
+
+    updateText(media);
+    media.addEventListener("change", updateText);
+
+    return () => media.removeEventListener("change", updateText);
+  }, []);
+
   return (
     <header className="navWrap">
       <div className="navInner">
         {/* Brand → Home */}
         <Link to="/" className="brand" aria-label="Go to homepage">
-          <span className="brandText">Girls Only Study Space</span>
+          <span className="brandText">{brandText}</span>
         </Link>
 
         {/* Navigation */}

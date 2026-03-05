@@ -24,7 +24,7 @@
   gap: 18px;
   align-items: center;
   border: var(--ink) solid 2px;
-  min-width: 500px;
+  min-width: 470px;
 }
 
 .brand{
@@ -39,7 +39,6 @@
 .brand .brandText{
   color: var(--ink);
   border-radius: 18px;
-  font-family: "Fraunces", serif;
   font-size: 26px;          /* ⬅ bigger */
   font-weight: 600;
   letter-spacing: .3px;
@@ -81,18 +80,9 @@
    ========================= */
 
 @media (max-width: 720px){
-  /* Hide the long brand text pill */
-  .brand .brandText{
-    display: none;
-  }
 
   .brandTag{
     height: 30px;
-  }
-
-  /* Hide everything first */
-  .navLink{
-    display: none;
   }
 
   /* Show Support + Contact + Join explicitly (not order-based) */
