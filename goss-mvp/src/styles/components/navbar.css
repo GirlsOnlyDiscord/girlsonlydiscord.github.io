@@ -1,121 +1,136 @@
 /* =========================
    Navbar
    ========================= */
-.navWrap {
-  position: sticky;
-  top: 20px;
-  z-index: 1000;
-}
-.faqSection {
-  scroll-margin-top: 120px;
-  padding-top: 80px;
+
+.navWrap{
+  position:sticky;
+  top:20px;
+  z-index:1000;
 }
 
-.navInner {
-  margin: 0 20px;
-  padding: 16px 24px;
-  background: var(--brand-cream);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  align-items: center;
-  border: var(--ink) solid 2px;
-  min-width: 500px;
-}
+.navInner{
+  margin:0 20px;
+  padding:16px 24px;
+  background:var(--brand-cream);
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
 
-.brand{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  min-width: 0;
-}
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
 
-/* Brand text pill (desktop) */
-.brand .brandText{
-  color: var(--ink);
-  border-radius: 18px;
-  font-family: "Fraunces", serif;
-  font-size: 26px;          /* ⬅ bigger */
-  font-weight: 600;
-  letter-spacing: .3px;
-
-  line-height: 2;
-  white-space: nowrap;
-
-  /* prevents “cut off” overflow */
-  max-width: 62vw;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-.brandTag{
-  height: 34px;
-  width: auto;
-  display: block;
-}
-
-.navLinks{
-  display: flex;
-  align-items: center;
-  gap: 40px; /* increased spacing */
-  flex-shrink: 0;
-}
-
-.navLink{
-  color: var(--ink);
-  font-weight: 400;
-}
-
-.navLink:hover{
-  text-decoration: underline;
+  border:var(--ink) solid 2px;
+  width:100%;
 }
 
 /* =========================
-   Mobile behaviour
+   Brand
    ========================= */
 
-@media (max-width: 720px){
-  .navWrap{
-
-  }
-  /* Hide the long brand text pill */
-  .brand .brandText{
-    display: none;
-  }
-
-  .brandTag{
-    height: 30px;
-  }
-
-  /* Hide everything first */
-  .navLink{
-    display: none;
-  }
-
-  /* Show Support + Contact + Join explicitly (not order-based) */
-  .navLink[href="/support"],
-  .navLink[href="/contact"],
-  .navLink[href*="discord.gg"]{
-    display: inline-flex;
-    font-size: 14px;
-    font-weight: 500;
-  }
-
-  .navLinks{
-    gap: 14px;
-  }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
 }
 
-@media (max-width: 480px){
-  .navInner{
-    padding: 14px 16px;
-  }
+.brandText{
+  color:var(--ink);
+  font-family:"Fraunces", serif;
+  font-size:26px;
+  font-weight:600;
+  white-space:nowrap;
+}
 
-  .navLinks{
-    gap: 12px;
-  }
+.brandText.mobile{
+  display:none;
+}
+
+/* =========================
+   Links
+   ========================= */
+
+.navLinks{
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+
+.navLink{
+  color:var(--ink);
+  font-weight:400;
+}
+
+.navLink:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+   Hamburger
+   ========================= */
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:24px;
+  height:2px;
+  background:var(--ink);
+  display:block;
+}
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width:720px){
+
+.brandText.desktop{
+  display:none;
+}
+
+.brandText.mobile{
+  display:block;
+  font-size:22px;
+}
+
+.hamburger{
+  display:flex;
+}
+
+.navLinks{
+  position:absolute;
+  top:80px;
+  left:20px;
+  right:20px;
+
+  flex-direction:column;
+  align-items:flex-start;
+
+  background:var(--brand-cream);
+  border:var(--ink) solid 2px;
+  border-radius:12px;
+
+  padding:20px;
+  gap:18px;
+
+  display:none;
+}
+
+.navLinks.open{
+  display:flex;
+}
+
+.btn{
+  width:100%;
+  text-align:center;
+}
+
 }

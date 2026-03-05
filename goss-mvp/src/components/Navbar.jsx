@@ -1,24 +1,44 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
   return (
     <header className="navWrap">
       <div className="navInner">
-        {/* Brand → Home */}
-        <Link to="/" className="brand" aria-label="Go to homepage">
-          <span className="brandText">Girls Only Study Space</span>
+        {/* Brand */}
+        <Link to="/" className="brand" onClick={closeMenu}>
+          <span className="brandText desktop">Girls Only Study Space</span>
+          <span className="brandText mobile">GOSS</span>
         </Link>
 
+        {/* Hamburger */}
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
         {/* Navigation */}
-        <nav className="navLinks" aria-label="Primary">
-          <a href="/#faq" className="navLink">
+        <nav className={`navLinks ${menuOpen ? "open" : ""}`}>
+          <a href="/#faq" className="navLink" onClick={closeMenu}>
             FAQ
           </a>
-          <Link className="navLink" to="/support">
+
+          <Link className="navLink" to="/support" onClick={closeMenu}>
             Support Us
           </Link>
 
-          <Link className="navLink" to="/contact">
+          <Link className="navLink" to="/contact" onClick={closeMenu}>
             Contact Us
           </Link>
 
@@ -27,6 +47,7 @@ export default function Navbar() {
             href="https://discord.gg/girlsonlystudy"
             target="_blank"
             rel="noreferrer"
+            onClick={closeMenu}
           >
             Join GOSS
           </a>

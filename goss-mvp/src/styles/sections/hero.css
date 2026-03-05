@@ -1,12 +1,7 @@
 /* =========================
-   HERO (single source of truth)
-   - No sparkles
-   - No heart spawning
-   - No animation loops
-   - Optional subtle mouse parallax only
+   HERO
    ========================= */
 
-/* Hero section wrapper */
 .hero {
   position: relative;
   padding: clamp(28px, 6vw, 48px) 18px clamp(36px, 8vw, 64px);
@@ -17,53 +12,56 @@
   margin-top: -100px;
 }
 
-/* Background host (goes behind content) */
+/* Background layer */
+
 .heroBg{
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
 
-  /* mouse parallax inputs (set from JS) */
   --mx: 0;
   --my: 0;
 }
 
-/* Keep hero content above background */
+/* Inner hero container */
+
 .heroInner{
   max-width: 1120px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 
-  /* avoids “too short” or “too tall” hero */
   min-height: clamp(420px, 70vh, 620px);
 
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
-  gap: 16px;
-
-  /* prevents overflow quirks in grid children */
-  min-width: 0;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
-/* Center copy */
+/* Center hero content */
+
 .heroCenter{
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
   place-self: center;
   text-align: center;
   margin-top: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
 }
 
-/* Kicker line */
+/* Headline */
+
 .heroKicker{
   font-family: "Fraunces", serif;
   font-size: 38px;
   font-weight: 500;
   color: rgba(255,255,255,.92);
-  margin: 0 0 18px;
+  margin: 0;
+
+  max-width: 16ch;
 }
 
 .wordCarousel{
@@ -71,48 +69,40 @@
   font-family: "Outfit", sans-serif;
 }
 
-.animate-blink {
+.animate-blink{
   animation: blink 1s step-start infinite;
 }
 
-/* Join button sizing inside hero (colour comes from buttons.css) */
+/* Join button */
+
 .btnDiscord{
   padding: 14px 20px;
   font-size: clamp(18px, 4.2vw, 22px);
-  max-width: 100%;
-  white-space: nowrap;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  max-width: 320px;
 }
 
-/* Optional: on very small screens, full-width CTA reads better */
+/* Mobile button behaviour */
+
 @media (max-width: 480px){
-  .navwar
 
   .btnDiscord{
-    width: 100%;
-    justify-content: center;
+    width: 90%;
+    max-width: 320px;
     padding: 14px 16px;
   }
+
 }
 
-.discordDot{
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  background: rgba(255,255,255,.22);
-}
+/* =========================
+   Background layers
+   ========================= */
 
-.discordIcon{
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
-/* ---- Background layers ---- */
-
-/* Soft gradient vibe (STATIC).
-   Only shifts slightly with mouse (optional). */
 .heroGradient{
   position: absolute;
   inset: -20%;
@@ -130,7 +120,10 @@
   );
 }
 
-/* Doodles layer */
+/* =========================
+   Doodles
+   ========================= */
+
 .heroDoodles{
   position: absolute;
   inset: 0;
@@ -138,12 +131,10 @@
   opacity: 0.22;
 }
 
-/* Reduce doodle dominance earlier */
 @media (max-width: 900px){
   .heroDoodles{ opacity: 0.16; }
 }
 
-/* Shared doodle styling */
 .doodle{
   position: absolute;
   width: clamp(44px, 6vw, 92px);
@@ -157,22 +148,7 @@
   filter: drop-shadow(0 10px 18px rgba(0,0,0,.10));
 }
 
-/* Individual positions */
-.doodleBow{     left: 6%;  top: 12%; --r: -12deg; }
-.doodleNotes{   left: 9%;  top: 56%; --r: -18deg; width: clamp(52px, 7vw, 110px); }
-
-.doodleBook{    left: 22%; top: 30%; --r: 14deg;  width: clamp(48px, 6.5vw, 108px); }
-.doodlePencil{  right: 12%; top: 18%; --r: 10deg; }
-
-.doodleAPlus{   left: 46%; top: 66%; --r: -6deg;  width: clamp(42px, 5.6vw, 88px); }
-.doodleCalc{    left: 2%;  top: 72%; --r: 16deg;  width: clamp(44px, 5.8vw, 90px); }
-
-.doodleApple{   left: 38%; top: 10%; --r: 0deg;   width: clamp(44px, 5.8vw, 86px); }
-.doodleStar{    left: 58%; top: 14%; --r: -6deg;  width: clamp(40px, 5vw, 78px); }
-
-.doodleCrown{   right: 3%; top: 10%; --r: 12deg;  width: clamp(60px, 8vw, 140px); }
-.doodleKitty{   right: 8%; top: 62%; --r: 10deg;  width: clamp(52px, 7vw, 110px); }
-
+/* Specific doodles */
 
 .picBg {
   position: absolute;
@@ -180,10 +156,11 @@
   pointer-events: none;
   height: auto;
 }
+
 .star{
-    width: 80px;
-    top: 450px;
-    left: 520px;
+  width: 80px;
+  top: 450px;
+  left: 520px;
 }
 
 .crown{
@@ -193,7 +170,10 @@
   width:140px;
 }
 
-/* Social stack */
+/* =========================
+   Social stack
+   ========================= */
+
 .socialStack{
   justify-content: space-around;
   align-self: center;
@@ -208,7 +188,7 @@
 
 .pillLink{
   min-width: 160px;
-  color: #1E1C1D;;
+  color: #1E1C1D;
   font-weight: 500;
   padding:18px;
   text-align: center;
@@ -218,14 +198,15 @@
   filter: brightness(0.99);
 }
 
-/* Benefits strip */
+/* =========================
+   Benefits strip
+   ========================= */
+
 .benefitsCard{
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: end;
+  margin-top: 2rem;
   background: var(--brand-cream-card);
   border-radius: var(--radius-lg);
-  padding: 18px 18px;
+  padding: 18px;
   box-shadow: var(--shadow);
   border: 1px solid rgba(0,0,0,.10);
 }
@@ -241,7 +222,6 @@
   justify-items: center;
   text-align: center;
   gap: 8px;
-  padding: 8px 6px;
 }
 
 .benefitIcon{
@@ -254,61 +234,22 @@
   line-height: 1.2;
 }
 
-.scrollHint{
-  font-family: "Outfit", sans-serif;
-  font-weight: 500;
-  color: rgba(31, 41, 55, 0.82);
-  margin-left: 10px;
-  background: rgba(255,255,255,.55);
-  border-radius: 999px;
-  padding: 4px 10px;
-  border: 1px solid rgba(0,0,0,.10);
-}
-
 /* Responsive */
+
 @media (max-width: 980px){
-  .benefitsGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .benefitsGrid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px){
-  .heroInner{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+
+  .benefitsGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* reduce clutter on small screens */
-  .doodleCrown,
-  .doodleNotes{
-    display: none;
+  .doodle{
+    filter: none;
   }
 
-  .socialStack{
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    justify-self: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 520px;
-    justify-content: center;
-  }
-
-  .pillLink{ min-width: unset; }
-  .benefitsCard{ grid-column: 1 / 2; grid-row: 3 / 4; }
-  .benefitsGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-  /* shadows get noisy on tiny screens */
-  .doodle{ filter: none; }
-}
-
-@media (max-width: 560px){
-  .benefitText{ font-size: 13px; }
-}
-
-/* Respect reduced motion (parallax is JS-side) */
-@media (prefers-reduced-motion: reduce){
-  .wordCarousel{ transition: none; }
-}
-
-.benefitsCard {
-  margin-top: 2rem;
 }

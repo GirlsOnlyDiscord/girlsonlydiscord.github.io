@@ -1,9 +1,9 @@
 import Navbar from "../components/Navbar.jsx";
 import Hero from "../components/Hero.jsx";
-import AboutSection from "../components/AboutSection.jsx"; // short intro section
-import AboutUs from "../components/AboutUs.jsx";           // full detailed section
+import AboutSection from "../components/AboutSection.jsx";
+import AboutUs from "../components/AboutUs.jsx";
 import Footer from "../components/Footer.jsx";
-import Cards from "../components/Cards.jsx";
+import FAQQuestions from "../components/Cards.jsx";
 
 export default function Home() {
   return (
@@ -11,23 +11,33 @@ export default function Home() {
       <Navbar />
 
       <main>
-        {/* Hero Section */}
+
+        {/* Hero */}
         <Hero />
 
-        {/* Short About Section */}
+        {/* Short About */}
         <AboutSection />
 
-        {/* FAQ Section */}
+        {/* FAQ */}
         <section id="faq" className="faqSection">
-          <div className="faqTitleContainer">
-            <h1 className="faqTitle">Frequently Asked Questions</h1>
-            <button className="btn btnPrimary">Expand all Questions</button>
+
+          <div className="faqHeader">
+            <h2 className="faqTitle">
+              Frequently Asked Questions
+            </h2>
+
+            <button className="btn btnPrimary">
+              Expand All Questions
+            </button>
           </div>
-          <Cards />
+
+          <FAQQuestions />
+
         </section>
 
-        {/* Full About Us Section */}
+        {/* Full About */}
         <AboutUs />
+
       </main>
 
       <Footer />

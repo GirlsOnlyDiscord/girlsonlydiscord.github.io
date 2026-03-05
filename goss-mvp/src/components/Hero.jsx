@@ -14,6 +14,7 @@ export default function Hero() {
       <div className="heroInner">
         <div className="heroCenter">
           <p className="heroKicker">Your discord server</p>
+
           <p className="heroKicker">
             for <WordCarousel items={HERO_WORDS} />
           </p>
@@ -25,15 +26,15 @@ export default function Hero() {
             rel="noreferrer"
             aria-label="Join the Girls Only Study Space"
           >
-            <span>Join GOSS → </span>
+            Join GOSS →
           </a>
 
           <BenefitsStrip />
         </div>
       </div>
 
-      <img src={crown} className="picBg crown" alt="Crown" />
-      <img src={star} className="picBg star" alt="Star" />
+      <img src={crown} className="picBg crown" alt="Crown doodle" />
+      <img src={star} className="picBg star" alt="Star doodle" />
 
       <SocialLinks />
     </section>
