@@ -11,7 +11,6 @@ export default function FAQ() {
       <main>
           <div className="faqTitleContainer">
             <h1 className="faqTitle">Frequently asked Questions</h1>
-            <button className="btn btnPrimary">Expand all Questions</button>
           </div>
           <Cards />
       </main>

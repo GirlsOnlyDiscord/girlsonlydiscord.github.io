@@ -1,0 +1,78 @@
+/* =========================
+   HERO DOODLES — decorative only
+   Imported separately so structural
+   hero styles stay uncluttered.
+   ========================= */
+
+.heroDoodles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+}
+
+/* Base doodle style */
+
+.doodle {
+  position: absolute;
+  width: clamp(44px, 6vw, 92px);
+  height: auto;
+  user-select: none;
+
+  transform:
+    translate3d(calc(var(--mx) * 5px), calc(var(--my) * 4px), 0)
+    rotate(var(--r, 0deg));
+
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.10));
+}
+
+/* Shared base for absolutely-positioned decorative images */
+
+.picBg {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  height: auto;
+}
+
+/* NOTE: .star and .crown pixel-based rules removed —
+   use .doodleStar and .doodleCrown below instead */
+
+/* =========================
+   Individual doodle positions
+   Spread across the full hero:
+   left edge, right edge, top, bottom, centre
+   ========================= */
+
+.doodleBow     { left: 6%;   top: 12%; --r: -12deg; }
+.doodleNotes   { left: 9%;   top: 56%; --r: -18deg; width: clamp(52px, 7vw, 110px); }
+.doodleBook    { left: 22%;  top: 30%; --r:  14deg; width: clamp(48px, 6.5vw, 108px); }
+.doodlePencil  { right: 12%; top: 18%; --r:  10deg; }
+.doodleAPlus   { left: 46%;  top: 66%; --r:  -6deg; width: clamp(42px, 5.6vw, 88px); }
+.doodleCalc    { left: 2%;   top: 72%; --r:  16deg; width: clamp(44px, 5.8vw, 90px); }
+.doodleApple   { left: 38%;  top: 10%; --r:   0deg; width: clamp(44px, 5.8vw, 86px); }
+.doodleStar    { left: 58%;  top: 14%; --r:  -6deg; width: clamp(40px, 5vw,   78px); }
+.doodleCrown   { right: 3%;  top: 10%; --r:  12deg; width: clamp(60px, 8vw,  140px); }
+.doodleKitty   { right: 8%;  top: 62%; --r:  10deg; width: clamp(52px, 7vw,  110px); }
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+  .heroDoodles {
+    opacity: 0.16;
+  }
+}
+
+@media (max-width: 720px) {
+  .doodle {
+    filter: none;
+  }
+
+  /* Hide a couple to reduce clutter on small screens */
+  .doodleCrown,
+  .doodleNotes {
+    display: none;
+  }
+}
