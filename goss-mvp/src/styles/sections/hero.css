@@ -117,27 +117,31 @@
    ========================= */
 
 .socialStack {
-  justify-content: space-around;
-  align-self: center;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: center;
   border: var(--ink) solid 2px;
   background-color: var(--brand-light-coral);
   border-radius: 12px;
   margin: 2px;
   margin-top: 100px;
+  width: 100%;
 }
 
 .pillLink {
-  min-width: 160px;
+  flex: 1 1 120px;      /* grows and shrinks, min 120px before wrapping */
+  min-width: 0;         /* overrides the old 160px fixed min */
   color: #1E1C1D;
   font-weight: 500;
-  padding: 18px;
+  padding: 14px 10px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .pillLink:hover {
-  filter: brightness(0.99);
+  filter: brightness(0.97);
 }
 
 /* =========================
@@ -189,5 +193,19 @@
 @media (max-width: 720px) {
   .benefitsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pillLink {
+    flex: 1 1 100px;
+    font-size: 14px;
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pillLink {
+    flex: 1 1 80px;
+    font-size: 13px;
+    padding: 10px 6px;
   }
 }
