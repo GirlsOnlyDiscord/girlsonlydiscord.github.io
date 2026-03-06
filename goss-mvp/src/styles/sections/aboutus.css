@@ -1,35 +1,251 @@
 /* =========================
    AboutUs section
-   Placeholder styles — to be designed later
    ========================= */
 
 .aboutSection {
-  padding: 56px 18px 70px;
   background: var(--brand-cream);
+  padding: 72px 24px 80px;
+  position: relative;
+  overflow: hidden;
 }
 
-.aboutSection .aboutInner {
+/* Confetti dots — left side */
+.aboutSection::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  background-image:
+    radial-gradient(circle, var(--brand-coral)  4px, transparent 4px),
+    radial-gradient(circle, var(--brand-blue)   4px, transparent 4px),
+    radial-gradient(circle, var(--brand-gold)   4px, transparent 4px),
+    radial-gradient(circle, var(--brand-green)  4px, transparent 4px),
+    radial-gradient(circle, var(--brand-coral)  3px, transparent 3px),
+    radial-gradient(circle, var(--brand-blue)   3px, transparent 3px),
+    radial-gradient(circle, var(--brand-gold)   3px, transparent 3px),
+    radial-gradient(circle, var(--brand-green)  3px, transparent 3px);
+  background-size:
+    60px 120px, 60px 120px, 60px 120px, 60px 120px,
+    60px 120px, 60px 120px, 60px 120px, 60px 120px;
+  background-position:
+    12px 18px,  30px 48px,  8px  72px,  42px 96px,
+    24px 108px, 48px 132px, 16px 156px, 36px 24px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Confetti dots — right side */
+.aboutSection::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  background-image:
+    radial-gradient(circle, var(--brand-green)  4px, transparent 4px),
+    radial-gradient(circle, var(--brand-coral)  4px, transparent 4px),
+    radial-gradient(circle, var(--brand-blue)   4px, transparent 4px),
+    radial-gradient(circle, var(--brand-gold)   4px, transparent 4px),
+    radial-gradient(circle, var(--brand-green)  3px, transparent 3px),
+    radial-gradient(circle, var(--brand-coral)  3px, transparent 3px),
+    radial-gradient(circle, var(--brand-blue)   3px, transparent 3px),
+    radial-gradient(circle, var(--brand-gold)   3px, transparent 3px);
+  background-size:
+    60px 120px, 60px 120px, 60px 120px, 60px 120px,
+    60px 120px, 60px 120px, 60px 120px, 60px 120px;
+  background-position:
+    48px 30px,  18px 60px,  38px 90px,  8px  110px,
+    28px 140px, 50px 20px,  14px 170px, 40px 80px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* =========================
+   Blue chunk below section
+   ========================= */
+
+.aboutBlueBar {
+  background: var(--brand-blue);
+  height: 80px;
+  width: 100%;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+.aboutHeader {
   max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.aboutSectionTitle {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: clamp(36px, 5vw, 52px);
+  color: var(--ink);
+  margin: 0 0 16px;
+  line-height: 1.0;
+}
+
+.aboutAccent {
+  color: var(--brand-coral);
+}
+
+.aboutLead {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.6;
+  color: var(--ink-muted);
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.sectionTitle {
+/* =========================
+   Stats row
+   ========================= */
+
+.aboutStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto 56px;
+}
+
+.aboutStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-cream-card);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 20px 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.aboutStatValue {
   font-family: "Fraunces", serif;
-  font-weight: 500;
-  font-size: 38px;
-  color: var(--ink);
-  margin: 0 0 24px;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.aboutStatLabel {
+  font-size: 13px;
+  color: var(--ink-muted);
+  line-height: 1.3;
+}
+
+/* =========================
+   Body copy
+   ========================= */
+
+.aboutBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 960px;
+  margin: 0 auto 56px;
 }
 
 .aboutPara {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.75;
   color: var(--ink-muted);
-  margin: 0 0 16px;
+  margin: 0;
+}
+
+/* =========================
+   Feature cards
+   ========================= */
+
+.aboutFeatures {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.aboutFeatureCard {
+  background: var(--brand-cream-card);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.aboutFeatureCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.aboutFeatureEmoji {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.aboutFeatureTitle {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.aboutFeatureText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 980px) {
+  .aboutStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aboutFeatures {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 720px) {
-  .sectionTitle {
-    font-size: 28px;
+  .aboutSection {
+    padding: 48px 18px 56px;
+  }
+
+  .aboutBody {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .aboutHeader {
+    margin-bottom: 32px;
+  }
+
+  .aboutStats {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aboutFeatures {
+    grid-template-columns: 1fr;
   }
 }
