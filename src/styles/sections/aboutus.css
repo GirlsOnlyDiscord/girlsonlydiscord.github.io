@@ -226,6 +226,11 @@
     padding: 48px 18px 56px;
   }
 
+  .aboutSection::before,
+  .aboutSection::after {
+    display: none;
+  }
+
   .aboutBody {
     grid-template-columns: 1fr;
     gap: 16px;
