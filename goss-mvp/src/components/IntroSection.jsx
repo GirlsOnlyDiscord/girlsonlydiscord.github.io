@@ -1,6 +1,6 @@
 import ServerBanner from "../assets/ServerBanner.png";
 
-export default function AboutSection() {
+export default function IntroSection() {
   return (
     <section className="about" aria-label="About GOSS" id="about">
       <div className="aboutInner">
@@ -11,7 +11,6 @@ export default function AboutSection() {
             className="aboutImage"
           />
         </div>
-
         <div className="aboutCopy">
           <h2 className="aboutTitle">
             <span className="aboutWord aboutWordCoral">GOSS</span> is a <br />
@@ -21,7 +20,6 @@ export default function AboutSection() {
             <span className="aboutWord aboutWordGreen">girls-only</span> <br />
             <span className="aboutWord aboutWordBlue">study community</span>
           </h2>
-
           <a
             className="btn btnPrimary"
             href="https://discord.gg/girlsonlystudy"

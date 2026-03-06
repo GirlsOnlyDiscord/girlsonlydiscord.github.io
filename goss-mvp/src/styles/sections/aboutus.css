@@ -1,79 +1,35 @@
 /* =========================
-   About Us Section
+   AboutUs section
+   Placeholder styles — to be designed later
    ========================= */
 
 .aboutSection {
-  padding: 80px 20px;
+  padding: 56px 18px 70px;
   background: var(--brand-cream);
-  border: 2px solid var(--ink);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  max-width: 1100px;
-  margin: 50px auto;
 }
 
-.aboutInner {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.aboutSection .aboutInner {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.aboutTitle {
-  font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 600;
-  font-size: 36px;
-  margin: 0;
-  text-align: center;
+.sectionTitle {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 38px;
   color: var(--ink);
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--ink);
+  margin: 0 0 24px;
 }
 
 .aboutPara {
-  font-family: "Fraunces", serif;
-  font-size: 18px;
-  line-height: 1.75;
-  margin: 0;
-  padding: 12px 16px;
-  border-left: 6px solid transparent; /* default neutral */
-  transition: all 0.3s ease;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin: 0 0 16px;
 }
 
-/* subtle brand accent per paragraph */
-.aboutPara.para1 { border-left-color: var(--brand-coral); }
-.aboutPara.para2 { border-left-color: var(--brand-blue); }
-.aboutPara.para3 { border-left-color: var(--brand-green); }
-.aboutPara.para4 { border-left-color: var(--brand-gold); }
-.aboutPara.para5 { border-left-color: var(--brand-red); }
-
-/* Optional: slightly lift on hover for subtle interactivity */
-.aboutPara:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .aboutPara {
-    font-size: 16px;
-    padding: 10px 12px;
-    border-left-width: 4px;
-  }
-
-  .aboutTitle {
+@media (max-width: 720px) {
+  .sectionTitle {
     font-size: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .aboutPara {
-    font-size: 15px;
-    padding: 8px 10px;
-    line-height: 1.6;
-    border-left-width: 3px;
-  }
-
-  .aboutTitle {
-    font-size: 24px;
   }
 }
