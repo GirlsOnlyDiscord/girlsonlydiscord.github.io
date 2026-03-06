@@ -1,34 +1,58 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function WordCarousel({
-  items,
-  intervalMs = 1400,
-  className = "",
-}) {
-  const safeItems = useMemo(() => (Array.isArray(items) ? items : []), [items]);
-  const [index, setIndex] = useState(0);
+export default function WordCarousel({ items = [], className = "" }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isIdle, setIsIdle] = useState(false); // cursor should blink when idle
 
   useEffect(() => {
-    if (safeItems.length <= 1) return;
+    if (!items.length) return;
 
-    const id = window.setInterval(() => {
-      setIndex((prev) => (prev + 1) % safeItems.length);
-    }, intervalMs);
+    const currentWord = items[currentIndex].text;
 
-    return () => window.clearInterval(id);
-  }, [safeItems.length, intervalMs]);
+    // Typing speed is random for organic effect
+    const minTypingSpeed = 50;
+    const maxTypingSpeed = 200;
+    const typingSpeed = isDeleting
+      ? 80 // fixed speed while deleting
+      : Math.floor(Math.random() * (maxTypingSpeed - minTypingSpeed + 1)) + minTypingSpeed;
 
-  if (safeItems.length === 0) return null;
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setDisplayedText((prev) => prev.slice(0, prev.length - 1));
+        setIsIdle(false); // solid cursor while deleting
+      } else {
+        setDisplayedText((prev) => currentWord.slice(0, prev.length + 1));
+        setIsIdle(false); 
+      }
 
-  const current = safeItems[index];
+      if (!isDeleting && displayedText.length + 1 === currentWord.length) {
+        setTimeout(() => {
+          setIsDeleting(true);
+          setIsIdle(true);
+        }, 800);
+      }
+
+      else if (isDeleting && displayedText.length === 0) {
+        setIsDeleting(false);
+        setCurrentIndex((prev) => (prev + 1) % items.length);
+        setIsIdle(true); // blinking at empty
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentIndex, items]);
+
+  if (!items.length) return null;
+
+  const current = items[currentIndex];
 
   return (
-    <span
-      className={`wordCarousel ${className}`}
-      style={{ color: `var(${current.colorVar})` }}
-      aria-label={`Highlighted word: ${current.text}`}
-    >
-      {current.text}
+    <span className={`wordCarousel ${className}`}>
+
+      <span style={{ color: `var(${current.colorVar})` }}>{displayedText}</span>
+      <span className={`cursor ${isIdle ? "animate-blink" : ""}`}>|</span>
     </span>
   );
 }

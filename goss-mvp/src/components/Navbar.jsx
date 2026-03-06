@@ -1,38 +1,55 @@
 import { Link } from "react-router-dom";
-import GOSSTag from "../assets/GOSStag.png";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
   return (
     <header className="navWrap">
       <div className="navInner">
-        {/* Brand → Home */}
-        <Link to="/" className="brand" aria-label="Go to homepage">
-          <span className="brandText">Girls Only Study Space</span>
-
-          <img
-            src={GOSSTag}
-            alt="GOSS tag"
-            className="brandTag"
-          />
+        {/* Brand */}
+        <Link to="/" className="brand" onClick={closeMenu}>
+          <span className="brandText desktop">Girls Only Study Space</span>
+          <span className="brandText mobile">GOSS</span>
         </Link>
 
+        {/* Hamburger */}
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
         {/* Navigation */}
-        <nav className="navLinks" aria-label="Primary">
-          <Link className="navLink" to="/support">
+        <nav className={`navLinks ${menuOpen ? "open" : ""}`}>
+          <a href="/#faq" className="navLink" onClick={closeMenu}>
+            FAQ
+          </a>
+          <a href="/#about-us" className="navLink" onClick={closeMenu}>
+            About Us
+          </a>
+          <Link className="navLink" to="/support" onClick={closeMenu}>
             Support Us
           </Link>
-
-          <Link className="navLink" to="/contact">
+          <Link className="navLink" to="/contact" onClick={closeMenu}>
             Contact Us
           </Link>
-
           <a
             className="btn btnPrimary"
             href="https://discord.gg/girlsonlystudy"
             target="_blank"
             rel="noreferrer"
+            onClick={closeMenu}
           >
-            Join
+            Join GOSS
           </a>
         </nav>
       </div>

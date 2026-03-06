@@ -1,0 +1,111 @@
+/* =========================
+   Intro section (formerly About)
+   ========================= */
+
+.about {
+  padding: 56px 18px 70px;
+  background: var(--brand-cream);
+}
+
+.aboutInner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 26px;
+  align-items: center;
+}
+
+/* =========================
+   Image
+   ========================= */
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(0,0,0,.10);
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   Copy / typography
+   ========================= */
+
+.aboutCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.aboutTitle {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.05;
+  margin: 0 0 22px;
+  color: var(--ink);
+  text-align: left;
+}
+
+/* Accent word helper */
+
+.accentWord {
+  color: var(--brand-coral);
+}
+
+/* =========================
+   Multi-colour word control
+   ========================= */
+
+.aboutWord      { display: inline-block; }
+.aboutWordCoral { color: var(--brand-coral); }
+.aboutWordBlue  { color: var(--brand-blue); }
+.aboutWordGold  { color: var(--brand-gold); }
+.aboutWordGreen { color: var(--brand-green); }
+
+/* =========================
+   Responsive
+   ========================= */
+
+/* Tablet: stack image above text */
+@media (max-width: 980px) {
+  .aboutInner {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutTitle {
+    font-size: 38px;
+    text-align: left;
+  }
+}
+
+/* Mobile: tighten up spacing and font, fix button width */
+@media (max-width: 720px) {
+  .about {
+    padding: 36px 18px 48px;
+  }
+
+  .aboutInner {
+    gap: 18px;
+  }
+
+  .aboutTitle {
+    font-size: 30px;
+    margin: 0 0 16px;
+  }
+
+  /* Prevent button stretching full width */
+  .aboutCopy .btn {
+    width: fit-content;
+    max-width: 220px;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutTitle {
+    font-size: 26px;
+  }
+}

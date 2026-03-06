@@ -1,6 +1,5 @@
 // src/components/HeroBackground.jsx
 import { useEffect, useRef } from "react";
-
 import Bow from "../assets/doodles/bow.png";
 import Notes from "../assets/doodles/notes.png";
 import Book from "../assets/doodles/book.png";
@@ -13,16 +12,16 @@ import Crown from "../assets/doodles/crown.png";
 import Kitty from "../assets/doodles/kitty.png";
 
 const DOODLES = [
-  { src: Bow, alt: "", className: "doodle doodleBow" },
-  { src: Notes, alt: "", className: "doodle doodleNotes" },
-  { src: Book, alt: "", className: "doodle doodleBook" },
-  { src: Pencil, alt: "", className: "doodle doodlePencil" },
-  { src: APlus, alt: "", className: "doodle doodleAPlus" },
+  { src: Bow,        alt: "", className: "doodle doodleBow" },
+  { src: Notes,      alt: "", className: "doodle doodleNotes" },
+  { src: Book,       alt: "", className: "doodle doodleBook" },
+  { src: Pencil,     alt: "", className: "doodle doodlePencil" },
+  { src: APlus,      alt: "", className: "doodle doodleAPlus" },
   { src: Calculator, alt: "", className: "doodle doodleCalc" },
-  { src: Apple, alt: "", className: "doodle doodleApple" },
-  { src: Star, alt: "", className: "doodle doodleStar" },
-  { src: Crown, alt: "", className: "doodle doodleCrown" },
-  { src: Kitty, alt: "", className: "doodle doodleKitty" },
+  { src: Apple,      alt: "", className: "doodle doodleApple" },
+  { src: Star,       alt: "", className: "doodle doodleStar" },
+  { src: Crown,      alt: "", className: "doodle doodleCrown" },
+  { src: Kitty,      alt: "", className: "doodle doodleKitty" },
 ];
 
 export default function HeroBackground() {
@@ -34,12 +33,10 @@ export default function HeroBackground() {
 
     const onMove = (e) => {
       const rect = el.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width; // 0..1
-      const y = (e.clientY - rect.top) / rect.height; // 0..1
-
-      // optional tiny parallax (not animation)
-      el.style.setProperty("--mx", String((x - 0.5) * 2)); // -1..1
-      el.style.setProperty("--my", String((y - 0.5) * 2)); // -1..1
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      el.style.setProperty("--mx", String((x - 0.5) * 2));
+      el.style.setProperty("--my", String((y - 0.5) * 2));
     };
 
     const onLeave = () => {
@@ -49,7 +46,6 @@ export default function HeroBackground() {
 
     el.addEventListener("pointermove", onMove);
     el.addEventListener("pointerleave", onLeave);
-
     return () => {
       el.removeEventListener("pointermove", onMove);
       el.removeEventListener("pointerleave", onLeave);

@@ -2,7 +2,7 @@ import { SOCIALS } from "../data/socials.js";
 
 export default function SocialLinks() {
   return (
-    <aside className="socialStack" aria-label="Social links">
+    <div className="socialStack">
       {SOCIALS.map((item) => (
         <a
           key={item.label}
@@ -11,9 +11,10 @@ export default function SocialLinks() {
           target="_blank"
           rel="noreferrer"
         >
-          {item.label} <span aria-hidden="true">→</span>
+          {item.label}
+
         </a>
       ))}
-    </aside>
+    </div>
   );
 }

@@ -16,7 +16,9 @@
 
 /* 4. Page sections */
 @import "./sections/hero.css";
+@import "./sections/hero-doodles.css";
 @import "./sections/about.css";
 
 /* 5. Full pages */
 @import "./pages/support-contact.css";
+@import "./pages/faq.css";

@@ -2,22 +2,18 @@
    Buttons / CTAs (GLOBAL)
    ========================= */
 
-.btn{
+.btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   border: none;
   border-radius: var(--radius-pill);
   padding: 12px 18px;
-
   font-family: "Outfit", sans-serif;
   font-weight: 500;
   cursor: pointer;
-
   background-clip: padding-box;
   box-shadow: var(--shadow);
-
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease,
@@ -25,34 +21,54 @@
 }
 
 /* Primary CTA */
-.btnPrimary{
-  background: var(--brand-coral);
-  color: #fff;
+.btnPrimary {
+  color: #1E1C1D;
+  background-color: var(--brand-coral);
+  border: #1E1C1D solid 2px;
 }
 
-/* Discord CTA (semantic alias of primary) */
-.btnDiscord{
+/* Discord CTA */
+.btnDiscord {
   background: var(--brand-coral);
-  color: #fff;
+  color: var(--brand-cream);
 }
 
-/* Hover / focus behaviour */
+/* Hover / focus */
 .btn:hover,
-.btn:focus-visible{
+.btn:focus-visible {
   transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
   filter: brightness(0.98);
 }
 
 /* Active / pressed */
-.btn:active{
+.btn:active {
   transform: translateY(0);
   box-shadow: var(--shadow);
   filter: brightness(0.96);
 }
 
 /* Accessibility: visible focus ring */
-.btn:focus-visible{
+.btn:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.9);
   outline-offset: 2px;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 720px) {
+  .btn {
+    width: auto;          /* never stretch to fill container */
+    align-self: flex-start;
+    padding: 11px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
 }

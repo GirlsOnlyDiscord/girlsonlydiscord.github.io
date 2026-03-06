@@ -17,9 +17,9 @@ export default function Contact() {
           </header>
 
           <div className="contactCards">
-            {/* Preferred: Tickets */}
+            {/* Row 1: Full-width card */}
             <section
-              className="contactCard contactCardPrimary"
+              className="contactCard contactCardPrimary fullWidth"
               aria-label="Open a support ticket"
             >
               <h2 className="contactCardTitle">Support & Moderation</h2>
@@ -45,46 +45,47 @@ export default function Contact() {
               </p>
             </section>
 
-            {/* Email */}
-            <section className="contactCard" aria-label="Contact by email">
-              <h2 className="contactCardTitle">Email</h2>
+            {/* Row 2: Two cards side by side */}
+            <div className="contactRow">
+              <section className="contactCard" aria-label="Contact by email">
+                <h2 className="contactCardTitle">Email</h2>
 
-              <p className="contactCardText">
-                For formal enquiries, partnerships, or anything that isn’t
-                time-sensitive:
-              </p>
+                <p className="contactCardText">
+                  For formal enquiries, partnerships, or anything that isn’t
+                  time-sensitive:
+                </p>
 
-              <a
-                className="contactLink"
-                href="mailto:discordgirlsonly@gmail.com"
-              >
-                discordgirlsonly@gmail.com
-              </a>
-            </section>
+                <a
+                  className="contactLink"
+                  href="mailto:discordgirlsonly@gmail.com"
+                >
+                  discordgirlsonly@gmail.com
+                </a>
+              </section>
 
-            {/* Discord Owners */}
-            <section className="contactCard" aria-label="Contact server owners">
-              <h2 className="contactCardTitle">Server Owners</h2>
+              <section className="contactCard" aria-label="Contact server owners">
+                <h2 className="contactCardTitle">Server Owners</h2>
 
-              <p className="contactCardText">
-                For exceptional cases, you may contact the server owners directly
-                on Discord:
-              </p>
+                <p className="contactCardText">
+                  For exceptional cases, you may contact the server owners directly
+                  on Discord:
+                </p>
 
-              <ul className="contactList">
-                <li>
-                  <strong>Nil</strong> (Co-owner) — <span>@niltheoverkill</span>
-                </li>
-                <li>
-                  <strong>Ruthie</strong> (Co-owner) — <span>@peachyqiss</span>
-                </li>
-              </ul>
+                <ul className="contactList">
+                  <li>
+                    <strong>Nil</strong> (Co-owner) — <span>@niltheoverkill</span>
+                  </li>
+                  <li>
+                    <strong>Ruthie</strong> (Co-owner) — <span>@peachyqiss</span>
+                  </li>
+                </ul>
 
-              <p className="contactCardText">
-                Please note that direct messages may receive a slower response
-                than tickets.
-              </p>
-            </section>
+                <p className="contactCardText">
+                  Please note that direct messages may receive a slower response
+                  than tickets.
+                </p>
+              </section>
+            </div>
           </div>
         </div>
       </main>
