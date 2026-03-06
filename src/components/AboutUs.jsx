@@ -1,4 +1,4 @@
-import "../styles/sections/AboutUs.css";
+import "../styles/sections/aboutus.css";
 
 const STATS = [
   { value: "2,500+", label: "Members Worldwide",       color: "var(--brand-coral)" },
