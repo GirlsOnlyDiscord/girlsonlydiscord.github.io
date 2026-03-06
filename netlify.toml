@@ -1,7 +1,7 @@
 [build]
   base = "goss-mvp"
   command = "npm run build"
-  publish = "dist"
+  publish = "goss-mvp/dist"
 
 [build.environment]
   NODE_VERSION = "20"
