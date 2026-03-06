@@ -1,37 +1,52 @@
 /* =========================
-   FAQ
+   FAQ page
    ========================= */
 
-  /* FAQ Header */
-  .faqTitleContainer {
+/* =========================
+   Header
+   ========================= */
+
+.faqTitleContainer {
   display: flex;
   justify-content: space-between;
-  margin:  50px 20px 20px 20px;
-  padding: 10px;
+  align-items: center;
+  margin: 50px 20px 20px;
+  padding: 16px 24px;
   background: var(--brand-cream);
   border: 2px solid var(--ink);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  overflow: hidden;
 }
 
-.faqTitle{
+.faqTitle {
+  font-family: "Fraunces", serif;
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 500;
   margin: 0;
+  color: var(--ink);
 }
-/* Expandle Questions */
+
+/* =========================
+   Cards wrapper — two column
+   ========================= */
+
 .cards-wrapper {
   display: flex;
   align-items: flex-start;
-  margin: 20px 20px
+  gap: 16px;
+  margin: 20px 20px 60px;
 }
 
 .cards-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 0 10px;
+  gap: 12px;
 }
+
+/* =========================
+   Individual card
+   ========================= */
 
 .card {
   background: var(--brand-cream);
@@ -39,62 +54,122 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
 }
 
 .card-header {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px;
+  gap: 10px;
+  padding: 14px 18px;
   cursor: pointer;
+  user-select: none;
 }
 
 .cardTitle {
-    font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    font-weight: 600;
-    padding: 0;
-    margin: 0;
-    color:var(--ink)
+  font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.3;
 }
+
+/* =========================
+   Card content — smooth expand/collapse
+   Transition both max-height AND padding to
+   prevent text morphing before collapse.
+   ========================= */
 
 .card-content {
   max-height: 0;
   overflow: hidden;
-  font-family: "Fraunces", serif;
+  padding: 0 24px;           /* horizontal padding always present */
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+
+  /* transition padding-bottom alongside max-height */
+  transition:
+    max-height 0.3s ease,
+    padding-bottom 0.3s ease;
+}
+
+.card-content p {
+  margin: 0;
 }
 
 .card.open .card-content {
   max-height: 500px;
-  padding: 0 30px 20px 30px;
+  padding-bottom: 18px;      /* only bottom padding animates */
 }
 
-/* text (remove margin) */
-p {
-  margin: 0;
-}
+/* =========================
+   Plus → × animation
+   ========================= */
 
-/* plus + animation + -> x */
 .plus {
   font-size: 22px;
-  width: 20px;
+  width: 24px;
+  flex-shrink: 0;
   display: inline-block;
-  transition: transform 0.3s ease;
-  font-size: 22px;
-  padding-bottom: 2px;
   text-align: center;
+  transition: transform 0.25s ease;
+  line-height: 1;
 }
 
 .plus.open {
   transform: rotate(45deg);
 }
 
+/* =========================
+   Responsive
+   ========================= */
+
 @media (max-width: 768px) {
+  .faqTitleContainer {
+    margin: 28px 14px 16px;
+    padding: 14px 18px;
+  }
+
   .cards-wrapper {
     flex-direction: column;
+    margin: 0 14px 48px;
+    gap: 10px;
+  }
+
+  .cards-column {
+    gap: 10px;
+  }
+
+  .card-header {
+    padding: 12px 14px;
+  }
+
+  .card-content {
+    padding: 0 18px;
+  }
+
+  .card.open .card-content {
+    padding-bottom: 14px;
+  }
+
+  .cardTitle {
+    font-size: 14px;
   }
 }
 
+@media (max-width: 480px) {
+  .faqTitle {
+    font-size: 22px;
+  }
 
-
-
+  .cardTitle {
+    font-size: 13px;
+  }
+}

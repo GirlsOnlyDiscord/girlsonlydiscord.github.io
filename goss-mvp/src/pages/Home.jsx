@@ -16,13 +16,8 @@ export default function Home() {
         <IntroSection />
         {/* FAQ */}
         <section id="faq" className="faqSection">
-          <div className="faqHeader">
-            <h2 className="faqTitle">
-              Frequently Asked Questions
-            </h2>
-            <button className="btn btnPrimary">
-              Expand All Questions
-            </button>
+          <div className="faqTitleContainer">
+            <h2 className="faqTitle">Frequently Asked Questions</h2>
           </div>
           <FAQQuestions />
         </section>
