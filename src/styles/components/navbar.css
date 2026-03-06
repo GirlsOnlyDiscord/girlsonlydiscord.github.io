@@ -8,20 +8,18 @@
   z-index:1000;
 }
 
-.navInner{
-  margin:0 20px;
-  padding:16px 24px;
-  background:var(--brand-cream);
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:18px;
-
-  border:var(--ink) solid 2px;
-  width:100%;
+.navInner {
+  margin: 0 20px;
+  padding: 16px 24px;
+  background: var(--brand-cream);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  border: var(--ink) solid 2px;
+  box-sizing: border-box; /* ← replaces width: 100% */
 }
 
 /* =========================
