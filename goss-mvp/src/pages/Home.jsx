@@ -3,7 +3,7 @@ import Hero from "../components/Hero.jsx";
 import IntroSection from "../components/IntroSection.jsx";
 import AboutUs from "../components/AboutUs.jsx";
 import Footer from "../components/Footer.jsx";
-import FAQQuestions from "../components/Cards.jsx";
+import FAQQuestions from "../components/FAQCards.jsx";
 
 export default function Home() {
   return (

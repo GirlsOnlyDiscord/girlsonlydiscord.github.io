@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
-import Cards from "../components/Cards.jsx";
+import Cards from "../components/FAQCards.jsx";
 
 export default function FAQ() {
   return (
