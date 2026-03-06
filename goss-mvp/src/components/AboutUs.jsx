@@ -17,7 +17,7 @@ const FEATURES = [
 export default function AboutUs() {
   return (
     <>
-      <section id="about" className="aboutSection">
+      <section id="about-us" className="aboutSection">
 
       {/* Header */}
       <div className="aboutHeader">

@@ -33,15 +33,15 @@ export default function Navbar() {
           <a href="/#faq" className="navLink" onClick={closeMenu}>
             FAQ
           </a>
-
+          <a href="/#about-us" className="navLink" onClick={closeMenu}>
+            About Us
+          </a>
           <Link className="navLink" to="/support" onClick={closeMenu}>
             Support Us
           </Link>
-
           <Link className="navLink" to="/contact" onClick={closeMenu}>
             Contact Us
           </Link>
-
           <a
             className="btn btnPrimary"
             href="https://discord.gg/girlsonlystudy"
