@@ -1,11 +1,9 @@
 /* =========================
    FAQ page
    ========================= */
-
 /* =========================
    Header
    ========================= */
-
 .faqTitleContainer {
   display: flex;
   justify-content: space-between;
@@ -17,7 +15,6 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
-
 .faqTitle {
   font-family: "Fraunces", serif;
   font-size: clamp(24px, 4vw, 38px);
@@ -25,29 +22,24 @@
   margin: 0;
   color: var(--ink);
 }
-
 /* =========================
    Cards wrapper — two column
    ========================= */
-
 .cards-wrapper {
   display: flex;
   align-items: flex-start;
   gap: 16px;
   margin: 20px 20px 60px;
 }
-
 .cards-column {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-
 /* =========================
    Individual card
    ========================= */
-
 .card {
   background: var(--brand-cream);
   border: 2px solid var(--ink);
@@ -56,11 +48,9 @@
   overflow: hidden;
   transition: box-shadow 0.2s ease;
 }
-
 .card:hover {
   box-shadow: var(--shadow-hover);
 }
-
 .card-header {
   display: flex;
   align-items: center;
@@ -69,7 +59,6 @@
   cursor: pointer;
   user-select: none;
 }
-
 .cardTitle {
   font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 600;
@@ -78,41 +67,31 @@
   color: var(--ink);
   line-height: 1.3;
 }
-
 /* =========================
    Card content — smooth expand/collapse
-   Transition both max-height AND padding to
-   prevent text morphing before collapse.
    ========================= */
-
 .card-content {
   max-height: 0;
   overflow: hidden;
-  padding: 0 24px;           /* horizontal padding always present */
+  padding: 0 24px;
   font-family: "Outfit", sans-serif;
   font-size: 15px;
   line-height: 1.6;
   color: var(--ink-muted);
-
-  /* transition padding-bottom alongside max-height */
   transition:
-    max-height 0.3s ease,
-    padding-bottom 0.3s ease;
+    max-height 0.35s ease,
+    padding-bottom 0.35s ease;
 }
-
 .card-content p {
   margin: 0;
 }
-
 .card.open .card-content {
-  max-height: 500px;
-  padding-bottom: 18px;      /* only bottom padding animates */
+  max-height: 2000px;        /* large enough for any answer */
+  padding-bottom: 18px;
 }
-
 /* =========================
    Plus → × animation
    ========================= */
-
 .plus {
   font-size: 22px;
   width: 24px;
@@ -122,53 +101,42 @@
   transition: transform 0.25s ease;
   line-height: 1;
 }
-
 .plus.open {
   transform: rotate(45deg);
 }
-
 /* =========================
    Responsive
    ========================= */
-
 @media (max-width: 768px) {
   .faqTitleContainer {
     margin: 28px 14px 16px;
     padding: 14px 18px;
   }
-
   .cards-wrapper {
     flex-direction: column;
     margin: 0 14px 48px;
     gap: 10px;
   }
-
   .cards-column {
     gap: 10px;
   }
-
   .card-header {
     padding: 12px 14px;
   }
-
   .card-content {
     padding: 0 18px;
   }
-
   .card.open .card-content {
     padding-bottom: 14px;
   }
-
   .cardTitle {
     font-size: 14px;
   }
 }
-
 @media (max-width: 480px) {
   .faqTitle {
     font-size: 22px;
   }
-
   .cardTitle {
     font-size: 13px;
   }
