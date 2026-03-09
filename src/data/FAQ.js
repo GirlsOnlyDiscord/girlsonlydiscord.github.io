@@ -59,7 +59,7 @@ export const FAQ = [
       " and ",
       { t: "monthly", c: "brand-gold" },
       " study sessions to ",
-      { t: "study tournaments, marathons, self-care challenges, movie nights,", c: "brand-coral" },
+      { t: "study tournaments, study marathons, self-care challenges, movie nights,", c: "brand-coral" },
       " and ",
       { t: "gaming events,", c: "brand-green" },
       " GOSS blends productivity with fun.\n\nOur goal is to help members stay ",
