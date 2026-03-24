@@ -1,7 +1,7 @@
 // src/data/FAQ.js
 // Text is stored as arrays of strings and span objects.
 // { t: "text", c: "css-var-name" } renders as a coloured span.
-
+// { t: "text", c: "css-var-name", href: "url" } renders as a coloured anchor link.
 export const FAQ = [
   {
     title: "What is GOSS?",
@@ -110,7 +110,9 @@ export const FAQ = [
     text: [
       "The best way to support GOSS is by ",
       { t: "boosting", c: "brand-gold" },
-      " the server! This helps us unlock higher-quality calls, better file uploads, and more perks for members.\nAlso - consider donating to us on Ko-fi, using this link - (link)\n\nYou can also support us by:\n\nParticipating actively in ",
+      " the server! This helps us unlock higher-quality calls, better file uploads, and more perks for members.\nAlso - consider donating to us on Ko-fi, using this link - ",
+      { t: "ko-fi.com/girlsonly", c: "brand-coral", href: "https://ko-fi.com/girlsonly" },
+      "\n\nYou can also support us by:\n\nParticipating actively in ",
       { t: "events", c: "brand-green" },
       "\nProviding ",
       { t: "suggestions", c: "brand-gold" },

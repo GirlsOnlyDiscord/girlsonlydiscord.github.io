@@ -15,6 +15,19 @@ function RichText({ parts }) {
             </span>
           ));
         }
+        if (part.href) {
+          return (
+            <a
+              key={i}
+              href={part.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: `var(--${part.c})` }}
+            >
+              {part.t}
+            </a>
+          );
+        }
         return (
           <span key={i} style={{ color: `var(--${part.c})` }}>
             {part.t}
