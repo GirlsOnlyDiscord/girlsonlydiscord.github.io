@@ -73,10 +73,7 @@ export default function Contact() {
 
                 <ul className="contactList">
                   <li>
-                    <strong>Nil</strong> (Co-owner) — <span>@niltheoverkill</span>
-                  </li>
-                  <li>
-                    <strong>Ruthie</strong> (Co-owner) — <span>@peachyqiss</span>
+                    <strong>Nil</strong> (Owner) — <span>@niltheoverkill</span>
                   </li>
                 </ul>
 
