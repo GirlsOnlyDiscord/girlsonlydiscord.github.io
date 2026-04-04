@@ -64,10 +64,10 @@ export default function Contact() {
               </section>
 
               <section className="contactCard" aria-label="Contact server owners">
-                <h2 className="contactCardTitle">Server Owners</h2>
+                <h2 className="contactCardTitle">Server Owner</h2>
 
                 <p className="contactCardText">
-                  For exceptional cases, you may contact the server owners directly
+                  For exceptional cases, you may contact the server owner directly
                   on Discord:
                 </p>
 
