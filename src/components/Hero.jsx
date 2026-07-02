@@ -8,7 +8,7 @@ import RealTalkLogo from "../assets/RealTalk.png";
 const REALTALK_URL =
   "https://open.spotify.com/show/40jD6FVIfkOAOeXlcQ9Zpe?si=814c38dccfc14aef";
 
-const REALTALK_CAPTION = "LISTEN TO OUR PODCAST";
+const REALTALK_CAPTION = "ADD OUR PODCAST TO YOUR ROTATION";
 
 export default function Hero() {
   return (
