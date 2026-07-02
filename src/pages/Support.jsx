@@ -18,59 +18,105 @@ export default function Support() {
           <div className="supportCards">
             <section
               className="supportCard"
-              aria-label="Support on Ko-fi"
+              aria-label="Support on Kofi"
             >
-              <h2 className="supportCardTitle">Ko-fi</h2>
+              <h2 className="supportCardTitle">Kofi</h2>
 
               <p className="supportCardText">
                 Every donation goes directly towards:
               </p>
 
               <ul className="supportList">
-                <li>🎁 Giveaways of educational materials and resources for our members</li>
-                <li>⚙️ Maintaining and improving server features and tools</li>
-                <li>💡 Supporting new initiatives that make learning more engaging and accessible</li>
+                <li>
+                  Giveaways of educational materials and resources for our
+                  members
+                </li>
+                <li>Maintaining and improving server features and tools</li>
+                <li>
+                  Supporting new initiatives that make learning more
+                  engaging and accessible
+                </li>
               </ul>
 
               <p className="supportCardText">
-                Thank you for helping us continue to build a space where hard work and curiosity thrive.
+                Thank you for helping us continue to build a space where
+                hard work and curiosity thrive.
               </p>
 
               <a
-                className="btn btnPrimary"
+                className="btn supportKofiBtn"
                 href="https://ko-fi.com/girlsonly"
                 target="_blank"
                 rel="noreferrer"
               >
-                Support us on Ko-fi →
+                Support us on Kofi →
               </a>
             </section>
 
             {/* Server Boosting */}
-<section className="supportCard" aria-label="Boost the Discord server">
-  <h2 className="supportCardTitle">Discord Server Boosting</h2>
+            <section
+              className="supportCard"
+              aria-label="Boost the Discord server"
+            >
+              <h2 className="supportCardTitle">Discord Server Boosting</h2>
 
-  <p className="supportCardText">
-    Server boosts help unlock better audio quality, streaming features,
-    and overall improvements to the Discord experience.
-  </p>
+              <p className="supportCardText">
+                Server boosts enable GOSS to deliver a better experience to
+                you. This includes audio quality & streaming abilities,
+                more custom emojis, large file uploads and custom role
+                icons.
+              </p>
 
-  <p className="supportCardText">
-    <strong>Booster-exclusive perks include:</strong>
-  </p>
+              <p className="supportCardText">
+                In return, becoming a booster of GOSS will also get you:
+              </p>
 
-  <ul className="supportList">
-    <li>✨ Exclusive custom gradient & holographic roles</li>
-    <li>🔒 A super secret booster-only chat</li>
-    <li>😌 Custom emoji requests</li>
-    <li>💖 And more special perks over time</li>
-  </ul>
+              <ul className="supportList">
+                <li>Exclusive custom gradient & holographic roles</li>
+                <li>A secret booster-only chat</li>
+                <li>Custom emoji Requests</li>
+              </ul>
 
-  <p className="supportCardHint">
-    Open Discord → Server settings → Boost this server
-  </p>
-</section>
+              <p className="supportCardHint">
+                Open GOSS → 'Server Boosts' → 'Boost this Server'
+              </p>
+            </section>
 
+            {/* Have another idea? */}
+            <section
+              className="supportCard"
+              aria-label="Other ways to reach us"
+            >
+              <h2 className="supportCardTitle">Have another idea?</h2>
+
+              <p className="supportCardText">
+                For formal enquiries, partnerships, or anything that isn't
+                time sensitive:{" "}
+                <a
+                  className="contactLink"
+                  href="mailto:discordgirlsonly@gmail.com"
+                >
+                  discordgirlsonly@gmail.com
+                </a>
+              </p>
+
+              <p className="supportCardText">
+                For exceptional cases, you may contact the server owner
+                directly on Discord:
+              </p>
+
+              <ul className="contactList">
+                <li>
+                  <strong>Nil</strong> (Co-owner) —{" "}
+                  <span className="contactMention">@niltheoverkill</span>
+                </li>
+              </ul>
+
+              <p className="supportCardText">
+                Please note that direct messages may receive a slower
+                response than tickets.
+              </p>
+            </section>
           </div>
         </div>
       </main>
