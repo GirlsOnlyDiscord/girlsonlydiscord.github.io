@@ -12,6 +12,7 @@
   font-family: "Outfit", sans-serif;
   font-weight: 500;
   cursor: pointer;
+  white-space: nowrap;
   background-clip: padding-box;
   box-shadow: var(--shadow);
   transition:
