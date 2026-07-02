@@ -10,7 +10,6 @@ export const EVENTS = [
   {
     id: "recruiting-the-undead",
     title: "Recruiting the Undead - 2025",
-    
     banner: RecruitingTheUndead,
     description:
       "Recruiting the Undead was our 2nd study tournament held during Halloween 2025, featuring three undead factions of zombies, ghosts, and vampires. Framed around a battle for control of the Ruthark Graveyard, this 12-day event brought together over 100 participants, who logged more than 10,600 hours of study and completed over 900 self-improvement quests, alongside interactive charms and curses, where teams could draw cards to influence the competition.",
