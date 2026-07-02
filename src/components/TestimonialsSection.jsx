@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TESTIMONIALS } from "../data/Testimonials.js";
+import { TESTIMONIALS } from "../data/testimonials.js";
 import "../styles/sections/testimonials.css";
 
 // Splits on **bold** markers and renders those segments as accented

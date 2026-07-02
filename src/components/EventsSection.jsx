@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { EVENTS } from "../data/Events.js";
+import { EVENTS } from "../data/events.js";
 import "../styles/sections/events.css";
 
 export default function EventsSection() {
