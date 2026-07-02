@@ -12,7 +12,7 @@
   --brand-red:   #E95241;
 
    /* Light brand colours */
-  --brand-light-blue: #729FC9;
+  --brand-light-blue: #A1BDDA;
   --brand-light-coral: #FBC0B7;
   --brand-light-green: #6bc490;
   --brand-light-gold:  #FFD76A;
@@ -68,6 +68,17 @@ body{
 a{
   color: inherit;
   text-decoration: none;
+}
+
+/* =========================
+   Anchor scroll offset
+   Sticky nav is ~20px top + ~76px tall; this keeps
+   anchor-linked sections (#about-us, #faq, etc.) from
+   landing tucked under/behind it.
+   ========================= */
+#about-us,
+#faq {
+  scroll-margin-top: 120px;
 }
 
 /* changed due to breaking sticky header */

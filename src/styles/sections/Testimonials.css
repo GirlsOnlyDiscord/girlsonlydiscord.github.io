@@ -1,0 +1,179 @@
+/* =========================
+   Testimonials section
+   Two-column card: copy on the left, single-testimonial
+   carousel on the right — mirrors the Intro section's
+   image-left/text-right split in the opposite direction.
+   ========================= */
+
+.testimonialsSection {
+  padding: 40px 20px 40px;
+}
+
+.testimonialsCard {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: var(--brand-cream);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* =========================
+   Left column — copy
+   ========================= */
+
+.testimonialsCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.testimonialsTitle {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 38px);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.testimonialsLead {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+/* =========================
+   Right column — carousel
+   ========================= */
+
+.testimonialsCarouselCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonialsCarouselInner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.testimonialsArrow {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: var(--brand-light-coral);
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.testimonialsArrow:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.97);
+}
+
+.testimonialsBox {
+  flex: 1 1 auto;
+  height: 360px;
+  background: var(--brand-light-gold);
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.testimonialsQuoteText {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 12px;
+  white-space: pre-line;
+}
+
+.testimonialsHighlight {
+  color: var(--brand-coral);
+  font-weight: 700;
+}
+
+.testimonialsAttribution {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* =========================
+   Dots
+   ========================= */
+
+.testimonialsDots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.testimonialsDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--brand-coral);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.testimonialsDot.active {
+  background: var(--brand-coral);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+  .testimonialsCard {
+    grid-template-columns: 1fr;
+    padding: 28px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonialsCard {
+    padding: 22px;
+  }
+
+  .testimonialsBox {
+    height: 300px;
+    padding: 18px;
+  }
+
+  .testimonialsArrow {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}

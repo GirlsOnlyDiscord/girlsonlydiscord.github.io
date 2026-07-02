@@ -22,12 +22,10 @@ export default function IntroSection() {
           </h2>
           <a
             className="btn btnPrimary"
-            href="https://discord.gg/girlsonlystudy"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Join the Girls Only Study Space Discord server"
+            href="#about-us"
+            aria-label="Read more about GOSS"
           >
-            I want to join <span aria-hidden="true">→</span>
+            More about us →
           </a>
         </div>
       </div>

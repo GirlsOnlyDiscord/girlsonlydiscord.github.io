@@ -3,10 +3,8 @@
    ========================= */
 .hero {
   position: relative;
-  padding: clamp(28px, 6vw, 48px) 18px clamp(36px, 8vw, 64px);
-  background: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-soft));
+  padding: clamp(28px, 6vw, 48px) 18px clamp(10px, 2vw, 16px);
   border-top: 2px solid rgba(0,0,0,.08);
-  border-bottom: 2px solid rgba(0,0,0,.08);
   overflow: hidden;
   margin-top: -100px;
 }
@@ -27,7 +25,7 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  min-height: clamp(420px, 70vh, 620px);
+  min-height: clamp(320px, 52vh, 460px);
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
@@ -94,6 +92,85 @@
 }
 
 /* =========================
+   RealTalk podcast badge
+   Circular badge on the hero's right edge, vertically
+   centred. Caption text curves around the logo on an SVG
+   path and rotates slowly; the logo itself stays upright.
+   ========================= */
+
+.realTalkBadge {
+  position: absolute;
+  top: 50%;
+  right: clamp(16px, 4vw, 64px);
+  transform: translateY(-50%);
+  z-index: 2;
+  width: clamp(200px, 20vw, 300px);
+  height: clamp(200px, 20vw, 300px);
+  display: block;
+}
+
+.realTalkTextRing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: realTalkSpin 18s linear infinite;
+}
+
+.realTalkTextRing text {
+  font-family: "Outfit", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  fill: var(--ink);
+}
+
+@keyframes realTalkSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.realTalkBadgeImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 66%;
+  height: 66%;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .realTalkTextRing {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .realTalkBadge {
+    width: clamp(160px, 22vw, 220px);
+    height: clamp(160px, 22vw, 220px);
+  }
+
+  .realTalkTextRing text {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 640px) {
+  .realTalkBadge {
+    display: none;
+  }
+}
+
+/* =========================
    Social stack
    ========================= */
 
@@ -102,23 +179,22 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-self: center;
   border: var(--ink) solid 2px;
   background-color: var(--brand-light-coral);
   border-radius: 12px;
-  margin: 2px;
-  margin-top: 100px;
-  width: 100%;
+  width: min(860px, calc(100% - 40px));
+  margin: 4px auto 40px;
 }
 
 .pillLink {
-  flex: 1 1 120px;
+  flex: 1 1 90px;
   min-width: 0;
   color: #1E1C1D;
   font-weight: 500;
-  padding: 14px 10px;
+  padding: 12px 6px;
   text-align: center;
   white-space: nowrap;
+  font-size: 14px;
 }
 
 .pillLink:hover {
@@ -126,39 +202,39 @@
 }
 
 /* =========================
-   Benefits strip
+   Benefits bar (full-width green)
    ========================= */
 
-.benefitsCard {
-  margin-top: 2rem;
-  background: var(--brand-cream-card);
-  border-radius: var(--radius-lg);
-  padding: 18px;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(0,0,0,.10);
+.benefitsBarWrap {
+  margin: 28px 20px 0;
 }
 
-.benefitsGrid {
+.benefitsBar {
+  background: var(--brand-green);
+  border: var(--ink) solid 2px;
+  border-radius: 12px;
+  padding: 20px 18px;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 12px;
 }
 
-.benefit {
+.benefitItem {
   display: grid;
   justify-items: center;
   text-align: center;
   gap: 8px;
 }
 
-.benefitIcon {
+.benefitItemIcon {
   font-size: 26px;
 }
 
-.benefitText {
+.benefitItemText {
   font-size: 12px;
-  color: rgba(31, 41, 55, 0.78);
-  line-height: 1.2;
+  color: var(--brand-cream);
+  line-height: 1.25;
+  font-weight: 500;
 }
 
 /* =========================
@@ -166,7 +242,7 @@
    ========================= */
 
 @media (max-width: 980px) {
-  .benefitsGrid {
+  .benefitsBar {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -185,7 +261,7 @@
     padding: 14px 24px;
   }
 
-  .benefitsGrid {
+  .benefitsBar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

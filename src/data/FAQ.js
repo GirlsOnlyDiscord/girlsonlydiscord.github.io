@@ -25,7 +25,7 @@ export const FAQ = [
     title: "Is it actually all girls?",
     text: [
       { t: "Yes!", c: "brand-coral" },
-      "\nSome girls' servers allow men for networking or moderation purposes — but at GOSS, we don't.\nWe are run ",
+      " Some girls' servers allow men for networking or moderation purposes — but at GOSS, we don't. We are run ",
       { t: "exclusively by girls and for girls.", c: "brand-blue" },
       " Our verification process ensures this, and every member must go through it before joining.\n\nIf there's ever any suspicion that a member may not be who they claim to be, please ",
       { t: "open a ticket.", c: "brand-gold" },
@@ -45,7 +45,7 @@ export const FAQ = [
     text: [
       "We host a wide variety of events; there's truly ",
       { t: "something for everyone.", c: "brand-blue" },
-      "\nFrom daily, weekly, and monthly ",
+      " From daily, weekly, and monthly ",
       { t: "study sessions", c: "brand-gold" },
       " to study tournaments, study marathons, self-care challenges, movie nights, and gaming events, GOSS blends productivity with fun.\n\nOur goal is to help members ",
       { t: "stay motivated", c: "brand-blue" },
@@ -57,19 +57,19 @@ export const FAQ = [
     text: [
       "GOSS is built around accountability — ",
       { t: "everything we do is designed to help you stay consistent,", c: "brand-gold" },
-      " focused, and supported.\n\nWe use a range of tools and spaces to make studying easier and more engaging, including:\n\n",
+      " focused, and supported.\n\nWe use a range of tools and spaces to make studying easier and more engaging, including ",
       { t: "Study bots", c: "brand-gold" },
-      " that track focus time and help you log sessions\n",
+      " that track focus time and help you log sessions, ",
       { t: "Pomodoro channels", c: "brand-coral" },
-      " with built-in timers for structured study blocks\n",
+      " with built-in timers for structured study blocks, ",
       { t: "Voice channels", c: "brand-green" },
-      " with different themes, such as talk-n-study or lofi-study\n",
+      " with different themes, such as talk-n-study or lofi-study, ",
       { t: "Camera and screenshare", c: "brand-blue" },
-      " study channels for stronger accountability and focus\n",
+      " study channels for stronger accountability and focus, and ",
       { t: "Private study rooms", c: "brand-coral" },
       " and ",
       { t: "club voice chats", c: "brand-blue" },
-      " for small-group or interest-based studying\n\nWhether you prefer quiet solo study or collaborative sessions with others watching your progress, there's a system that fits your study style.",
+      " for small-group or interest-based studying.\n\nWhether you prefer quiet solo study or collaborative sessions with others watching your progress, there's a system that fits your study style.",
     ]
   },
   {
@@ -87,11 +87,12 @@ export const FAQ = [
     text: [
       "GOSS operates in ",
       { t: "English only", c: "brand-gold" },
-      ", to avoid moderation issues and miscommunication.\nWe ask everyone to use English in public channels (especially under \"Chats\") to ensure inclusivity and clear communication.\nOf course, you're free to speak other languages in DMs, clubs, journals or private study groups with friends!",
+      ", to avoid moderation issues and miscommunication. We ask everyone to use English in public channels (especially under \"Chats\") to ensure inclusivity and clear communication. Of course, you're free to speak other languages in DMs, clubs, journals or private study groups with friends!",
     ]
   },
   {
     title: "I have limited internet — can I still be involved?",
+    defaultOpen: true,
     text: [
       { t: "Absolutely!", c: "brand-green" },
       " We have text-based study sessions, asynchronous events, and flexible participation options. You can join at your own pace without needing to be on call or video.",
@@ -110,16 +111,17 @@ export const FAQ = [
     text: [
       "The best way to support GOSS is by ",
       { t: "boosting", c: "brand-gold" },
-      " the server! This helps us unlock higher-quality calls, better file uploads, and more perks for members.\nAlso - consider donating to us on Ko-fi, using this link - ",
+      " the server! This helps us unlock higher-quality calls, better file uploads, and more perks for members. Also - consider donating to us on Ko-fi, using this link - ",
       { t: "ko-fi.com/girlsonly", c: "brand-coral", href: "https://ko-fi.com/girlsonly" },
-      "\n\nYou can also support us by:\n\nParticipating actively in ",
+      ". You can also support us by participating actively in ",
       { t: "events", c: "brand-green" },
-      "\nProviding ",
+      ", providing ",
       { t: "suggestions", c: "brand-gold" },
-      " for server improvement\nApplying to become a Helper or Staff\n",
-      { t: "Sharing GOSS with friends", c: "brand-coral" },
-      "\nInteracting with or mentioning us on ",
+      " for server improvement, applying to become a Helper or Staff, ",
+      { t: "sharing GOSS with friends", c: "brand-coral" },
+      ", and interacting with or mentioning us on ",
       { t: "social media", c: "brand-blue" },
+      ".",
     ]
   },
   {
