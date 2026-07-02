@@ -230,3 +230,121 @@
     margin-bottom: 26px;
   }
 }
+
+/* =========================
+   Contact page — mockup-matched card style
+   (Contact-only overrides; Support page untouched)
+   ========================= */
+
+.contactCard {
+  background: var(--brand-cream);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.contactCardTitle {
+  font-size: 30px;
+  color: var(--ink);
+}
+
+.contactCardText {
+  color: var(--ink-muted);
+}
+
+.contactLink {
+  color: var(--brand-coral);
+}
+
+.contactMention {
+  color: var(--brand-blue);
+  font-weight: 500;
+}
+
+.contactList {
+  margin: 8px 0 16px;
+  color: var(--ink-muted);
+}
+
+/* Numbered steps */
+.stepsList {
+  margin: 0 0 16px;
+  padding-left: 22px;
+  color: var(--ink-muted);
+  display: grid;
+  gap: 10px;
+}
+
+.stepsList li {
+  padding-left: 4px;
+}
+
+/* Pink INFORMATION box */
+.ticketInfoBox {
+  background: var(--brand-light-coral);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.ticketInfoHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.ticketInfoIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.ticketInfoChannel {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.ticketHash {
+  color: var(--ink-muted);
+  margin-right: 2px;
+}
+
+/* Steps + info box (left) / Ticket Tool image (right) */
+.ticketRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.ticketSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ticketToolImage {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .ticketRow {
+    grid-template-columns: 1fr;
+  }
+}
