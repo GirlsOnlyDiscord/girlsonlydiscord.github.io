@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { SOCIALS } from "../data/socials.js";
+
+// Reusing the same Spotify link already used for the RealTalk badge
+// on desktop (see REALTALK_URL in Hero.jsx) — this link only shows
+// in the mobile menu, since desktop has the spinning badge instead.
+const PODCAST_URL = SOCIALS.find((s) => s.label === "Spotify")?.href;
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,6 +48,17 @@ export default function Navbar() {
           <Link className="navLink" to="/contact" onClick={closeMenu}>
             Contact
           </Link>
+          {PODCAST_URL && (
+            <a
+              href={PODCAST_URL}
+              className="navLink navLinkPodcast"
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeMenu}
+            >
+              🎧 Listen to RealTalk, our Podcast
+            </a>
+          )}
           <a
             className="btn btnPrimary"
             href="https://discord.gg/girlsonlystudy"

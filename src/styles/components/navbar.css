@@ -64,6 +64,10 @@
   text-decoration:underline;
 }
 
+.navLinkPodcast{
+  display:none;
+}
+
 /* =========================
    Hamburger
    ========================= */
@@ -153,8 +157,13 @@
   display:flex;
 }
 
+.navLinkPodcast{
+  display:block;
+}
+
 .navLinks .btn{
   width:100%;
+  justify-content:center;
   text-align:center;
 }
 
