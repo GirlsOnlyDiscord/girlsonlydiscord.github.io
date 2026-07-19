@@ -110,6 +110,30 @@
   color: var(--ink);
   margin: 0 0 12px;
   white-space: pre-line;
+  /* Custom scrollbar so overflow reads as intentional, not a
+     default-browser leftover. Right-side padding keeps text from
+     sitting flush against the thumb. */
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-coral) transparent;
+}
+
+.testimonialsQuoteText::-webkit-scrollbar {
+  width: 8px;
+}
+
+.testimonialsQuoteText::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.testimonialsQuoteText::-webkit-scrollbar-thumb {
+  background-color: var(--brand-coral);
+  border-radius: 8px;
+  border: 2px solid var(--brand-light-gold);
+}
+
+.testimonialsQuoteText::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ink);
 }
 
 .testimonialsHighlight {
@@ -154,7 +178,7 @@
    ========================= */
 
 @media (max-width: 900px) {
-  .testimonialsCard {
+.testimonialsCard {
     grid-template-columns: 1fr;
     padding: 28px;
     gap: 24px;
@@ -162,16 +186,16 @@
 }
 
 @media (max-width: 600px) {
-  .testimonialsCard {
+.testimonialsCard {
     padding: 22px;
   }
 
-  .testimonialsBox {
+.testimonialsBox {
     height: 300px;
     padding: 18px;
   }
 
-  .testimonialsArrow {
+.testimonialsArrow {
     width: 32px;
     height: 32px;
     font-size: 16px;

@@ -74,7 +74,7 @@ export default function Support() {
               <ul className="supportList">
                 <li>Exclusive custom gradient & holographic roles</li>
                 <li>A secret booster-only chat</li>
-                <li>Custom emoji Requests</li>
+                <li>Custom emoji requests</li>
               </ul>
 
               <p className="supportCardHint">
