@@ -102,7 +102,11 @@
   position: absolute;
   top: 50%;
   right: clamp(16px, 4vw, 64px);
-  transform: translateY(-50%);
+  /* .hero has a -100px margin-top pulling the whole section up under
+     the navbar; .heroCenter compensates with its own +100px margin,
+     but this badge is positioned relative to .hero directly, so it
+     needs the same nudge down to clear the nav. */
+  transform: translateY(calc(-50% + 70px));
   z-index: 2;
   width: clamp(200px, 20vw, 300px);
   height: clamp(200px, 20vw, 300px);
