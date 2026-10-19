@@ -1,5 +1,6 @@
 import TheWorldAfterDark from "../assets/EventBanners/TheWorldAfterDark.png";
 import UnderTheSurface from "../assets/EventBanners/UnderTheSurface.png";
+import TaskSprints from "../assets/EventBanners/TaskSprints.png";
 import RecruitingTheUndead from "../assets/EventBanners/RecruitingTheUndead.png";
 import TheRift from "../assets/EventBanners/TheRift.png";
 import TOWAW from "../assets/EventBanners/TOWAW.png";
@@ -22,6 +23,13 @@ export const EVENTS = [
     description:
       "What began as an April Fools' prank became a full-blown underground society in Under the Surface, a 12-day GOSS study tournament held in April 2026. With over 90 participants settling into the GOSS Cave, four factions emerged with competing ideas about how their new home should develop. As members logged more than 5,700 study hours and completed over 950 self-improvement quests, daily interactive events gave factions opportunities to secure advantages, disrupt their rivals, and bring an extra layer of competition to studying together.",
   },
+  {
+    id: "task-sprints",
+    title: "Task Sprints - Every Sunday",
+    banner: TaskSprints,
+    description:
+      "Two years in and counting, we meet every Sunday for 3 hours of focused studying, with regular check-ins, a shared timer, and a goal of getting as much of our to-do lists done as possible. With two sessions to accommodate Western and Eastern hemispheres, Task Sprints help members wrap up the week and start the new one on the right foot.",
+  },  
   {
     id: "recruiting-the-undead",
     title: "Recruiting the Undead - 2025",
