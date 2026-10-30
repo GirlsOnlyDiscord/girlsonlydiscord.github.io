@@ -71,9 +71,9 @@ export default function Contact() {
                 time sensitive:{" "}
                 <a
                   className="contactLink"
-                  href="mailto:discordgirlsonly@gmail.com"
+                  href="mailto:girlsonlystudy@gmail.com"
                 >
-                  discordgirlsonly@gmail.com
+                  girlsonlystudy@gmail.com
                 </a>
               </p>
 
