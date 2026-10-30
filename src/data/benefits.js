@@ -1,5 +1,5 @@
 export const BENEFITS = [
-  { icon: "👥", text: "3,200+ Members Worldwide" },
+  { icon: "👥", text: "3,300+ Members Worldwide" },
   { icon: "🕒", text: "Active Across Every Time Zone" },
   { icon: "📅", text: "At Least Two Community Events Weekly" },
   { icon: "💗", text: "Built by Young Women, for Young Women" },

@@ -1,6 +1,6 @@
 import "../styles/sections/aboutus.css";
 const STATS = [
-  { value: "3,200+", label: "Members Worldwide", color: "var(--brand-light-blue)" },
+  { value: "3,300+", label: "Members Worldwide", color: "var(--brand-light-blue)" },
   { value: "70+", label: "Countries Represented", color: "var(--brand-light-gold)" },
   { value: "24/7", label: "Study Channels Active", color: "var(--brand-light-green)" },
   { value: "Apr '24", label: "Founded", color: "var(--brand-light-red)" },
@@ -37,7 +37,7 @@ export default function AboutUs() {
             and build consistent study habits.
           </p>
           <p className="aboutPara">
-            Founded in April 2024, we've grown into a global community of over 3,200
+            Founded in April 2024, we've grown into a global community of over 3,300
             members across more than 70 countries. Run entirely by a volunteer staff
             team, GOSS is free to join. Our mission is clear: to provide a disciplined,
             focused environment where girls can perform at their highest level.
