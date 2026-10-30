@@ -5,7 +5,7 @@ export const SOCIALS = [
   },
   {
     label: "TikTok",
-    href: "https://www.tiktok.com/@girlsonlystudy",
+    href: "https://www.tiktok.com/@girlsonlystudyspace",
   },
   {
     label: "X (Twitter)",
@@ -13,7 +13,7 @@ export const SOCIALS = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/company/girlsonlystudy",
+    href: "https://www.linkedin.com/company/girlsonlystudy.space",
   },
   {
     label: "YouTube",
